@@ -1,0 +1,347 @@
+﻿<style>
+
+   #keyboardHeader{
+     height:20px;  
+     background: rgb(202, 202, 202);
+   }
+   body #keyboardPane{
+      position: fixed;
+	  top: 0;
+	  left: auto;
+      border: solid 1px black;
+      width: 805px;
+	  z-index: 9999;
+   }
+   
+   #lngID {
+	width: 76px;
+   }
+   
+   #keyboard tr td input {
+	padding: 14px 20px;
+	margin: 2px;
+   }
+   
+   #keyboard tr td {
+	padding: 0;
+   }
+</style>
+<script>
+	$(function(){
+		$("#minimize").click(function(){
+			var el = $("#keyboard");
+			if (el.is(":visible")){
+				el.hide();
+				$(this).text(" Развернуть");
+			}
+			else{
+				el.show();
+				$(this).text(" Свернуть");
+			}
+		});
+	});
+</script>
+<form name="one" action="#">
+<!--
+  <input type="text" name="test">
+-->
+</form>
+<div id="keyboardPane">
+<div id="keyboardHeader">
+	<a id="minimize" href="#"> Свернуть</a>
+</div>
+<center>
+<table id="keyboard">
+  <tr> 
+   <td colspan="6"><button style="width:100%" onClick="clearFocused();">Clear</button></td>
+   <td colspan="6"><button style="width:100%" onClick="backSpaceFocused();" >Backpace</button></td>
+  </tr>
+  <tr>
+    <td><input type="button" value="1"/></td>
+    <td><input type="button" value="2"/></td>
+    <td><input type="button" value="3"/></td>
+    <td><input type="button" value="4"/></td>
+    <td><input type="button" value="5"/></td>
+    <td><input type="button" value="6"/></td>
+    <td><input type="button" value="7"/></td>
+    <td><input type="button" value="8"/></td>
+    <td><input type="button" value="9"/></td>
+    <td><input type="button" value="0"/></td>
+    <td><input type="button" value="-"/></td>
+    <td><input type="button" value="+"/></td>
+  </tr>
+  <tr  id="ru" name="lngLocation">
+    <td><input type="button" value="й"/></td>
+    <td><input type="button" value="ц"/></td>
+    <td><input type="button" value="у"/></td>
+    <td><input type="button" value="к"/></td>
+    <td><input type="button" value="е"/></td>
+    <td><input type="button" value="н"/></td>
+    <td><input type="button" value="г"/></td>
+    <td><input type="button" value="ш"/></td>
+    <td><input type="button" value="щ"/></td>
+    <td><input type="button" value="з"/></td>
+    <td><input type="button" value="х"/></td>
+    <td><input type="button" value="ъ"/></td>
+  </tr>
+  <tr id="ru" name="lngLocation">
+    <td><input type="button" value="ф"/></td>
+    <td><input type="button" value="ы"/></td>
+    <td><input type="button" value="в"/></td>
+    <td><input type="button" value="а"/></td>
+    <td><input type="button" value="п"/></td>
+    <td><input type="button" value="р"/></td>
+    <td><input type="button" value="о"/></td>
+    <td><input type="button" value="л"/></td>
+    <td><input type="button" value="д"/></td>
+    <td><input type="button" value="ж"/></td>
+    <td><input type="button" value="э"/></td>
+    <td><input type="button" value="\"/></td>
+  </tr>
+  <tr id="ru" name="lngLocation">
+    <td><input type="button" value="я"/></td>
+    <td><input type="button" value="ч"/></td>
+    <td><input type="button" value="с"/></td>
+    <td><input type="button" value="м"/></td>
+    <td><input type="button" value="и"/></td>
+    <td><input type="button" value="т"/></td>
+    <td><input type="button" value="ь"/></td>
+    <td><input type="button" value="б"/></td>
+    <td><input type="button" value="ю"/></td>
+    <td><input type="button" value="?"/></td>
+    <td><input type="button" value="{"/></td>
+    <td><input type="button" value="}"/></td>
+  </tr>
+
+
+  <tr id="en" name="lngLocation">
+    <td><input type="button" value="q"/></td>
+    <td><input type="button" value="w"/></td>
+    <td><input type="button" value="e"/></td>
+    <td><input type="button" value="r"/></td>
+    <td><input type="button" value="t"/></td>
+    <td><input type="button" value="y"/></td>
+    <td><input type="button" value="u"/></td>
+    <td><input type="button" value="i"/></td>
+    <td><input type="button" value="o"/></td>
+    <td><input type="button" value="p"/></td>
+    <td><input type="button" value="*"/></td>
+    <td><input type="button" value="@"/></td>
+  </tr>
+  <tr  id="en" name="lngLocation">
+    <td><input type="button" value="a"/></td>
+    <td><input type="button" value="s"/></td>
+    <td><input type="button" value="d"/></td>
+    <td><input type="button" value="f"/></td>
+    <td><input type="button" value="g"/></td>
+    <td><input type="button" value="h"/></td>
+    <td><input type="button" value="j"/></td>
+    <td><input type="button" value="k"/></td>
+    <td><input type="button" value="l"/></td>
+    <td><input type="button" value=":"/></td>
+    <td><input type="button" value=";"/></td>
+    <td><input type="button" value="."/></td>
+  </tr>
+  <tr  id="en" name="lngLocation">
+    <td><input type="button" value="z"/></td>
+    <td><input type="button" value="x"/></td>
+    <td><input type="button" value="c"/></td>
+    <td><input type="button" value="v"/></td>
+    <td><input type="button" value="b"/></td>
+    <td><input type="button" value="n"/></td>
+    <td><input type="button" value="m"/></td>
+    <td><input type="button" value="<"/></td>
+    <td><input type="button" value=">"/></td>
+    <td><input type="button" value=","/></td>
+    <td><input type="button" value="{"/></td>
+    <td><input type="button" value="}"/></td>
+  </tr>
+
+
+  <tr>
+    <td colspan="2"><button onclick="onCaps()">Caps</button></td>
+    <td colspan="6"><button onClick="spaceFocused();" style="width:100%">Space</button></td>
+    <td colspan="2"><button onClick="enterFocused();"/>Enter</td>
+    <td colspan="2"><select id="lngID" onchange="changeLocation(lngID.options[lngID.selectedIndex].value);"><option value="ru">Ru</option><option value="en">En</option></select></td>
+  </tr>
+</table>
+</center>
+</div>
+
+<script>
+$(document).ready(function(){
+	bindToForms();
+});
+   lowerCase = true;
+   lngLocation = "ru";
+   changeLocation(lngLocation);
+   focusedElement = null;
+   var keyboardHeader = document.getElementById('keyboardHeader');
+   keyboardHeader.onmousedown = kbMouseDown;
+   
+
+
+   //window.kbX = 10;
+   window.kbY = 10;
+   initButtons();
+
+   function onCaps(){
+     var keyboard = document.getElementById('keyboard');
+     lowerCase = !lowerCase;
+     var buttons = keyboard.getElementsByTagName('input');
+     for(i=0;i<buttons.length;i++){
+       if(lowerCase){
+         buttons[i].value = buttons[i].value.toLowerCase();
+       }else{
+         buttons[i].value = buttons[i].value.toUpperCase();
+       }
+     }
+   }
+
+
+   function changeLocation(newLng){
+     var lng = document.getElementsByName("lngLocation");
+     for(i=0;i<lng.length;i++) {
+       if(lng[i].id==newLng){
+         lng[i].style.display='';
+       }else{
+         lng[i].style.display='none'; 
+       }
+     }
+   }
+
+   function onFocus(e){
+    trg = getTargetButton(e);
+    focusedElement = trg;  
+
+	/*
+	var topCoord = $(this).position().top + $(this).height();
+	var leftCoord = $(this).position().left + 190;	
+	$('#keyboardPane').offset({top: topCoord, left: leftCoord});	
+	*/
+   }
+   
+
+   function getTargetButton(e){
+     var targ;
+     if (!e) var e = window.event;
+     if (e.target) targ = e.target;
+     else if (e.srcElement) targ = e.srcElement;
+     return targ;
+   }
+
+
+   function appendText(e){
+     var targ = getTargetButton(e);
+     if(focusedElement !=null){ 
+       focusedElement.value += targ.value;
+     }
+   }
+
+   function initButtons(){
+     var keyboard = document.getElementById('keyboard');
+     var buttons = keyboard.getElementsByTagName('input');
+     for(i=0;i<buttons.length;i++){
+       buttons[i].onclick = appendText;
+     }
+    var keyboardPane = document.getElementById('keyboardPane'); 
+     keyboardPane.style.top = window.kbY + "px";
+     keyboardPane.style.left = window.kbX + "px";
+          
+   }
+
+   function clearFocused(){
+     if(focusedElement !=null){
+       focusedElement.value = "";
+     }
+   }
+
+
+   function backSpaceFocused(){
+     if(focusedElement !=null){
+       focusedElement.value = focusedElement.value.substr(0,focusedElement.value.length - 1);
+     }   
+   }
+
+  function enterFocused(){
+     if(focusedElement !=null){
+       focusedElement.value += "\r\n";
+     }
+  } 
+
+  function spaceFocused(){
+     if(focusedElement !=null){
+       focusedElement.value += " ";
+     }
+  } 
+
+  
+
+  function kbMouseDown(e){
+     if (!e) var e = window.event;
+     kbX = e.pageX;
+     kbY = e.pageY;
+     document.onmousemove = kbMouseMove;
+     document.onmouseup = kbMouseUp;
+  } 
+
+
+  function getNewCoords(old,delta){
+    if(old==''){ 
+      old = 0;
+    }else{
+      var pos = old.indexOf("px");
+      if(pos>0){
+        old = old.substr(0,pos);
+      }
+      old = old.trim();
+      try{
+        old = parseInt(old);
+      }catch(e){
+        old = 0;
+      }
+    }
+
+    return old - delta;
+  }
+
+  function kbMouseMove(e){
+     if (!e) var e = window.event;
+     if(e.button==0){
+       var deltaX = kbX - e.pageX;    
+       var deltaY = kbY - e.pageY;
+       var keyboardPane = document.getElementById('keyboardPane');   
+     
+       kbX = e.pageX;  
+       kbY = e.pageY;
+
+       keyboardPane.style.top =  getNewCoords(keyboardPane.style.top,deltaY) + "px";
+       keyboardPane.style.left = getNewCoords(keyboardPane.style.left,deltaX) + "px";     
+     }else{
+       document.onmousemove = null;
+     }
+     
+  }
+
+  function kbMouseUp(e){
+     document.onmousemove = null;
+     document.onmouseup = null;
+  }
+  
+
+  function bindToForms(){
+    var forms = document.forms;
+    var current = null;
+    var elem = null;
+    for(i=0;i<forms.length;i++){
+      current = forms[i];
+      for(j=0;j<current.elements.length;j++){
+        elem = current.elements[j];
+        if(elem.type!=null && (elem.type=="text" || elem.type=="textarea")){
+          elem.onfocus = onFocus;
+        }
+      }
+    }
+  }
+ 
+</script>

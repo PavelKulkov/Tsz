@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+      <head>
+	  
+
+	   <meta charset="utf-8"><meta name="description" content=""/> 
+		<title>Региональный портал государственных и муниципальных услуг Пензенской области</title>
+		<!-- Styles -->
+		<link rel="stylesheet" type="text/css" href="/templates/newdesign/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="/templates/newdesign/css/site.css">
+		<link rel="stylesheet" type="text/css" href="/templates/newdesign/css/custom.css">
+		<!-- Javascript
+			================================================== -->
+			<!-- 
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+			 -->
+		<script src="/templates/assets/js/jquery.js"></script>
+		<script type="text/javascript" src="/templates/newdesign/js/bootstrap.js"></script>
+		
+	
+         <style media="screen,projection" type="text/css">
+            div#doctorsContent .no_shadow_print h4, .no_shadow_print h5 {
+            text-align: center;
+            }
+            div#doctorsContent h4 {
+            font-style: normal;
+            font-weight: bold;
+            }
+            textarea {
+            width: 300px; 
+            height: 150px; 
+            resize: none; 
+            margin-bottom: 11px;
+            }
+            select {
+            width: 314px;
+            margin-bottom: 11px
+            }
+            form div.tab-content input[type="text"] {width: 300px;}
+            #blank .content {
+            background: white;
+            width: 100%;
+            margin: 0;
+            }
+            .form {
+            margin-left: 0px;
+            margin-top: 0px;
+            }
+            .rule_line {
+            border-top: 1px solid #e4e4e4;		
+            }
+            .rule_line_div {
+            margin-top: 8px;		
+            }
+            table {
+            margin: 10px;
+            }
+            table tr td{
+            padding-right: 10px;
+            }
+            .tab-content {
+            overflow: hidden;
+            }
+            .next {
+            cursor: pointer;
+            height: 32px;
+            top: 0px;   
+            }
+            .prev {
+            height: 32px;			
+            }
+            div#doctorsContent {
+            vertical-align: center;
+            text-align: center;
+			width: 800px;
+            }
+            div#doctorsContent div.content {
+            margin-left: 0px;
+            }
+            table#listRegionsTable, table#listLpuTable, div#hospitalInfoTable, div#specialtiesDirection, div#specialists {
+            width: 100%;
+            text-align: left;
+            }
+            table#listRegionsTable ul li, table#listLpuTable ul li, div#hospitalInfoTable ul li, div#specialtiesDirection ul li, div#specialists ul li {
+            display: block;	
+            padding: 10px;
+            }
+            div#timeTable {
+            background-color: #f5f5f5;
+            border: 1px solid #e3e3e3;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+            -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+            margin-bottom: 13px;
+            }
+            div#timeTable, div#timeTable ul li {
+            display: block;	
+            padding: 6px 16px 10px 15px;
+            }
+            table#listRegionsTable ul li:hover, table#listLpuTable ul li:hover, div#hospitalInfoTable ul li:hover, div#specialtiesDirection ul li:hover, div#specialists ul li:hover, div#timeTable ul li:hover {
+            background-color: #eeeeee;				
+            }
+            table#listRegionsTable ul li:hover a, table#listLpuTable ul li:hover a, div#hospitalInfoTable ul li:hover a, div#specialtiesDirection ul li:hover a, div#specialists ul li:hover a, div#timeTable a {
+            color: #027bd8;
+            }
+            .btn-prev {
+            float: left;
+            margin-left: 20px;
+            }
+            .time_btn {
+            padding: 4px 15px;
+            margin-bottom: -13px;
+            }		
+            div#tabname_3 div#hospitalInfoTable, div#tabname_3 div#specialists{
+            width: 27%;
+            float: left;
+            padding-left: 10px;			
+            }
+            div#tabname_3 div#specialtiesDirection {
+            width: 43%;
+            float: left;		 	
+            }
+            table#person_data tr td:first-child {
+            text-align: right;
+            }
+            table#person_data tr td:nth-child(2) {
+            text-align: left;
+            }
+            table#recordTable {
+            width: 80%;
+            margin: auto;
+            }
+            .clear_all {
+            clear: both;
+            height: 10px;
+            }
+            .activeRecord {
+            background-color: #0088cc;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            }
+            .activeRecord a{
+            color: #ffffff;
+            }
+            .marker {
+            color: #ff0000;
+            }
+            input#norobot {
+            width: 262px;
+            margin-top: -10px;
+            }
+            div#selfModal {
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            width: 99.92%;
+            height: 99.92%;
+            background-color: #111111;
+            filter: progid:DXImageTransform.Microsoft.Alpha(opacity=50);
+            -moz-opacity: 0.5;
+            opacity: 0.5;
+            z-index: 10;
+            }
+            div#textModal {
+            z-index: 999;
+            position: absolute;
+            top: 36%;
+            width: 335px;
+            height: 72px;
+            left: 41%;
+            border-radius: 10px; 
+            background: #fff; 
+            color: #000;
+            text-align: center;
+            padding-top: 30px;
+            }
+            .alert-danger, .alert-error {
+            background-color: #f2dede;
+            border-color: #eed3d7;
+            color: #b94a48;
+            }
+            .alert {
+            padding: 8px 35px 8px 14px;
+            margin-bottom: 20px;
+            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+            border: 1px solid #fbeed5;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            }
+            blockquote {
+            display: block;
+            -webkit-margin-before: 1em;
+            -webkit-margin-after: 1em;
+            -webkit-margin-start: 40px;
+            -webkit-margin-end: 40px;
+            padding: 0 0 0 15px;
+            margin: 0 0 20px;
+            border-left: 5px solid #B94A48;
+            }
+            table#commonInfoTable tr td:first-child {
+            text-align: right;
+            }
+            table#commonInfoTable tr td:nth-child(2) {
+            text-align: left;
+            }
+            button#timePrevWeek {
+            float: left;
+            }
+            button#timeNextWeek {
+            float: right;
+            }
+         </style>
+		 
+		 
+		  <style type="text/css">
+		  
+		   @media print { /* Стиль для печати */
+			
+			button {
+			 visibility: hidden;
+			}
+			
+		   }
+		  </style>
+  
+  
+	<script type="text/javascript">
+		
+		$.urlParam = function(name){
+		  var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(window.location.href);
+		  return decodeURIComponent(results[1]) || 0;
+		}
+		 
+		 
+		$(document).ready(function(){
+			
+			$("#ticketId").text($.urlParam('ticketId'));
+			$("#pacientFio").text($.urlParam('pacientFio'));
+			$("#pacientBirth").text($.urlParam('pacientBirth'));
+			$("#policeNumber").text($.urlParam('policeNumber'));
+			$("#hospitalName").text($.urlParam('hospitalName'));
+			$("#hospitalSub").text($.urlParam('hospitalSub'));
+			$("#hospitalPhone").text($.urlParam('hospitalPhone'));
+			$("#doctorFio").text($.urlParam('doctorFio'));
+			$("#doctorSpecialty").text($.urlParam('doctorSpecialty'));
+			$("#doctorCab").text($.urlParam('doctorCab'));
+			$("#dateRecord").text($.urlParam('dateRecord'));
+			
+			window.print();
+
+		});
+	</script>
+	
+	
+      </head>
+	  <body>
+	  <div id="doctorsContent">
+      <table class="no_shadow_print table" id="recordTable">
+         <thead>
+            <tr>
+               <th colspan="3">
+                  <strong><h4>УВЕДОМЛЕНИЕ О ЗАПИСИ НА ПРИЕМ №<span id="ticketId"></span></h4></strong><br>
+               </th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <th>ФИО (Пациент):</th>
+               <td colspan="2"><span id="pacientFio"></span></td>
+            </tr>
+            <tr>
+               <th>Дата рождения:</th>
+               <td colspan="2"><span id="pacientBirth"></span></td>
+            </tr>
+            <tr>
+               <th>Полис ОМС:</th>
+               <td colspan="2"><span id="policeNumber"></span></td>
+            </tr>
+            <tr>
+               <th colspan="3">
+                  <br><h4>ВЫ ЗАПИСАНЫ НА ПРИЕМ:</h4><br>
+               </th>
+            </tr>
+            <tr>
+               <th>Лечебное учреждение:</th>
+               <td colspan="2"><span id="hospitalName"></span>,<br><span id="hospitalSub"></span>,<br><span id="hospitalPhone"></span></td>
+            </tr>
+            <tr>
+               <th>Врач:</th>
+               <td colspan="2"><span id="doctorFio"></span><br /><span id="doctorSpecialty"></span><br /> <span id="doctorCab"></span></td>
+            </tr>
+            <tr>
+               <th>Дата и время приёма:</th>
+               <td colspan="2"><span id="dateRecord"></span></td>
+            </tr>
+            <tr>
+               <th colspan="3">
+                  <br><h4>ВНИМАНИЕ!</h4>
+               </th>
+            </tr>
+            <tr>
+               <td colspan="3">В случае невозможности посещения врача в указанное время, пожалуйста, сообщите об этом лечебному учреждению по контактным данным, указанным в настоящем уведомлении.</td>
+            </tr>
+            <tr>
+               <td colspan="3">С настоящим уведомлением необходимо обратиться в регистратуру лечебного учреждения не менее чем за 15 минут до указанного времени приёма.</td>
+            </tr>
+         </tbody>
+      </table>
+	  <br><br>
+	  <button type="button" onclick="window.print();" class="btn btn-success">Распечатать</button>
+	  </div>
+   </body>
+</html>

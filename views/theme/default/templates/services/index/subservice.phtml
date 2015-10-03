@@ -1,0 +1,97 @@
+<div class="rule"></div>
+			
+<div class="left">
+	<ul class="left_menu">
+		<li class="current" id="link_block_service">Информация об услуге</li>
+		
+		
+		<li id="link_block_NPA"><a class="menu_link" onclick="info_block_change(this);" >Нормативно-правовые акты</a></li>
+		<!--
+		<li><a href="" class="menu_link">Адреса и телефоны</a></li>
+		<li><a href="" class="menu_link">Дополнительно</a></li>
+		-->
+	</ul>
+</div>
+<div class="right">
+	<?php if (isset($subservice['service_s_name'])): ?>
+		<div style="margin-bottom: 10px; font-size: 15px; "><a href="/services?operation=view&service_id=<?php echo $subservice['service_id']; ?>" target="_blank"><?php echo $subservice['service_s_name']; ?></a></div>
+	<?php endif; ?>
+							
+	<h3><?php echo $subservice['s_name']; ?></h3>
+	<table class="info">
+		<tr>
+			<td class="first">Ответственный орган</td>
+			<td><?php echo $subservice['c_name']; ?></td>
+		</tr>			
+		<tr>
+			<td class="first">Административный регламент</td>
+			<td><a href="/scripts/import/files.php?reglament_id=<?php echo $subservice['reglament']['id']; ?>"><?php echo $subservice['reglament']['reglament_name']; ?></a></td>
+		</tr>			
+		<tr>
+			<td class="first">Получатели</td>
+			<td><?php echo $subservice['recipient']; ?></td>
+		</tr>						
+		<tr>
+			<td class="first">Перечень документов</td>
+			<td>Отсутствует</td>
+		</tr>						
+		<tr>
+			<td class="first">Порядок предоставления услуги</td>
+			<td><?php echo ( ($subservice['s_provide_description'] != '') ? $subservice['s_provide_description'] : 'Не указано' ); ?></td>
+		</tr>						
+		<tr>
+			<td class="first">Стоимость услуги и порядок оплаты</td>
+			<td><?php echo ( ($subservice['s_payment_description'] != '') ? $subservice['s_payment_description'] : 'Не указано' ); ?></td>
+		</tr>			
+		<tr>
+			<td class="first">Основание для оказания услуги</td>
+			<td><?php echo ( ($subservice['s_provide_description'] != '') ? $subservice['s_provide_description'] : 'Не указано' ); ?></td>
+		</tr>
+		<tr>
+			<td class="first">Основание для отказа</td>
+			<td><?php echo ( ($subservice['s_refusal_description'] != '') ? $subservice['s_refusal_description'] : 'Не указано' ); ?></td>
+		</tr>
+		<tr>
+			<td class="first">Результат </td>
+			<td><?php echo ( ($subservice['s_result_description'] != '') ? $subservice['s_result_description'] : 'Не указано' ); ?></td>
+		</tr>
+		<tr>
+			<td class="first">Сведения о консультировании </td>
+			<td><?php echo ( ($subservice['consultation'] != '') ? $subservice['consultation'] : 'Не указано' ); ?></td>
+		</tr>
+		<tr>
+			<td class="first">Форма обращения </td>
+			<td><?php echo ( ($subservice['requests'] != '') ? $subservice['requests'] : 'Не указано' ); ?></td>
+		</tr>
+		<tr>
+			<td class="first">Форма ответа</td>
+			<td><?php echo ( ($subservice['responses'] != '') ? $subservice['responses'] : 'Не указано' ); ?></td>
+		</tr>
+		<tr>
+			<td class="first">Сроки оказания подуслуги</td>
+			<td>  </td>
+		</tr>			
+		<tr>
+			<td class="first">Дата размещения услуги</td>
+			<td><?php echo ( ($subservice['approval_date'] != '') ? date('d.m.Y',strtotime($subservice['approval_date'])) : 'Не указано' ); ?></td>
+		</tr>
+	</table>
+	
+	<div class="info_block" id="info_block_NPA">
+		<div class="info_title">Нормативно-правовые акты</div>
+		<div>Не указаны.</div>		
+	</div>
+	<?php if ($subservice['s_digital_form'] != 0): ?>
+	<br />
+	<button class="legalize" onclick="location='/forms?subservice_id=<?php echo $subservice['id']; ?>'"></button>
+	<?php endif; ?>
+	<div class="cl"></div>
+</div>
+<div class="cl"></div>
+
+				
+				
+<?php  
+	include VIEWS_ROOT.'/theme/default/includes/menusAndLeftBar.phtml';
+	include VIEWS_ROOT.'/theme/default/includes/info_block_change.phtml';
+?>

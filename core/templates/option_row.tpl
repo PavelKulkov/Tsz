@@ -1,0 +1,1 @@
+﻿<option{if style} style="{#style}"{/if} value="{#id}" {#sel}>{#name}</option>

@@ -1,0 +1,141 @@
+.logo {
+	float: left;
+	width: 94px;
+	height: 130px;
+	margin-left: 40px;
+	margin-bottom: 20px;
+}
+
+.content {
+	width: 80%;
+	min-width: 800px;
+	margin-left: 280px;
+}
+
+.footer-text {
+	text-align: center;
+	padding-left: 560px;
+	width: 800px;
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
+.page-header {
+	padding-bottom: 9px;
+	margin: 20px 0 30px;
+	border-bottom: 1px solid #eeeeee;
+	min-width: 950px;
+}
+
+.leftbar {
+	width: 250px;
+	float: left;
+}
+
+#contact_info {
+	margin-bottom: 20px;
+}
+
+body {
+	background-repeat: no-repeat;
+	background-position: center bottom;
+}
+
+.hidden {
+	visibility: hidden;
+	display: none;
+}
+
+#topMenu {
+	float: right;
+}
+
+#topMenu td {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	padding-left: 20px;
+}
+
+#mainArea {
+	width: 100%;
+	min-width: 800px;
+}
+
+#mainArea .leftSideBar {
+	width: 250px;
+	padding-left: 20px;
+	padding-right: 20px;
+	vertical-align: top;
+	min-width: 250px;
+}
+
+#leftMenu {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	padding: 19px 0 19px 5px;
+}
+
+#dataBar {
+	width: 95%;
+}
+
+#searchEngine {
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 20px;
+	max-width: 300px;
+}
+
+input.search-query {
+	height:25px;
+	width: 200px;
+}
+
+.justify {
+	text-align: justify;
+}
+
+
+
+.success_msg {
+	color: #51a351;
+	font-weight: bold;
+}
+
+.error_msg {
+	color: #ff0000;
+	font-weight: bold;
+}
+
+.in_line_msg {
+	color: #0000ff;
+	font-weight: bold;
+}
+
+
+.in_smev_msg {
+	color: #4682B4;
+	font-weight: bold;
+}
+
+.in_waitUser_msg {
+	color: #86B917;
+	font-weight: bold;
+}
+
+
+.error {
+    border: 2px solid red !important;
+}
+
+div#myModal label{
+	display: inline;
+}
+
+div#myModal input{
+	margin: 5px;
+}
+
+#printDocument {
+	margin-top: 30px;
+}  

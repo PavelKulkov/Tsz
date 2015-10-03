@@ -1,0 +1,84 @@
+div.left ul.left_menu li a:hover,  div.search_tabs ul.search_tabNavigation li a:hover {
+	cursor:pointer;
+}
+
+input.search_btn {
+	margin-top: 13px;
+	margin-left: 5px;
+	float: left;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14.05px;
+	font-weight: normal;
+	line-height: 20px;
+	padding: 3px 6px;
+	color: buttontext;		
+}
+
+a.more_info, a.more_info:hover  {
+	color: #027bd8;
+	text-decoration: none;
+	border-bottom: 1px dashed #027bd8;
+	cursor: pointer;	
+}
+
+
+div#theme_block {
+	float:right; 
+	margin-top: 3px; 
+	margin-right: 10px; 
+	color: #ffffff;	
+}
+
+div#theme_block select {
+	height: 20px; 
+	width: 140px; 
+	padding: 0 0 0 5px;	
+}
+
+
+
+.success_msg {
+	color: #51a351;
+	font-weight: bold;
+}
+
+.error_msg {
+	color: #ff0000;
+	font-weight: bold;
+}
+
+.in_line_msg {
+	color: #0000ff;
+	font-weight: bold;
+}
+
+
+.in_smev_msg {
+	color: #4682B4;
+	font-weight: bold;
+}
+
+.current_cab a {color:#95d6be; padding:4px 0px 5px 0px;}
+
+.in_waitUser_msg {
+	color: #86B917;
+	font-weight: bold;
+}
+
+.error {
+    border: 2px solid red !important;
+}
+
+div.enter label{
+	display: inline;
+}
+
+div.enter input{
+	margin: 5px;
+}
+
+#printDocument {
+	margin-top: 30px;
+}   	
+
+

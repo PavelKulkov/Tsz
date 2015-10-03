@@ -1,0 +1,131 @@
+<style type="text/css" media="screen">
+	body { 
+		padding:20px;
+	}
+	
+	.modal.fade {
+		top: 10%;
+	}
+</style>
+
+<form action="/files/upload.php" method="post" target="hiddenframe" enctype="multipart/form-data" onsubmit="hideBtn();">
+  	<input type="file" id="userfile" name="userfile" />
+	<button type="submit" name="upload" class="btn btn-success"><i class="icon-download-alt icon-white"></i>Загрузить</button>
+</form>
+<div id="res"></div>
+<iframe id="hiddenframe" name="hiddenframe" style="width:0px; height:0px; border:0px;"></iframe>
+
+
+<form accept-charset="UTF-8" action="news?operation=save" class="form-horizontal" id="news-edit" method="POST">
+	<?php if (isset($new['id'])) $checked = ""; ?>
+	<?php if ($new['is_published'] == 1) { $checked = " checked "; } ?>
+
+	<div hidden="hidden">
+		<input value="<?php echo $new['id']; ?>" class="input-xlarge" name="id_news" id="id_news" readonly="true">
+	</div>
+	
+	<div class="control-group text optional">
+		<label for="date">Дата создания:</label>
+	    <div>
+		    <input type="text" value="<?php echo isset($new['date']) ? date('d-m-Y H:i:s',strtotime($new['date'])) : date('d-m-Y H:i:s'); ?>" class="input-xlarge" name="date" id="date" readonly="true">
+	    </div>
+	</div>
+	
+	<div class="control-group">
+		<label class="checkbox" for="is_publish"></label>
+		<div>	
+	    	<input type="checkbox" <?php echo $checked; ?>"  name="is_published[]" id="is_published">  Опубликована
+		</div>
+	</div>
+			
+	<div class="control-group text optional">
+		<label class="text optional" for="article_title">Заголовок:</label>
+		<div>
+			<textarea required style="resize: none;" class="text optional span6" id="title" name="title" rows="2"><?php echo $new['title']; ?></textarea>
+		</div>
+	</div>
+			
+	<div class="control-group text optional">
+		<label class="text optional" for="article_description">Краткое описание:</label>
+		<div>
+			<textarea required=required style="resize: none;" class="text optional span6"  id="annotation" name="annotation" rows="3"><?php echo $new['annotation']; ?></textarea>
+		</div>
+	</div>
+	
+	<div class="control-group text optional">
+		<label class="text optional" for="editor">Содержание: </label>
+		<div required id="text">
+				<?php echo $new['text']; ?>
+		</div>
+	    <div align="right" class="form-actions">
+			<button type="submit" class="btn btn-success" id="submit_btn"><i class="icon-ok icon-white"></i>Сохранить</button>
+			<a class="btn btn-danger" href="news">Отмена<i class="icon-share-alt icon-white"></i></a>
+	    </div>
+	</div>
+</form>
+
+<div id="modal-from-dom" class="modal hide fade">
+    <div class="modal-header">
+      <a onclick="btnok()" class="close">&times;</a>
+      <h3>Сохранение</h3>
+    </div>
+    <div class="modal-body" align="center">
+      <p>Новость успешно сохранена!</p>
+    </div>
+    <div class="modal-footer">
+      <a onclick="btnok()" class="btn btn-success"><i class="icon-info-sign icon-white"></i> Ну и отлично</a>
+    </div>
+</div>
+
+
+<!-- elRTE -->
+<script src="/elrte/js/elrte.min.js" type="text/javascript" charset="utf-8"></script>
+<link rel="stylesheet" href="/elrte/css/elrte.min.css" type="text/css" media="screen" charset="utf-8">
+<!-- elRTE translation messages -->
+<script src="/elrte/js/i18n/elrte.ru.js" type="text/javascript" charset="utf-8"></script>
+
+<script type="text/javascript">	
+	$().ready(function() {
+		var opts = {
+			cssClass : 'el-rte',
+			lang     : 'ru',
+			height   : 450,
+			toolbar  : 'complete',
+			cssfiles : ['css/elrte-inner.css']
+		};
+		$('#text').elrte(opts);
+
+		$('#modal-from-dom').hide();
+	});
+	
+	$('button#submit_btn').click(function(){
+		$('#modal-from-dom').show();
+		$('#modal-from-dom').modal({
+			backdrop: true
+		}).modal('show');
+		return false;
+	});
+	
+	
+	
+	function btnok() {
+		$('#modal-from-dom').modal('hide');
+		$('form#news-edit').submit();
+	}
+
+	function hideBtn(){
+		$('#upload').hide();
+		$('#res').html("Идет загрузка файла");
+	}
+									
+	function handleResponse(mes) {
+		$('#upload').show();
+	    if (mes.errors != null) {
+	    	$('#res').html("Возникли ошибки во время загрузки файла: " + mes.errors);
+	    }	
+	    else {
+			var html = $('#res').html();
+	    	$('#res').html("Файл " + mes.name + " загружен, его возможно включить в контент страницы используя url = /files/" + mes.name + ".");	
+	    }	
+	}
+</script>

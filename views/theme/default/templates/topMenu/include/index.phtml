@@ -1,0 +1,41 @@
+<ul class="top_menu">
+
+<?php $i = 0;	
+	if($topMenuList['menu_part'] && count($topMenuList['menu_part']) > 0): ?>
+		<?php foreach ($topMenuList['menu_part'] as $item): ?>
+			<?php if (strpos($item['url'], 'account') !== false) { continue; } 
+				if ($i == (count($topMenuList['menu_part']) - 4)) {
+					$bg = 'bg2';
+				} elseif ($i == (count($topMenuList['menu_part']) - 3)) {
+					$bg = 'bg3';
+				}  elseif ($i == (count($topMenuList['menu_part']) - 2)) {
+					$bg = '';
+				} else {
+					$bg = 'bg1';
+				}
+			
+			?>
+				<li class="
+					<?php echo $bg; ?>"><a href="<?php echo $item['url']; ?>"><?php echo $item['name']; ?></a></li>
+		<?php $i++; endforeach; ?>
+	<?php endif; ?>
+</ul>
+
+<?php if(isset($_SESSION)&&isset($_SESSION['login'])): ?>
+	<?php if($topMenuList['menu_part'] && count($topMenuList['menu_part']) > 0): ?>
+		<?php foreach ($topMenuList['menu_part'] as $item): ?>
+			<?php if (strpos($item['url'], 'account') !== false): ?>
+				<div class="current_cab"><a href="/account">Мой кабинет</a></div>
+			<?php endif; ?> 
+		<?php endforeach; ?>
+	<?php endif; ?>
+<?php endif; ?>
+
+
+<?php if(isset($topMenuList['link']) && count($topMenuList['link']) > 0): ?>
+	<?php foreach ($topMenuList['link'] as $item): ?>
+		<?php if(!empty($item)): ?>			
+			<div class="enter" <?php echo ( (isset($_SESSION)&&isset($_SESSION['login'])) ? 'style="margin-left: 0px;"' : '' ); ?> ><?php echo $item; ?></div>			
+		<?php endif; ?>
+	<?php endforeach; ?>		
+<?php endif; ?>

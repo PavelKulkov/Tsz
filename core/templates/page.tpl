@@ -1,0 +1,1 @@
+﻿ {if !no_page}<a href="{#page_href}" class="{#class}" >{/if}<span style="{if no_page}color: #bbbbbb;{/if}">{#page_num}</span>{if !no_page}</a>

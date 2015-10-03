@@ -1,0 +1,1 @@
+a:4:{s:10:"service_id";s:2:"11";s:5:"title";s:21:"Ничего себе";s:18:"short_name_service";s:18:"223434dghghjhjkjh ";s:17:"url_image_service";s:6:"17.jpg";}

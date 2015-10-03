@@ -1,0 +1,31 @@
+<div class="rule"></div><br />
+
+<table width="98%" border="0"  style="padding: 10px 15px;">
+    <tbody>
+        <tr>
+            <td align="left" width="60%" valign="top">
+            	<?php echo $portal_info['content']; ?>
+            </td>
+            <td align="right" width="40%" valign="top">
+           		<h2>Схема проезда</h2>
+
+           			<script type="text/javascript" charset="utf-8" src="//api-maps.yandex.ru/services/constructor/1.0/js/?sid=I-qDvJA-d2MkBzkrQuWSNadjOeLFcOl-&width=450&height=350"></script> 		
+            </td>
+        </tr>
+    </tbody>
+</table>		
+
+<?php if ($admin): ?>
+	<div align="left">
+		<a class="btn btn-success" href="/about&operation=edit">Редактировать данные<i class="icon-chevron-right icon-white"></i></a>
+	</div>
+<?php endif; ?>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+    	$('div#content_content').removeClass().addClass('content');
+		$('div#content_center').removeClass().addClass('center');
+		$('div#content_navigation').html('<a href="/">Главная</a>  / Контакты');
+		$('div#content_line').removeClass().addClass('blue_line');
+	});
+</script>

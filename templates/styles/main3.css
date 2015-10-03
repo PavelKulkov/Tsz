@@ -1,0 +1,68 @@
+#calendar {
+border: 1px solid #006699;
+margin-top: 3px;
+background-color: #fff;
+cursor: pointer;
+color: #000000;
+visibility: hidden;
+position: absolute;
+width: 207px; padding-bottom: 10px;
+}
+#calendar a{
+cursor: pointer;
+color: #000000;
+}
+#calendar a:hover{
+text-decoration:underline;
+color: #000000;
+}
+#calendar td {
+width: 20px;
+height: 10px;
+border: 1px solid #ddd;
+text-align: center;
+}
+#smash {
+	margin-left:20px;
+}
+
+#full_calc {
+	position:relative;
+	overflow:hidden;
+}
+
+#type_of_site {
+	border:1px gray solid;
+	padding:2px 10px 2px 10px;
+}
+
+#config_site {
+	display: none;
+}
+
+#option_1, #option_2, #cms_choice  {
+	display:none;
+}
+
+#design, #programming {
+	float:left;
+	border:1px gray solid;
+	width:350px;
+	padding:2px 10px 2px 10px;
+	margin-right:10px;
+}
+
+.org_row_container {
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 1px #E3E3E3 solid;
+}
+
+.org_row_title {
+
+}
+
+.org_row_info {
+	color: #777777;
+	margin: 5px 0;
+}

@@ -1,0 +1,37 @@
+
+<form id="organisationsType" class="form-search" action="/organisations" method="POST">
+	<p>Выбор организации по району:</p>
+	<select name=municipal_district>
+
+	<?php foreach ($municipal_districts as $district): ?>
+		<option value="<?php echo $district['id']; ?>" <?php echo ($municipal_district == $district['id']) ? ' selected' : ''; ?>><?php echo $district['name']; ?></option>
+	<?php endforeach; ?>
+
+	</select>
+	<button type="submit" class="btn btn-info"><i class="icon-ok-circle icon-white"></i>Отфильтровать</button>
+	
+	<?php if ($municipal_filtered): ?>
+		<a href="/organisations" class="btn btn-danger"><i class="icon-ban-circle icon-white"></i>Сбросить фильтр</a>
+	<?php endif; ?>
+</form>
+
+
+<?php if ($organisations): ?>
+	<?php echo $paginator['text']; ?>
+	
+	<?php foreach ($organisations as $organisation): ?>		
+		<article class = "well">
+			<span class="label label-info pull-right"><?php echo $organisation['type_item']['name']; ?></span>
+			<p><a href="/organisations?operation=view&id_organisation=<?php echo $organisation['id']; ?>"><?php echo $organisation['c_name']; ?></a></p>
+			<p><small>Руководитель: <?php echo $organisation['c_head']; ?></small></p>
+			<p><small><a href="http://<?php echo $organisation['c_web_site']; ?>">Официальный сайт</a></small></p>
+			<p>Контактная информация: <?php echo $organisation['c_contacts']; ?></p>
+			<p>Автоинформатор: <?php echo (!empty($organisation['autoinformer']) ? $organisation['autoinformer']: 'Не указано' ); ?></p>
+			<p align="right"><a class="btn btn-success" href="/organisations?operation=view&id_organisation=<?php echo $organisation['id']; ?>">Подробнее<i class="icon-chevron-right icon-white"></i></a></p>
+		</article>
+	<?php endforeach; ?>
+	
+	<?php echo $paginator['text']; ?>
+<?php else: ?>
+	По вашему запросу ничего не найдено
+<?php endif; ?>

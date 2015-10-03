@@ -1,0 +1,1 @@
+<div style="font-size: 11px; color: #777777;">{#thank}</div>

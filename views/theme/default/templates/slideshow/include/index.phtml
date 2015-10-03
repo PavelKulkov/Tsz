@@ -1,0 +1,7 @@
+<div id="slider-wrap">
+	<div id="slider">
+	<?php foreach ($slides as $slide): ?>
+		<div class="slide"><img src="<?php echo $slide['image_path']; ?>" alt="" ><div class="name"><?php echo $slide['description']; ?></div></div>
+	<?php endforeach; ?>
+	</div>
+</div>

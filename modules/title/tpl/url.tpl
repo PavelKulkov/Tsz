@@ -1,0 +1,1 @@
+{if title}-> {if !last}<a href="{/if}{if lng}/{#lng}{/if}{if title}{if !last}{#link}{if !last}">{/if}{if last}<span style="color: #333333; font-style: italic;">{/if}{#title}{if !last}</a>{/if}{if last}</span>{/if}

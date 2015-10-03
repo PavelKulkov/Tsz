@@ -1,0 +1,36 @@
+SELECT c.id
+FROM company c, company_tmp ct
+WHERE ct.registry_number=c.registry_number
+
+
+SELECT s.`s_short_name`, s.`s_name`, s.`general_info`, s.`consultation`, s.`result`, s.`type_serviñe_id`, s.`registry_number`, 
+(SELECT c.id
+ FROM company c, company_tmp ct
+ WHERE ct.registry_number=c.registry_number and s.compainy_id=ct.id) 
+FROM `service_tmp` s
+
+SELECT s.`s_short_name` , s.`s_name` , s.`general_info` , s.`consultation` , s.`result` , s.`type_serviñe_id` , s.`registry_number` , (
+SELECT c.id
+FROM company c, company_tmp ct
+WHERE ct.registry_number = c.registry_number
+AND s.company_id = ct.id
+) AS company_id
+FROM  `service_tmp` s
+
+
+
+
+INSERT INTO service (`s_short_name` , `s_name` , `general_info` , `consultation` ,`result` , `type_serviñe_id` , `registry_number`, `company_id`)
+
+
+
+SELECT s.id
+FROM service s, service st
+WHERE s.registry_number = st.registry_number
+
+SELECT t.`s_short_name`, t.`registry_number`, t.`due_time`, t.`s_name`, t.`s_appeal_description`, t.`s_provide_description`, t.`s_refusal_description`, t.`s_result_description`, 
+                (SELECT s.id
+                 FROM service s, service_tmp st
+                 WHERE s.registry_number = st.registry_number AND t.service_id=st.id)   as 'service_id'              
+FROM `subservice_tmp` t
+

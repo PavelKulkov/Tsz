@@ -1,0 +1,18 @@
+<style>
+	div#news_div ul li {
+		margin-left: 20px;
+	}
+</style>
+<div class="rule"></div>
+<h3 class="title_blank"><?php echo $new['title']; ?></h3>
+<div id="news_div"><?php echo $new['text']; ?></div>
+
+		
+<script type="text/javascript">
+	$(document).ready(function(){
+    	$('div#content_content').removeClass().addClass('content');
+		$('div#content_center').removeClass().addClass('center');
+		$('div#content_navigation').html("<a href='/'>Главная</a>  / <a href='/news'>Новости</a> / <?php echo $new['title']; ?>");
+		$('div#content_line').removeClass().addClass('blue_line');
+	});
+</script>

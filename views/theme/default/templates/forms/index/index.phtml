@@ -1,0 +1,41 @@
+
+<div class="rule" style="margin-top:20px;"></div>
+<?php echo (!(isset($form) && isset($form['content_'.SITE_THEME])) ? 'Не найдено формы для данной услуги! Обратитесь в службу поддержки!' : $form['content_'.SITE_THEME] ); ?>
+
+						
+
+<script type="text/javascript">
+	$(document).ready(function(){
+    	$("div#content_content").removeClass().addClass("<?php echo ($recipient == 'phys') ? 'content_disp' : 'content_jur'; ?>");
+		$("div#content_center").removeClass().addClass("<?php echo ($recipient == 'phys') ? 'center_disp' : 'center_jur'; ?>");
+		$("div#content_center").attr("style", "margin-top: -5px;");
+		
+		var navigation_menu = '<div class="nav_menu">' + 
+								'<ul class="topnav_menu">' + 
+								<?php $first_menu = true;
+								if($menu_categories): ?>
+								<?php foreach ($menu_categories as $item): ?>	
+									<?php if ($item['category_id'] == $item['id']): ?>
+										'<li class="current"> <?php echo $item['short_name']; ?> </li>' +											
+										<?php $first_menu = false; ?>
+										<?php else: ?>
+										'<li><a href="/services?service_categories=<?php echo $item['id']; ?>"><?php echo $item['short_name']; ?></a></li>' +											
+										<?php endif; ?>
+								<?php endforeach; ?>
+								<?php endif; ?>													
+								'</ul>' + 
+								'<div class="cl"></div>' + 
+								'</div>';
+		$("div.marg_center").prepend(navigation_menu);													
+		$("div#content_navigation").removeClass().addClass("navigation_disposal");
+		$("div#content_navigation").html('<a href="/">Главная</a> / ' +
+			<?php foreach ($menu_categories as $item): ?>
+				<?php if ($item['category_id'] == $item['id']): ?>	
+					<?php echo "'".$item['short_name']."'"; ?> 
+				<?php endif; ?> 
+			<?php endforeach; ?>
+		);
+		
+		$("div#content_line").removeClass().addClass("<?php echo ($recipient == 'phys') ? 'green_line' : 'orange_line'; ?>");
+	});
+</script>

@@ -1,0 +1,78 @@
+
+		
+<div class="found_block ">
+	<div class="found_services">Найдено <?php echo ( ($service_count > 0) ? $service_count : 0); ?> из <?php echo $all_services_count; ?> услуг</div>
+
+	<div class="select_district" style="margin-left: 100px;">Выбрать район:</div>
+	<div style="float: left;">
+		<form id="organisationsType"  action="/services" method="GET">
+			<input type="hidden" name="service_categories" value="<?php echo $category_id; ?>" />
+			<select class="district" name=municipal_district id="districts">
+				<option value="0">Все районы</option>
+				<?php if ($municipal_districts): ?>
+					<?php foreach ($municipal_districts as $entry): ?>
+						<option value="<?php echo $entry['id']; ?>"  <?php echo ($municipal_district == $entry['id'] || $_GET['municipal_district']  == $entry['id']) ? 'selected' : ''; ?> ><?php echo $entry['name']; ?></option>
+					<?php endforeach; ?>
+				<?php endif; ?>
+			</select>
+		</form>
+	</div>
+					
+	<div>
+		<form action="/services" method="GET">
+		<input type="hidden" name="service_categories" value="<?php echo $category_id; ?>" />
+		<input type="hidden" name="only_el" value="1" />
+		<input type="hidden" name="municipal_district" value="<?php echo $_GET['municipal_district']; ?>" />
+		<button class="only_el" type="submit"></button>
+		</form>
+	</div>
+	<div class="cl"></div>
+</div>
+<div class="rule"></div>
+
+
+<?php echo	($service_count > 0) ? $paginator['text'] : ''; ?>
+<?php if ($services): ?>
+	<?php foreach ($services as $service): ?>
+		<div class="list_services">
+			<div class="symbol"></div>
+			<div class="service"><a href="/services?operation=view&service_id=<?php echo $service['id']; ?>"><?php echo $service['s_name']; ?></a></div>
+			<div class="cl"></div>
+			<?php if (isset($service['subservices'])): ?>
+			<div class="show_list">
+			<?php foreach ($service['subservices'] as $subservice): ?>	
+				<div class="show_list_txt"><a href="/services?operation=subservice&subservice_id=<?php echo $subservice['id']; ?>" ><?php echo $subservice['s_name']; ?></a></div>
+			<?php endforeach; ?>
+			</div>
+			<?php endif; ?>
+		</div>		
+	<?php endforeach; ?>
+<?php endif; ?>				
+<?php  echo ($service_count > 0) ? $paginator['text'] : 'По Вышему запросу ничего не найдено.'; ?>
+<div class="cl"></div>							
+						
+				
+			
+<script type="text/javascript">
+	$(document).ready(function(){
+		<?php 
+		if (!isset($_GET['municipal_district'])): ?>
+			<?php if(isset($_SESSION['municipal_district'])): ?>
+				$("select#districts [value='<?php echo $_SESSION['municipal_district']; ?>']").attr("selected", "selected");
+			<?php else: ?>
+				$("select#districts [value='1']").attr("selected", "selected");
+			<?php endif; ?>
+		<?php endif; ?>
+	
+		$("select#districts").change(function(){
+			if ( this.value == "" ) {						
+				window.location.href = "/services?service_categories=<?php echo $category_id; ?>";
+			} else {
+				$("form#organisationsType").submit();
+			}
+		});
+	});
+</script>
+<?php  
+	include VIEWS_ROOT.'/theme/default/includes/menusAndLeftBar.phtml';
+?>

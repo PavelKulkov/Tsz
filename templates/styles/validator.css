@@ -1,0 +1,11 @@
+.validator_error {
+	border: 1px #9D0505 solid !important;
+	color: #000 !important;
+}
+
+.result {
+	font-style: italic;
+	font-size: 10px;
+	margin-left: 5px;
+	color: red;
+}

@@ -1,0 +1,6 @@
+RewriteEngine on 
+RewriteBase /modules/auth/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*) admin.php?url=$0&%{QUERY_STRING}   
+RewriteCond %{REQUEST_FILENAME} /admin.php
+RewriteRule ^(.*) admin.php?indexSecure=password&%{QUERY_STRING} [L] 

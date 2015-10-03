@@ -1,0 +1,489 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <!-- мета теги -->
+   <meta charset="utf-8"><meta name="description" content=""/> 
+    <title>Оферта на оказание платных услуг на региональном портале государственных и муниципальных услуг Пензенской области</title>
+    <!-- Styles -->
+	<link rel="stylesheet" type="text/css" href="/templates/newdesign/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="/templates/newdesign/css/site.css">
+	<link rel="stylesheet" type="text/css" href="/templates/newdesign/css/custom.css">
+	<!-- Javascript
+        ================================================== -->
+        <!-- 
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+		 -->
+	<script src="/templates/assets/js/jquery.js"></script>
+	<script type="text/javascript" src="/templates/newdesign/js/bootstrap.js"></script>
+	
+	<script src="/templates/assets/js/jquery.maskedinput.min.js"></script>
+    
+    <link href="/templates/assets/jquery_ui/jquery-ui-1.10.1.custom.css" rel="stylesheet"/>
+	<script src="/templates/assets/jquery_ui/jquery-ui-1.10.2.custom.min.js"></script>
+	
+	<script type="text/javascript" src="/templates/newdesign/js/user.js"></script>
+	<script type="text/javascript" src="/templates/newdesign/js/jcarousellite.js"></script>
+
+	<script src="/templates/assets/js/forms.js"></script>
+	<script type="text/javascript" src="/templates/newdesign/js/openapi.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){	
+			$('select[name=theme_select]').change(function(){
+				$('input[name=theme_value]').val($(this).val());
+				 
+				$('input[name=url_path]').val(window.location);
+				
+				$('form#change_theme_form').submit();
+			});
+
+			$.ajax({
+				type: "POST",
+			  	url: '/scripts/ajax.php?module_name=pages&operation=serviceCategories',
+			  	dataType: "json",
+			  	success: function(data) {
+				  	var phys_data = '';
+				  	var juri_data = '';
+					var phys_count = data.categories.phys.length;
+					var juri_count = data.categories.juri.length;
+					var count = 0;
+					for (var i = 0; i < phys_count; i++){
+
+						if(count % 3 == 0) {
+							phys_data +='<tr>';
+					    }
+						phys_data +='<td>' +
+										'<div class="fiz"><a href="/services?service_categories=' + data.categories.phys[i].id + '"><img src="' + data.categories.phys[i].image + '" alt="" title=""></a></div>' +
+										'<div class="fiz_txt"><a href="/services?service_categories=' + data.categories.phys[i].id + '">' + data.categories.phys[i].category + '</a></div>' +
+									'</td>';
+					    if (count % 3 == 2) {
+					    	phys_data +='</tr>';
+					    }
+					    count++;
+					}
+					
+					$('table.tiz_fiz').html(phys_data);
+
+					count = 0;
+					for (i = 0; i < juri_count; i++){
+
+						if(count % 2 == 0) {
+							juri_data +='<tr>';
+					    }
+						juri_data +='<td>' +
+										'<div class="fiz"><a href="/services?service_categories=' + data.categories.juri[i].id + '"><img src="' + data.categories.juri[i].image + '" alt="" title=""></a></div>' +
+										'<div class="fiz_txt"><a href="/services?service_categories=' + data.categories.juri[i].id + '">' + data.categories.juri[i].category + '</a></div>' +
+									'</td>';
+					    if (count % 3 == 1) {
+					    	juri_data +='</tr>';
+					    }
+					    count++;
+					}
+					
+					$('table.tiz_jur').html(juri_data);
+			  	}
+			});
+			
+			
+		});
+
+	</script>
+</head>
+<body id="blank" style="zoom: 1;">
+	<div class="header">
+		<div class="center">
+			 <!-- top menu -->
+			<!--  <ul class="top_menu"> -->
+			<!-- это левое меню. его не будет..но можно сделать как floatMenu	 -->
+				<!-- 
+				<li class="bg1"><a href="/blank.html">О проекте</a></li>
+				<li class="bg1"><a href="/news.html">Новости</a></li>
+				<li class="bg1"><a href="/blank.html">Контакты</a></li>
+				<li class="bg2"><a href="/blank.html">Частые вопросы</a></li>
+				<li><a href="">Партнёры</a></li>
+				 -->
+				
+				
+				<!-- menu & Login stuff -->
+				<ul class="top_menu"><li class="bg1"><a href="/">Главная</a></li><li class="bg1"><a href="/news">Новости</a></li><li class="bg1"><a href="about">Контакты</a></li><li class="bg2"><a href="http://faq.oep-penza.ru/">Частые вопросы</a></li><li class="bg3"><a href="/banners">Партнёры</a></li><li class=""><a href="/feedback">Обращение граждан</a></li></ul><div class="enter" >   	<a href="#" type="button" data-toggle="modal" data-target="#myModal" class="" id="enter_option">Вход</a> 
+   
+	
+	<link href="styles/style.css" rel="stylesheet">    
+   		
+	<div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+		<div class="modal-header">
+	    	<h3 id="myModalLabel">Авторизация</h3>
+	  	</div>
+   		<div class="error_msg"></div>
+	 	<div class="modal-body">
+			<table>
+				<tr style="display:none;">
+   					<td>
+   						<input type="radio" value="0" name="enter_radio" class="enter_radio" />
+   					</td>
+   					<td>
+   						<label>По номеру телефона (При sms-регистрации портал доступен с ограниченным функционалом)</label><br />
+   						(Ваш номер телефона будет идентифицировать Вас при получении государственных услуг) <br /><br />
+   					</td>
+   				</tr>
+   				<tr>
+   					<td>
+   						<input type="radio" value="2" name="enter_radio" class="enter_radio" />
+   					</td>
+   					<td>
+   						<label>Через ЕСИА (Единая система идентификации и аутентификации)</label><br /><br />
+   					</td>
+   				</tr> 	
+				<tr>
+	   					<td>
+	   						<input type="radio" value="3" name="enter_radio" class="enter_radio" />
+	   					</td>
+	   					<td>
+	   						<label>Через УЭК</label><br /><br />
+	   					</td>
+	   				</tr>
+
+				</table>
+   		
+   			<div id="enter_form" >
+   				<div style="width: 114px; float: left;">Введите телефон (<b>БЕЗ ведущей 8 </b>): </div><div><input type="text" name="phone" id="phone" placeholder="9273217788" maxlength="10" required="required" /></div>
+   				<div style="clear: both;"></div>
+   				<div id="submitINN" >Введите ИНН: &nbsp &nbsp &nbsp&nbsp<input type="text" name="INN" required="required" /></div>
+   				<div id="passExitsDiv" >Уже есть пароль: &nbsp <input type="checkbox" id="passExists"  /></div>
+   				<div id="submitPass" >Введите пароль: &nbsp <input type="password" name="password" id="password" required="required" /></div>   				
+   				<div id="submitPassBtn"><input type="button" value="Выслать пароль" id="sendPassBtn" /></div>
+   			</div>
+		</div>
+		<div class="modal-footer">
+   			<button class="btn btn-primary" data-target="#myModal" id="enter_btn">Войти</button>
+	    	<button class="btn" data-dismiss="modal" aria-hidden="true">Закрыть</button>
+	  	</div>
+	</div> 
+		
+	<script type="text/javascript" src="/modules/auth/scripts/auth.js"></script>
+   		
+</div>
+			<!-- </ul> -->
+			<!-- 
+			<div class="enter"><a href="#" class="hider" >Вход</a></div>
+			
+			 -->
+		</div>
+		
+		<div id="theme_block">
+			<form action="/" method="POST" id="change_theme_form">
+				Тема: <input type="hidden" name="theme_value" />
+					<input type="hidden" name="url_path" />
+				<select name="theme_select">
+					<option value="default" selected="selected">Основная</option>
+					<option value="light">Облегченная</option>
+				</select>
+			</form>	 
+		</div>
+	</div>
+	
+	<div class="cl"></div>
+	<!-- category -->
+	<div class="category">
+		<div class="top_block">
+			<div class="logo"><a href="/"><img src="/templates/newdesign/images/logo.png" alt="" title="" ></a></div>
+			<div class="logo_txt"><a href="/">Региональный портал <br/> государственных и муниципальных услуг <br/>Пензенской области</a></div>
+			<div class="search">
+			<!-- поиск -->
+				<form id="search-block-form" class="form-search" action="/search?is_news=true&is_service=true&is_organisation=true" method = "GET" onsubmit="if(getElementById('search_string').value=='') {alert('Поле поиска не может быть пустым!'); return false; }">	<div class="form-item">
+					<input type="text" name="search_string" value="" placeholder="Поиск"  size="45" maxlength="100" class="search-query"  id="search_string" />
+				</div>
+				<div class="form-actions">		<div style="display: none;">
+						<label class="checkbox"><input type="checkbox" name="is_news" checked> Новости </label>
+						<label class="checkbox"><input type="checkbox" name="is_service" checked> Услуги </label>
+						<label class="checkbox"><input type="checkbox" name="is_organisation" checked> Организации </label>
+					</div>
+				</div>
+			</form>
+				
+			</div>
+			<div class="cl"></div>
+		</div>
+		<div style="margin-left:9px;">
+			<div class="menu_fiz"><a href="" class="hider_fiz">Физическим лицам</a>
+				<div class="submenu_fiz_blank" id="hidden_fiz">
+					<div class="menu_block">
+						<table class="tiz_fiz"></table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="menu_jur"><a href="" class="hider_tov">Юридическим лицам</a>
+			<div class="submenu_jur_blank" id="hidden_jur">
+				<div class="menu_block">
+					<table class="tiz_jur"></table>
+				</div>
+			</div>
+		</div>
+		<div class="menu_org"><a href="/organisations">Ведомства и организации</a></div>
+		 <div class="cl"></div>
+		
+		
+	</div>
+	
+	<div class="cl"></div>
+
+	<div class="content" id="content_content">
+		<div class="center" id="content_center">
+			<div class="marg_center">
+				<div class="navigation" id="content_navigation"><a href="/">Главная</a></div>
+				<div class="blue_line " id="content_line"></div>
+					
+
+	
+					<style>
+						div#news_div ul li {
+						margin-left: 20px;
+						}
+					</style>
+					<div class="rule"></div>
+					<h3 class="title_blank">Оферта на оказание платных услуг</h3>
+					<div id="news_div">
+					
+
+
+<p>Настоящая оферта (далее — «Оферта») в соответствии со статьей ст. 435 Гражданского кодекса РФ является офертой Общества с ограниченной ответственностью «Пензенский платежный центр» (далее — «Исполнитель») на оказание платных услуг  на региональном портале  государственных и муниципальных услуг Пензенской области  <a href="http://www.uslugi.pnzreg.ru">www.uslugi.pnzreg.ru</a>  (далее — «Портал»), любым физическим лицам, зарегистрированным в установленном порядке на территории Российской Федерации юридическим лицам и индивидуальным предпринимателям (далее — «Пользователи»). В случае акцепта Оферты Пользователем он считается заключившим с Исполнителем договор оказания Услуг на условиях, предусмотренных настоящей Офертой (далее — «Договор»).</p>
+
+<p><strong>1. ОБЩИЕ ПОЛОЖЕНИЯ</strong></p>
+<p>1.1. Услуги, оказываемые в соответствии с настоящим Договором, включают услуги, указанные в п. 4.2 Договора. Перечень и/или условия оказания Услуг может быть дополнен и/или изменен Исполнителем по своему усмотрению с внесением соответствующих изменений на указанной странице Портала. Пользование Услугами после вступления в силу изменений Перечня и/или условий оказания Услуг означает согласие Пользователя со всеми изменениями.<br />1.2. Услуги в соответствии с настоящим Договором предоставляются исключительно Пользователям, являющимися физическими лицами, а также зарегистрированными в установленном порядке на территории Российской Федерации юридическими лицами и индивидуальным предпринимателям.<br />1.3. Настоящая оферта считается акцептованной Пользователем, а Договор между Исполнителем и Пользователем заключенным, с момента оплаты Услуг.</p>
+
+<p><strong>2. ОБЯЗАННОСТИ СТОРОН</strong></p>
+<p>2.1. Обязанности Исполнителя:<br />2.1.1. Предоставить Пользователю Услуги в соответствии с положениями настоящего Договора, при наличии технической возможности предоставления Услуг.<br />2.2. Обязанности Пользователя:<br />2.2.1. Оплачивать Услуги по действующим в момент оплаты ценам на Услуги в соответствии с условиями, изложенными в настоящем Договоре.<br />2.2.2. Соблюдать при пользовании Услугами требования действующего законодательства Российской Федерации и положения Договора, и всех иных документов, регламентирующих работу Портала и оказание Услуг.<br />2.2.3. По требованию Исполнителя предоставить последнему информацию и документы, необходимые для идентификации Пользователя в качестве стороны Договора, в том числе при направлении Пользователем в адрес Исполнителя заявлений, уведомлений и пр.</p>
+
+<p><strong>3. ПОРЯДОК РАСЧЕТОВ</strong></p>
+<p>3.1. Пользователь сам выбирает необходимую Услугу на Портале, доступ к которой предоставляется Пользователю после авторизации на Портале.<br />3.2. Цена Услуги указывается при выборе Услуги и сообщается Пользователю в рублях, через интерфейс на Портале. Исполнитель вправе без специального уведомления об этом Пользователя изменять в одностороннем порядке цены на Услуги путем установления на Услуги новых цен (тарифов), доступных для ознакомления на Портале ,при этом использование Услуг по новым ценам (тарифам) означает согласие Пользователя с изменениями. Оплата Услуг осуществляется Пользователем по действующим на момент оплаты ценам (тарифам) на Услуги.<br />3.3. Пользователь может оплатить конкретные Услуги в сумме, соответствующей стоимости таких Услуг.<br />3.4.Исполнитель устанавливает, изменяет и взимает в момент проведения Услуг, сервисные сборы за проведение Услуг.<br />3.5. Исполнитель предоставляет Пользователю информацию о движении денежных средств Пользователя.<br />3.6. Услуга предоставляются только оплате  Пользователем суммы равной стоимости выбранной Пользователем Услуги.<br />3.7. Пользователь,  осуществляет оплату Услуг по настоящему Договору безналичным переводом денежных средств на расчетный счет банка-эквайера.<br />3.8. Оплата Услуг производится Пользователем с указанием реквизитов, идентифицирующих платеж. При отсутствии и/или неправильном указании перечисленных в настоящем пункте Договора данных, Исполнитель не несет ответственности за убытки, которые могут возникнуть у Пользователя и/или третьих лиц в случае неправильного указания назначения платежа.<br />3.9. Наименование, юридический адрес, почтовый адрес, ИНН, КПП, контактная и прочая информация (далее «реквизиты») в документах, формируемых Исполнителем в соответствии с настоящим Договором, указываются Исполнителем в соответствии с реквизитами  указанными Пользователем. Пользователь самостоятельно несет ответственность за правильность указанных реквизитов. <br />3.10. Оплата по настоящему Договору считается совершенной Пользователем, в момент получения соответствующей верифицированной информации о поступлении платежа за Услуги.<br />3.11. Настоящим Пользователь подтверждает свое согласие с тем, что статистические данные учетной системы Исполнителя будет являться достаточным подтверждением факта оказанных в рамках Договора Услуг.</p>
+
+<p><strong>4. ПОРЯДОК ОКАЗАНИЯ УСЛУГ И ОТВЕТСТВЕННОСТЬ</strong></p>
+<p>4.1. До начала оплаты Услуг Пользователь должен внимательно ознакомиться с документами, регламентирующими работу Портала.<br />4.2. Услуги Исполнителя включают в себя:<br />(а) Предоставление возможности оплаты услуг Региональных и Федеральных органов власти, а так же штрафов ГИБДД, пошлин, налогов и сборов.<br />(б) Предоставление возможности  проведения платежей в пользу государственных учреждений (школы, детские сады и т.п.)<br />(в) Предоставление возможности осуществления иных платежей.<br />4.3. Исполнитель обязуется предпринимать все разумные усилия для должного оказания Услуг, однако не отвечает за невозможность оказания Услуг в случае:</p>
+<ul>
+<li>технологических неисправностей каналов связи общего пользования, посредством которых осуществляется доступ к Услугам, или утраты доступа в сети Интернет — до устранения неисправностей или восстановления доступа, соответственно;</li>
+<li>наличия признаков несанкционированного доступа к Личному кабинету Пользователя — на срок действия таких обстоятельств;</li>
+<li>в случаях, подпадающих под определение обстоятельств непреодолимой силы — на срок действия таких обстоятельств.</li>
+</ul>
+
+</br>
+
+<p>4.4. Исполнитель вправе незамедлительно и без специального уведомления об этом Пользователя приостановить оказание Услуг в случае нарушения Пользователем любого из своих обязательств, предусмотренных настоящим Договором, и иными документами, регламентирующими работу Портала, до полного устранения допущенного нарушения.<br />4.5. В случае причинения убытков Пользователю по вине Исполнителя, Исполнитель несет перед Пользователем ответственность в сумме, не превышающей стоимость оплаченной Пользователем, но не полученной по вине Исполнителя.<br />4.6. Исполнитель не отвечает перед Пользователем за любые иные убытки и/или расходы, включая упущенную выгоду и косвенные убытки, в том числе возникшие у Пользователя в связи с нарушением Пользователем при работе с Порталом требований документов, регламентирующих работу Портала.<br />4.7. Исполнитель не несет ответственности за убытки, причиненные Пользователю в результате невозможности пользования Услугами вследствие ошибок, пропусков, перерывов в работе, удаления файлов, дефектов, задержек в работе или передаче данных и других причин технологического характера, а также ненадлежащим качеством каналов связи общего пользования, посредством которых осуществляется доступ к Услугам.<br />4.8. Пользователь проинформирован и соглашается с тем, что часть операций, включая (но не ограничиваясь указанным) операций по приему оплаты за оказываемые Услуги не контролируется и не отслеживается Исполнителем лично или через третьих лиц, и Исполнитель не несет ответственности за перевод и/или поступление денежных средств Пользователя в оплату Услуг.<br />4.12. Действия, совершенные при помощи средств идентификации Пользователя, признаются Сторонами совершенными Пользователем и имеющими силу простой электронной подписи. <br />4.13. Пользователь подтверждает свое согласие с тем, что факт отдачи команды (клик, нажатие клавиши и т.п.) через интерфейс Портала означает волеизъявление Пользователя в отношении Услуг в соответствии с ценовыми и иными параметрами Услуг, определенными на Портале.<br />4.14. Исполнитель вправе изменять (дополнять) условия Оферты в одностороннем порядке. Датой вступления в силу изменений (дополнений) Оферты является дата опубликования на Портале новой редакции Оферты. Пользователь обязан самостоятельно регулярно знакомиться с действующей редакцией Оферты, размещенных на Портале. Пользование Услугами после вступления в силу изменений (дополнений) Оферты означает согласие Пользователя со всеми изменениями.<br /><br /><strong>5. РАССМОТРЕНИЕ ПРЕТЕНЗИЙ</strong></p>
+<p>5.1. Все споры, возникшие в рамках настоящего Договора, должны быть переданы на рассмотрение в Арбитражный суд г. Пензы либо, в случае если спор не подведомственен арбитражному суду — в иные суды в соответствии с действующим законодательством Российской Федерации.<br />5.2. До обращения в суд Пользователь должен соблюсти внесудебный порядок разрешения споров, направив в адрес Исполнителя письменную претензию, с приложением документов, подтверждающих обстоятельства и требования, на которые ссылается Пользователь. Срок рассмотрения претензий Пользователя составляет не более 30 (Тридцати) дней. В случае не получения Пользователем ответа Исполнителя на претензию в течение 30 (Тридцати) дней с момента получения Исполнителем претензии или в случае отказа Исполнителя от удовлетворения обоснованных претензий Пользователя, Пользователь вправе обратиться в суд.</p>
+
+<p><strong>6. ДЕЙСТВИЕ ДОГОВОРА</strong></p>
+<p>6.1. Договор вступает в силу с момента акцепта Оферты в соответствии с п.1.3. и действует до исполнения Сторонами обязательств по нему или досрочного прекращения.<br />6.2. Исполнитель вправе в любое время в одностороннем порядке отказаться от исполнения настоящего Договора как полностью, так и в части, с уведомлением об этом Пользователя через интерфейс Портала, или иным способом.</p>
+
+<p><strong>7. РЕКВИЗИТЫ ИСПОЛНИТЕЛЯ:</strong></p>
+<p>ООО «Пензаплат» (ООО «Пензенский платежный центр»)<br />440052, г. Пенза, ул. Чкалова, д. 52<br />Почтовый адрес: 440068, г. Пенза, ул. Центральная 1В<br />ИНН/КПП 5837054716/583701001<br />ОГРН 1135837002058<br />р/с 40702810400010002926<br />в ОАО Банк «Кузнецкий» <br />БИК 045655707<br />к/с 30101810200000000707<br />Генеральный директор Пексимов Н.О. (на основании Устава)</p>
+
+
+<p style="text-align: center;"><span style="font-size: medium;"><strong>Тарифы для портала государственных и муниципальных услуг</strong></span></p>
+
+<table style="width: 560px; height: 99px;" border="1" align="center">
+<tbody>
+<tr style="text-align: center;">
+<td><span style="font-size: small;">Пункт тарифов</span></td>
+<td><span style="font-size: small;">Наименование</span></td>
+<td><span style="font-size: small;">Сервисный сбор</span></td>
+</tr>
+<tr>
+<td>1.</td>
+<td>Осуществление любой из Услуг, указанной в <br />п 4.2. данной оферты</td>
+<td>3%, min 20 руб</td>
+</tr>
+</tbody>
+</table>
+<br></br>
+
+</div>
+												
+					<script type="text/javascript">
+						$(document).ready(function(){
+					    	$("div#content_content").removeClass().addClass("content");
+							$("div#content_center").removeClass().addClass("center");
+							$("div#content_navigation").html("Оферта на оказание платных услуг на региональном портале государственных и муниципальных услуг Пензенской области");
+							$("div#content_line").removeClass().addClass("blue_line");
+						});
+					</script>
+					
+					
+					
+					<!-- Лайки -->
+					<!-- facebook -->
+					<div id="fb-root"></div>
+					<script>(function(d, s, id) {
+					  var js, fjs = d.getElementsByTagName(s)[0];
+					  if (d.getElementById(id)) return;
+					  js = d.createElement(s); js.id = id;
+					  js.src = "//connect.facebook.net/ru_RU/all.js#xfbml=1";
+					  fjs.parentNode.insertBefore(js, fjs);
+					}(document, "script", "facebook-jssdk"));</script>
+					
+					<div style="float: left; margin-right: 10px;" class="fb-like" data-href="https://uslugi.pnzreg.ru/news?id_news=5032" data-width="The pixel width of the plugin" data-height="The pixel height of the plugin" data-colorscheme="light" data-layout="box_count" data-action="like" data-show-faces="false" data-send="false"></div>
+					
+
+					
+					<!-- odnoklassniki 
+					<div id="ok_shareWidget" style="float: left; margin-right: 10px;"></div>
+					<script>
+					!function (d, id, did, st) {
+					  var js = d.createElement("script");
+					  js.src = "http://connect.ok.ru/connect.js";
+					  js.onload = js.onreadystatechange = function () {
+					  if (!this.readyState || this.readyState == "loaded" || this.readyState == "complete") {
+					    if (!this.executed) {
+					      this.executed = true;
+					      setTimeout(function () {
+					        OK.CONNECT.insertShareWidget(id,did,st);
+					      }, 0);
+					    }
+					  }};
+					  d.documentElement.appendChild(js);
+					}(document,"ok_shareWidget","https://uslugi.pnzreg.ru/news?id_news=5032","{width:95,height:65,st:\"rounded\",sz:20,ck:3,vt: \"1\"}");
+					</script>
+					-->					
+					
+					<!-- Мой мир (mail.ru) 
+					<div id="my_world" style="float: left; width: 92px;">
+					<a target="_blank" class="mrc__plugin_uber_like_button" href="http://connect.mail.ru/share" data-mrc-config="{'cm' : '1', 'sz' : '20', 'st' : '1', 'tp' : 'mm', 'vt' : '1'}">Нравится</a>
+
+					<script src="http://cdn.connect.mail.ru/js/loader.js" type="text/javascript" charset="UTF-8"></script>
+					</div>
+					-->
+					
+					
+				
+					
+					<!-- google+ -->
+
+					<div style="float: left; margin-right: 10px; margin-top: 1px;"><div class="g-plusone" data-size="tall"></div></div>
+					<script type="text/javascript">
+					  window.___gcfg = {lang: "ru"};
+					
+					  (function() {
+					    var po = document.createElement("script"); po.type = "text/javascript"; po.async = true;
+					    po.src = "https://apis.google.com/js/plusone.js";
+					    var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(po, s);
+					  })();
+					</script>
+					
+					
+					<!-- vkontakte -->
+					<script type="text/javascript">
+					  VK.init({apiId: 3927437, onlyWidgets: true});
+					</script>
+					
+					<!-- Для теста апи 3927444 -->
+					<!-- Для реалки апи 3927437 -->
+					
+					<!-- Put this div tag to the place, where the Like block will be -->
+					<div style="float: left; width: 141px; padding-top: 40px;"><div id="vk_like"></div></div>
+					<script type="text/javascript">
+					VK.Widgets.Like("vk_like", {type: "button", height: 20});
+					</script>
+					
+					
+					
+					<!-- twitter -->
+					<div style="padding-top: 40px;">
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="https://uslugi.pnzreg.ru/news?id_news=5032" data-text="Мне нравится" data-lang="ru" data-hashtags="uslugi">Твитнуть</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+</div>	 
+			</div>			
+		</div>
+	</div>
+	
+	
+	<div class="footer">
+		<div class="center">
+			<div class="copyright">&copy; Региональный портал государственных и муниципальных услуг Пензенской области 2013. Все права защищены
+				<div class="studio"><a href="http://www.hosting-online.ru/" target="_blank"><img src="/templates/newdesign/images/studio.gif" alt="Веб-студия Пенза-онлайн" title="Веб-студия Пенза-онлайн"></a>
+					<span style="margin-left: 30px;">
+					<!-- Yandex.Metrika informer -->
+					<a href="http://metrika.yandex.ru/stat/?id=21070690&amp;from=informer"
+					target="_blank" rel="nofollow"><img src="//bs.yandex.ru/informer/21070690/3_1_FFFFFFFF_EFEFEFFF_0_pageviews"
+					style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" onclick="try{Ya.Metrika.informer({i:this,id:21070690,lang:'ru'});return false}catch(e){}"/></a>
+					<!-- /Yandex.Metrika informer -->
+					
+					<!-- Yandex.Metrika counter -->
+					<script type="text/javascript">
+					(function (d, w, c) {
+					    (w[c] = w[c] || []).push(function() {
+					        try {
+					            w.yaCounter21070690 = new Ya.Metrika({id:21070690,
+					                    webvisor:true,
+					                    clickmap:true,
+					                    trackLinks:true,
+					                    accurateTrackBounce:true});
+					        } catch(e) { }
+					    });
+					
+					    var n = d.getElementsByTagName("script")[0],
+					        s = d.createElement("script"),
+					        f = function () { n.parentNode.insertBefore(s, n); };
+					    s.type = "text/javascript";
+					    s.async = true;
+					    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+					
+					    if (w.opera == "[object Opera]") {
+					        d.addEventListener("DOMContentLoaded", f, false);
+					    } else { f(); }
+					})(document, window, "yandex_metrika_callbacks");
+					</script>
+					<noscript><div><img src="//mc.yandex.ru/watch/21070690" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+					<!-- /Yandex.Metrika counter -->
+					</span>
+				</div>
+			</div>
+			<div class="statistic_block">
+					<div class="in_site">Сейчас на сайте</div>
+			<div class="sum">
+				<div class="all"> всего 1116</div>
+				<div class="disposal">
+					<div class="disposal_num">1116</div>
+					<div class="disposal_txt">услуги</div>
+				</div>
+				<div class="in_detail" align="center">
+					<table class="detail_num">
+					<!--
+						<tr>
+							<td class="violet">0</td>
+							<td>федеральных</td>
+							
+						</tr>
+					-->							
+						<tr>
+							<td class="violet">245</td>
+							<td>региональных</td>
+							
+						</tr>							
+						<tr>
+							<td class="violet">871</td>
+							<td>муниципальных</td>
+							
+						</tr>
+					</table>
+				</div>
+				<div class="function">
+					<div class="function_num">221</div>
+					<div class="function_txt">в эл.виде</div>
+				</div>
+				<div class="cl"></div>
+			</div>
+			<div class="also">, также:</div>
+			<div class="orgdoc_block">
+				<div class="block_bg">
+					<div class="bg_organization">799</div>
+					<div class="block_txt">организаций</div>
+				</div>
+				<div class="block_bg">
+					<div class="bg_doc">941</div>
+					<div class="block_txt">документов</div>
+				</div>
+			</div>
+			</div>
+			<div class="cl"></div>
+		</div>
+	</div> 
+</body>
+</html>
