@@ -1213,7 +1213,7 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
     {
         $this->services['dbal.conn.driver'] = $instance = new \phpbb\db\driver\mysqli();
 
-        $instance->sql_connect('127.0.0.1', 'user', 'pass', 'regportal_cms', '', false, false);
+        $instance->sql_connect('127.0.0.1', 'user', 'pass', 'regportal_forum', '', false, false);
 
         return $instance;
     }
@@ -2609,7 +2609,7 @@ class phpbb_cache_container extends Symfony\Component\DependencyInjection\Contai
             'dbal.dbhost' => '127.0.0.1',
             'dbal.dbuser' => 'user',
             'dbal.dbpasswd' => 'pass',
-            'dbal.dbname' => 'regportal_cms',
+            'dbal.dbname' => 'regportal_forum',
             'dbal.dbport' => '',
             'dbal.new_link' => false,
         );

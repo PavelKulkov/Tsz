@@ -4,7 +4,7 @@
 $dbms = 'phpbb\\db\\driver\\mysqli';
 $dbhost = '127.0.0.1';
 $dbport = '';
-$dbname = 'regportal_cms';
+$dbname = 'regportal_forum';
 $dbuser = 'user';
 $dbpasswd = 'pass';
 $table_prefix = 'phpbb_';

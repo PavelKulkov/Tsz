@@ -45,9 +45,7 @@ class __TwigTemplate_13fa213ece74f610f4e40f112f70737d15d3f5c87c1551d87538f797a53
         if (isset($context["S_VIEWTOPIC"])) { $_S_VIEWTOPIC_ = $context["S_VIEWTOPIC"]; } else { $_S_VIEWTOPIC_ = null; }
         if (isset($context["S_VIEWFORUM"])) { $_S_VIEWFORUM_ = $context["S_VIEWFORUM"]; } else { $_S_VIEWFORUM_ = null; }
         if (( !$_S_VIEWTOPIC_ &&  !$_S_VIEWFORUM_)) {
-            if (isset($context["SITENAME"])) { $_SITENAME_ = $context["SITENAME"]; } else { $_SITENAME_ = null; }
-            echo $_SITENAME_;
-            echo " - ";
+            echo "Форум Ассоциации ТСЖ - ";
         }
         if (isset($context["S_IN_MCP"])) { $_S_IN_MCP_ = $context["S_IN_MCP"]; } else { $_S_IN_MCP_ = null; }
         if (isset($context["S_IN_UCP"])) { $_S_IN_UCP_ = $context["S_IN_UCP"]; } else { $_S_IN_UCP_ = null; }
@@ -332,37 +330,13 @@ class __TwigTemplate_13fa213ece74f610f4e40f112f70737d15d3f5c87c1551d87538f797a53
 \t\t\t<div class=\"inner\">
 
 \t\t\t<div id=\"site-description\">
-\t\t\t\t<a id=\"logo\" class=\"logo\" href=\"";
+\t\t\t\t<a id=\"logo\" class=\"logo\" href=\"/forum\">";
         // line 81
-        if (isset($context["U_SITE_HOME"])) { $_U_SITE_HOME_ = $context["U_SITE_HOME"]; } else { $_U_SITE_HOME_ = null; }
-        if ($_U_SITE_HOME_) {
-            if (isset($context["U_SITE_HOME"])) { $_U_SITE_HOME_ = $context["U_SITE_HOME"]; } else { $_U_SITE_HOME_ = null; }
-            echo $_U_SITE_HOME_;
-        } else {
-            if (isset($context["U_INDEX"])) { $_U_INDEX_ = $context["U_INDEX"]; } else { $_U_INDEX_ = null; }
-            echo $_U_INDEX_;
-        }
-        echo "\" title=\"";
-        if (isset($context["U_SITE_HOME"])) { $_U_SITE_HOME_ = $context["U_SITE_HOME"]; } else { $_U_SITE_HOME_ = null; }
-        if ($_U_SITE_HOME_) {
-            echo $this->env->getExtension('phpbb')->lang("SITE_HOME");
-        } else {
-            echo $this->env->getExtension('phpbb')->lang("INDEX");
-        }
-        echo "\">";
         if (isset($context["SITE_LOGO_IMG"])) { $_SITE_LOGO_IMG_ = $context["SITE_LOGO_IMG"]; } else { $_SITE_LOGO_IMG_ = null; }
         echo $_SITE_LOGO_IMG_;
         echo "</a>
-\t\t\t\t<h1>";
-        // line 82
-        if (isset($context["SITENAME"])) { $_SITENAME_ = $context["SITENAME"]; } else { $_SITENAME_ = null; }
-        echo $_SITENAME_;
-        echo "</h1>
-\t\t\t\t<p>";
-        // line 83
-        if (isset($context["SITE_DESCRIPTION"])) { $_SITE_DESCRIPTION_ = $context["SITE_DESCRIPTION"]; } else { $_SITE_DESCRIPTION_ = null; }
-        echo $_SITE_DESCRIPTION_;
-        echo "</p>
+\t\t\t\t<h1>Ассоциация ТСЖ</h1>
+\t\t\t\t
 \t\t\t\t<p class=\"skiplink\"><a href=\"#start_here\">";
         // line 84
         echo $this->env->getExtension('phpbb')->lang("SKIP");
@@ -489,6 +463,6 @@ class __TwigTemplate_13fa213ece74f610f4e40f112f70737d15d3f5c87c1551d87538f797a53
 
     public function getDebugInfo()
     {
-        return array (  477 => 119,  474 => 118,  464 => 114,  460 => 112,  454 => 111,  449 => 108,  447 => 107,  443 => 105,  430 => 104,  428 => 103,  423 => 100,  414 => 95,  405 => 94,  399 => 93,  390 => 92,  384 => 90,  381 => 89,  376 => 88,  374 => 87,  368 => 84,  363 => 83,  358 => 82,  337 => 81,  327 => 73,  325 => 72,  313 => 70,  309 => 68,  307 => 67,  301 => 65,  298 => 64,  296 => 63,  286 => 60,  282 => 58,  272 => 56,  269 => 55,  266 => 54,  256 => 52,  253 => 51,  244 => 49,  239 => 48,  233 => 47,  216 => 32,  213 => 31,  203 => 23,  196 => 21,  193 => 20,  190 => 19,  186 => 17,  163 => 16,  143 => 15,  130 => 14,  117 => 13,  104 => 12,  91 => 11,  77 => 10,  74 => 9,  38 => 7,  33 => 6,  22 => 2,  19 => 1,);
+        return array (  451 => 119,  448 => 118,  438 => 114,  434 => 112,  428 => 111,  423 => 108,  421 => 107,  417 => 105,  404 => 104,  402 => 103,  397 => 100,  388 => 95,  379 => 94,  373 => 93,  364 => 92,  358 => 90,  355 => 89,  350 => 88,  348 => 87,  342 => 84,  335 => 81,  325 => 73,  323 => 72,  311 => 70,  307 => 68,  305 => 67,  299 => 65,  296 => 64,  294 => 63,  284 => 60,  280 => 58,  270 => 56,  267 => 55,  264 => 54,  254 => 52,  251 => 51,  242 => 49,  237 => 48,  231 => 47,  214 => 32,  211 => 31,  201 => 23,  194 => 21,  191 => 20,  188 => 19,  184 => 17,  161 => 16,  141 => 15,  128 => 14,  115 => 13,  102 => 12,  89 => 11,  75 => 10,  72 => 9,  38 => 7,  33 => 6,  22 => 2,  19 => 1,);
     }
 }
