@@ -16,6 +16,6 @@ $moduleHome = new ModuleHome($modules_root,$db);
 $domenHome = new DomenHome($request,$db);
 $templateHome = new TemplateHome($db);
 
-include("../../scripts/index.php");
+include("../adminPanel/adminPanel.html");
 $db->disconnect();
 ?>

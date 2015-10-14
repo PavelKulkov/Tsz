@@ -59,7 +59,7 @@ class News {
 	}
 	
 	function save($news_item){
-		return $this->db_instance->save($news_item,'news',$this->items_news);
+		return $this->db_instance->saveData($news_item,'news',$this->items_news);
 	}
 	
 	
