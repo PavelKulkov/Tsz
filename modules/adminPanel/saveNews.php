@@ -15,7 +15,8 @@
 	  	 die("DB Connection error");
 	  }
 	if(!isset($news)) $news = new News($request, $db);
-	$items_news = array('id'=>$_POST['idNews'],'title'=>$_POST['title'],'date'=>date("Y-m-d H:i:s"),'annotation'=>'', 'image'=>'', 'text'=>$_POST['news'],'is_published'=>'','id_template'=>1);
+	$items_news = array('id'=>$_POST['idNews'],'title'=>$_POST['title'],'date'=>date("Y-m-d H:i:s"),'annotation'=>'', 'image'=>'', 'text'=>$_POST['text'],'is_published'=>'','id_template'=>1);
+	
 	$news -> save($items_news);
 	$db->disconnect();
 	header("Location:/news");

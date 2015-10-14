@@ -5,7 +5,7 @@ class Registry {
 	public $sql;
 	private $lng_prefix;	
 	public $count;
-	//public $items_news = array('id','title','address','phoneNumber','E-mail','fax','President');
+	public $items_registry = array('logo','title','address','id_template','phoneNumber','E-mail','fax','President');
 
 	
 	function __construct($request=NULL,$db) 	{
@@ -58,7 +58,7 @@ class Registry {
 	}
 	
 	function save($registry_item){
-		return $this->db_instance->save($registry_item,'registry',$this->items_registry);
+		return $this->db_instance->saveData($registry_item,'registry',$this->items_registry);
 	}
 	
 	/*
