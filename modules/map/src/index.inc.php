@@ -1,8 +1,11 @@
 <?php 
   require_once($modules_root."map/class/Map.class.php");
   if(!isset($map)) $map = new Map($request, $db);
+  $getRequest = new Map($request, $db);
   
   $YandexMap = $map->getMap();
+  
+  /*$request2 =  $getRequest->getRequest();*/
   
   include ($modules_root.'map/view/map.php');
   

@@ -1,3 +1,4 @@
 <?php
-	echo $YandexMap['content'];
+echo $YandexMap['content'];
+   
 ?>
