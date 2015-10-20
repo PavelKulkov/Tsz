@@ -11,6 +11,7 @@
 	<title>
 	  associationTsz
 	</title>
+	<script src="http://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
   </head>
   <body>
     <header>

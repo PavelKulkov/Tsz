@@ -1,11 +1,7 @@
 <?php
 	$text = '	<div class="rule"></div>
 				<h3 class="title_blank">Новости</h3>';
-				if ($admin) {
-	$text .= 	"<div align=\"left\">
-					<a class=\"btn btn-success\" href=\"news?operation=create\">Добавить новость<i class=\"icon-chevron-right icon-white\"></i></a>
-				</div>";
-				}
+	
 							
 	//$text .= 	$paginator['text'];
 	

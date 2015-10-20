@@ -5,8 +5,6 @@
   
   $YandexMap = $map->getMap();
   
-  /*$request2 =  $getRequest->getRequest();*/
-  
   include ($modules_root.'map/view/map.php');
   
 ?>

@@ -169,7 +169,7 @@ class DB
 		
 		
 		$result = $this->query($sql);
-		
+		/*
 		if($result) {
 			if(!$item['id']) {
 				$item['id'] = $this->insertId();
@@ -177,6 +177,7 @@ class DB
 			return $item['id'];
 		}
 		return false;
+		*/
 	}
 	        
 	
