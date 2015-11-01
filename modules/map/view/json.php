@@ -21,17 +21,17 @@
 	}
 	
 	//Заполнение массива для отправки
-	while($row2 = mysql_fetch_array($res2)){
+	/*while($row2 = mysql_fetch_array($res2)){
 		$request[] = array("id" => $row2["id"], "text" => $row2["text"], "$request" => $row2["$request"], "id_register_home" => $row2["id_register_home"] );
-	}
+	}*/
 
 	switch ($_REQUEST['action']) {
     //Передача данных из таблицы registered_home
     case 'registeredHome':
 		echo json_encode($registeredHome);
         break;
-	case 'request':
+	/*case 'request':
 	    echo json_encode($request);
-        break;
+        break;*/
 	}
 ?>
