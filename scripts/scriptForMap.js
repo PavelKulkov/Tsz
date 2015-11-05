@@ -21,6 +21,7 @@
 
     registeredHome = [];
     registeredHome = getJson('/modules/map/view/json.php?action=registeredHome');
+	
 /*
 request = [];
 setTimeout("request = getJson('json.php?action=request')", 1000);
