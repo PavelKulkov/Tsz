@@ -8,7 +8,7 @@
 
 	
 	move_uploaded_file($_FILES['logo']['tmp_name'], $uploadfile);
-    
+	
 	
 	$db = new DB();
 	DBRegInfo::initParams($guestUser[0],

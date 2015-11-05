@@ -7,6 +7,7 @@
 					</style>
 					<div class="rule"></div>
 					<h3 class="title_blank">'.$new['title'].'</h3>
+					<img src="/files/imageForNews/'.$new['image'].'">
 					<div id="news_div">'.$new['text'].'</div>
 												
 					<script type="text/javascript">

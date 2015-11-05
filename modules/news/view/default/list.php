@@ -25,3 +25,4 @@
 						$("div#content_line").removeClass().addClass("blue_line");
 					});
 				</script>';
+?>

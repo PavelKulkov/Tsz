@@ -5,7 +5,7 @@ class Registry {
 	public $sql;
 	private $lng_prefix;	
 	public $count;
-	public $items_registry = array('logo','title','address','id_template','phoneNumber','E-mail','fax','President');
+	public $items_registry = array('id','logo','title','address','id_template','phoneNumber','E-mail','fax','President');
 
 	
 	function __construct($request=NULL,$db) 	{
@@ -52,15 +52,21 @@ class Registry {
 		return  $item;		
 	}
 	
-	function delete($id_news){	
+	function delete($id_tsz){	
 		$sql = "DELETE FROM `registry` WHERE `id`= ?";
-		$this->db_instance->delete($sql, $id_news);
+		$this->db_instance->delete($sql, $id_tsz);
 	}
 	
 	function save($registry_item){
 		return $this->db_instance->saveData($registry_item,'registry',$this->items_registry);
 	}
-	
+	function deleteLogo($idTsz){
+		$pathLogo = $_SERVER['DOCUMENT_ROOT']."/files/logos/"; 
+		$tsz = $this->getTsz($idTsz);
+		$pathLogo .= $tsz['logo']; 
+		//chmod($pathLogo,0775);
+		unlink($pathLogo);
+	}
 	/*
 	function Time_To_Show($value) {
 		$montharray = array('1' => 'Января','2' => 'Февраля','3' => 'Марта','4' => 'Апреля','5' => 'Мая','6' => 'Июня','7' => 'Июля','8' => 'Августа','9' => 'Сентября','10' => 'Октября','11' => 'Ноября','12' => 'Декабря');

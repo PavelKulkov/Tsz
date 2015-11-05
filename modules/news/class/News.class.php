@@ -5,7 +5,7 @@ class News {
 	public $sql;
 	private $lng_prefix;
 	public $count;
-	public $items_news = array('title','date','annotation', 'image', 'text', 'keywords', 'id_template', 'is_published');
+	public $items_news = array('id','title','date','annotation', 'image', 'text', 'keywords', 'id_template', 'is_published');
 
 	
 	function __construct($request=NULL,$db) 	{
@@ -25,11 +25,11 @@ class News {
 		}
 	}
 	
-	function getList($begin=0,$limit=5, $is_published=0){
-		$sql = "SELECT *  FROM `news` WHERE is_published <> ? ";
-		$sql .= " ORDER BY `date` DESC,`id` DESC";
-		$sql .=" LIMIT ".$begin.", ".$limit." ";
-		$item = $this->db_instance->select($sql, $is_published); 
+	function getList($begin=0,$limit=7){
+		$sql = "SELECT *  FROM `news`";
+		//$sql .= " ORDER BY `date` DESC,`id` DESC";
+		//$sql .=" LIMIT ".$begin.", ".$limit." ";
+		$item = $this->db_instance->select($sql); 
 		if($item) {
 			return  $item;
 		}
@@ -61,7 +61,13 @@ class News {
 	function save($news_item){
 		return $this->db_instance->saveData($news_item,'news',$this->items_news);
 	}
-	
+	function deleteLogo($idNew){
+		$pathLogo = $_SERVER['DOCUMENT_ROOT']."/files/imageForNews/"; 
+		$new = $this->getNew($idNew);
+		$pathLogo .= $new['image']; 
+		//chmod($pathLogo,0775);
+		unlink($pathLogo);
+	}
 	
 	function Time_To_Show($value) {
 		$montharray = array('1' => 'Января','2' => 'Февраля','3' => 'Марта','4' => 'Апреля','5' => 'Мая','6' => 'Июня','7' => 'Июля','8' => 'Августа','9' => 'Сентября','10' => 'Октября','11' => 'Ноября','12' => 'Декабря');

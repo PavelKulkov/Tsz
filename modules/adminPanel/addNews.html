@@ -1,27 +1,28 @@
 <!DOCTYPE html>
-  <head>
-	<meta charset="utf-8">
-  </head>
-  <body>
-    <!--   
-		 <form method="post" action="/auth/">
-     --> 
-    	<form method="post" action="/modules/adminPanel/addNews.php">
-    	
-        <table>
-          <tr>
-            <td>Заголовок</td>
-            <td><input type="text" name="title"/></td>
-          </tr>
-          <tr>
-            <td>Текст новости</td>
-            <td><textarea type="textarea" name="news"></textarea></td>
-          </tr> 
-          <tr>
-            <td colspan="2"><input type="submit" value="Добавить"/></td>
-          </tr>                   
-        </table>        
-      </form>
-    </div>
-  </body>  
+	<head>
+		<title>Добавить новость</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<form enctype="multipart/form-data" method="post" action="/modules/adminPanel/addNews.php">
+			<table>
+			<tr>
+				<td>Заголовок</td>
+				<td><input type="text" name="title"/></td>
+			</tr>
+			<tr>
+				<td>Текст новости</td>
+				<td><textarea type="textarea" name="news"></textarea></td>
+			</tr> 
+			<tr>
+				<td>Картинка для новости</td>
+				<td><input type="hidden" name="MAX_FILE_SIZE" value="524288" /></td>
+				<td><input name="image" type="file" /></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="Добавить"/></td>
+			</tr>
+			</table>        
+		</form>
+	</body>  
 </html>

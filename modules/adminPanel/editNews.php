@@ -16,29 +16,15 @@
 	  }
 	if(!isset($news)) $news = new News($request, $db);
 	
-	$new =  $news -> getNew($_POST['idNews']);
-	$text = '
-	<form method="post" action="/modules/adminPanel/saveNews.php">';
-	$text.='
-        <table>
-          <tr>
-            <td><input type="hidden" name="idNews" value="'.$new['id'].'"/></td>
-          </tr>
-		  <tr>
-            <td>Заголовок</td>
-            <td><input type="text" name="title" value="'.$new['title'].'"/></td>
-          </tr>
-		  <tr>
-            <td>Текст новости</td>
-            <td><textarea name="text">'.$new['text'].'</textarea></td>
-          </tr>
-          <tr>
-            <td colspan="2"><input type="submit" value="Изменить"/></td>
-          </tr>                   
-        </table>        
-    </form>';
+	$listNews = $news -> getList();
 	
+	$text = '	<form method="post" action="delNews.php" >';
+	foreach ($listNews as $entry) {
+		$text .= '<input type="checkbox" name="newsForDel[]" value="'.$entry['id'].'"/>'.$entry['title'].'</br>';
+	}
+	$text .= '<input type="submit" value="Удалить">
+			</form>';
 	echo($text);
 	$db->disconnect();
-	
+	//header("Location:/news");
 ?>
