@@ -48,15 +48,16 @@ setTimeout("alert(request[0].text)", 1000);*/
 			coordinates: [registeredHome[i].breadth ,registeredHome[i].longitude]
           },
           properties: {
-            balloonContentHeader: 'ТСЖ \"' + registeredHome[i].title + '\"', //Баллун для метки
-            clusterCaption: 'ТСЖ \"' + registeredHome[i].title + '\"',
+            balloonContentHeader: "<p class=mapHeader>ТСЖ \"" + registeredHome[i].title + "\"</p>", //Баллун для метки
+            clusterCaption: '<p class=mapHeader>ТСЖ \"' + registeredHome[i].title + '\"</p>',
+			
 
-            balloonContentBody: "<p><strong>Адрес:</strong>" + registeredHome[i].address + "</p>" +
+            balloonContentBody: "<div class='mapContent'><div class='mapImage'><img src='/templates/images/" + registeredHome[i].logo + ".png'></div><div class='mapText'><p><strong>Адрес:</strong>" + registeredHome[i].address + "</p>" +
 			    "<p><strong>Телефон: </strong>" + registeredHome[i].phoneNumber + " ; " + registeredHome[i].fax + "</p>" +
 				/*"TODO  выводит undefined ?????<p><strong>E-mail:</strong>" + registeredHome[i].e_mail + "</p>" +*/
 				"<p><strong>Председатель:</strong>" + registeredHome[i].President +"</p>" +
-				"<p><strong>Сайт:</strong> <a href="+ registeredHome[i].site + ">" + registeredHome[i].site + "</a></p>",
-            hintContent: 'ТСЖ \"' + registeredHome[i].title + '\"',  //Хинт для метки
+				"<p><strong>Сайт:</strong> <a href="+ registeredHome[i].site + ">" + registeredHome[i].site + "</a></p></div></div>",
+            hintContent: '<p class=mapHeader>ТСЖ \"' + registeredHome[i].title + '\"</p>',  //Хинт для метки
             /*balloonContentFooter: '<a href="#">' + registeredHome[i].site + '</a>'*/
           }
         });
