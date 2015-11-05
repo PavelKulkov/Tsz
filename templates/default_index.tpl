@@ -10,150 +10,227 @@
 	</title>
   </head>
   <body>
-    <header>
-	  <h1>Ассоциации ТСЖ</h1>
-	</header>
-    <nav class="menu">
-	  {#area14}
-	</nav>
-	<div class="publicityLeft">
-	  <div class="publicityLeftBox">
-	    <a href="#"><img src=""></a>
-	  </div>
-	  <div class="publicityLeftBox">
-	    <a href="#"><img src=""></a>
-	  </div>
-	</div>
-	
-	<div class="publicityRight">
-	  <div class="publicityRightBox">
-	    <a href="#"><img src=""></a>
-	  </div>
-	  <div class="publicityRightBox">
-	    <a href="#"><img src=""></a>
-	  </div>
-	</div>
-	
-	<div class="mainContent">
-		
-	  <div class="firstBlock">
-	  <h3>Список членов Ассоциации </h3>
-	    <select class="selectTsz">
-		  <option>1Б</option>
-		  <option>2Б</option>
-		</select>
-		
-		<p>«Ассоциация ТСЖ и потребительских кооперативов Пензенской области»<br>
-		Ассоциация ЖСК, ЖК и ТСЖ была зарегистрирована в 1995 году двенадцатью учредителями. На начало 2010 г. в Ассоциации зарегитсрировано более 600 членов.<br>
-		НАПРАВЛЕНИЯ РАБОТЫ АССОЦИАЦИИ<br>
-        Создание информационной базы по вопросам управления многоквартирными домомами:
-        в тематических папках на бумажных носителях;
-        информационные бюллетени;
-        книги, изданные в помощь правлениям ТСЖ, ЖСК;
-        электронная информационная база на ПК;
-        библиотека по данной тематике.
-        Содержание: 
-        нормативно-правовая база;
-        переписка с властными структурами как Ассоциации, так и её членов;
-        решения судов;
-        комментарии специалистов как по документам, так и по реформе ЖКХ.
-		</p>
-		<h3>Как вступить в Ассоциацию?</h3>
-		УВАЖАЕМЫЙ ПРЕДСЕДАТЕЛЬ!
-        <p>
-          Ассоциация ЖСК, ЖК и ТСЖ г.Санкт - Петербурга сообщает, что ЖСК, ЖК, ТСЖ становится членом Ассоциации после регистрации и присвоения регистрационного номера.
-          Для присвоения регистрационного номера необходима выписка из протокола общего собрания или заседания правления о решении вступления в Ассоциацию ЖСК, ЖК и ТСЖ.
-          Членские взносы необходимо самостоятельно оплачивать регулярно. Ассоциация счета и акты выполненных работ на членские взносы не выставляет.
-          <br>1. Вступительный взнос - 200-00 рублей с дома (разовый взнос).
-          <br>2. Членские взносы - 3,00 рубля с каждой квартиры ежемесячно ( c 01 января 2015 г.)!
-          <br>3. Дома более 250 квартир - 750 рублей с дома ежемесячно!<br>
-          Платежные реквизиты  выдаются только после  заполнения карточки учета с печатью и подписью председателя правления и присвоения регистрационного номера в офисе
-          Ассоциации ЖСК, ЖК и ТСЖ на ул.Рубинштейна д.8.Надеемся, что наши совместные усилия позволят успешно решать насущные проблемы ЖСК, ЖК, ТСЖ! 
-          Нам нужны активные и думающие люди.
-        </p>
-	  </div>
-	  <div class="secontBlock">
-	    <div class="newsDay">
-	    <article class="newsDayItem">
-	      <div class="newsDayItemImg">
-		    <a href="#"><img src="images\img_1.jpg"></a>
-		  </div>
-		  <div class="newsDayItemText">
-		    <div class="newsDayItemData">26.08.2015, 16:00</div>
-		    <div class="newsDayItemTitle">
-		      <h3>
-			    <a href="#">Демонстрационные полеты на МАКС-2015 в Жуковском. Прямая трансляция</a>
-			  </h3>
-		    </div>
-		  </div>
-	    </article>
-		
-		<article class="newsDayItem">
-	      <div class="newsDayItemImg">
-		    <a href="#"><img src="images\img_2.jpg"></a>
-		  </div>
-		  <div class="newsDayItemText">
-		    <div class="newsDayItemData">26.08.2015, 16:00</div>
-		    <div class="newsDayItemTitle">
-		      <h3>
-			    <a href="#">Демонстрационные полеты на МАКС-2015 в Жуковском. Прямая трансляция</a>
-			  </h3>
-		    </div>
-		  </div>
-	    </article>
-		
-		<article class="newsDayItem">
-	      <div class="newsDayItemImg">
-		    <a href="#"><img src="images\img_3.jpg"></a>
-		  </div>
-		  <div class="newsDayItemText">
-		    <div class="newsDayItemData">26.08.2015, 16:00</div>
-		    <div class="newsDayItemTitle">
-		      <h3>
-			    <a href="#">Демонстрационные полеты на МАКС-2015 в Жуковском. Прямая трансляция</a>
-			  </h3>
-		    </div>
-		  </div>
-	    </article>
-		
-		<article class="newsDayItem">
-	      <div class="newsDayItemImg">
-		    <a href="#"><img src="images\img_4.jpg"></a>
-		  </div>
-		  <div class="newsDayItemText">
-		    <div class="newsDayItemData">26.08.2015, 16:00</div>
-		    <div class="newsDayItemTitle">
-		      <h3>
-			    <a href="#">Демонстрационные полеты на МАКС-2015 в Жуковском. Прямая трансляция</a>
-			  </h3>
-		    </div>
-		  </div>
-	    </article>
-		
-		<article class="newsDayItem">
-	      <div class="newsDayItemImg">
-		    <a href="#"><img src="images\img_4.jpg"></a>
-		  </div>
-		  <div class="newsDayItemText">
-		    <div class="newsDayItemData">26.08.2015, 16:00</div>
-		    <div class="newsDayItemTitle">
-		      <h3>
-			    <a href="#">Демонстрационные полеты на МАКС-2015 в Жуковском. Прямая трансляция</a>
-			  </h3>
-		    </div>
-		  </div>
-	    </article>
-		<span class="allNews">
-		  <a href="#" >Все новости</a>
-		</span>
-		</div>
-	</div>
-	
-	</div>
+  <header>
+      <div class="feedback">
+          <div class="feedbackContent">
+              <img src="/templates/images/logo_tube.png"><p> 8 (8412) 23 11 25 | </p><img src="/templates/images/logo_message.png"><p><a href="#">Обратная связь</a></p>
+              </div>
+      </div>
+    <div class="header">
+      <img src="/templates/images/feader.png">
+    </div>
+      
+    <div class="topMenu">
+        <nav class="insideContent">      
+            {#area14}
+        </nav>
+    </div>
+
+  </header>
+  
+   <div class="sidebar">
+      <div class="upper_picture">
+         <img src="/templates/images/upper_picture.png">
+      </div>
+      <div class="search">
+          <h1>Найди свое ТСЖ</h1>
+          <h2>Введите название своего ТСЖ<br>или адрес</h2>
+          <div class="formContent">
+              <form class="searchForm">
+                  <input type="text" placeholder="Введите название">
+                  <input type="image" src="/templates/images/submit_logo.png" name="submit">
+              </form>
+          </div>
+      </div>
+      <div class="info">
+          <div class="infoContent">
+          <p>
+	      “Ассоциация ТСЖ и потребительских кооперативов Пензенской области”<br>
+           Ассоциация ЖСК, ЖК и ТСЖ была зарегистрирована в 1995 году двенадцатью учредителями. На начало<br>
+		   2010 г. в Ассоциации зарегистрировано более 600 членов. Направления работы Ассоциации:<br>
+	       создание информационной базы по вопросам управления многоквартирными домами;<br>
+	       информационные бюллетени;<br>
+	       книги, изданные в помощь правлениям ТСЖ, ЖСК;<br>
+	       электронная информационная база на ПК.
+	       </p>
+         </div>
+      </div>
+      
+  </div>
+  <div class="content">
+      <div class="joinContent">
+          <h1>Как вступить в Ассоциацию?</h1>
+          <div class="stepOne">
+              <div class="OnestepText">
+                  <h3>1 РЕГИСТРАЦИЯ</h3>
+                  <p>Для присвоения регистрационного номера<br>
+                    необходима выписка из протокола общего <br>
+                    собрания или заседания правления о<br>
+                    решении вступления в Ассоциацию.</p>
+              </div>
+              
+              <div class="OnestepImage">
+                  <img src="/templates/images/step_1.png">
+              </div>
+          </div>
+          
+          <div class="stepTwo">
+              <div class="TwostepImage">
+                  <img src="/templates/images/step_2.png">
+              </div>
+              
+              <div class="TwostepText">
+                  <h3>2 ПРИСВОЕНИЕ <br>РЕГИСТРАЦИОННОГО НОМЕРА</h3>
+                  <p>Для присвоения регистрационного номера<br>
+                    необходима выписка из протокола общего <br>
+                    собрания или заседания правления о<br>
+                    решении вступления в Ассоциацию.</p>
+                  
+              </div>
+          </div>
+          
+          <div class="stepOne">
+              <div class="OnestepText">
+                  <h3>3 ЗАПОЛНЕНИЕ <br> КАРТОЧКИ УЧЕТА</h3>
+                  <p>Для присвоения регистрационного номера<br>
+                    необходима выписка из протокола общего <br>
+                    собрания или заседания правления о<br>
+                    решении вступления в Ассоциацию.</p>
+              </div>
+              
+              <div class="OnestepImage">
+                  <img src="/templates/images/step_3.png">
+              </div>
+          </div>
+          
+          <div class="stepTwo">
+              <div class="TwostepImage">
+                  <img src="/templates/images/step_4.png">
+              </div>
+              
+              <div class="TwostepText">
+                  <h3>4 ЧЛЕНСКИЕ ВЗНОСЫ</h3>
+                  <p>Для присвоения регистрационного номера<br>
+                    необходима выписка из протокола общего <br>
+                    собрания или заседания правления о<br>
+                    решении вступления в Ассоциацию.</p>
+              </div>
+          </div>
+
+          
+      </div>
+      <div class="services">
+         <h1>Наши услуги</h1>
+          <div class="servicesOne">
+              <div class="servicesOneImage">
+                  <img src="/templates/images/services_1.png">
+              </div>
+              
+              <div class="servicesOneText">
+                  <h3>Представление интересов членов ассоциации перед<br>поставщиками коммунальных услуг</h3>
+                  <ul>
+                      <li>Решение хозяйственных споров;</li>
+                      <li>Экспертиза качества предоставляемых услуг;</li>
+                      <li>Анализ и практическое применение существующих тарифов<br>
+                          и выработка предложений по их оптимизации, а также<br> практическому применению.</li>
+                  </ul>
+              </div>
+          </div>
+          <div class="servicesTwo">
+              <div class="servicesTwoText">
+                  <h3>Юридические услуги</h3>
+                  <ul>
+                      <li>Помощь в подготовке по вопросам хозяйственной<br> деятельности ТСЖ;</li>
+                      <li>Представление интересов ТСЖ в суде;</li>
+                      <li>Предоставление членам нормативно-правовой документации.</li>
+                  </ul>
+              </div>
+          
+          <div class="servicesTwoImage">
+              <img src="/templates/images/services_2.png">
+          </div>
+        </div>
+          
+        <div class="servicesOne">
+              <div class="servicesOneImage">
+                  <img src="/templates/images/services_3.png">
+              </div>
+              
+              <div class="servicesOneText">
+                  <h3>Организация капитального ремонта<br> для членов Ассоциации</h3>
+                  <ul>
+                      <li>Создание страхового фонда;</li>
+                      <li>Организация конкурсов и проведение капитального ремонта;</li>
+                      <li>Приемка работ по капитальному ремонту по решению <br>собственников помещений в МКД;</li>
+                      <li>Выработка рекомендаций по организации капремонта и<br> приемке работ и услуг.</li>
+                  </ul>
+              </div>
+          </div>
+          
+      </div>
+      <div class="lastNews">
+          <h1>Последние новости</h1>
+          <div class="lastNewsBox">
+              <div class="lastNewsContent">
+                  <div class="lastNewsImage">
+                      <a href="#"><img src="/templates/images/news_1.png"></a>
+                  </div>
+                  <div class="lastNewsText">
+                      <p>Демонстрационные полеты на МАКС-2015 в Жуковском. Прямая трансляция</p>
+                      <a href="#">Подробнее...</a>
+                  </div>
+              </div>
+          </div>
+          
+          <div class="lastNewsBox">
+              <div class="lastNewsContent">
+                  <div class="lastNewsImage">
+                      <a href="#"><img src="/templates/images/news_2.png"></a>
+                  </div>
+                  <div class="lastNewsText">
+                      <p>Демонстрационные полеты на МАКС-2015 в Жуковском. Прямая трансляция</p>
+                      <a href="#">Подробнее...</a>
+                  </div>
+              </div>
+          </div>
+          
+          <div class="lastNewsBox">
+              <div class="lastNewsContent">
+                  <div class="lastNewsImage">
+                      <a href="#"><img src="/templates/images/news_1.png"></a>
+                  </div>
+                  <div class="lastNewsText">
+                      <p>Демонстрационные полеты на МАКС-2015 в Жуковском. Прямая трансляция</p>
+                      <a href="#">Подробнее...</a>
+                  </div>
+              </div>
+          </div>
+          
+          <div class="lastNewsBox">
+              <div class="lastNewsContent">
+                  <div class="lastNewsImage">
+                      <a href="#"><img src="/templates/images/news_2.png"></a>
+                  </div>
+                  <div class="lastNewsText">
+                      <p>Демонстрационные полеты на МАКС-2015 в Жуковском. Прямая трансляция</p>
+                      <a href="#">Подробнее...</a>
+                  </div>
+              </div>
+          </div>
+          
+      </div>
+  </div>
+  
 	<footer>
-	  <hr>
-	  <p>© 2015 "Ассоциация ТСЖ" Все права защищены</p>
-	</footer>
+    <div class="footer">
+      <p>
+        (c) 2015 "Ассоциация ТСЖ" Все права защищены.<br>
+        Россия, г.Пенза, ул.Центральная 1В<br>
+        т.: 8 (8412) 23 11 25; e-mail: tczh@yandex.ru
+      </p>
+    </div>
+
+  </footer>
 	
   </body>
 </html>
