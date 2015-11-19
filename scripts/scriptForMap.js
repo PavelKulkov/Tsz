@@ -1,5 +1,4 @@
-﻿//window.onload = function(){
-    function getJson(url){
+﻿    function getJson(url){
         mas = [];
         i = 0;
         $(function() {
@@ -19,11 +18,6 @@
     }
     registeredHome = [];
     registeredHome = getJson('/modules/registry/view/json.php?action=registeredHome');
-	
-/*
-request = [];
-setTimeout("request = getJson('json.php?action=request')", 1000);
-setTimeout("alert(request[0].text)", 1000);*/
 
     ymaps.ready(init);
     var myMap,
@@ -52,11 +46,11 @@ setTimeout("alert(request[0].text)", 1000);*/
             clusterCaption: '<p class=mapHeader>ТСЖ \"' + registeredHome[i].title + '\"</p>',
 			
 
-            balloonContentBody: "<div class='mapContent'><div class='mapImage'><img src='/templates/images/" + registeredHome[i].logo + ".png'></div><div class='mapText'><p><strong>Адрес:</strong>" + registeredHome[i].address + "</p>" +
-			    "<p><strong>Телефон: </strong>" + registeredHome[i].phoneNumber + " ; " + registeredHome[i].fax + "</p>" +
-				/*"TODO  выводит undefined ?????<p><strong>E-mail:</strong>" + registeredHome[i].e_mail + "</p>" +*/
-				"<p><strong>Председатель:</strong>" + registeredHome[i].President +"</p>" +
-				"<p><strong>Сайт:</strong> <a href="+ registeredHome[i].site + ">" + registeredHome[i].site + "</a></p></div></div>",
+            balloonContentBody: "<div class='mapContent'><div class='mapImage'><img src='/templates/images/registry/logo/" + registeredHome[i].logo + ".png'></div><div class='mapText'><p><strong>Адрес:</strong> " + registeredHome[i].address + "</p>" +
+			    "<p><strong>Телефон: </strong> " + registeredHome[i].phoneNumber + " ; " + registeredHome[i].fax + "</p>" +
+				"<p><strong>E-mail:</strong> " + registeredHome[i].e_mail + "</p>"+
+				"<p><strong>Председатель:</strong> " + registeredHome[i].President +"</p>" +
+				"<p><strong>Сайт:</strong> <a href="+ registeredHome[i].site + "> " + registeredHome[i].site + "</a></p></div></div>",
             hintContent: '<p class=mapHeader>ТСЖ \"' + registeredHome[i].title + '\"</p>',  //Хинт для метки
             /*balloonContentFooter: '<a href="#">' + registeredHome[i].site + '</a>'*/
           }
@@ -66,4 +60,39 @@ setTimeout("alert(request[0].text)", 1000);*/
       myClusterer.add(myGeoObjects);
       myMap.geoObjects.add(  myClusterer);
     }
-//}
+
+ $(document).ready(function() {
+	 var flag = true;
+	 function createWindow(id , obj){
+		id--;
+		$(".headerModalWindow").append('<h1>ТСЖ "'+ obj[id].title +'"</h1>');
+		$(".logoModalWindow").append('<img src="/templates/images/registry/logo/'+ obj[id].logo +'.png">');
+        $(".textModalWindow").append('<p><strong>Адрес:</strong> '+obj[id].address+'</p>'+
+			                        '<p><strong>Телефон:</strong> '+ obj[id].phoneNumber +'; '+ obj[id].fax +' </p>'+
+                                    '<p><strong>E-mail:</strong><a href=#> '+ obj[id].e_mail +'</a></p>'+
+                                    '<p><strong>Председатель:</strong> '+ obj[id].President +'</p>'+
+                                    '<p><strong>Сайт: </strong><a href="#"> '+ obj[id].site +'</a></p>');
+	}
+	//Функция отображения всплывающего окна
+	
+		
+	$(".listAreasContent p").click(function() {
+		if(flag){
+			flag = false;
+		    var id = $(this).attr('id');
+		    createWindow(id, registeredHome);
+		    $(".modalWindow").css("display", "block");
+		}
+	});
+	
+	//Функция скрытия всплывающего окна
+	$(".closeModalWindowImg").click(function(){
+		flag = true;
+		$(".modalWindow").css("display", "none");
+		$(".textModalWindow").empty();
+		$(".headerModalWindow").empty();
+		$(".logoModalWindow").empty();
+	});
+	
+ });
+ 

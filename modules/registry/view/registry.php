@@ -3,9 +3,11 @@
 	$text = '<div class="pageNavigation">
                <p><a href="\">Главная</a> -> Список членов ассоциации</p>
              </div>
+			 <div class="pageTitle">
+                 <h1>Список членов Ассоциации</h1>
+             </div>
 			 
 			 <div class="listAssociation">
-               <h1>Список членов Ассоциации</h1>
                <div class="listAssociationSelect">
                  <p>Выберите название ТСЖ из списка или укажите адрес на карте:</p>
                  <input name="search" type="text" id="search" placeholder="Название...">
@@ -19,7 +21,7 @@
 		$i =0;
 		foreach ($list as $entry) {
 			if($entry['area'] == $index){
-				$mas[$i] = "ТСЖ ".$entry['title']." , ".$entry['address'];  
+				$mas[$i] = "<p id = ".$entry['id'].">ТСЖ ".$entry['title']." , ".$entry['address']."</p>";  
 				$i++;
 			}
 		}
@@ -39,7 +41,7 @@
 			     <div class="AreasLeftContent">';
 
     for($j = 0; $j < count($mas_1); $j++){
-		$text .= '<p>'.$mas_1[$j].'</p>';
+		$text .= $mas_1[$j];
 	}
 
 	$text .= '</div>
@@ -50,7 +52,7 @@
                 </div>
                 <div class="AreasRightContent">';
     for($j = 0; $j < count($mas_2); $j++){
-		$text .= '<p>'.$mas_2[$j].'</p>';
+		$text .= $mas_2[$j];
 	}
 	$text .= ' </div>
                </div>
@@ -62,7 +64,7 @@
                    </div>
                    <div class="AreasLeftContent">';
     for($j = 0; $j < count($mas_3); $j++){
-		$text .= '<p>'.$mas_3[$j].'</p>';
+		$text .= $mas_3[$j];
 	}
 	$text .= '</div>
               </div>
@@ -72,11 +74,31 @@
                 </div>
                 <div class="AreasRightContent">';
     for($j = 0; $j < count($mas_4); $j++){
-	  $text .= '<p>'.$mas_4[$j].'</p>';
+	  $text .= $mas_4[$j];
     }
 	$text .= ' </div>
                </div>
-               </div>';
+               </div>
+			   
+			   
+			   <div class="modalWindow">
+    <div class="closeModalWindow">
+       <div class="closeModalWindowImg"></div>
+    </div>
+    <div class="headerModalWindow">
+        
+    </div>
+    <div class="contentModalWindow">
+        <div class="logoModalWindow">
+            
+        </div>
+        <div class="textModalWindow">
+           
+        </div>
+    </div>
+</div>      
+			   
+			   ';
 							
 	/*
 	

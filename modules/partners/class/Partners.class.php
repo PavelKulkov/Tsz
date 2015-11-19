@@ -9,13 +9,27 @@ class PartneryAndProject {
 		$this->db_instance = $db;
 		$this->request 	= $request;
 	}
-
-	function getListOfPartners(){
-		$sql = "SELECT * FROM `pages` WHERE `name`= 'partneryAndProject'";
-		$item = $this->db_instance->selectRow($sql);
-		if ($item){
-			return $item;
-		}else{
+	
+	function getPartners(){
+		$sql= "SELECT *  FROM `partners`";
+		$item = $this->db_instance->select($sql); 
+		
+		if($item) {
+			return  $item;
+		}
+		else {
+			return false;
+		}
+	}
+	
+	function getProjects(){
+		$sql= "SELECT *  FROM `projects`";
+		$item = $this->db_instance->select($sql); 
+		
+		if($item) {
+			return  $item;
+		}
+		else {
 			return false;
 		}
 	}

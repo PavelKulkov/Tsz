@@ -5,6 +5,7 @@
 	$i = 0;	
 	
 	if($topMenuList['menu_part'] && count($topMenuList['menu_part']) > 0) {
+		$ij = 1;
 		foreach ($topMenuList['menu_part'] as $item) {
 			if (strpos($item['url'], 'account') !== false) {
 
@@ -20,9 +21,9 @@
 				$bg = 'bg1';
 			}
 			
-				$text .= '<li class="'.$bg.'"><a href="'.$item['url'].'">'.$item['name'].'</a></li>';
+				$text .= '<li id="select_'.$ij.'" class="'.$bg.'"><a href="'.$item['url'].'">'.$item['name'].'</a></li>';
 				$i++;
-			
+			$ij++;
 		}
 	}
 	

@@ -7,6 +7,7 @@
 	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 	<script src="/scripts/jquery.js"></script>
 	<script src="/scripts/scriptForMap.js"></script>
+	<script src="/scripts/modalWindow.js"></script>
 	
 	<title>
 	  associationTsz
