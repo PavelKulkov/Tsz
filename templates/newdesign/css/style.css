@@ -823,7 +823,122 @@ html, body{
     word-wrap: break-word;
 }
 
+/*NEWS*/
+.news{
+    width: 800px;
+    position: relative;
+    font-family: 'robotoregular';
+    display: inline-block;
+    margin: 0 50px 50px 50px;
+    
+}
+.newsContent{
+    width: 800px;
+    position: relative;
+    margin: 0 0 30px 0;
+   
+}
+.newsContent .newsContentData{
+    text-align: left;
+    font-family: 'robotoregular';
+    color: #7a7a7a;
+    font-size: 0.9em;
+}
+.newsContent .newsContentTitle{
+    color: #abcc26;
+    font-size: 1.2em;
+    display: block;
+    text-align: left;
+    margin: 4px 0 0 0;
+}
+.newsText{
+    width: 800px;
+    position: relative;
+    margin: 5px 0 0 0;
+    
+    display: inline-block;
+}
+.newsText img{
+    
+    float: left;
+    width: 180px;
+    height: 100px;
+}
+.newsText p{
+    width: 610px;
+    float: right;
+    color: #7a7a7a;
+    font-size: 0.9em;
+    word-wrap: break-word;
+    text-align: left;
+}
+.newsText a{
+    position: absolute;
+    float: right;
+    bottom: 0;
+    right: 20px;
+    color: #7a7a7a;
+    font-weight: 600;
+}
 
+/*OPEN_NEWS*/
+.openNews{
+    width: 800px;
+    position: relative;
+    margin: 20px 0 0 0;
+    font-family: 'robotoregular';
+    
+}
+.openNews .newsContentData{
+    text-align: left;
+    
+    color: #7a7a7a;
+    font-size: 0.9em;
+}
+.openNews .newsContentTitle{
+    color: #abcc26;
+    font-size: 1.2em;
+    display: block;
+    text-align: left;
+    margin: 4px 0 20px 0;
+}
+.openNews .openNewsText{
+    text-align: left;
+    text-indent: 20px;
+    margin: 0 0 10px 0;
+    font-size: 1em;
+    word-wrap: break-word;
+	color: #7a7a7a;
+}
+.openNews a{
+    position: absolute;
+    float: right;
+    bottom: 0;
+    right: 20px;
+    color: #7a7a7a;
+    font-weight: 600;
+}
+.openNewsImages{
+    width: 800px;
+    display: inline-block;
+    position: relative;
+    margin: 30px 0 40px 0;
+    
+}
+.openNewsImages img{
+    float: left;
+    width: 300px;
+    height: 200px;
+    margin: 0 0 0 50px;
+}
+/*TODO*/
+/*transition - Переход по страницам*/
+.transition{
+    position: relative;
+    width: 100%;
+    height: 30px;
+    
+}
 
 
 

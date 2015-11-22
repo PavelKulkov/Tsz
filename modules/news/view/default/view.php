@@ -1,5 +1,42 @@
 <?php
-		$text = '	
+    function getMasImages($obj){
+		$mas = explode(",", $obj);
+		$text = '';
+		
+		for($i = 0; $i < count($mas); $i++){
+			$text .= '<img src="/templates/images/news/openNews/'.$mas[$i].'.png">';
+		}
+		
+		
+		return $text;
+	}
+	
+    $text = '<div class="pageNavigation">
+                 <p><a href="\">Главная</a> -> <a href="news">Новости</a> -> Демонстрационные полеты на МАКС-2015 в Жуковском. Прямая трансляция</p>
+            </div>
+	';
+	
+
+    $text .= '<div class="news">
+          <div class="openNews">
+              <p class="newsContentData">'.date('d.m.Y H:i',strtotime($new['date'])).'</p>
+              <p class="newsContentTitle">'.$new['title'].'</p>
+              <p class="openNewsText">'.$new['text'].'
+              </p>
+         
+              <div class="openNewsImages">';
+			 $text .= getMasImages($new['image']);
+                  /*<img src="/templates/images/news/openNews/'.$new['image'].'.png">
+                  <img src="images/openNews_2.png">*/
+              $text .='</div>
+              <a href="news">Ко всем новостям</a>
+          </div>
+      </div>';
+
+
+
+/*
+		$text .= '	
 					<style>
 						div#news_div ul li {
 						margin-left: 20px;
@@ -106,5 +143,5 @@ $twitter = <<<TEXT
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 </div>
 TEXT;
-
+*/
 		$text .= $twitter;	

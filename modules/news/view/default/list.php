@@ -1,5 +1,30 @@
 <?php
-	$text = '	<div class="rule"></div>
+    $text = '<div class="pageNavigation">
+                <p><a href="\">Главная</a> -> Новости</p>
+            </div>
+            <div class="pageTitle">
+                <h1>Новости в сфере ТСЖ</h1>
+            </div>
+			<div class="news">';
+			foreach ($list as $entry) {	
+			    
+				$text .= '
+				<div class="newsContent">
+              <p class="newsContentData">'.date('d.m.Y H:i',strtotime($entry['date'])).'</p>
+              <a class="newsContentTitle" href="news?id_news='.$entry['id'].'">'.$entry['title'].'</a>
+              <div class="newsText">
+                  <img src="/templates/images/news/'.$entry['preview_images'].'.png">
+                  <p>'.$entry['preview'].'</p>
+                  <a href="news?id_news='.$entry['id'].'">Читать дальше</a>
+              </div>
+          </div>
+				   
+				';
+			
+			}			
+			$text .='</div>';
+/*
+	$text .= '	<div class="rule"></div>
 				<h3 class="title_blank">Новости</h3>';
 	
 							
@@ -24,5 +49,5 @@
 						$("div#content_navigation").html("<a href=\"/\">Главная</a>  / Новости");
 						$("div#content_line").removeClass().addClass("blue_line");
 					});
-				</script>';
+				</script>';*/
 ?>
