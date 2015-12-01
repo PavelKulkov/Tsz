@@ -23,7 +23,12 @@
     $mas_4 = get_mas($list, 4);  
 	
 				
-	$text	='  <div class="pageNavigation">
+	$text	='<style>
+	#select_2 a{
+		border-bottom: 7px solid #fd8505;
+	}
+	</style>
+	<div class="pageNavigation">
               <p><a href="\">Главная</a> -> Список членов ассоциации</p>
           </div>
           <div class="pageTitle">

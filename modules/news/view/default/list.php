@@ -1,5 +1,11 @@
 <?php
-    $text = '<div class="pageNavigation">
+    $text = '
+	<style>
+	#select_5 a{
+		border-bottom: 7px solid #fd8505;
+	}
+	</style>
+	<div class="pageNavigation">
                 <p><a href="\">Главная</a> -> Новости</p>
             </div>
             <div class="pageTitle">
@@ -7,20 +13,18 @@
             </div>
 			<div class="news">';
 			foreach ($list as $entry) {	
+			    $mas = explode(",", $entry['image']);
 			    
 				$text .= '
 				<div class="newsContent">
               <p class="newsContentData">'.date('d.m.Y H:i',strtotime($entry['date'])).'</p>
               <a class="newsContentTitle" href="news?id_news='.$entry['id'].'">'.$entry['title'].'</a>
               <div class="newsText">
-                  <img src="/templates/images/news/'.$entry['preview_images'].'.png">
+                  <img src="/templates/images/news/'.$mas[0].'.png">
                   <p>'.$entry['preview'].'</p>
                   <a href="news?id_news='.$entry['id'].'">Читать дальше</a>
               </div>
-          </div>
-				   
-				';
-			
+          </div>';
 			}			
 			$text .='</div>';
 /*

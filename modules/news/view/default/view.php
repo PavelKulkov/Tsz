@@ -4,15 +4,20 @@
 		$text = '';
 		
 		for($i = 0; $i < count($mas); $i++){
-			$text .= '<img src="/templates/images/news/openNews/'.$mas[$i].'.png">';
+			$text .= '<img src="/templates/images/news/'.$mas[$i].'.png">';
 		}
 		
 		
 		return $text;
 	}
 	
-    $text = '<div class="pageNavigation">
-                 <p><a href="\">Главная</a> -> <a href="news">Новости</a> -> Демонстрационные полеты на МАКС-2015 в Жуковском. Прямая трансляция</p>
+    $text = '<style>
+	#select_5 a{
+		border-bottom: 7px solid #fd8505;
+	}
+	</style>
+	<div class="pageNavigation">
+                 <p><a href="\">Главная</a> -> <a href="news">Новости</a> -> '.$new['title'].'</p>
             </div>
 	';
 	

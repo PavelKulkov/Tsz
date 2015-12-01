@@ -1,5 +1,11 @@
 <?php
-	$text = '<div class="pageNavigation">
+	$text = '
+	<style>
+	#select_3 a{
+		border-bottom: 7px solid #fd8505;
+	}
+	</style>
+	<div class="pageNavigation">
                  <p><a href="\">Главная</a> -> Партнеры и проекты</p>
              </div>
              <div class="pageTitle">

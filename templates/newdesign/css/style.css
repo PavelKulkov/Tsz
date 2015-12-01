@@ -108,16 +108,18 @@ html, body{
     border-bottom: 7px solid #abcc26;
      
 }
-.insideContent a:focus{
+/*.insideContent a:focus{
    
     border-bottom: 7px solid #fd8505;
-}
+}*/
 .insideContent a:hover{
     border-left: 1px solid #fff;
     border-right: 1px solid #fff;
 }
 
-
+.activMenu{
+	border-bottom: 7px solid #fd8505;
+}
 
 
 
@@ -224,11 +226,6 @@ html, body{
     margin: 0 auto;
     text-align: center;
     /*TODO проверить размер на крличество контента*/
-	
-	
-	
-    
-    
 }
 
 .joinContent{
@@ -557,6 +554,15 @@ html, body{
     margin: 0 auto;   
     
 }
+.listAreasContent p{
+	border-bottom: 1px dashed maroon;
+	border-color: #7a7a7a;
+}
+.listAreasContent p:hover{
+	border-bottom: 1px solid maroon;
+	border-color: #abcc26;
+	color: #abcc26;
+}
 /*Left*/
 .listAreasLeft{
     float: left;
@@ -581,7 +587,13 @@ html, body{
 .AreasLeftContent p{
     margin: 0 40px 0 0;
     line-height: 1.5;
+	cursor: pointer;
 }
+/*.AreasLeftContent p:hover{
+	border-bottom: 1px solid maroon;
+	border-color: #abcc26;
+	color: #abcc26;
+}*/
 /*RIGHT*/
 .listAreasRight{
     float: right;
@@ -604,6 +616,8 @@ html, body{
 .AreasRightContent p{
     margin: 0 0 0 40px;
     line-height: 1.5;
+	cursor: pointer;
+	
 }
 
 /*modalWindow*/
@@ -726,14 +740,34 @@ html, body{
     margin: 30px 0 0 0;
 	height: auto;
 }
+
+/*
+.listAreasContent p{
+	border-bottom: 1px dashed maroon;
+	border-color: #7a7a7a;
+}
+.listAreasContent p:hover{
+	border-bottom: 1px solid maroon;
+	border-color: #abcc26;
+	color: #abcc26;
+}*/
+
+
+
+
 .textDoc p{
     width: 98%;
     font-size: 0.9em;
     margin: 0 1% 10px 1%;
+	
 }
+
 .textDoc a{
     color: #7a7a7a;
     text-decoration: none;
+}
+.textDoc a:hover{
+	color: #abcc26;
 }
 .leftContentDoc{
     width: 48%;
@@ -784,6 +818,10 @@ html, body{
 	text-decoration: none;
 	color: #7a7a7a;
 }
+.ourPartnersContent a:hover{
+	color: #abcc26;
+}
+
 .namePartners p{
     font-size: 1.8em;
     color: #abcc26;
@@ -808,6 +846,34 @@ html, body{
     margin: 0 0 50px 0;
     color: #7a7a7a;
 }
+.questions h3{
+    font-size: 1.5em;
+    text-align: left;
+    font-weight: 100;
+    width: 95%;
+    margin: 5px 2.5% 0 0;
+	padding-left: 2.5%;
+	background: #abcc26;
+	border-radius: 5px;
+	color: #ffffff;	
+	cursor: pointer;
+	opacity: 0.9;
+	outline:  none;
+}
+.questions h3:hover, h3:focus{
+	background: #fd8505;
+}
+.answer{
+    width: 95%;
+    margin: 0 2.5% 0 2.5%;
+	
+}
+.answer p{
+     margin: 5px 0 0 0;
+     word-wrap: break-word;
+    text-align: left;
+}
+/*
 .question{
     width: 95%;
     position: relative;
@@ -822,7 +888,7 @@ html, body{
     margin: 5px 0 0 0;
     word-wrap: break-word;
 }
-
+*/
 /*NEWS*/
 .news{
     width: 800px;
@@ -940,6 +1006,45 @@ html, body{
     
 }
 
+/*CONTACTS*/
+.contacts{
+    width: 1000px;
+    display: inline-block;
+    font-family: 'robotoregular';
+    color: #7a7a7a;
+    margin-top: 40px;
+	margin-bottom:  50px;
+   
+}
+.contacts h3{
+    color: #abcc26;
+    margin: 40px 0 40px 0;
+    font-weight: 400;
+    font-size: 1.4em;
+}
+.contantsContent{
+    width: 900px;
+    margin: 0 50px 0 50px;
+    display: inline-block;
+}
+.contactInfo{
+    width: 440px;
+    margin: 0 10px 0 0;
+   float: left;
+    text-align: right;
+	 word-wrap: break-word;
+}
+.contactText{
+    width: 440px;
+    margin: 0 0 0 10px;
+    float: right;
+    text-align: left;
+}
+.contactText strong{
+    color: #fd8505;
+     font-weight: 400;
+}
+
 
 
 
@@ -951,7 +1056,7 @@ footer{
     height: 100px;
     display: block;
     min-width: 1024px;
-    margin: 20px 0 0 0 ;
+    margin: 10px 0 0 0 ;
 	
 }
 .footer{
