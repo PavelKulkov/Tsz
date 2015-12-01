@@ -21,7 +21,7 @@
 				$bg = 'bg1';
 			}
 			
-				$text .= '<li id="select_'.$ij.'" class="'.$bg.'"><a href="'.$item['url'].'">'.$item['name'].'</a></li>';
+				$text .= '<li id="select_'.$ij.'" ><a href="'.$item['url'].'">'.$item['name'].'</a></li>';
 				$i++;
 			$ij++;
 		}

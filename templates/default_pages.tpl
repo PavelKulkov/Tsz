@@ -6,8 +6,14 @@
 	<link rel="stylesheet" type="text\css" href="/templates/newdesign/css/style.css">
 	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 	<script src="/scripts/jquery.js"></script>
+	<script src="/scripts/jquery-ui.js"></script>
+	<script src="/scripts/jquery-ui.min.js"></script>
+	<script src="/scripts/accordion.js"></script>
+	
 	<script src="/scripts/scriptForMap.js"></script>
-	<script src="/scripts/modalWindow.js"></script>
+	<script src="/scripts/activMenu.js"></script>
+	
+	
 	
 	<title>
 	  associationTsz
@@ -32,20 +38,9 @@
     </div>
 
   </header>
-  
-  
-  
-  
-  
-  
-  
 	<div class="content">
 	    {#content}
 	</div>
-	 
-	
-	
-	
 	</div>
 	<footer>
     <div class="footer">
