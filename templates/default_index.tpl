@@ -168,56 +168,7 @@
           </div>
           
       </div>
-      <div class="lastNews">
-          <h1>Последние новости</h1>
-          <div class="lastNewsBox">
-              <div class="lastNewsContent">
-                  <div class="lastNewsImage">
-                      <a href="#"><img src="/templates/images/news_1.png"></a>
-                  </div>
-                  <div class="lastNewsText">
-                      <p>Демонстрационные полеты на МАКС-2015 в Жуковском. Прямая трансляция</p>
-                      <a href="news">Подробнее...</a>
-                  </div>
-              </div>
-          </div>
-          
-          <div class="lastNewsBox">
-              <div class="lastNewsContent">
-                  <div class="lastNewsImage">
-                      <a href="#"><img src="/templates/images/news_2.png"></a>
-                  </div>
-                  <div class="lastNewsText">
-                      <p>Демонстрационные полеты на МАКС-2015 в Жуковском. Прямая трансляция</p>
-                      <a href="news">Подробнее...</a>
-                  </div>
-              </div>
-          </div>
-          
-          <div class="lastNewsBox">
-              <div class="lastNewsContent">
-                  <div class="lastNewsImage">
-                      <a href="#"><img src="/templates/images/news_1.png"></a>
-                  </div>
-                  <div class="lastNewsText">
-                      <p>Демонстрационные полеты на МАКС-2015 в Жуковском. Прямая трансляция</p>
-                      <a href="news">Подробнее...</a>
-                  </div>
-              </div>
-          </div>
-          
-          <div class="lastNewsBox">
-              <div class="lastNewsContent">
-                  <div class="lastNewsImage">
-                      <a href="#"><img src="/templates/images/news_2.png"></a>
-                  </div>
-                  <div class="lastNewsText">
-                      <p>Демонстрационные полеты на МАКС-2015 в Жуковском. Прямая трансляция</p>
-                      <a href="news">Подробнее...</a>
-                  </div>
-              </div>
-          </div>
-          
+           {#area24}
       </div>
   </div>
   

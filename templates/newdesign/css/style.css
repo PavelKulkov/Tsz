@@ -7,7 +7,6 @@
 html, body{
    /* background: #ffffff;*/
    height: 100%;
-   
 }
 /*
   HEADER
@@ -896,7 +895,6 @@ html, body{
     font-family: 'robotoregular';
     display: inline-block;
     margin: 0 50px 50px 50px;
-    
 }
 .newsContent{
     width: 800px;
@@ -1003,9 +1001,56 @@ html, body{
     position: relative;
     width: 100%;
     height: 30px;
-    
 }
 
+
+/*pagination*/
+.pagination{
+	font-family: 'robotoregular';
+	position: absolute;
+	bottom: 0;
+	display: flex;
+	width: 100px;
+	text-align: right;
+	margin: 0 20px 0 880px;
+	color: #fd8505;
+	font-size: 1.4em;
+}
+.pagination div{
+	margin: 0 2px 0 2px;
+}
+.page_next{
+}
+.page_next a{
+	text-decoration: none;
+	color: #fd8505;
+	padding: 1px;
+	width: 100%;
+}
+.page_next a:hover{
+	background: #fd8505;
+	color: #ffffff;
+}
+.activHref{
+	background: #fd8505;
+	color: #ffffff;
+	
+}
+.activHref span{
+	padding: 5px;
+}
+.nextPages:hover {
+background: #fd8505;
+	color: #ffffff;
+}
+.nextPages a:hover{
+	color: #ffffff;
+}
+.nextPages a {
+	text-decoration: none;
+	color: #fd8505;
+	padding: 5px;
+}
 /*CONTACTS*/
 .contacts{
     width: 1000px;
@@ -1014,7 +1059,6 @@ html, body{
     color: #7a7a7a;
     margin-top: 40px;
 	margin-bottom:  50px;
-   
 }
 .contacts h3{
     color: #abcc26;

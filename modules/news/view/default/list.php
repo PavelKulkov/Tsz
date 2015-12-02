@@ -25,8 +25,10 @@
                   <a href="news?id_news='.$entry['id'].'">Читать дальше</a>
               </div>
           </div>';
-			}			
+			}
+			
 			$text .='</div>';
+			$text .= 	$paginator['text'];
 /*
 	$text .= '	<div class="rule"></div>
 				<h3 class="title_blank">Новости</h3>';

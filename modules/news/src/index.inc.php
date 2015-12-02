@@ -220,7 +220,7 @@
 	
 				require_once($modules_root."general/class/Paginator.class.php");
 				if(!isset($paginatorObj)) $paginatorObj = new Paginator($request, $db, "news", $limit, $admin);
-				$paginatorObj->setStyle(SITE_THEME);
+				
 				
 				$count = $paginatorObj->getCountGlobal("WHERE is_published<>0");
 				$paginator = $paginatorObj->getPaginator($request, "news", $count);

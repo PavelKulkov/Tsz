@@ -6,8 +6,6 @@
 		for($i = 0; $i < count($mas); $i++){
 			$text .= '<img src="/templates/images/news/'.$mas[$i].'.png">';
 		}
-		
-		
 		return $text;
 	}
 	
@@ -31,9 +29,7 @@
          
               <div class="openNewsImages">';
 			 $text .= getMasImages($new['image']);
-                  /*<img src="/templates/images/news/openNews/'.$new['image'].'.png">
-                  <img src="images/openNews_2.png">*/
-              $text .='</div>
+             $text .='</div>
               <a href="news">Ко всем новостям</a>
           </div>
       </div>';
