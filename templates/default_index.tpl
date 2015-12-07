@@ -39,6 +39,10 @@
               <form class="searchForm">
                   <input type="text" placeholder="Введите название">
                   <input type="image" src="/templates/images/submit_logo.png" name="submit">
+				  <select>
+                      <option>ТСЖ "Ромашка"</option>
+                      <option>ТСЖ "Виктория"</option>
+                  </select>
               </form>
           </div>
       </div>

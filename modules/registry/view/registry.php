@@ -16,7 +16,11 @@
                <div class="listAssociationSelect">
                  <p>Выберите название ТСЖ из списка или укажите адрес на карте:</p>
                  <input name="search" type="text" id="search" placeholder="Название...">
-                </div>
+                <select>
+                      <option>ТСЖ "Ромашка"</option>
+                      <option>ТСЖ "Виктория"</option>
+              </select>
+				</div>
              </div>
 			 <div id="map" class="map" >
 			 
