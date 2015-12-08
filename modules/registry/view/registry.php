@@ -6,7 +6,7 @@
 	}
 	</style>
 	<div class="pageNavigation">
-               <p><a href="\">Главная</a> -> Список членов ассоциации</p>
+               <p><a href="/">Главная</a> -> Список членов ассоциации</p>
              </div>
 			 <div class="pageTitle">
                  <h1>Список членов Ассоциации</h1>

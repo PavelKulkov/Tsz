@@ -6,7 +6,7 @@
 	}
 	</style>
    <div class="pageNavigation">
-          <p><a href="\">Главная</a> -> Вопрос-ответ</p>
+          <p><a href="/">Главная</a> -> Вопрос-ответ</p>
       </div>
       <div class="pageTitle">
           <h1>Часто задаваемые вопросы</h1>

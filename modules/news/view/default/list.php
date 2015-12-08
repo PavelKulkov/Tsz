@@ -6,7 +6,7 @@
 	}
 	</style>
 	<div class="pageNavigation">
-                <p><a href="\">Главная</a> -> Новости</p>
+                <p><a href="/">Главная</a> -> Новости</p>
             </div>
             <div class="pageTitle">
                 <h1>Новости в сфере ТСЖ</h1>

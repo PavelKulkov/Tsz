@@ -15,7 +15,7 @@
 	}
 	</style>
 	<div class="pageNavigation">
-                 <p><a href="\">Главная</a> -> <a href="news">Новости</a> -> '.$new['title'].'</p>
+                 <p><a href="/">Главная</a> -> <a href="news">Новости</a> -> '.$new['title'].'</p>
             </div>
 	';
 	
