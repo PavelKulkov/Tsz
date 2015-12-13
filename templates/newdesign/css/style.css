@@ -66,7 +66,7 @@ html, body{
     width: 100%;
     background: #abcc26;
     min-width: 1024px;
-    height: 51px;
+    height: 50px;
 	
 	
 	
@@ -74,7 +74,7 @@ html, body{
 @-moz-document url-prefix()
 {
 	.topMenu{
-		height: 52px;
+		height: 50px;
 	}
 }
 .insideContent{
@@ -173,7 +173,7 @@ html, body{
     margin-bottom: 10px;
     text-align: center;
     color: #ffffff;
-    font-family: 'Arial';
+    font-family: 'HattoriHanzoLight';
 }
 .search h2{
     width: 350px;
@@ -268,9 +268,12 @@ html, body{
 
 /*STEPONE*/
 .stepOne{
-    width: 35%;
+	
+    /*width: 35%;*/
+	width: 489px;
+	height: 150px;
     float: left;
-    margin: 0 0 10px 40px;
+    margin: 0 10px 10px 0;
     min-width: 450px;
     display: block;
 }
@@ -279,37 +282,60 @@ html, body{
     text-align: right;
     color: #7a7a7a;
     word-wrap: break-word;
+	font-family: 'robotoregular';
+	width: 350px;
+	margin: 0 8px 0 0;
+	
 }
 .OnestepText h3{
     margin: 0 0 15px 0;
     color: #fd8505;
     font-size: 1em;
-    font-family: 'robotoregular';
+    height: 45px;
     word-wrap: break-word;
+}
+.OnestepText p{
+	font-size: 0.95em;
+	text-align: right;
 }
 .OnestepImage{
     float: right;
+	width: 122px;
+	
+	margin: 10px 0 0 0;
+	
 }
+
+
+
 /*STEPTWO*/
 .stepTwo{
-    width: 35%;
+	
+    width: 489px;
+	height: 150px;
     float: right;
-    margin: 0 40px 10px 0;
+    margin: 0 0 10px 10px;
     min-width: 450px;
     display: block;
+	
 }
 .TwostepImage{
     float: left;
     text-align: left;
+	width: 122px;
+	margin: 10px 0 0 0;
 }
 .TwostepText{
     float: right;
     color: #7a7a7a;
     word-wrap: break-word;
+	font-family: 'robotoregular';
+	width: 350px;
+	margin: 0 0 0 8px;
 }
 .TwostepText p{
-    text-align: left
-    
+    text-align: left;
+    font-size: 0.95em;
     }
 .TwostepText h3{
     margin: 0 0 15px 0;
@@ -318,6 +344,7 @@ html, body{
     font-size: 1em;
     word-wrap: break-word;
     text-align: left;
+	height: 45px;
 }
 
 /*services*/
@@ -396,6 +423,20 @@ html, body{
 
 /*word-wrap: break-word;*/
 /*lastNews*/
+.lastNewsIndex{
+	display: inline-block;
+	width: 100%;
+}
+
+
+.lastNewsIndex h1{
+    text-align: center;
+    margin: 30px 0 30px 0;
+    color: #fd8505;
+    font-family: 'robotoregular';
+}
+
+
 .lastNews{
     position: relative;
     width: 1000px; 
