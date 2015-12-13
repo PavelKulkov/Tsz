@@ -17,7 +17,7 @@
               </div>
       </div>
     <div class="header">
-      <img src="/templates/images/feader.png">
+      <a href="/"><img src="/templates/images/index_logo/logo_tczh.png"></a>
     </div>
       
     <div class="topMenu">
@@ -38,7 +38,7 @@
           <div class="formContent">
               <form class="searchForm">
                   <input type="text" placeholder="Введите название">
-                  <input type="image" src="/templates/images/submit_logo.png" name="submit">
+                  
 				  <select>
                       <option>ТСЖ "Ромашка"</option>
                       <option>ТСЖ "Виктория"</option>
@@ -74,13 +74,13 @@
               </div>
               
               <div class="OnestepImage">
-                  <img src="/templates/images/step_1.png">
+                  <img src="/templates/images/index_logo/reg.png">
               </div>
           </div>
           
           <div class="stepTwo">
               <div class="TwostepImage">
-                  <img src="/templates/images/step_2.png">
+                  <img src="/templates/images/index_logo/ok.png">
               </div>
               
               <div class="TwostepText">
@@ -103,13 +103,13 @@
               </div>
               
               <div class="OnestepImage">
-                  <img src="/templates/images/step_3.png">
+                  <img src="/templates/images/index_logo/pencil.png">
               </div>
           </div>
           
           <div class="stepTwo">
               <div class="TwostepImage">
-                  <img src="/templates/images/step_4.png">
+                  <img src="/templates/images/index_logo/pay.png">
               </div>
               
               <div class="TwostepText">

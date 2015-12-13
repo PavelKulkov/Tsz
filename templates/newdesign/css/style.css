@@ -43,12 +43,19 @@ html, body{
 
 
 .header{
-    width: 100%;
+    width: 1000px;
+	height: 135px;
+	
+	
+	margin: 0 auto;
 }
 .header img{
-    display: block;
-    width: 100%;
-    min-width: 1024px;
+   /* display: block;*/
+    width: 427px;
+	height: 125px;
+	margin: 10px 286px 0 286px;
+    /*min-width: 1024px;*/
+	
 }
 
 /*
@@ -59,7 +66,16 @@ html, body{
     width: 100%;
     background: #abcc26;
     min-width: 1024px;
-    height: 50px;
+    height: 51px;
+	
+	
+	
+}
+@-moz-document url-prefix()
+{
+	.topMenu{
+		height: 52px;
+	}
 }
 .insideContent{
     width: 1024px;
@@ -107,15 +123,9 @@ html, body{
     border-bottom: 7px solid #abcc26;
      
 }
-/*.insideContent a:focus{
-   
-    border-bottom: 7px solid #fd8505;
-}*/
 .insideContent a:hover{
-    border-left: 1px solid #fff;
-    border-right: 1px solid #fff;
+	border-bottom: 7px solid #fd8505;
 }
-
 .activMenu{
 	border-bottom: 7px solid #fd8505;
 }
@@ -176,6 +186,7 @@ html, body{
     width: 456px;
     margin: 0 auto;
     margin-top: 10px;
+	
 }
 .searchForm input[type="text"]{
     width: 388px;
@@ -185,7 +196,9 @@ html, body{
     padding: 10px 0 10px 12px;
     border: 1px solid #848DA1;
     color: #7a7a7a;
+	margin: 0 28px 0 28px;
 }
+/*
 .searchForm input[type="image"]{
     margin: 0;
     position: absolute;
@@ -193,6 +206,7 @@ html, body{
     margin: 0 0 0 6px;
     outline: none;
 }
+*/
 .searchForm select{
     width: 402px;
     border-radius: 5px;
@@ -201,7 +215,7 @@ html, body{
     padding: 10px 0 10px 12px;
     border: 1px solid #848DA1;
     color: #7a7a7a;
-    margin: 10px 0 0 0;
+    margin: 10px 0 0 26px;
 }
 
 /*INFO*/
@@ -234,7 +248,7 @@ html, body{
     display: table;
     margin: 0 auto;
     text-align: center;
-    /*TODO проверить размер на крличество контента*/
+    /*TODO проверить размер на количество контента*/
 }
 
 .joinContent{
@@ -870,7 +884,7 @@ html, body{
     color: #7a7a7a;
 }
 .questions h3{
-    font-size: 1.5em;
+    font-size: 1.1em;
     text-align: left;
     font-weight: 100;
     width: 95%;
@@ -889,12 +903,12 @@ html, body{
 .answer{
     width: 95%;
     margin: 0 2.5% 0 2.5%;
-	
 }
 .answer p{
      margin: 5px 0 0 0;
      word-wrap: break-word;
     text-align: left;
+	font-size: 0.9em;
 }
 /*
 .question{

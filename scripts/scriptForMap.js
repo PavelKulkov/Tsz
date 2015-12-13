@@ -1,4 +1,4 @@
-﻿    function getJson(url){
+﻿ function getJson(url){
         mas = [];
         i = 0;
         $(function() {
@@ -52,7 +52,7 @@
 				"<p><strong>Председатель:</strong> " + registeredHome[i].President +"</p>" +
 				"<p><strong>Сайт:</strong> <a href="+ registeredHome[i].site + "> " + registeredHome[i].site + "</a></p></div></div>",
             hintContent: '<p class=mapHeader>ТСЖ \"' + registeredHome[i].title + '\"</p>',  //Хинт для метки
-            /*balloonContentFooter: '<a href="#">' + registeredHome[i].site + '</a>'*/
+           
           }
         });
       }

@@ -17,7 +17,18 @@
 	$request = array();
 	    //Заполнение массива для отправки
 	while($row1 = mysql_fetch_array($res1)){
-		$registeredHome[] = array("id" => $row1["id"], "breadth" => $row1["breadth"], "longitude" => $row1["longitude"], "logo" => $row1["logo"], "title" => $row1["title"], "address" => $row1["address"], "phoneNumber" => $row1["phoneNumber"], "e_mail" => $row1["e_mail"], "fax" => $row1["fax"], "President" => $row1["President"], "site" => $row1["site"], "man" => $row1["man"]);
+		$registeredHome[] = array("id" => $row1["id"], 
+		                           "breadth" => $row1["breadth"], 
+								   "longitude" => $row1["longitude"], 
+								   "logo" => $row1["logo"], 
+								   "title" => $row1["title"], 
+								   "address" => $row1["address"], 
+								   "phoneNumber" => $row1["phoneNumber"], 
+								   "e_mail" => $row1["e_mail"], 
+								   "fax" => $row1["fax"], 
+								   "President" => $row1["President"], 
+								   "site" => $row1["site"], 
+								   "man" => $row1["man"]);
 	}
 	
 	//Заполнение массива для отправки
