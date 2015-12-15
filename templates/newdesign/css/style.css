@@ -938,7 +938,7 @@ html, body{
 	opacity: 0.9;
 	outline:  none;
 }
-.questions h3:hover, h3:focus{
+.questions h3:hover,.questions h3:focus{
 	background: #fd8505;
 }
 .answer{
