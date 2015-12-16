@@ -1,13 +1,13 @@
 ﻿<!DOCTYPE html>
-<html>
   <head>
-	 
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">  
 	<link rel="stylesheet" type="text/css" href="/templates/newdesign/css/style.css">
 	<title>
 	  associationTsz
 	</title>
+	<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+	<script src="../modules/search/scripts/search.js"></script>
   </head>
   <body>
   <header>
@@ -17,7 +17,7 @@
               </div>
       </div>
     <div class="header">
-      <a href="/"><img src="/templates/images/index_logo/logo_tczh.png"></a>
+      <img src="/templates/images/feader.png">
     </div>
       
     <div class="topMenu">
@@ -36,14 +36,7 @@
           <h1>Найди свое ТСЖ</h1>
           <h2>Введите название своего ТСЖ<br>или адрес</h2>
           <div class="formContent">
-              <form class="searchForm">
-                  <input type="text" placeholder="Введите название">
-                  
-				  <select>
-                      <option>ТСЖ "Ромашка"</option>
-                      <option>ТСЖ "Виктория"</option>
-                  </select>
-              </form>
+              {#area22}
           </div>
       </div>
       <div class="info">
@@ -74,13 +67,13 @@
               </div>
               
               <div class="OnestepImage">
-                  <img src="/templates/images/index_logo/reg.png">
+                  <img src="/templates/images/step_1.png">
               </div>
           </div>
           
           <div class="stepTwo">
               <div class="TwostepImage">
-                  <img src="/templates/images/index_logo/ok.png">
+                  <img src="/templates/images/step_2.png">
               </div>
               
               <div class="TwostepText">
@@ -103,13 +96,13 @@
               </div>
               
               <div class="OnestepImage">
-                  <img src="/templates/images/index_logo/pencil.png">
+                  <img src="/templates/images/step_3.png">
               </div>
           </div>
           
           <div class="stepTwo">
               <div class="TwostepImage">
-                  <img src="/templates/images/index_logo/pay.png">
+                  <img src="/templates/images/step_4.png">
               </div>
               
               <div class="TwostepText">
@@ -186,6 +179,5 @@
     </div>
 
   </footer>
-	
   </body>
 </html>

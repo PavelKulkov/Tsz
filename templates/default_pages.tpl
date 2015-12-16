@@ -7,11 +7,11 @@
 	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 	<script src="/scripts/jquery.js"></script>
 	<script src="/scripts/jquery-ui.js"></script>
-	<script src="/scripts/scriptForMap.js"></script>
+	<script src="/scripts/jquery-ui.min.js"></script>
 	<script src="/scripts/accordion.js"></script>
 	
-	
-	
+	<script src="/scripts/scriptForMap.js"></script>
+	<script src="/scripts/activMenu.js"></script>
 	
 	
 	
@@ -28,7 +28,7 @@
               </div>
       </div>
     <div class="header">
-      <a href="/"><img src="/templates/images/index_logo/logo_tczh.png"></a>
+      <img src="/templates/images/feader.png">
     </div>
       
     <div class="topMenu">
@@ -39,7 +39,7 @@
 
   </header>
 	<div class="content">
-	    {#content}
+		{#content}
 	</div>
 	</div>
 	<footer>

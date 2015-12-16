@@ -43,19 +43,12 @@ html, body{
 
 
 .header{
-    width: 1000px;
-	height: 135px;
-	
-	
-	margin: 0 auto;
+    width: 100%;
 }
 .header img{
-   /* display: block;*/
-    width: 427px;
-	height: 125px;
-	margin: 10px 286px 0 286px;
-    /*min-width: 1024px;*/
-	
+    display: block;
+    width: 100%;
+    min-width: 1024px;
 }
 
 /*
@@ -67,15 +60,6 @@ html, body{
     background: #abcc26;
     min-width: 1024px;
     height: 50px;
-	
-	
-	
-}
-@-moz-document url-prefix()
-{
-	.topMenu{
-		height: 50px;
-	}
 }
 .insideContent{
     width: 1024px;
@@ -123,9 +107,15 @@ html, body{
     border-bottom: 7px solid #abcc26;
      
 }
+/*.insideContent a:focus{
+   
+    border-bottom: 7px solid #fd8505;
+}*/
 .insideContent a:hover{
-	border-bottom: 7px solid #fd8505;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
 }
+
 .activMenu{
 	border-bottom: 7px solid #fd8505;
 }
@@ -173,7 +163,7 @@ html, body{
     margin-bottom: 10px;
     text-align: center;
     color: #ffffff;
-    font-family: 'HattoriHanzoLight';
+    font-family: 'Arial';
 }
 .search h2{
     width: 350px;
@@ -186,7 +176,6 @@ html, body{
     width: 456px;
     margin: 0 auto;
     margin-top: 10px;
-	
 }
 .searchForm input[type="text"]{
     width: 388px;
@@ -196,9 +185,7 @@ html, body{
     padding: 10px 0 10px 12px;
     border: 1px solid #848DA1;
     color: #7a7a7a;
-	margin: 0 28px 0 28px;
 }
-/*
 .searchForm input[type="image"]{
     margin: 0;
     position: absolute;
@@ -206,7 +193,6 @@ html, body{
     margin: 0 0 0 6px;
     outline: none;
 }
-*/
 .searchForm select{
     width: 402px;
     border-radius: 5px;
@@ -215,7 +201,7 @@ html, body{
     padding: 10px 0 10px 12px;
     border: 1px solid #848DA1;
     color: #7a7a7a;
-    margin: 10px 0 0 26px;
+    margin: 10px 0 0 0;
 }
 
 /*INFO*/
@@ -248,7 +234,7 @@ html, body{
     display: table;
     margin: 0 auto;
     text-align: center;
-    /*TODO проверить размер на количество контента*/
+    /*TODO проверить размер на крличество контента*/
 }
 
 .joinContent{
@@ -268,12 +254,9 @@ html, body{
 
 /*STEPONE*/
 .stepOne{
-	
-    /*width: 35%;*/
-	width: 489px;
-	height: 150px;
+    width: 35%;
     float: left;
-    margin: 0 10px 10px 0;
+    margin: 0 0 10px 40px;
     min-width: 450px;
     display: block;
 }
@@ -282,60 +265,37 @@ html, body{
     text-align: right;
     color: #7a7a7a;
     word-wrap: break-word;
-	font-family: 'robotoregular';
-	width: 350px;
-	margin: 0 8px 0 0;
-	
 }
 .OnestepText h3{
     margin: 0 0 15px 0;
     color: #fd8505;
     font-size: 1em;
-    height: 45px;
+    font-family: 'robotoregular';
     word-wrap: break-word;
-}
-.OnestepText p{
-	font-size: 0.95em;
-	text-align: right;
 }
 .OnestepImage{
     float: right;
-	width: 122px;
-	
-	margin: 10px 0 0 0;
-	
 }
-
-
-
 /*STEPTWO*/
 .stepTwo{
-	
-    width: 489px;
-	height: 150px;
+    width: 35%;
     float: right;
-    margin: 0 0 10px 10px;
+    margin: 0 40px 10px 0;
     min-width: 450px;
     display: block;
-	
 }
 .TwostepImage{
     float: left;
     text-align: left;
-	width: 122px;
-	margin: 10px 0 0 0;
 }
 .TwostepText{
     float: right;
     color: #7a7a7a;
     word-wrap: break-word;
-	font-family: 'robotoregular';
-	width: 350px;
-	margin: 0 0 0 8px;
 }
 .TwostepText p{
-    text-align: left;
-    font-size: 0.95em;
+    text-align: left
+    
     }
 .TwostepText h3{
     margin: 0 0 15px 0;
@@ -344,7 +304,6 @@ html, body{
     font-size: 1em;
     word-wrap: break-word;
     text-align: left;
-	height: 45px;
 }
 
 /*services*/
@@ -423,20 +382,6 @@ html, body{
 
 /*word-wrap: break-word;*/
 /*lastNews*/
-.lastNewsIndex{
-	display: inline-block;
-	width: 100%;
-}
-
-
-.lastNewsIndex h1{
-    text-align: center;
-    margin: 30px 0 30px 0;
-    color: #fd8505;
-    font-family: 'robotoregular';
-}
-
-
 .lastNews{
     position: relative;
     width: 1000px; 
@@ -925,7 +870,7 @@ html, body{
     color: #7a7a7a;
 }
 .questions h3{
-    font-size: 1.1em;
+    font-size: 1.5em;
     text-align: left;
     font-weight: 100;
     width: 95%;
@@ -938,18 +883,18 @@ html, body{
 	opacity: 0.9;
 	outline:  none;
 }
-.questions h3:hover,.questions h3:focus{
+.questions h3:hover, h3:focus{
 	background: #fd8505;
 }
 .answer{
     width: 95%;
     margin: 0 2.5% 0 2.5%;
+	
 }
 .answer p{
      margin: 5px 0 0 0;
      word-wrap: break-word;
     text-align: left;
-	font-size: 0.9em;
 }
 /*
 .question{
