@@ -4,7 +4,7 @@
                
 				  <select class="listTsz">';
 	foreach($listTsz as $Tsz){
-			$text .='<option>'.$Tsz['title'].'</option>';
+			$text .='<option id="'.$Tsz['id'].'">'.$Tsz['title'].'</option>';
 			};
     $text .= '         
                   </select>

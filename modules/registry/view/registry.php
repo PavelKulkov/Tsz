@@ -17,7 +17,7 @@
 					<input type="text" placeholder="Введите название вашего ТСЖ" class="nameTsz"  autocomplete="off">
 					<select class="listTsz">';
 	foreach($list as $Tsz){
-		$text .='<option>'.$Tsz['title'].'</option>';
+		$text .='<option  id="'.$Tsz['id'].'">'.$Tsz['title'].'</option>';
 	};
 						
     $text .= '      </select>
@@ -90,21 +90,19 @@
 			   
 			   
 			   <div class="modalWindow">
-    <div class="closeModalWindow">
-       <div class="closeModalWindowImg"></div>
-    </div>
-    <div class="headerModalWindow">
-        
-    </div>
-    <div class="contentModalWindow">
-        <div class="logoModalWindow">
-            
-        </div>
-        <div class="textModalWindow">
+                   <div class="closeModalWindow">
+                       <div class="closeModalWindowImg"></div>
+                   </div>
+                   <div class="headerModalWindow">
+                   </div>
+                   <div class="contentModalWindow">
+                       <div class="logoModalWindow">
+                       </div>
+                       <div class="textModalWindow">
            
-        </div>
-    </div>
-</div>      
+                       </div>
+                   </div>
+                </div>      
 			   
 			   ';
 							

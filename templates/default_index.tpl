@@ -8,6 +8,8 @@
 	</title>
 	<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
 	<script src="../modules/search/scripts/search.js"></script>
+	<script src="/scripts/scriptForJson.js"></script>
+	<script src="/scripts/scriptForWindow.js"></script>
   </head>
   <body>
   <header>
@@ -167,6 +169,19 @@
       </div>
            {#area24}
       </div>
+	  
+	   <!--Всплывающее окно-->
+  <div class="modalWindow">
+      <div class="closeModalWindow">
+          <div class="closeModalWindowImg"></div>
+      </div>
+      <div class="headerModalWindow"></div>
+      <div class="contentModalWindow">
+          <div class="logoModalWindow"></div>
+          <div class="textModalWindow"></div>
+      </div>
+   </div> 
+	  
   </div>
   
 	<footer>
@@ -179,5 +194,9 @@
     </div>
 
   </footer>
+  
+ 
+  
+  
   </body>
 </html>

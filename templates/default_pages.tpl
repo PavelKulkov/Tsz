@@ -10,7 +10,10 @@
 	<script src="/scripts/jquery-ui.min.js"></script>
 	<script src="/scripts/accordion.js"></script>
 	<script src="../modules/search/scripts/search.js"></script>
+	<script src="/scripts/scriptForJson.js"></script>
 	<script src="/scripts/scriptForMap.js"></script>
+	<script src="/scripts/scriptForWindow.js"></script>
+	
 	<script src="/scripts/activMenu.js"></script>
 	
 	
