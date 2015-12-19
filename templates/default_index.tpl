@@ -36,7 +36,7 @@
           <h1>Найди свое ТСЖ</h1>
           <h2>Введите название своего ТСЖ<br>или адрес</h2>
           <div class="formContent">
-              {#area22}
+              {#area4}
           </div>
       </div>
       <div class="info">

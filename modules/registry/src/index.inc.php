@@ -6,8 +6,7 @@
 	
 	if ($request->hasValue('id_tsz')) {
 			$id_tsz = $request->getValue('id_tsz');
-			if ($id_tsz || $id_tsz == 0) $tsz = $registry->getTsz($id_tsz);
-			
+			if ($id_tsz || $id_tsz == 0) $tsz = $registry->getTsz($id_tsz);	
 		}
 	
 	$url = "?";

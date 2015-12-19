@@ -13,18 +13,17 @@
              </div>
 			 
 			 <div class="listAssociation">
-               <div class="listAssociationSelect">
-                 <p>Выберите название ТСЖ из списка или укажите адрес на карте:</p>
-                 <input name="search" type="text" id="search" placeholder="Название...">
-                <select>
-                      <option>ТСЖ "Ромашка"</option>
-                      <option>ТСЖ "Виктория"</option>
-              </select>
-				</div>
-             </div>
+               <form class="searchForm">
+					<input type="text" placeholder="Введите название вашего ТСЖ" class="nameTsz"  autocomplete="off">
+					<select class="listTsz">';
+	foreach($list as $Tsz){
+		$text .='<option>'.$Tsz['title'].'</option>';
+	};
+						
+    $text .= '      </select>
+				</form> 
+			</div>
 			 <div id="map" class="map" >
-			 
-			  
              </div>';
     function get_mas($list, $index){
 		$i =0;
