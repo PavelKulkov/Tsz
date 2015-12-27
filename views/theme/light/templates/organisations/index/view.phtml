@@ -1,0 +1,112 @@
+
+	<span class="label label-info pull-right"><?php echo $organisation['type_item']['name']; ?></span>
+				<p><a href="/organisations?operation=view&id_organisation=<?php echo $organisation['id']; ?>"><?php echo $organisation['c_name']; ?></a></p>
+				<p><small>Руководитель: <?php echo $organisation['c_head']; ?></small></p>
+				<p><small><a href="<?php echo $organisation['c_web_site']; ?>">Официальный сайт</a></small></p>
+				<p>Контактная информация: <?php echo $organisation['c_contacts']; ?></p>
+				<p>Автоинформатор: <?php echo ( !empty($organisation['autoinformer']) ? $organisation['autoinformer']: 'Не указано' ); ?></p>
+				<p align="right">
+					<a class="btn btn-success"	href="/organisations">К списку органиаций<i class="icon-chevron-right icon-white"></i></a>
+				</p>
+	
+	<?php if (isset($parent_entry_id)): ?>
+		<p>Головная организация:</p>
+		<a href=/organisations?operation=view&id_organisation=<?php echo $parent_entry_id['id']; ?>><?php echo $parent_entry_id['c_name']; ?></a>
+	<?php endif; ?>
+	
+	<?php $active_tab_created = false; ?>
+
+	<!-- Tabs -->
+	<ul class="nav nav-tabs">
+	<?php if ($service_count !=0): ?>
+		<li class="active">
+			<a href="#services" data-toggle="tab">
+				Оказывает услуги <span class="badge badge-success"><?php echo $service_count; ?></span>
+			</a>
+		</li>
+		<?php $active_tab_created = true; ?>
+	<?php endif; ?>
+	
+	<?php if ($child_organisations_count != 0): ?>
+		<?php if ($active_tab_created): ?>
+			<li><a href="#child_org" data-toggle="tab">Подведомственные организации
+		<?php else: ?>
+			<li class="active"><a href="#child_org" data-toggle="tab">Подведомственные организации
+		<?php endif; ?>
+		<span class="badge badge-success"><?php echo $child_organisations_count; ?></span>
+				</a>
+			</li>
+		<?php $active_tab_created = true; ?>
+	<?php endif; ?>
+	
+	</ul>
+	
+	<!-- tabs content  -->
+<?php $active_pane_created = false; ?>
+	<div class="tab-content">
+	
+	<?php if ($service_count != 0): ?>
+		<div class="tab-pane active" id="services">
+		<?php if(isset($service_paginator)): ?>
+			<?php echo $paginator['text']; ?>
+			
+			<?php foreach ($service_list as $service): ?>
+				<div class="accordion-group">
+					<div class="accordion-heading">
+						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse<?php echo $service['id']; ?>"><?php echo $service['s_name']; ?></a>
+					</div>
+								
+					<div id="collapse<?php echo $service['id']; ?>" class="accordion-body collapse">
+						<div class="accordion-inner">
+							<div>Короткое наименование: <?php echo $service['s_short_name']; ?></div>
+							<div>Административный регламент: <?php echo $service['s_reglament_name']; ?></div>
+								<?php if (isset($service['subservices']) && !empty($service['subservices'])): ?>
+									<ul>
+									<?php foreach ($service['subservices'] as $subservice): ?>
+										<li><?php echo $subservice['s_short_name']; ?></li>
+										<a class="btn btn-success" href="/services?operation=subservice&subservice_id=<?php echo $subservice['id']; ?>">Подробнее<i class="icon-chevron-right icon-white"></i></a>
+										<?php if ($subservice['s_digital_form'] == 1 or $subservice['s_digital_form'] == 2): ?>
+											<a class="btn btn-success" href="/forms?subservice_id=<?php echo $subservice['id']; ?>">Подать заявление<i class="icon-chevron-right icon-white"></i></a>
+										<?php endif; ?>
+									<?php endforeach; ?>
+									</ul>
+								<?php endif; ?>
+						</div>
+					</div>
+				</div>
+			<?php endforeach; ?>
+			
+			
+			<?php echo $paginator['text'];
+					$active_pane_created = true; ?>
+		<?php endif; ?>
+		</div>
+	<?php endif; ?>
+
+
+	<?php if ($child_organisations_count != 0): ?>
+		<?php if (!$active_pane_created): ?>
+			<div class="tab-pane active" id="child_org">
+		<?php else: ?>
+			<div class="tab-pane" id="child_org">
+		<?php endif; ?>
+		
+		<?php echo $paginator['text']; ?>
+		
+		<?php foreach ($organisation_list as $organisation): ?>		
+			<article class="well">
+				<span class="label label-info pull-right"><?php echo $organisation['type_item']['name']; ?></span>
+				<p><a href="/organisations?operation=view&id_organisation=<?php echo $organisation['id']; ?>"><?php echo $organisation['c_name']; ?></a></p>
+				<p><small>Руководитель: <?php echo ($organisation['c_head']) ? $organisation['c_head'] : ' --- ' ; ?></small></p>
+				<p><small><a href="http://<?php echo $organisation['c_web_site']; ?>">Официальный сайт</a></small></p>
+				<p>Контактная информация: <?php echo $organisation['c_contacts']; ?></p>
+				<p align="right">
+					<a class="btn btn-success" href="/organisations?operation=view&id_organisation=<?php echo $organisation['id']; ?>">Подробнее<i class="icon-chevron-right icon-white"></i></a>
+				</p>
+			</article>
+		<?php endforeach; ?>
+		
+		<?php echo $paginator['text']; ?>
+		
+			</div>
+	<?php endif; ?>

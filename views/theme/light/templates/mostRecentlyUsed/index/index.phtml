@@ -1,0 +1,46 @@
+<?php if (!empty($services)): ?>
+	Часто используемые услуги: <br><br>
+	<div class="accordion" id="accordion3">
+
+	<?php foreach ($services as $service): ?>
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="services?subservice_digital_form#collapse<?php echo $service['service_id']; ?>">
+								<?php echo $service['service_name']; ?>
+							</a>
+	    				</div>
+						<div id="collapse<?php echo $service['service_id']; ?>" class="accordion-body collapse">
+						<?php if (isset($service['subservice']) && is_array($service['subservice'])): ?>
+							<div class="accordion-inner">
+								<div>Короткое наименование: <?php echo $service['s_short_name']; ?></div>			
+								<?php if ($service['reglament']): ?>
+								<div>Административный регламент: 
+									<!-- <a href="/scripts/import/files.php?reglament_id='.$service['reglament']['id'].'">'.$service['reglament'].'</a> -->
+									<a href="#"><?php echo $service['reglament']['reglament_name']; ?></a>
+								</div>
+								<?php endif; ?>
+								<ul>
+								<?php foreach ($service['subservice'] as  $sub): ?>
+									<li><?php echo $sub['s_short_name']; ?></li>
+										<a class="btn btn-success"	href="/services?operation=subservice&subservice_id=<?php echo $sub['id']; ?>">Подробнее<i class="icon-chevron-right icon-white"></i></a>
+										<?php if ($sub['s_digital_form'] == 1 || $sub['s_digital_form'] == 2): ?>
+										<a class="btn btn-success"	href="/forms?subservice_id=<?php echo $sub['id']; ?>">Подать заявление<i class="icon-chevron-right icon-white"></i></a>
+										<?php endif; ?>
+								<?php endforeach; ?>
+								</ul>
+							</div>
+						<?php endif; ?>
+						</div>
+					</div>
+	<?php endforeach; ?>
+	</div>
+<?php endif; ?>
+	
+	
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#accordion2").collapse({	
+			toggle: true
+		});
+	});
+</script>

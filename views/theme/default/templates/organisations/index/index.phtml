@@ -1,0 +1,89 @@
+
+<div class="select_district">Выбрать район:</div>
+	<form id="organisationsType" name="form-search" class="form-search" action="/organisations" method="POST">
+		<select class="district" name=municipal_district id="districts">
+			<option value="" selected>Все районы</option>
+			<?php foreach ($municipal_districts as $entry): ?>
+			<option value="<?php echo $entry['id']; ?>" <?php echo ($municipal_district == $entry['id']) ? ' selected' : ''; ?>> <?php echo $entry['name']; ?></option>
+			<?php endforeach; ?>
+		</select>
+	</form>
+	
+	<div class="cl"></div>
+	<div class="rule"></div>
+				
+	<form id="letters" name="letters" action="/organisations" method="POST">
+		<input name="letter" type="hidden" />
+				
+		<ul class="abc">
+		<?php foreach ($letters_rus as $letter): ?>
+			<li class="letter" id="letter_<?php echo $letter; ?>"><a href="#<?php echo $letter ?>" onclick="org_letter_search(this);"><?php echo $letter; ?></a></li>
+		<?php endforeach; ?>
+		</ul>
+	</form>
+	
+	<div class="cl"></div>
+	
+<?php if ($organisations): ?>
+	<?php foreach ($organisations as $entry): ?>		
+		<div class="list_services">
+			<div class="symbol"></div>
+			<div class="service"><a href="/organisations?operation=view&id_organisation=<?php echo $entry['id']; ?>"><?php echo $entry['c_name']; ?></a></div>
+			<div class="cl"></div>
+			<?php if (count($entry['service'])  > 0): ?>
+				<div class="show_list">
+				<?php for ($i = 0; $i < count($entry['service']); $i++): ?>
+					<div class="show_list_txt">
+						<a href="services?service_id=<?php echo $entry['service'][$i]['id']; ?>"><?php echo $entry['service'][$i]['s_name']; ?></a>
+					</div>			
+				<?php endfor; ?>
+				</div>
+			<?php endif; ?>
+		</div>
+	<?php endforeach; ?>
+	
+	<?php echo $paginator['text']; ?>
+<?php else: ?>
+	<br />По вашему запросу ничего не найдено.
+<?php endif; ?>
+
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		<?php if(isset($_POST['letter'])): ?>
+	
+			var tab = $("form#letters ul.abc li#letter_<?php echo $_POST['letter']; ?>");
+			var tab_text =  $(tab).children('a').text();
+			$(tab).html(tab_text).addClass('current');
+		<?php endif; ?>
+	
+		$('div#content_content').removeClass().addClass('content_org');
+		$('div#content_center').removeClass().addClass('center_org');
+		$('div#content_navigation').html('<a href="/">Главная</a>  / Ведомства и организации');
+		$('div#content_line').removeClass().addClass('pink_line');
+	
+	});
+
+	$('select#districts').change(function(){
+		
+		if ( this.value == '' ) {						
+			window.location.href = '/organisations';
+		} else {
+			$('form#organisationsType').submit();
+		}
+	});
+	
+	function org_letter_search(el) {
+		$('input[name=letter]').val($(el).text());
+		
+		// Определяем текст в кликнутой ссылке и текст в текущей вкладке, чтобы поменять местами. 
+		var link_text = $(el).text();
+		var current_link = $('form#letters ul.abc li.current');   
+		var prev_link_text = current_link.text();
+		
+		current_link.removeClass('current').html('<a href="#"' + prev_link_text + ' onclick="org_letter_search(this);" > ' + prev_link_text + '</a>');
+		$(el).parent('li').text(link_text).addClass('current');
+		$('form[name=letters]').attr('action', 'organisations?letter=' + link_text);
+		$('form[name=letters]').submit();
+	};
+</script>

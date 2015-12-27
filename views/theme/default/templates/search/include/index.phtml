@@ -1,0 +1,11 @@
+
+
+<form id="search-block-form" class="form-search" action="/search" method="GET" onsubmit="if(getElementById('search_string').value == '') {alert('Поле поиска не может быть пустым!'); return false; }">
+<input type="hidden" name="news_flag" value="true" />
+<input type="hidden" name="service_flag" value="true" />
+<input type="hidden" name="organisation_flag" value="true" />
+	<div class="form-item">
+		<input type="text" name="search_string" value="" placeholder="Поиск"  size="45" maxlength="100" class="search-query"  id="search_string" />
+	</div>
+
+</form>

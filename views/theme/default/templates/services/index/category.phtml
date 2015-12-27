@@ -1,0 +1,66 @@
+<?php
+	//отображение жизненных ситуаций
+	$text .= '<input type="text" onkeyup="changeText(this)"/>
+				<div id="data">
+	  				<table id="situation" border="0">';
+	$count = 0;
+	for ($i=0; $i<count($life_situations); $i++){
+		if($count % 3 == 0){
+	    	$text .= '	<tr>';
+	    }
+	
+	    $text .= '			<td>
+	    						<a href="/services?category='.$life_situations[$i]["id"].'">'.$life_situations[$i]["name"].'</a>
+	    						<span class="badge badge-success" id="news_badge">'.$life_situations[$i]["count"].'</span>
+	    					</td>';
+	    
+	    if($count % 3 == 2){
+	    	$text .= '	</tr>';
+	    }
+		
+	    $count++;
+	}
+	
+	$text .= '		</table>
+				</div>';
+	
+	$text .= '	<script>
+					var situation = document.getElementById("situation");
+				  	data = new Array();
+				  	var count = 0;
+				  	for(var i=0;i<situation.rows.length;i++) {
+					    for(var j=0;j<situation.rows[i].cells.length;j++){
+				      		data[count] = situation.rows[i].cells[j].innerHTML;
+				      		count++;    
+				    	}
+				  	}
+	  
+	
+				 	 function changeText(source){
+				    	 if(source.value.length>2 || source.value.length==0){
+					     	var table = \'<table id="situation" border="0">\';
+				    	    var count = 0;
+				        	for(var i=0; i<data.length; i++) {
+				          		var from  = data[i].toLowerCase();
+				          		var query = source.value.toLowerCase();
+				          		if (from.indexOf(query)>=0 || query=="") {
+				            		if(count % 3 == 0){
+				              			table += "<tr>";
+				            		}
+				            		table += "<td>" + data[i] + "</td>";
+				            		if(count % 3 == 2){
+				              			table += "</tr>";
+				            		}
+						            count++;
+					  			}
+							}
+				        	table +="</table>"; 
+				        	if(count==0){
+								$("#data").html("Извините ничего не найдено для <b>"+ source.value + "</b>!");
+				        	}else{
+				          		var div = document.getElementById("data");
+				          		div.innerHTML = table;
+				        	}
+				     	}
+				  	}
+				</script>';

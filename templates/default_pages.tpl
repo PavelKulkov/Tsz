@@ -13,6 +13,10 @@
 	<script src="/scripts/scriptForJson.js"></script>
 	<script src="/scripts/scriptForMap.js"></script>
 	<script src="/scripts/scriptForWindow.js"></script>
+	<script type="text/javascript" src="/scripts/addDoc.js"></script>
+    <script type="text/javascript" src="/scripts/openCloseWindow.js"></script>
+	<script type="text/javascript" src="/scripts/sendId.js"></script>
+	<script type="text/javascript" src="/scripts/getGroupOrDoc.js"></script>
 	
 	<script src="/scripts/activMenu.js"></script>
 	

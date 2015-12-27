@@ -1,13 +1,14 @@
 <?php
 	require_once("../documentation/class/Documentation.class.php");
-	require_once("../../config.inc.php");
-	require_once("../../config_system.inc.php");
-	
+	require_once("../../../config.inc.php");
+	require_once("../../../config_system.inc.php");
+	echo 222;
+	exit;
 	$uploaddir = $_SERVER['DOCUMENT_ROOT']."/files/Docs/";
-	$uploadfile = $uploaddir . basename($_FILES['doc']['name']);
+	$uploadfile = $uploaddir . basename($_FILES['uploaded_file_add_object']['name']);
 
 	
-	move_uploaded_file($_FILES['doc']['tmp_name'], $uploadfile);
+	move_uploaded_file($_FILES['uploaded_file_add_object']['tmp_name'], $uploadfile);
 	
 	$db = new DB();
 	DBRegInfo::initParams($guestUser[0],
@@ -23,9 +24,9 @@
 	  }
 	if(!isset($documentation)) $documentation = new Documentation($request, $db);
 	
-	$newDoc = array('title'=>$_POST['title'],'date'=>date("Y-m-d H:i:s"),'name'=>$_FILES['doc']['name']);
+	$newDoc = array('title'=>$_POST['title'],'date'=>date("Y-m-d H:i:s"),'name'=>$_FILES['uploaded_file_add_object']['name']);
 	$documentation ->save($newDoc);
 	
 	$db->disconnect();
-	header("Location:/documentation");
+	//header("Location:/documentation");
 ?>

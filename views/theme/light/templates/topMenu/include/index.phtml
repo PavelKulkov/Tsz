@@ -1,0 +1,21 @@
+<table id="topMenu">
+	<tr>
+	
+	<?php if($topMenuList['menu_part'] && count($topMenuList['menu_part']) > 0): ?>
+	<?php foreach ($topMenuList['menu_part'] as $item): ?>
+		<td><a href="<?php echo $item['url']; ?>"><?php echo $item['name']; ?></a></td>
+	<?php endforeach; ?>
+	<?php endif; ?>
+	
+	<?php if(isset($topMenuList['link']) && count($topMenuList['link']) > 0): ?>
+	<?php foreach ($topMenuList['link'] as $item): ?>
+		<?php if(!empty($item)): ?>			
+		<!-- 
+			<div class="enter" <?php // echo ( (isset($_SESSION)&&isset($_SESSION['login'])) ? 'style="margin-left: 0px;"' : '' ); ?> style="float: right; margin-left: 20px; margin-top: 1px;"><?php echo $item; ?></div>
+		 -->
+			<div class="enter" style="float: right; margin-left: 20px; margin-top: 1px;"><?php echo $item; ?></div>			
+		<?php endif; ?>
+	<?php endforeach; ?>		
+	<?php endif; ?>
+	</tr>
+</table>

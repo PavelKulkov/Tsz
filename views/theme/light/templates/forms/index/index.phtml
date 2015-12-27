@@ -1,0 +1,5 @@
+<?php if(!(isset($form) && isset($form['content_'.SITE_THEME]))): ?>
+	Не найдено формы для данной услуги! Обратитесь в службу поддержки!
+<?php else: ?>
+	<?php echo $form['content_'.SITE_THEME]; ?>
+<?php endif; ?>

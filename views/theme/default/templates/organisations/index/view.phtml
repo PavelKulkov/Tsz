@@ -1,0 +1,115 @@
+
+<div class="left">
+	<ul class="left_menu">
+		<li id="link_block_services"><a class="menu_link" onclick="info_block_change(this);" >Услуги</a></li>
+		<li id="link_block_contacts"><a class="menu_link" onclick="info_block_change(this);">Адреса и контакты</a></li>
+		<!--
+		 
+		<li id="link_block_places"><a class="menu_link" onclick="info_block_change(this);">Места обращения</a></li>
+
+		-->
+		<li class="current" id="link_block_organisations">Подведомственные организации</li>
+	</ul>
+</div>
+
+<div class="right">
+	<?php if (isset($organisation['parent_entry'])): ?>
+		<div style="margin-bottom: 5px; font-size: 12px;"><a href="/organisations?operation=view&id_organisation=<?php echo $organisation['parent_entry']['id']; ?>" target="_blank" ><?php echo $organisation['parent_entry']['c_name']; ?></a></div>			
+	<?php endif;?>
+	<h3><?php echo $organisation['c_name']; ?></h3>
+	<table class="info">
+		<tr>
+			<td class="first">Руководитель организации</td>
+			<td><?php echo $organisation['c_head']; ?></td>
+		</tr>						
+		<tr>
+			<td class="first">Вэб-сайт</td>
+			<td>
+				<?php echo ( ($organisation['c_web_site'] == 'нет') ? 'нет' : '<a href="'.$organisation['c_web_site'].'" target="_blank">'.$organisation['c_web_site'].'</a>' ); ?>
+			</td>
+		</tr>						
+		<tr>
+			<td class="first">Электронная почта</td>
+			<td><?php echo $organisation['c_email']; ?></td>
+		</tr>						
+		<tr>
+			<td class="first">Справочный телефон</td>
+			<td><?php echo $organisation['c_contacts']; ?></td>
+		</tr>						
+		<tr>
+			<td class="first">Режим работы</td>
+			<td>Не указано</td>
+		</tr>						
+		<tr>
+			<td class="first">Автоинформатор</td>
+			<td><?php echo ( !empty($output_params['organisation']['autoinformer']) ? $output_params['organisation']['autoinformer']: 'Не указано' ); ?></td>
+		</tr>
+	</table>
+			
+	<div class="info_block" id="info_block_organisations">
+		<?php if ($child_organisations_count != 0): ?>
+		<div class="info_title">Подведомственные организации</div>
+		<?php foreach ($organisation_list as $child_entry): ?>	
+			<div class="info_txt service"><a href="/organisations?operation=view&id_organisation=<?php echo $child_entry['id']; ?>"><?php echo $child_entry['c_name']; ?></a></div>
+		<?php endforeach; ?>
+	
+		<?php else: ?>
+			<div class="info_title">Подведомственные организации</div><br />Отсутствуют.
+		<?php endif; ?>
+	</div>
+	
+	
+	<div class="info_block" id="info_block_contacts">			
+		<div class="info_title">Адреса и контакты</div>		
+		<div class="info_txt contacts">
+			Адрес: <?php echo ( !empty($output_params['organisation']['c_adress']) ? $output_params['organisation']['c_adress'] : 'Нет' ); ?><br />
+			Телефоны: <?php echo ( !empty($output_params['organisation']['c_contacts']) ? $output_params['organisation']['c_contacts'] : 'Нет' ); ?>
+		</div>					
+	</div>
+	
+	
+				
+	<div class="info_block" id="info_block_services">
+		<?php if ($service_count != 0): ?>
+			<div class="info_title ">Услуги</div>
+			<?php foreach ($service_list as $service_entry): ?>
+				<div class="list_services">
+					<div class="symbol "></div>						
+					<div class="info_txt service"><a href="/services?operation=view&service_id=<?php echo $service_entry['id']; ?>"><?php echo $service_entry['s_name'] ?></a></div>
+					<div class="cl"></div>
+					<?php if (isset($service_entry['subservices']) && !empty($service_entry['subservices'])): ?>
+						<div class="show_list">
+						<?php foreach ($service_entry['subservices'] as $subservice_entry): ?>
+							<div class="show_list_txt2"><a href="/services?operation=subservice&subservice_id=<?php echo $subservice_entry['id']; ?>"><?php echo $subservice_entry['s_name']; ?></a></div>
+						<?php endforeach; ?>
+						</div>
+					<?php endif; ?>
+				</div>
+			<?php endforeach; ?>
+	
+		<?php endif; ?>
+	</div>
+	<div class="cl"></div>
+</div>
+
+	
+	
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('div.info_block').hide();
+		$('div#info_block_organisations').show();
+		
+		
+		
+		$('div#content_content').removeClass().addClass('content_org');
+		$('div#content_center').removeClass().addClass('center_org');
+		$('div#content_navigation').html("<a href=\"/\">Главная</a>  / <a href=\"/organisations\">Ведомства и организации</a> / <?php echo $organisation['c_name']; ?>");
+		$('div#content_line').removeClass().addClass('pink_line');
+		
+	});
+</script>
+<?php  
+	include VIEWS_ROOT.'/theme/default/includes/info_block_change.phtml';
+?>
+	
+	

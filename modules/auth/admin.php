@@ -1,21 +1,20 @@
 <?php
-require_once("../../config.inc.php");
-require_once("../../config_system.inc.php");
-$request = new HttpRequest();
-$response = new HttpResponse();
+session_start();
 
-$secureFile = new SecureFile();
-$authHome = new AuthHome($secureFile);
-$authHome->initAdminConnection($request, $guestUser);
+if($_GET['do'] == 'logout'){
+	unset($_SESSION['admin']);
+	session_destroy();
+	header("Location: /");
+	exit;
+}
+$admin = 'admin';
+$pass = 'a029d0df84eb5549c641e04a9ef389e5';
 
-$modules_root = "../../".$modules_root;
-$template_dir = "../../".$template_dir;
-$db = $authHome->getCurrentDBConnection();
-$log = new Logger($db);
-$moduleHome = new ModuleHome($modules_root,$db);
-$domenHome = new DomenHome($request,$db);
-$templateHome = new TemplateHome($db);
 
-include("../adminPanel/adminPanel.html");
-$db->disconnect();
+	if($admin == $_POST['login'] && $pass == md5($_POST['password'])){
+		$_SESSION['admin'] = $admin;
+		header("Location: /");
+		exit;
+	}else echo '<p>Логин или пароль неверны!</p>';
+
 ?>
