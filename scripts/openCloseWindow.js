@@ -11,6 +11,15 @@ $(document).ready(function(){
 		        //var id = $(this).attr('id');
 		        $(idWindow).css("display", "block");
 		    }
+			
+			var width = jQuery(idWindow).width();
+           var height = jQuery(idWindow).height();
+        
+           var left = (screen.width - width)/2;
+           var top = (screen.height - height)/2;
+        
+           $(idWindow).css({"left": left + "px", "top": top + "px" });
+			
 	    //});
 	}
 	

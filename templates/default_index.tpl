@@ -19,7 +19,7 @@
               </div>
       </div>
     <div class="header">
-      <img src="/templates/images/feader.png">
+      <img src="/templates/images/index_logo/feader.png">
     </div>
       
     <div class="topMenu">

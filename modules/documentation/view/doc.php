@@ -2,9 +2,9 @@
     function get_mas($list, $index){
 		$i =0;
 		foreach ($list as $entry) {
-			if($entry['document_type'] == $index){
+			if($entry['groupOfDocs'] == $index){
 				//$mas[$i] = '<p class="documentText"><a href="#" download>'.$entry['title'].'</a>'; 
-				$mas[$i] = "<p><a href=files/Docs/".$entry['name']." download>".$entry['title']."</a></p>";
+				$mas[$i] = "<p><a href=files/Docs/".$entry['Name']." download>".$entry['title']."</a></p>";
 				$i++;
 			}
 		}
@@ -26,7 +26,12 @@
 	
 	if($_SESSION['admin']){
 		$text = '
-  <div class="content">
+		
+ <style>
+	#select_2 a{
+		border-bottom: 7px solid #fd8505;
+	}
+	</style>
       <div class="_adminHeader">
           <span class="_adminHeaderL"><p>Документы</p></span>
           <span class="_adminHeaderR">
@@ -47,7 +52,7 @@
           
 				$text .='
 					<h3 class="_adminAccordionTitle">
-						<p>'.$groups[$i]['groupOfDoc'].'<span><img src="/templates/images/select.png"></span></p>
+						<p>'.$groups[$i]['groupOfDoc'].' <span><img src="/templates/images/select.png"></span></p>
 						<span class="_adminAccordionSelectAction">
 							<a id="'.$groups[$i]['id'].'" href="#" class="_adminAddObject_"><span><img src="/templates/images/addDoc.png"></span></a>
 							<a id="'.$groups[$i]['id'].'" href="#" class="_adminEditObjectGroup_"><span ><img src="/templates/images/editDocGroup.png"></span></a>
@@ -72,9 +77,6 @@
               
           $text.='</div>
          
-          
-      
-      
        <!-- УДАЛЕНИЕ ДОКУМЕНТА/ГРУППЫ-->
       
       <div class="windowDel" id="_windowDel_">
@@ -101,7 +103,7 @@
 		 
               <div class="windowEditObjectTitle">
                   <p>Название документа</p>
-                  <input type="text" id="titleDoc" name="titleDoc" >
+                  <textarea type="text" id="titleDoc" name="titleDoc" ></textarea>
               </div>
 			  <input type="hidden" id="idDoc" name="idDoc">
               <div class="windowEditObjectContent">
@@ -135,7 +137,7 @@
 		 
               <div class="windowEditObjectTitle">
                  <p>Название группы</p>
-                  <input type="text" id="titleGroup" name="titleGroup">
+                  <textarea type="text" id="titleGroup" name="titleGroup"></textarea>
               </div>
 				  <input type="hidden" name="idGroup" id="idGroup">
               <div class="windowEditObjectContent">
@@ -172,7 +174,7 @@
 		 
               <div class="windowEditObjectTitle">
                  <p>Название документа</p>
-                  <input type="text" name="title"/>
+                  <textarea type="text" name="title"/></textarea>
               </div>
 			  <input type="hidden" name="idGroup" id="idGroupForAdd" value="">
               <div class="windowEditObjectContent">
@@ -206,7 +208,7 @@
 		 
               <div class="windowEditObjectTitle">
                  <p>Название группы</p>
-                   <input type="text" name="title"/>
+                   <textarea type="text" name="title"></textarea>
               </div>
           
               <div class="windowEditObjectContent">
@@ -230,28 +232,17 @@
               
            </form>
          
-      </div>
-
-
-      
-   
-  </div>
-  <footer>
-    <div class="footer">
-      <p>
-        (c) 2015 "Ассоциация ТСЖ" Все права защищены.<br>
-        Россия, г.Пенза, ул.Центральная 1В<br>
-        т.: 8 (8412) 23 11 25; e-mail: tczh@yandex.ru
-      </p>
-    </div>
-
-  </footer>
-    
-    ';
-		$text.= '<a href="modules/auth/admin.php?do=logout">Выход</a>';		
+      </div>';
+		$text.= '
+		<script>
+		    $(".feedbackContent").append("<a href=modules/auth/admin.php?do=logout class=adminExit>Выход</a>");	
+		    </script>';		
 		echo $text;
 		exit;
+		
 	}
+	else{
+	
 	$text	='<style>
 	#select_2 a{
 		border-bottom: 7px solid #fd8505;
@@ -313,12 +304,7 @@
                         $text .= outputMas($mas_4);  
                  $text .= ' </div>
               </div>
-          </div>';
-	
+          </div>  ';
 		echo($text);
+		}
 ?>
-							
-			
-							
-	
-				
