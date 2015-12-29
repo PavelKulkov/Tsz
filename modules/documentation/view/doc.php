@@ -238,7 +238,7 @@
 		    $(".feedbackContent").append("<a href=modules/auth/admin.php?do=logout class=adminExit>Выход</a>");	
 		    </script>';		
 		echo $text;
-		exit;
+		//exit;
 		
 	}
 	else{
