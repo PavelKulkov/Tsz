@@ -1,0 +1,46 @@
+<?php
+	/*TODO Если при редактировании не указывают документ,то старый стирается.То же самое и в документах*/
+	require_once("../class/Partners.class.php");
+	require_once("../../../config.inc.php");
+	require_once("../../../config_system.inc.php");
+	
+	$db = new DB();
+	DBRegInfo::initParams($guestUser[0],
+	  			              $guestUser[1],
+	  			              $guestUser[2],
+	  			              $guestUser[3]);	  	
+	  	  
+	  $regInfo = DBRegInfo::getInstance();
+	try{
+	  	$db->connect($regInfo);
+	  }catch(Exception $e){
+	  	 die("DB Connection error");
+	  }
+	if(!isset($partneryAndProject)) $partneryAndProject = new PartneryAndProject($request, $db);
+	
+	if($_POST['idPartner']){
+		$uploaddir = $_SERVER['DOCUMENT_ROOT']."/files/LogosPartners/";
+		$uploadfile = $uploaddir . basename($_FILES['uploaded_file_edit_object']['name']);
+		$image = "/LogosPartners/".$_FILES['uploaded_file_edit_object']['name'];
+	
+		move_uploaded_file($_FILES['uploaded_file_edit_object']['tmp_name'], $uploadfile);
+	
+		$newPartner = array('id'=>$_POST['idPartner'],'image'=>$image,'title'=>$_POST['titlePartner'],'text'=>'','site'=>$_POST['sitePartner']);
+
+		$partneryAndProject -> savePartner($newPartner);
+	}else{
+		$uploaddir = $_SERVER['DOCUMENT_ROOT']."/files/LogosPartners/";
+		$uploadfile = $uploaddir . basename($_FILES['uploaded_file_add_object']['name']);
+		$image = "/LogosPartners/".$_FILES['uploaded_file_add_object']['name'];
+	
+		move_uploaded_file($_FILES['uploaded_file_add_object']['tmp_name'], $uploadfile);
+	
+		$newPartner = array('image'=>$image,'title'=>$_POST['titlePartner'],'text'=>'','site'=>$_POST['sitePartner']);
+
+		$partneryAndProject -> savePartner($newPartner);
+	}
+	
+	
+	$db->disconnect();
+	header("Location:/");
+?>

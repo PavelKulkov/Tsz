@@ -19,22 +19,22 @@
 	
 	if(isset($_POST['idDoc'])){
 		$uploaddir = $_SERVER['DOCUMENT_ROOT']."/files/Docs/";
-		$uploadfile = $uploaddir . basename($_FILES['"uploaded_file_edit_object']['name']);
-
+		$uploadfile = $uploaddir . basename($_FILES['uploaded_file_edit_object']['name']);
+		$image = "/Docs/".$_FILES['uploaded_file_edit_object']['name'];
 	
-		move_uploaded_file($_FILES['"uploaded_file_edit_object']['tmp_name'], $uploadfile);
+		move_uploaded_file($_FILES['uploaded_file_edit_object']['tmp_name'], $uploadfile);
 	
-		$newDoc = array('id'=>$_POST['idDoc'],'title'=>$_POST['titleDoc'],'date'=>date("Y-m-d H:i:s"),'Name'=>$_FILES['uploaded_file_edit_object']['name']);
+		$newDoc = array('id'=>$_POST['idDoc'],'title'=>$_POST['titleDoc'],'date'=>date("Y-m-d H:i:s"),'image'=>$image);
 		//echo var_dump($newDoc);
 		$documentation ->saveDoc($newDoc);
 	}else{
 		$uploaddir = $_SERVER['DOCUMENT_ROOT']."/files/Docs/";
 		$uploadfile = $uploaddir . basename($_FILES['uploaded_file_add_object']['name']);
-
+		$image = "/Docs/".$_FILES['uploaded_file_add_object']['name'];
 	
 		move_uploaded_file($_FILES['uploaded_file_add_object']['tmp_name'], $uploadfile);
 	
-		$newDoc = array('title'=>$_POST['title'],'date'=>date("Y-m-d H:i:s"),'groupOfDocs'=>$_POST['idGroup'],'Name'=>$_FILES['uploaded_file_add_object']['name']);
+		$newDoc = array('title'=>$_POST['title'],'date'=>date("Y-m-d H:i:s"),'groupOfDocs'=>$_POST['idGroup'],'image'=>$image);
 		$documentation ->saveDoc($newDoc);
 	}
 	

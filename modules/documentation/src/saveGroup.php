@@ -23,26 +23,26 @@
 	if(isset($_POST['idGroup'])){
 		$uploaddir = $_SERVER['DOCUMENT_ROOT']."/files/Docs/LogoForGroups/";
 		$uploadfile = $uploaddir . basename($_FILES['uploaded_file_edit_object_group']['name']);
-
+		$image = "/Docs/LogoForGroups/".$_FILES['uploaded_file_edit_object_group']['name'];
 	
 		move_uploaded_file($_FILES['uploaded_file_edit_object_group']['tmp_name'], $uploadfile);
 	
 	
 	
-		$newGroup = array('id'=>$_POST['idGroup'],'groupOfDoc'=>$_POST['titleGroup'],'image'=>$_FILES['uploaded_file_edit_object_group']['name']);
+		$newGroup = array('id'=>$_POST['idGroup'],'groupOfDoc'=>$_POST['titleGroup'],'image'=>$image);
 	
 		
 		$documentation ->saveGroup($newGroup);
 	}else{
 		$uploaddir = $_SERVER['DOCUMENT_ROOT']."/files/Docs/LogoForGroups/";
 		$uploadfile = $uploaddir . basename($_FILES['uploaded_file_add_object_group']['name']);
-
-	
+		$image = "/Docs/LogoForGroups/".$_FILES['uploaded_file_add_object_group']['name'];
+		
 		move_uploaded_file($_FILES['uploaded_file_add_object_group']['tmp_name'], $uploadfile);
 	
 	
 	
-		$newGroup = array('groupOfDoc'=>$_POST['title'],'image'=>$_FILES['uploaded_file_add_object_group']['name']);
+		$newGroup = array('groupOfDoc'=>$_POST['title'],'image'=>$image);
 	
 		//echo(var_dump($newGroup));
 		$documentation ->saveGroup($newGroup);

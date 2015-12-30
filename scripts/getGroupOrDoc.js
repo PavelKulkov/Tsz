@@ -9,7 +9,7 @@ $(document).ready(function(){
 				var group = jQuery.parseJSON(data);
 				$('#titleGroup').val(group.groupOfDoc);
 				$('#idGroup').val(group.id);
-				$('#image_uploaded_edit_object_group').append("<img id='image"+group.id+"' src='../files/Docs/LogoForGroups/"+group.image+"'>");
+				$('#image_uploaded_edit_object_group').append("<img id='image"+group.id+"' src='"+group.image+"'>");
 				
 			}
 		})
@@ -25,7 +25,7 @@ $(document).ready(function(){
 				var doc = jQuery.parseJSON(data);
 				$('#titleDoc').val(doc.title);
 				$('#idDoc').val(doc.id);
-				$('#image_uploaded_edit_object').append("<img id='image"+doc.id+"' src='../files/Docs/"+doc.Name+"'>");
+				$('#image_uploaded_edit_object').append("<img id='image"+doc.id+"' src='"+doc.Name+"'>");
 			}
 		})
      

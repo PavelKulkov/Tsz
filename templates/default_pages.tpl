@@ -16,7 +16,7 @@
 	<script type="text/javascript" src="/scripts/addDoc.js"></script>
     <script type="text/javascript" src="/scripts/openCloseWindow.js"></script>
 	<script type="text/javascript" src="/scripts/sendId.js"></script>
-	<script type="text/javascript" src="/scripts/getGroupOrDoc.js"></script>
+	<script type="text/javascript" src="/scripts/getObjectsForEdit.js"></script>
 	
 	<script src="/scripts/activMenu.js"></script>
 	

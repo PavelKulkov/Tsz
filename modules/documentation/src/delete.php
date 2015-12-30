@@ -1,7 +1,4 @@
 <?php
-	echo 22;
-	exit;
-	require_once("../class/Documentation.class.php");
 	require_once("../../../config.inc.php");
 	require_once("../../../config_system.inc.php");
 
@@ -17,25 +14,20 @@
 	  }catch(Exception $e){
 	  	 die("DB Connection error");
 	  }
+	  
 	if($_POST['IdForDel']){
-		$tmp = explode($_POST['IdForDel']);
-		echo $tmp[0];
-		exit;
-	}else{
-		echo 22;
-		exit;
-	}
-	
-	
-	if(!isset($documentation)) $documentation = new Documentation($request, $db);
-	
-	if($_POST['IdDocForDel']){
-		$documentation ->deleteDoc($_POST['IdDocForDel']);
-	}
-	else{
-		$documentation ->deleteGroup($_POST['IdGroupForDel']);
-	}
+		$tmp = explode('-',$_POST['IdForDel']);
+		$sql = "SELECT * FROM `".$tmp[0]."` WHERE `id`= ?";
+		$item = $db ->selectRow($sql,$tmp[1]);
+		if($item['image']){
+			@unlink($_SERVER['DOCUMENT_ROOT']."/files".$item['image']);
+		}	
+		$sql = "DELETE FROM `".$tmp[0]."` WHERE `id`= ?";
+		$db -> delete($sql,$tmp[1]);
+		
+		}
+
 	
 	$db->disconnect();
-	header("Location:/documentation");
+	header("Location:/");
 ?>

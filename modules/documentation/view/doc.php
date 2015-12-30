@@ -56,7 +56,7 @@
 						<span class="_adminAccordionSelectAction">
 							<a id="'.$groups[$i]['id'].'" href="#" class="_adminAddObject_"><span><img src="/templates/images/addDoc.png"></span></a>
 							<a id="'.$groups[$i]['id'].'" href="#" class="_adminEditObjectGroup_"><span ><img src="/templates/images/editDocGroup.png"></span></a>
-							<a id="Group'.$groups[$i]['id'].'" href="#" class="_adminDelObject_"><span ><img src="/templates/images/delDocGroup.png"></span></a>
+							<a id="groups of documents-'.$groups[$i]['id'].'" href="#" class="_adminDelObject_"><span ><img src="/templates/images/delDocGroup.png"></span></a>
 						</span>
 					</h3>
 					<div class="_adminAccordionContents">';
@@ -67,7 +67,7 @@
 								<p>'.$docs[$j]['title'].'</p>
 								<span class="_adminAccordionSelectAction">
 									<a id="'.$docs[$j]['idDoc'].'" href="#" class="_adminEditObject_"><span ><img src="/templates/images/editDoc.png"></span></a>
-									<a id="Doc'.$docs[$j]['idDoc'].'" href="#" class="_adminDelObject_"><span ><img src="/templates/images/delDoc.png"></span></a>
+									<a id="documentation-'.$docs[$j]['idDoc'].'" href="#" class="_adminDelObject_"><span ><img src="/templates/images/delDoc.png"></span></a>
 								</span>
 							</div> 
 					 ';}
@@ -80,9 +80,8 @@
        <!-- УДАЛЕНИЕ ДОКУМЕНТА/ГРУППЫ-->
       
       <div class="windowDel" id="_windowDel_">
-          <form method="post" enctype="multipart/form-data" action="modules/documentation/src/delGroupOrDoc.php">
-		  <input type="hidden" name="IdGroupForDel" id="IdGroupForDel" >
-		  <input type="hidden" name="IdDocForDel" id="IdDocForDel" >
+          <form method="post" enctype="multipart/form-data" action="scripts/phpScripts/delete.php">
+		  <input type="hidden" name="IdForDel" id="IdForDel" >		  
 		  <div class="windowDelText">
               <p>Вы уверены, что хотите удалить<br>
              выбранный документ (группу) ?</p>
