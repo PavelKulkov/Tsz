@@ -855,6 +855,16 @@ html, body{
 .textDoc a:hover{
 	color: #abcc26;
 }
+
+.mainContentDoc{
+	width: 48%;
+	height: auto;
+	display: inline-block;
+	margin: 2% 0 0 1.3%;
+	float: left;
+}
+
+/*
 .leftContentDoc{
     width: 48%;
     float: left;
@@ -866,7 +876,7 @@ html, body{
     float: right;
     margin: 0 1% 0 0;
 	height: auto;
-}
+}*/
 
 /*PARTNERS*/
 .ourPartners{

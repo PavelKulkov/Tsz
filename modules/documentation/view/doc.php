@@ -1,5 +1,5 @@
 <?php
-    function get_mas($list, $index){
+    /*function get_mas($list, $index){
 		$i =0;
 		foreach ($list as $entry) {
 			if($entry['groupOfDocs'] == $index){
@@ -9,8 +9,8 @@
 			}
 		}
 		return $mas;
-    }
-	function outputMas($mas){
+    }*/
+	/*function outputMas($mas){
 		$text = "";
 		for($j = 0; $j < count($mas); $j++){
 		$text .= $mas[$j];
@@ -20,7 +20,7 @@
 	$mas_1 = get_mas($docs, 1);  
 	$mas_2 = get_mas($docs, 2);
 	$mas_3 = get_mas($docs, 3); 
-    $mas_4 = get_mas($docs, 4);  
+    $mas_4 = get_mas($docs, 4);  */
 	
 	session_start();
 	
@@ -253,57 +253,20 @@
           <div class="pageTitle">
               <h1>Документы Ассоциации ТСЖ г.Пензы</h1>  
           </div>
-          <div class="ContentDoc">
-              <div class="leftContentDoc">
-                  <div class="logoDoc">
-                      <img src="/templates/images/documents/logoDoc_1.png">
-                  </div>
-                  <div class="headerDoc">
-                      <h1>Законы Российской федерации</h1>
-                  </div>
-                  <div class="textDoc">';
-                $text .= outputMas($mas_1);                  
-                $text .= ' </div>
-              </div>
-              
-               <div class="rightContentDoc">
-                  <div class="logoDoc">
-                      <img src="/templates/images/documents/logoDoc_2.png">
-                  </div>
-                  <div class="headerDoc">
-                      <h1>Законодательные документы Пензенской области</h1>
-                  </div>
-                  <div class="textDoc">';
-                      $text .= outputMas($mas_2);                     
-                $text .=  '</div>
-              </div>
-          </div>
-          <div class="ContentDoc">
-              <div class="leftContentDoc">
-                  <div class="logoDoc">
-                      <img src="/templates/images/documents/logoDoc_3.png">
-                  </div>
-                  <div class="headerDoc">
-                      <h1>Местные нормативные документы г.Пензы</h1>
-                  </div>
-                  <div class="textDoc">';
-                  $text .= outputMas($mas_3);              
-         	
-                 $text .=' </div>
-              </div>
-              
-               <div class="rightContentDoc">
-                  <div class="logoDoc">
-                      <img src="/templates/images/documents/logoDoc_4.png">
-                  </div>
-                  <div class="headerDoc">
-                      <h1>Прочие документы</h1>
-                  </div>
-                  <div class="textDoc">';
-                        $text .= outputMas($mas_4);  
-                 $text .= ' </div>
-              </div>
-          </div>  ';
+          <div class="ContentDoc">';
+		  //ВОТ ЭТОТ БЛОК - mainContentDoc
+		   $text .= '<div class="mainContentDoc">
+			                 <div class="logoDoc">
+							     <img src="/templates/images/documents/">
+							 </div>
+							 <div class="headerDoc">
+							     <h1>Название группы</h1>
+							 </div>
+							 <div class="textDoc">
+							     <p><a href="#">Название документа"</a></p>
+							 </div>
+						</div>';
+         $text .='</div>';
 		echo($text);
 		}
 ?>
