@@ -237,7 +237,7 @@
 		    $(".feedbackContent").append("<a href=modules/auth/admin.php?do=logout class=adminExit>Выход</a>");	
 		    </script>';		
 		echo $text;
-		//exit;
+		
 		
 	}
 	else{
@@ -254,19 +254,26 @@
               <h1>Документы Ассоциации ТСЖ г.Пензы</h1>  
           </div>
           <div class="ContentDoc">';
-		  //ВОТ ЭТОТ БЛОК - mainContentDoc
+		  $countGroups = count($groups);
+		  $countDocs = count($docs);
+		  for($i=0;$i<$countGroups;$i++){
 		   $text .= '<div class="mainContentDoc">
 			                 <div class="logoDoc">
-							     <img src="/templates/images/documents/">
+							     <img src="/files/'.$groups[$i]['image'].'">
 							 </div>
 							 <div class="headerDoc">
-							     <h1>Название группы</h1>
-							 </div>
-							 <div class="textDoc">
-							     <p><a href="#">Название документа"</a></p>
-							 </div>
-						</div>';
+							     <h1>'.$groups[$i]['groupOfDoc'].'</h1>
+							 </div>';
+							 for($j=0;$j<$countDocs;$j++){
+								if(strcasecmp($groups[$i]['groupOfDoc'],$docs[$j]['groupOfDoc'])==0){
+									$text .= '<div class="textDoc">
+												<p><a href="files'.$docs[$j]['path'].'"download >'.$docs[$j]['title'].'</a></p>
+											  </div>';
+								}
+							 }
+						$text .= '</div>';
+		}
          $text .='</div>';
 		echo($text);
-		}
+	}
 ?>

@@ -24,7 +24,10 @@
 		$image = "/LogosPartners/".$_FILES['uploaded_file_edit_object']['name'];
 	
 		move_uploaded_file($_FILES['uploaded_file_edit_object']['tmp_name'], $uploadfile);
-	
+		
+		$oldPartner = $partneryAndProject->getPartner($_POST['idPartner']);
+		@unlink($_SERVER['DOCUMENT_ROOT']."/files".$oldPartner['image']);
+		
 		$newPartner = array('id'=>$_POST['idPartner'],'image'=>$image,'title'=>$_POST['titlePartner'],'text'=>'','site'=>$_POST['sitePartner']);
 
 		$partneryAndProject -> savePartner($newPartner);

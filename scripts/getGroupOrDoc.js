@@ -25,7 +25,7 @@ $(document).ready(function(){
 				var doc = jQuery.parseJSON(data);
 				$('#titleDoc').val(doc.title);
 				$('#idDoc').val(doc.id);
-				$('#image_uploaded_edit_object').append("<img id='image"+doc.id+"' src='"+doc.Name+"'>");
+				$('#image_uploaded_edit_object').append("<img id='image"+doc.id+"' src='"+doc.path+"'>");
 			}
 		})
      

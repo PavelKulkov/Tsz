@@ -18,23 +18,39 @@
 	if(!isset($documentation)) $documentation = new Documentation($request, $db);
 	
 	if(isset($_POST['idDoc'])){
+		
 		$uploaddir = $_SERVER['DOCUMENT_ROOT']."/files/Docs/";
 		$uploadfile = $uploaddir . basename($_FILES['uploaded_file_edit_object']['name']);
-		$image = "/Docs/".$_FILES['uploaded_file_edit_object']['name'];
+		$path = "/Docs/".$_FILES['uploaded_file_edit_object']['name'];
 	
 		move_uploaded_file($_FILES['uploaded_file_edit_object']['tmp_name'], $uploadfile);
-	
-		$newDoc = array('id'=>$_POST['idDoc'],'title'=>$_POST['titleDoc'],'date'=>date("Y-m-d H:i:s"),'image'=>$image);
-		//echo var_dump($newDoc);
+		
+		$oldDoc = $documentation->getDoc($_POST['idDoc']);
+		@unlink($_SERVER['DOCUMENT_ROOT']."/files".$oldDoc['path']);
+		
+		$info = pathinfo($uploadfile);
+		
+		@rename($uploaddir.basename($_FILES['uploaded_file_edit_object']['name']),$uploaddir.md5(basename($_FILES['uploaded_file_edit_object']['name'],'.'.$info['extension'])).'.'.$info['extension']);
+		$path = "/Docs/".md5(basename($path,'.'.$info['extension'])).'.'.$info['extension'];
+		
+		
+		$newDoc = array('id'=>$_POST['idDoc'],'title'=>$_POST['titleDoc'],'date'=>date("Y-m-d H:i:s"),'path'=>$path);
+		
 		$documentation ->saveDoc($newDoc);
 	}else{
 		$uploaddir = $_SERVER['DOCUMENT_ROOT']."/files/Docs/";
 		$uploadfile = $uploaddir . basename($_FILES['uploaded_file_add_object']['name']);
-		$image = "/Docs/".$_FILES['uploaded_file_add_object']['name'];
+		$path = "/Docs/".$_FILES['uploaded_file_add_object']['name'];
 	
 		move_uploaded_file($_FILES['uploaded_file_add_object']['tmp_name'], $uploadfile);
-	
-		$newDoc = array('title'=>$_POST['title'],'date'=>date("Y-m-d H:i:s"),'groupOfDocs'=>$_POST['idGroup'],'image'=>$image);
+		
+		
+		$info = pathinfo($uploadfile);
+		
+		@rename($uploaddir.basename($_FILES['uploaded_file_edit_object']['name']),$uploaddir.md5(basename($_FILES['uploaded_file_edit_object']['name'],'.'.$info['extension'])).'.'.$info['extension']);
+		$path = "/Docs/".md5(basename($path,'.'.$info['extension'])).'.'.$info['extension'];
+		
+		$newDoc = array('title'=>$_POST['title'],'date'=>date("Y-m-d H:i:s"),'groupOfDocs'=>$_POST['idGroup'],'path'=>$path);
 		$documentation ->saveDoc($newDoc);
 	}
 	

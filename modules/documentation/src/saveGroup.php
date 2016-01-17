@@ -26,9 +26,11 @@
 		$image = "/Docs/LogoForGroups/".$_FILES['uploaded_file_edit_object_group']['name'];
 	
 		move_uploaded_file($_FILES['uploaded_file_edit_object_group']['tmp_name'], $uploadfile);
+		
+		$oldGroup = $documentation->getGroup($_POST['idGroup']);
+		@unlink($_SERVER['DOCUMENT_ROOT']."/files".$oldGroup['image']);
 	
-	
-	
+		
 		$newGroup = array('id'=>$_POST['idGroup'],'groupOfDoc'=>$_POST['titleGroup'],'image'=>$image);
 	
 		
@@ -44,7 +46,7 @@
 	
 		$newGroup = array('groupOfDoc'=>$_POST['title'],'image'=>$image);
 	
-		//echo(var_dump($newGroup));
+		
 		$documentation ->saveGroup($newGroup);
 	
 	}

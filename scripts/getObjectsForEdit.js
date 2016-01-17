@@ -25,7 +25,7 @@ $(document).ready(function(){
 				var doc = jQuery.parseJSON(data);
 				$('#titleDoc').val(doc.title);
 				$('#idDoc').val(doc.id);
-				$('#image_uploaded_edit_object').append("<img id='image"+doc.id+"' src='../files"+doc.image+"'>");
+				$('#image_uploaded_edit_object').append("<img id='image"+doc.id+"' src='../files"+doc.path+"'>");
 			}
 		})
      
@@ -57,6 +57,21 @@ $(document).ready(function(){
 				$('#titleProject').val(project.title);
 				$('#idProject').val(project.id);
 				$('#textProject').val(project.text);
+			}
+		})
+     
+    });
+	$('._adminEditObjectQuestions_').click(function() {
+		var id =($(this).attr('id'));
+		$.ajax({
+			url:"../modules/questions/src/getQuestion.php",
+			type:"post",
+			data:{"idQuestion":id},
+			success:function(data){
+				var question = jQuery.parseJSON(data);
+				$('#titleQuestion').val(question.title);
+				$('#idQuestion').val(question.id);
+				$('#answer').val(question.answer);
 			}
 		})
      

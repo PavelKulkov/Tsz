@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Дек 27 2015 г., 19:57
+-- Время создания: Янв 17 2016 г., 22:09
 -- Версия сервера: 5.5.45
 -- Версия PHP: 5.3.29
 
@@ -79,18 +79,20 @@ CREATE TABLE IF NOT EXISTS `documentation` (
   `title` text NOT NULL,
   `date` datetime NOT NULL,
   `groupOfDocs` int(11) NOT NULL,
-  `Name` text NOT NULL,
+  `path` text NOT NULL,
   PRIMARY KEY (`id`),
   KEY `groupOfDocs` (`groupOfDocs`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
 
 --
 -- Дамп данных таблицы `documentation`
 --
 
-INSERT INTO `documentation` (`id`, `title`, `date`, `groupOfDocs`, `Name`) VALUES
-(1, 'ff', '2015-12-27 12:59:10', 1, ''),
-(2, '123', '2015-12-27 18:52:49', 1, 'drre.jpg');
+INSERT INTO `documentation` (`id`, `title`, `date`, `groupOfDocs`, `path`) VALUES
+(5, 'Закон РФ 1 ', '2016-01-11 19:47:29', 7, '/Docs/Query.txt'),
+(6, 'Пенз.обл. 1 ', '2016-01-11 19:49:07', 8, '/Docs/TODO TSZ.txt'),
+(7, 'Местные 1 ', '2016-01-11 19:58:16', 9, '/Docs/Tulips.jpg'),
+(9, 'Прочие 1 ', '2016-01-17 19:59:55', 11, '/Docs/5aeb1f62f6cd496dc81c07d58b82f143.jpg');
 
 -- --------------------------------------------------------
 
@@ -154,17 +156,17 @@ CREATE TABLE IF NOT EXISTS `groups of documents` (
   `groupOfDoc` text NOT NULL,
   `image` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
 
 --
 -- Дамп данных таблицы `groups of documents`
 --
 
 INSERT INTO `groups of documents` (`id`, `groupOfDoc`, `image`) VALUES
-(1, 'Законы РФ', 'Ierarkhia_obektov_JS.png'),
-(2, 'Законодательные документы  Пензенской области', ''),
-(3, 'Местные нормативные документ г.Пензы', ''),
-(4, 'Прочие документы', '');
+(7, 'Законы РФ', '/Docs/LogoForGroups/Tulips.jpg'),
+(8, 'Законодательные документы Пензенской области', '/Docs/LogoForGroups/Penguins.jpg'),
+(9, 'Местные нормативные документы г.Пензы', '/Docs/LogoForGroups/Koala.jpg'),
+(11, 'Прочие документы', '/Docs/LogoForGroups/Lighthouse.jpg');
 
 -- --------------------------------------------------------
 
@@ -412,21 +414,12 @@ INSERT INTO `pages` (`id`, `name`, `annotation`, `description`, `keywords`, `con
 
 CREATE TABLE IF NOT EXISTS `partners` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `logo` text NOT NULL,
+  `image` text NOT NULL,
   `title` text NOT NULL,
   `text` text,
   `site` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
-
---
--- Дамп данных таблицы `partners`
---
-
-INSERT INTO `partners` (`id`, `logo`, `title`, `text`, `site`) VALUES
-(1, 'partners_1', 'Оператор электронного правительства', NULL, 'http://www.oep-penza.ru/'),
-(2, 'partners_2', 'Страховая компания РОСНО', NULL, 'http://rosno-ms.ru/'),
-(3, 'partners_3', 'Веб-студия Пенза-Онлайн', NULL, 'http://i158.ru/211001');
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 -- --------------------------------------------------------
 
@@ -436,19 +429,19 @@ INSERT INTO `partners` (`id`, `logo`, `title`, `text`, `site`) VALUES
 
 CREATE TABLE IF NOT EXISTS `projects` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `logo` text,
+  `image` text,
   `title` text NOT NULL,
   `text` text NOT NULL,
   `site` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
 -- Дамп данных таблицы `projects`
 --
 
-INSERT INTO `projects` (`id`, `logo`, `title`, `text`, `site`) VALUES
-(1, NULL, 'Портал Пенза 1', 'Проект был реализован в рамках...', '#'),
+INSERT INTO `projects` (`id`, `image`, `title`, `text`, `site`) VALUES
+(1, '/LogosProjects/', 'Портал Пенза 1', 'Проект был реализован в рамках...', '#'),
 (2, NULL, 'Портал Пенза 2', 'Проект был реализован в рамках...', '#'),
 (3, NULL, 'Портал Пенза 3', 'Проект был реализован в рамках...', '#'),
 (4, NULL, 'Портал Пенза 4', 'Проект был реализован в рамках...', '#'),
@@ -464,15 +457,15 @@ INSERT INTO `projects` (`id`, `logo`, `title`, `text`, `site`) VALUES
 CREATE TABLE IF NOT EXISTS `questions` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` text NOT NULL,
-  `text` text NOT NULL,
+  `answer` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
 --
 -- Дамп данных таблицы `questions`
 --
 
-INSERT INTO `questions` (`id`, `title`, `text`) VALUES
+INSERT INTO `questions` (`id`, `title`, `answer`) VALUES
 (1, 'Чем занимается Ассоциациия ТСЖ?', 'This is Photoshop''s version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.'),
 (2, 'Как вступить в Ассоциацию ТСЖ?', 'This is Photoshop''s version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.'),
 (3, 'Какие документы необходимы для вступления в Ассоциацию?', 'This is Photoshop''s version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.'),

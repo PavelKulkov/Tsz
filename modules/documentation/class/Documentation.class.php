@@ -4,7 +4,7 @@ class Documentation{
 	private $request;
 	public $sql;
 	public $count;
-	public $itemsDoc = array('title','date','groupOfDocs','image');
+	public $itemsDoc = array('title','date','groupOfDocs','path');
 	public $itemsGroup = array('groupOfDoc','image');
 	
 	function __construct($request=NULL,$db){
@@ -12,7 +12,7 @@ class Documentation{
 		$this->request 	= $request;
 	}
 	function getDocs(){
-		$sql= "SELECT `doc`.`id` AS `idDoc`,`doc`.`title` AS `title`,`doc`.`date` AS `date`,`doc`.`groupOfDocs` AS `groupOfDocs`,`doc`.`image` AS `image`,`god`.`id` AS `idGroup`,`god`.`groupOfDoc` AS `groupOfDoc`,`god`.`image` AS `image` FROM  `documentation` AS  `doc`
+		$sql= "SELECT `doc`.`id` AS `idDoc`,`doc`.`title` AS `title`,`doc`.`date` AS `date`,`doc`.`groupOfDocs` AS `groupOfDocs`,`doc`.`path` AS `path`,`god`.`id` AS `idGroup`,`god`.`groupOfDoc` AS `groupOfDoc`,`god`.`image` AS `image` FROM  `documentation` AS  `doc`
 			LEFT JOIN  `groups of documents` AS  `god` ON  `god`.`id` =  `doc`.`groupOfDocs` 
 			LIMIT 0 , 50";
 		$item = $this->db_instance->select($sql); 
@@ -32,11 +32,10 @@ class Documentation{
 		
 		return  $item;		
 	}
-	function deleteDoc($idDoc){	
-		
-		$pathDoc = $_SERVER['DOCUMENT_ROOT']."/files/Docs/"; 
+	function deleteDoc($idDoc){		
+		$pathDoc = $_SERVER['DOCUMENT_ROOT']."/files"; 
 		$doc = $this -> getDoc($idDoc);
-		$pathDoc .= $doc['image'];
+		$pathDoc .= $doc['path'];
 		
 		@unlink($pathDoc);
 		

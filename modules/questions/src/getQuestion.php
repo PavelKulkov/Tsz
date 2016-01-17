@@ -1,5 +1,5 @@
 <?php
-	require_once("../class/Documentation.class.php");
+require_once("../class/Questions.class.php");
 	require_once("../../../config.inc.php");
 	require_once("../../../config_system.inc.php");
 	
@@ -15,13 +15,12 @@
 	  }catch(Exception $e){
 	  	 die("DB Connection error");
 	  }
-	if(!isset($documentation)) $documentation = new Documentation($request, $db);
+	if(!isset($questions)) $questions = new Questions($request, $db);
 	
-	$doc = $documentation->getDoc($_POST['idDoc']);
-	$db->disconnect();
-	echo(json_encode($doc));
-	
-	
-	
+	$question = $questions->getQuestion($_POST['idQuestion']);
 
+	
+	
+	$db->disconnect();
+	echo(json_encode($question));
 ?>

@@ -114,4 +114,11 @@ $(document).ready(function(){
 		closeWindow("#_windowEditObjectProject_")
 	});
     
+	 /*Редактирование информации о вопросе*/
+	$("._adminEditObjectQuestions_").click(function(){
+		displayWindow("#_windowEditObjectQuestions_")
+	});
+	$(".cancelButton").click(function(){
+		closeWindow("#_windowEditObjectQuestions_")
+	});
  });
