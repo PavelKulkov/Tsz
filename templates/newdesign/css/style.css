@@ -1,4 +1,4 @@
-@import url("fonts/hattori/hattori.css");
+ @import url("fonts/hattori/hattori.css");
  @import url("fonts/roboto/roboto.css");
 *{
     margin: 0;
@@ -18,22 +18,21 @@ html, body{
     min-width: 1024px;
 }
 .feedbackContent{
-    width: 350px;
+    width: 300px;
     float: right;
-    margin: 5px 5% 0 0;
+    margin: 5px 10% 0 0;
     color: #7a7a7a;
     display: flex;
     font-family: 'HattoriHanzoLight';
 }
+.feedbackContent p{
+    
+}
 .feedbackContent a{
     color: #7a7a7a;
-}
-.feedbackContent a:hover{
-    color:#fd8505;
-}
-
-.feedbackContent .adminExit{
-    margin: 0 0 0 30px;
+    
+    
+    
 }
 .feedbackContent img{
     margin: 1px 5px 0 5px;
@@ -198,7 +197,6 @@ html, body{
     border: 1px solid #848DA1;
     color: #7a7a7a;
 	margin: 0 28px 0 28px;
-	display: block;
 }
 /*
 .searchForm input[type="image"]{
@@ -218,7 +216,6 @@ html, body{
     border: 1px solid #848DA1;
     color: #7a7a7a;
     margin: 10px 0 0 26px;
-	display:block;
 }
 
 /*INFO*/
@@ -249,7 +246,6 @@ html, body{
     position: relative;
     height: 100%;
     display: table;
-	
     margin: 0 auto;
     text-align: center;
     /*TODO проверить размер на количество контента*/
@@ -523,8 +519,7 @@ html, body{
 .listAssociation{
     position: relative;
     width: 100%;
-    height:140px;
-	display: inline-block;
+    height: 180px;
 }
 /*.listAssociation h1{
     font-size: 2.4em;
@@ -559,18 +554,18 @@ html, body{
     margin: 0 0 0 10px;
     color: #7a7a7a;
 }
-/*
+
 .listAssociationSelect button{
     float: left;
     border-radius: 5px;
     outline: none;
     
     
-}*/
-/*.listAssociationSelect img{
+}
+.listAssociationSelect img{
     width: 45px;
     height: 40px;
-}*/
+}
 .listAssociationSelect select{
     width: 314px;
     border-radius: 5px;
@@ -715,10 +710,7 @@ html, body{
     position: fixed;
     box-shadow: 0px 0px 20px #000;
     top: 35%;
-	left:auto;
-	right: auto;
-	margin: 0 100px 0 100px;*/
-	margin: 0 auto;
+	margin: 0 100px 0 100px;
   
 }
 .closeModalWindow{
@@ -855,16 +847,6 @@ html, body{
 .textDoc a:hover{
 	color: #abcc26;
 }
-
-.mainContentDoc{
-	width: 48%;
-	height: auto;
-	display: inline-block;
-	margin: 2% 0 0 1.3%;
-	float: left;
-}
-
-/*
 .leftContentDoc{
     width: 48%;
     float: left;
@@ -876,7 +858,7 @@ html, body{
     float: right;
     margin: 0 1% 0 0;
 	height: auto;
-}*/
+}
 
 /*PARTNERS*/
 .ourPartners{
@@ -1223,6 +1205,8 @@ footer{
 
 
 
+
+
 /*ADMIN====================================================================================================================*/
 /*Добавление документов*/
 ._adminHeader{
@@ -1239,11 +1223,17 @@ footer{
     text-align: left;
     margin: 0 0 0 20px;
 }
+._adminHeaderL a{
+    color: #fd8505;
+}
 ._adminHeaderR{
     width: 480px;
     float: right;
     text-align: right;
     margin: 0 20px 0 0;
+}
+._adminHeaderR p{
+    color: #7a7a7a;
 }
 ._adminHeaderR a{
     color: #fd8505;
@@ -1251,6 +1241,150 @@ footer{
 ._adminHeaderR a:hover{
     color: #abcc26;
 }
+._adminHeader h3{
+    color: #abcc26;
+    text-align: center;
+     font-family: 'robotoregular';
+    font-weight: 100;
+    margin: 40px 0 40px 0;
+}
+
+/*Админ - редактирование новостей*/
+._adminEditNews{
+    width: 1000px;
+    display: inline-block;
+    
+}
+._adminEditNewsContent{
+    width: 1000px;
+    display: inline-block;
+    font-family: 'robotoregular';
+    margin: 10px 0 0 0;
+}
+._adminEditNewsContent p{
+    float: left;
+    color: #7a7a7a;
+    width: 280px;
+    font-size: 1.3em;
+    text-align: right;
+    margin: 0 20px 0 0;
+}
+._adminEditNewsContent input[type=text]{
+     float: right;
+    width: 640px;
+    height:20px;
+    border-radius: 5px;
+    resize: none;
+    border: 1px solid #dcdada;
+    padding: 5px;
+    font-size: 1.1em;
+    font-family: 'robotoregular';
+    color: #7a7a7a;
+    margin: 0 40px 0 0;
+}
+._adminEditNewsContent textarea{
+     float: right;
+     width: 640px;
+    height:300px;
+    border-radius: 5px;
+    resize: none;
+    border: 1px solid #dcdada;
+    padding: 5px;
+     font-size: 1.1em;
+    font-family: 'robotoregular';
+    color: #7a7a7a;
+    margin: 0 40px 0 0;
+}
+._adminEditNewsContentImg{
+     width: 648px;
+    float: right;
+    margin: 0 40px 0 0;
+}
+._adminEditNewsContentImg .file_upload{
+    width: 548px;
+}
+._adminEditNewsContentImg .file_upload button{ 
+    margin: 0 40px 0 0;
+    width: 150px;
+}
+._adminEditNewsContentImg .file_name p{
+    text-align: center;    
+    width: 320px;
+}
+._adminContentButton{
+    width: 1000px;
+    display: inline-block;
+    margin: 30px 0 50px 0;
+}
+._adminContentButton .windowButton{
+    width: 600px
+}
+._adminContentButton .windowButton a{
+    margin: 0 10px 0 10px;
+}
+
+/*
+.windowEditObjectTitle .windowEditObjectTitleBox input[type=text]{
+    width: 180px;
+    display: inline-block;
+    float: left;
+    margin: 0 5px 0 5px;
+}
+.windowEditObjectTitle .windowEditObjectTitleBox label{
+   font-size: 0.95em;
+    float: left;
+}
+.windowEditObjectTitle p {
+    float: left;
+    color: #7a7a7a;
+    width: 280px;
+    font-size: 1.2em;
+    text-align: right;
+    margin: 0 20px 0 0;
+}
+.windowEditObjectTitle input[type=text]{
+    float: right;
+    width: 530px;
+    height:20px;
+    border-radius: 5px;
+    resize: none;
+    border: 1px solid #dcdada;
+    padding: 5px;
+    font-size: 1.1em;
+    font-family: 'robotoregular';
+    color: #7a7a7a;
+}
+.windowEditObjectTitle textarea{
+    float: right;
+    width: 530px;
+    height:110px;
+    border-radius: 5px;
+    resize: none;
+    border: 1px solid #dcdada;
+    padding: 5px;
+     font-size: 1.1em;
+    font-family: 'robotoregular';
+    color: #7a7a7a;
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ._adminList{
     width: 1000px;
@@ -1262,15 +1396,23 @@ footer{
     background: #eff4f4;
     padding: 10px 0 10px 0;
 }
+
 ._adminListL{
     text-align:left;
-    width: 450px;
+    width: 309px;
     float: left;
     margin: 0 0 0 50px;
 }
+._adminListC{
+    text-align:left;
+    width: 309px;
+    float: left;
+    margin: 0 0 0 20px;
+}
+
 ._adminListR{
     text-align:right;
-    width: 480px;
+    width: 290px;
     float: right;
     margin: 0 20px 0 0;
 }
@@ -1308,20 +1450,21 @@ footer{
     display: inline-block;
     float: right;
     text-align: right;
+   
 }
 ._adminAccordionSelectAction a{
     z-index: 9999;
 }
-._adminAccordionSelectAction span img{
+
+._adminAccordionSelectAction a span img{
     width: 16px;
     height: 16px;
-    margin: 0 0 0 20px;
+    margin: 0 5px 0 5px;
 }
 
 ._adminAccordionContents{
     width: 1000px;
     display: inline-block;
-    
 }
 ._adminAccordionContent{
     width: 1000px;
@@ -1331,15 +1474,30 @@ footer{
     padding: 0 0 5px 0;
     margin: 10px 0 5px 0;
 }
+
 ._adminAccordionContent p{
-    width: 830px;
-    margin: 0 0 0 30px;
+    width: 810px;
+    margin: 0 0 0 50px;
     text-align: left;
     float: left;
     color: #7a7a7a;
-    
-    
 }
+
+._adminAccordionContent ._adminAccordionName{
+    margin: 0 0 0 50px;
+    float: left;
+    color: #7a7a7a;
+    text-align:left;
+    width: 310px;
+}
+._adminAccordionContent ._adminAccordionAddress{
+    float: left;
+    color: #7a7a7a;
+    text-align:left;
+    width: 480px;
+    margin: 0 0 0 20px;
+}
+
 
 /*Окно для удаления документа или группы*/
 .windowDel{
@@ -1369,30 +1527,15 @@ footer{
     font-size: 1.4em;
      font-family: 'robotoregular'; 
 }
-
-/*для <a>
 .delButton{
     display: inline-block;
     background: #abcc26;
-    padding: 10px 35px 10px 35px;
+    padding: 10px 20px 10px 20px;
     color: #ffffff;
     border-radius: 5px;
-    margin: 0 5px 0 0;
+    margin: 0 2px 0 0;
     box-shadow: 0 6px 10px 1px rgba(0, 0, 0, 0.2);
     text-decoration: none;
-}*/
-
-.delButton{
-    display: inline-block;
-    background: #abcc26;
-    padding: 14px 20px 14px 20px;
-    border: 0;
-    color: #ffffff;
-    border-radius: 5px;
-    margin: 0 0 0 0;
-    box-shadow: 0 6px 10px 1px rgba(0, 0, 0, 0.2);
-    text-decoration: none;
-    font-size: 0.9em;
 }
 .cancelButton{
     display: inline-block;
@@ -1400,7 +1543,7 @@ footer{
     color: #7a7a7a;
     padding: 10px 20px 10px 20px;
     border-radius: 5px;
-    margin: 0 0 0 5px;
+    margin: 0 0 0 2px;
     box-shadow: 0 6px 10px 1px rgba(0, 0, 0, 0.2);
     text-decoration: none;
 }
@@ -1424,11 +1567,51 @@ footer{
     font-size: 1.7em;
     margin: 30px 0 20px 0;
 }
+
+.windowContact{
+    height: 260px;
+    display: none;
+}
+
+.windowEditRegistry{
+    width: 900px;
+    height: 650px;
+    background: #ffffff;
+    z-index: 99999;
+    position: fixed;
+    box-shadow: 0 6px 5px 2px rgba(0, 0, 0, 0.2);
+    top: 20%; left: 15%;
+    border-radius: 5px;
+    font-family: 'robotoregular';
+    display: none;/*---------------------------------------------------------------------------------------------------*/
+}
+.windowEditRegistry h3{
+    color: #abcc26;
+     font-weight: 100;
+    font-size: 1.7em;
+    margin: 30px 0 20px 0;
+}
+
 .windowEditObjectTitle{
    width: 850px; 
     margin: 0 25px 0 25px;
     display: inline-block;
     margin: 5px 0 5px 0;
+}
+.windowEditObjectTitleBox{
+    float: right;
+    width: 542px;
+    display: inline-block;
+}
+.windowEditObjectTitle .windowEditObjectTitleBox input[type=text]{
+    width: 180px;
+    display: inline-block;
+    float: left;
+    margin: 0 5px 0 5px;
+}
+.windowEditObjectTitle .windowEditObjectTitleBox label{
+   font-size: 0.95em;
+    float: left;
 }
 .windowEditObjectTitle p {
     float: left;
@@ -1444,7 +1627,7 @@ footer{
     height:20px;
     border-radius: 5px;
     resize: none;
-    border: 1px solid #7a7a7a;
+    border: 1px solid #dcdada;
     padding: 5px;
     font-size: 1.1em;
     font-family: 'robotoregular';
@@ -1456,12 +1639,26 @@ footer{
     height:110px;
     border-radius: 5px;
     resize: none;
-    border: 1px solid #7a7a7a;
+    border: 1px solid #dcdada;
     padding: 5px;
      font-size: 1.1em;
     font-family: 'robotoregular';
     color: #7a7a7a;
 }
+
+.windowEditObjectTitle input[type=radio]{
+   cursor: pointer;
+   float: left;
+    margin: 5px 0 0 5px;
+}
+.windowEditObjectTitle label{
+    display: inline-block;
+    padding: 0 3px 0 3px;
+    color: #7a7a7a;
+    font-size: 0.9em;
+   
+}
+
 .windowEditObjectContent{
     width: 850px; 
     margin: 5px 25px 0 25px;

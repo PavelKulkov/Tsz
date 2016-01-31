@@ -1,9 +1,9 @@
 <?php
 
 	if ($new) {
-	include ($modules_root.'news/view/'.SITE_THEME.'/view.php');
+	include ($modules_root.'news/view/view.php');
 	} else {
-		include ($modules_root.'news/view/'.SITE_THEME.'/list.php');
+		include ($modules_root.'news/view/list.php');
 	}
 
 	$module['text'] = $text;
