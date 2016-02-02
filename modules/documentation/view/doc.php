@@ -61,6 +61,7 @@
 					</h3>
 					<div class="_adminAccordionContents">';
 				for($j=0;$j<count($docs);$j++){
+					
 					if(strcasecmp($groups[$i]['groupOfDoc'],$docs[$j]['groupOfDoc'])==0){
 					$text.=' 
 							<div class="_adminAccordionContent">	
@@ -257,6 +258,10 @@
 		  $countGroups = count($groups);
 		  $countDocs = count($docs);
 		  for($i=0;$i<$countGroups;$i++){
+			 if($i == 0 || $i%2 == 0){
+						 $text .= '<div class="mainContentDocS">'; 
+					 }
+			  
 		   $text .= '<div class="mainContentDoc">
 			                 <div class="logoDoc">
 							     <img src="/files/'.$groups[$i]['image'].'">
@@ -272,6 +277,9 @@
 								}
 							 }
 						$text .= '</div>';
+						if($i%2 != 0 && $i != 0){
+						$text .= '</div>'; 
+					 }
 		}
          $text .='</div>';
 		echo($text);

@@ -45,5 +45,5 @@
 	
 	
 	$db->disconnect();
-	header("Location:/");
+	header("Location:/partners");
 ?>

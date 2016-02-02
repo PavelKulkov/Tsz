@@ -16,7 +16,7 @@
 			  </div>
 			   <div class="_adminEditNewsContent">
 				  <p>Текст новости</p>
-				  <input type="text" name="textNews">
+				  <textarea type="text" name="textNews"></textarea>
 			  </div>
 			  <div class="_adminEditNewsContent">
 				  <p>Изображение №1</p>
@@ -62,6 +62,6 @@
 	  echo $text;
 	}
 	else{
-		header("location:/");
+		header("location:/news");
 	}
 ?>

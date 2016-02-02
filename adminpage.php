@@ -9,15 +9,15 @@
   $text ='  	<form method="post" action="/modules/auth/admin.php">
         <table>
           <tr>
-            <td>Р›РѕРіРёРЅ</td>
+            <td>Логин</td>
             <td><input type="text" name="login"/></td>
           </tr>
           <tr>
-            <td>РџР°СЂРѕР»СЊ</td>
+            <td>Пароль</td>
             <td><input type="password" name="password"/></td>
           </tr> 
           <tr>
-            <td colspan="2"><input type="submit" name="submit" value="РћС‚РїСЂР°РІРёС‚СЊ"/></td>
+            <td colspan="2"><input type="submit" name="submit" value="Отправить"/></td>
           </tr>                   
         </table>        
       </form>';

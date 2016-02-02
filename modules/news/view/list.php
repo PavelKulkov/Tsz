@@ -1,6 +1,13 @@
 <?php
     if($_SESSION['admin']){
-		$text = ' <div class="_adminHeader">
+		$text = '
+		<style>
+	#select_5 a{
+		border-bottom: 7px solid #fd8505;
+	}
+	</style>
+
+		<div class="_adminHeader">
           <span class="_adminHeaderL"><p>Новости</p></span>
           <span class="_adminHeaderR">
               <a href="news?admin=addNews">Добавить новость</a>
@@ -56,6 +63,12 @@
           </div>
 		  </form>
       </div>';
+	  $text.= '
+		<script>
+		    $(".feedbackContent").append("<a href=modules/auth/admin.php?do=logout class=adminExit>Выход</a>");	
+		    </script>';		
+			
+			
 	}else{
 		$text = '
 		<style>

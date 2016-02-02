@@ -24,7 +24,7 @@ if($_SESSION['admin']){
           </div>
            <div class="_adminEditNewsContent">
               <p>Текст новости</p>
-			  <input type="text" name="textNew" value="'.$new['text'].'">
+			  <textarea  name="textNew" >'.$new['text'].'</textarea>
           </div>
 		  <input type="hidden" name="idNew" value="'.$new['id'].'">
 		  <input type="hidden" name="nameDir" value="'.$new['image'].'">
@@ -79,6 +79,6 @@ if($_SESSION['admin']){
 	  
 	  echo($text);
 }else{
-	header("Location:/");
+	header("Location:/news");
 }
 ?>

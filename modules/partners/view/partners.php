@@ -1,6 +1,11 @@
 ﻿<?php
 	if($_SESSION['admin']){
-		$text = '<div class="_adminHeader">
+		$text = '
+		<style>
+	#select_3 a{
+		border-bottom: 7px solid #fd8505;
+	}
+	</style><div class="_adminHeader">
           <span class="_adminHeaderL"><p>Партнеры и проекты</p></span>
       </div>
       
@@ -202,6 +207,10 @@
            </form>
          </div>
       ';
+	  $text.= '
+		<script>
+		    $(".feedbackContent").append("<a href=modules/auth/admin.php?do=logout class=adminExit>Выход</a>");	
+		    </script>';		
 	}else{
 		$text = '
 			<style>
@@ -218,26 +227,29 @@
       
              <div class="ourPartners">
                  <h2>Партнеры Ассоциации ТСЖ города Пензы</h3>';
-		foreach ($list as $entry) {
-			$text .= '<div class="ourPartnersContent">
+				 
+		        foreach ($partners as $partner) {
+			        $text .= '<div class="ourPartnersContent">
                       <div class="namePartners"> 
-                          <a href="'.$entry['site'].'" target="_blank"><img src="/templates/images/partners/'.$entry['logo'].'.png"></a>
+                          <a href="'.$partner['site'].'" target="_blank"><img src="/templates/images/partners/'.$partner['image'].'"></a>
                       </div>
-                      <p><a href="'.$entry['site'].'" target="_blank">'.$entry['title'].'</a></p>
+                      <p><a href="'.$partner['site'].'" target="_blank">'.$partner['title'].'</a></p>
                   </div>';
-		}	
-		$text .=' </div>
+		        }	
+		        $text .=' </div>
+		
               <div class="ourPartners">
                  <h2>Совместные проекты</h3>';
-		foreach ($list2 as $entry2) {
-			$text .= '<div class="ourPartnersContent">
+				 
+		        foreach ($projects as $project) {
+			        $text .= '<div class="ourPartnersContent">
                       <div class="namePartners"> 
-                          <p><a href="'.$entry2['site'].'" target="_blank">'.$entry2['title'].'</a></p>
+                          <p><a href="'.$project['site'].'" target="_blank">'.$project['title'].'</a></p>
                       </div>
-                      <p>'.$entry2['text'].'</p>
+                      <p>'.$project['text'].'</p>
                  </div>';	
-		}
-		$text .=' </div>';
+		        }
+		        $text .=' </div>';
 	
 	}
 		$module['text'] = $text;

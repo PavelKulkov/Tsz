@@ -1,6 +1,12 @@
 <?php
    if($_SESSION['admin']){
-	   $text = '<div class="_adminHeader">
+	   $text = '
+	   <style>
+	#select_4 a{
+		border-bottom: 7px solid #fd8505;
+	}
+	</style>
+	   <div class="_adminHeader">
           <span class="_adminHeaderL"><p>Вопрос-ответ</p></span>
       </div>
       
@@ -66,7 +72,7 @@ $text .='
           
               <div class="windowEditObjectContent">
                   <p class="windowEditObjectP">Ответ</p>
-                  <input type="text" name="answer">             
+                  <textarea name="answer"></textarea>             
               </div>    
               
 			  <div class="windowButton">
@@ -91,7 +97,7 @@ $text .='
 				<input type="hidden" id="idQuestion" name="idQuestion">
               <div class="windowEditObjectContent">
                   <p class="windowEditObjectP">Ответ</p>
-                  <input type="text" id="answer" name="answer">           
+                  <textarea  id="answer" name="answer"></textarea>           
               </div>    
 			  <div class="windowButton">
 				  <input class="delButton" type="submit" value="Сохранить"/>
@@ -100,6 +106,10 @@ $text .='
            </form>
          
       </div>';
+	  $text.= '
+		<script>
+		    $(".feedbackContent").append("<a href=modules/auth/admin.php?do=logout class=adminExit>Выход</a>");	
+		    </script>';		
    }else{
 	$text = '
 	<style>

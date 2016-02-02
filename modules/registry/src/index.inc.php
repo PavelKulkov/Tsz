@@ -1,8 +1,21 @@
 <?php
 	
 	require_once($modules_root."registry/class/Registry.class.php");
+	
+	
 	if(!isset($registry)) $registry = new Registry($request, $db);
-	$tsz = false;
+	        $groups = $registry->getRegistryGroupsTsz();
+			$registry = $registry->getRegistryTsz();
+	
+	
+	
+	/*$tsz = false;
+	
+	
+	
+	
+	
+	
 	
 	if ($request->hasValue('id_tsz')) {
 			$id_tsz = $request->getValue('id_tsz');
@@ -18,6 +31,6 @@
 	$count = $paginatorObj->getCountGlobal();
 	$paginator = $paginatorObj->getPaginator($request, "registry", $count);
 	$list = $paginatorObj->getListGlobal($paginator['index'], "title");
-				
+		*/		
 	include ($modules_root.'registry/view/view_ind.php');	
   ?>

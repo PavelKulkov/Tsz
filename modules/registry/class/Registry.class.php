@@ -6,12 +6,53 @@ class Registry {
 	private $lng_prefix;	
 	public $count;
 	public $items_registry = array('id','logo','title','address','id_template','phoneNumber','E-mail','fax','President');
+	public $items_reg = array('logo','title','address','id_template','phoneNumber','e_mail','fax','President', 'site', 'area', 'man', 'groupsArea');
 
 	
 	function __construct($request=NULL,$db) 	{
 		$this->db_instance = $db;
 		$this->lng_prefix = $GLOBALS["lng_prefix"];
 		$this->request 	= $request;
+	}
+	
+	function getRegistryGroupsTsz(){
+		$sql = 'SELECT * FROM `groups_area`';
+		$item  =$this->db_instance->select($sql);
+		if($item)
+			return $item;
+		else
+			return false;
+	}
+	
+	function getRegistryTsz(){
+		/*$sql= "SELECT *
+		       FROM registry LEFT JOIN groups_area
+			   ON registry.groupsArea = groups_area.id";*/
+		
+		$sql= "SELECT t1.id, t1.title, t2.groupsArea AS groupsArea
+		       FROM registry t1
+			   LEFT OUTER JOIN groups_area t2
+			   ON t1.groupsArea = t2.id";
+		
+		
+		$item  =$this->db_instance->select($sql);
+		if($item)
+			return $item;
+		else
+			return false;
+	}
+	
+	function getReg($id) {
+		
+		$sql = "SELECT * FROM `registry` WHERE `id`= ?";
+		$item = $this->db_instance->selectRow($sql, $id);
+		if(!$item) return false;
+		
+		return  $item;		
+	}
+	
+	function saveReg($reg){
+		return $this->db_instance->saveData($reg,'registry',$this->items_reg);
 	}
 	
 	function getNews($id_template){

@@ -76,5 +76,27 @@ $(document).ready(function(){
 		})
      
     });
+	//Редактирование ТСЖ
+	$('._adminEditObjectRegistry_').click(function() {
+		var id =($(this).attr('id'));
+		$.ajax({
+			url:"../modules/registry/src/getReg.php",
+			type:"post",
+			data:{"idTsz":id},
+			success:function(data){
+				var reg = jQuery.parseJSON(data);
+				$("#titleTsz").val(reg.title);
+				$('#idTsz').val(reg.id);
+				$('#addressTsz').val(reg.address);
+				$('#phoneNumberTsz').val(reg.phoneNumber);
+				$('#e_mailTsz').val(reg.e_mail);
+				$('#presidentTsz').val(reg.President);
+				$('#siteTsz').val(reg.site);
+			    $('#area-'+reg.groupsArea).attr("checked","checked");
+				$('#image_uploaded_edit_object_group').append("<img id='image"+reg.id+"' src='../files/Registry/"+reg.logo+"'>");
+			}
+		})
+     
+    });
 
 });

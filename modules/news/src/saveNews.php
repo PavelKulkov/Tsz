@@ -65,5 +65,5 @@
 		$news ->save($new);
 	}
 	$db->disconnect();
-	header("Location:/News");
+	header("Location:/news");
 ?>

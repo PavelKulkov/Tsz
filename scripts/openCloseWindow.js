@@ -45,6 +45,13 @@ $(document).ready(function(){
 		closeWindow(".windowDel")
 	});
 	 
+	//Редактирование ТСЖ
+	$("._adminEditObjectRegistry_").click(function(){
+		displayWindow("#_windowEditObject_")
+	});
+	$(".cancelButton").click(function(){
+		closeWindow("#_windowEditObject_")
+	});
 	 
 	/*Редактирование документа*/
 	$("._adminEditObject_").click(function(){

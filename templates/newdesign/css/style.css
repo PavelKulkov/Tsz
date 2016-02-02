@@ -18,21 +18,22 @@ html, body{
     min-width: 1024px;
 }
 .feedbackContent{
-    width: 300px;
+    width: 350px;
     float: right;
-    margin: 5px 10% 0 0;
+    margin: 5px 5% 0 0;
     color: #7a7a7a;
     display: flex;
     font-family: 'HattoriHanzoLight';
 }
-.feedbackContent p{
-    
-}
 .feedbackContent a{
     color: #7a7a7a;
-    
-    
-    
+}
+.feedbackContent a:hover{
+    color:#fd8505;
+}
+
+.feedbackContent .adminExit{
+    margin: 0 0 0 30px;
 }
 .feedbackContent img{
     margin: 1px 5px 0 5px;
@@ -41,12 +42,9 @@ html, body{
     height: 14px
 }
 
-
 .header{
     width: 1000px;
 	height: 135px;
-	
-	
 	margin: 0 auto;
 }
 .header img{
@@ -55,7 +53,6 @@ html, body{
 	height: 125px;
 	margin: 10px 286px 0 286px;
     /*min-width: 1024px;*/
-	
 }
 
 /*
@@ -630,6 +627,7 @@ html, body{
     max-width: 1000px;
     display: inline-block;
     margin: 0 auto;   
+	
     
 }
 .listAreasContent p{
@@ -641,7 +639,44 @@ html, body{
 	border-color: #abcc26;
 	color: #abcc26;
 }
+.listAreasMain{
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+}
+.listAreas{
+	float: left;
+    width: 48%;
+	height: auto;
+	display: inline-block;
+	margin: 2% 0 0 1.3%;
+}
+.AreasName h3{
+	color: #abcc26;
+    text-align: center;
+    font-size: 1.3em;
+    font-family: 'robotoregular';
+    margin: 0 40px 15px 0;
+}
+
+.listAreasMainContent{
+	text-align: left;
+    color: #7a7a7a;
+    font-family: 'robotoregular';
+    font-size: 1.1em;	
+}
+.listAreasMainContent p{
+    margin: 5px 40px 0 0;
+    line-height: 1.5;
+	cursor: pointer;
+}
+.listAreasMainContent p:hover{
+	border-bottom: 1px solid maroon;
+	border-color: #abcc26;
+	color: #abcc26;
+}
 /*Left*/
+/*
 .listAreasLeft{
     float: left;
     width: 50%;
@@ -666,13 +701,14 @@ html, body{
     margin: 0 40px 0 0;
     line-height: 1.5;
 	cursor: pointer;
-}
+}*/
 /*.AreasLeftContent p:hover{
 	border-bottom: 1px solid maroon;
 	border-color: #abcc26;
 	color: #abcc26;
 }*/
 /*RIGHT*/
+/*
 .listAreasRight{
     float: right;
     width: 50%;
@@ -697,7 +733,7 @@ html, body{
 	cursor: pointer;
 	
 }
-
+*/
 /*modalWindow*/
 
 .modalWindow{
@@ -776,7 +812,6 @@ html, body{
     color: #fd8505;
 }
 
-
 /*DOCUMENTS*/
 .ContentDoc{
      position: relative;
@@ -847,17 +882,18 @@ html, body{
 .textDoc a:hover{
 	color: #abcc26;
 }
-.leftContentDoc{
-    width: 48%;
-    float: left;
-    margin: 0 0 0 1%;
-	height: auto;
+.mainContentDocS{
+	width: 100%;
+	height: 100%;
+	display: inline-block;
 }
-.rightContentDoc{
-    width: 48%;
-    float: right;
-    margin: 0 1% 0 0;
+
+.mainContentDoc{
+	width: 48%;
 	height: auto;
+	display: inline-block;
+	margin: 2% 0 0 1.3%;
+	float: left;
 }
 
 /*PARTNERS*/
@@ -1527,6 +1563,7 @@ footer{
     font-size: 1.4em;
      font-family: 'robotoregular'; 
 }
+/*
 .delButton{
     display: inline-block;
     background: #abcc26;
@@ -1536,6 +1573,18 @@ footer{
     margin: 0 2px 0 0;
     box-shadow: 0 6px 10px 1px rgba(0, 0, 0, 0.2);
     text-decoration: none;
+}*/
+.delButton{
+    display: inline-block;
+    background: #abcc26;
+    padding: 14px 20px 14px 20px;
+    border: 0;
+    color: #ffffff;
+    border-radius: 5px;
+    margin: 0 0 0 0;
+    box-shadow: 0 6px 10px 1px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-size: 0.9em;
 }
 .cancelButton{
     display: inline-block;
@@ -1673,6 +1722,7 @@ footer{
     margin: 0 20px 0 0;
     text-align: right;
 }
+/*
 .windowEditObjectContent textarea{
     float: right;
     width: 530px;
@@ -1685,7 +1735,29 @@ footer{
     font-family: 'robotoregular';
     color: #7a7a7a;
     margin: 0 0 50px 0;
+}*/
+
+
+
+
+.windowEditObjectContent textarea{
+    float: right;
+    width: 530px;
+    height:110px;
+    border-radius: 5px;
+    resize: none;
+    border: 1px solid #dcdada;
+    padding: 5px;
+     font-size: 1.1em;
+    font-family: 'robotoregular';
+    color: #7a7a7a;
 }
+
+
+
+
+
+
 .windowEditDocFileAnswer{
     width: 540px;
     float: right;
