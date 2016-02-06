@@ -1855,3 +1855,14 @@ footer{
     opacity: 0;
     cursor: pointer
 }
+
+.pageWindows{
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top:0;
+	display: none;
+	background: #000000;
+	opacity: 0.5; 
+    position: fixed;
+}

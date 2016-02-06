@@ -3,10 +3,14 @@
 	session_start();
 	
 	if($_SESSION['admin']){
-		$text = '<style>
+		$text = '
+		
+		<style>
 	#select_1 a{
 		border-bottom: 7px solid #fd8505;
 	}
+	
+	
 	</style>
 		 <div class="_adminHeader">
           <span class="_adminHeaderL"><p>Список членов Ассоциации</p></span>
@@ -53,7 +57,7 @@
           $text .='
       
        <!-- УДАЛЕНИЕ ОРГАНИЗАЦИИ-->
-      
+     
       <div class="windowDel" id="_windowDel_">
 	   <form method="post" enctype="multipart/form-data" action="modules/registry/src/delete.php">
           <input type="hidden" name="IdForDel" id="IdForDel" >	
@@ -259,7 +263,9 @@
 	
 	
 	else{
-	$text = '<style>
+	$text = '
+	
+	<style>
 	#select_1 a{
 		border-bottom: 7px solid #fd8505;
 	}

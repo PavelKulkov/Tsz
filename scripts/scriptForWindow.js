@@ -15,16 +15,6 @@
 			}
 		}
 		
-		//alert(Object.keys(obj).length);
-		
-		/*$(".headerModalWindow").append('<h1>ТСЖ "'+ obj[id].title +'"</h1>');
-		
-		$(".logoModalWindow").append('<img src="/files/Registry/'+ obj[id].logo + '">');
-        $(".textModalWindow").append('<p><strong>Адрес:</strong> '+obj[id].address+'</p>'+
-			                        '<p><strong>Телефон:</strong> '+ obj[id].phoneNumber +'; '+ obj[id].fax +' </p>'+
-                                    '<p><strong>E-mail:</strong><a href=#> '+ obj[id].e_mail +'</a></p>'+
-                                    '<p><strong>Председатель:</strong> '+ obj[id].President +'</p>'+
-                                    '<p><strong>Сайт: </strong><a href="#"> '+ obj[id].site +'</a></p>');*/
 	}
 	//Функция отображения всплывающего окна
 	
@@ -34,6 +24,8 @@
 			flag = false;
 		    var id = $(this).attr('id');
 		    createWindow(id, registeredHome);
+			$('body').append('<div class="pageWindows"></div>');
+			 $(".pageWindows").css("display", "block");
 		    $(".modalWindow").css("display", "block");
 		}
 	});
@@ -41,7 +33,11 @@
 	//Функция скрытия всплывающего окна
 	$(".closeModalWindowImg").click(function(){
 		flag = true;
+		
 		$(".modalWindow").css("display", "none");
+		 $(".pageWindows").css("display", "none");
+		 $('.pageWindows').remove()
+		         
 		$(".textModalWindow").empty();
 		$(".headerModalWindow").empty();
 		$(".logoModalWindow").empty();
@@ -54,6 +50,8 @@
 		    var id = $( "select option:selected").attr('id');
 			
 		    createWindow(id, registeredHome);
+			$('body').append('<div class="pageWindows"></div>');
+			$(".pageWindows").css("display", "block");
 		    $(".modalWindow").css("display", "block");
 		}
 

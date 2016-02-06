@@ -88,7 +88,7 @@ $(document).ready(function(){
 				$("#titleTsz").val(reg.title);
 				$('#idTsz').val(reg.id);
 				$('#editCoordsTsz').val(reg.breadth + "," + reg.longitude);
-				alert(reg.breadth + "," + reg.longitude);
+				//alert(reg.breadth + "," + reg.longitude);
 				$('#addressTszEditCoord').val(reg.address);
 				$('#phoneNumberTsz').val(reg.phoneNumber);
 				$('#e_mailTsz').val(reg.e_mail);
@@ -111,7 +111,7 @@ $(document).ready(function(){
             myGeocoder.then(
                 function (res) {
 					var coords = res.geoObjects.get(0).geometry.getCoordinates();
-					alert(coords);
+					//alert(coords);
 					if($(idHiddenField).val() != ""){
 						$(idHiddenField).val("");
 					}

@@ -4,12 +4,14 @@ $(document).ready(function(){
     
 	//Функция для отображения скрытого окна
 	function displayWindow(idWindow){
-		//alert("gj");
-		//$(idClick).click(function() {
+		
 		    if(flag){
 			    flag = false;
 		        //var id = $(this).attr('id');
-		        $(idWindow).css("display", "block");
+				 $('.content').append('<div class="pageWindows"></div>');
+		        $(".pageWindows").css("display", "block");
+		         $(idWindow).css("display", "block");
+				
 		    }
 			
 			var width = jQuery(idWindow).width();
@@ -20,7 +22,6 @@ $(document).ready(function(){
         
            $(idWindow).css({"left": left + "px", "top": top + "px" });
 			
-	    //});
 	}
 	
 	//Функция для скрытия открытого окна
@@ -35,6 +36,8 @@ $(document).ready(function(){
 			$(".image_uploaded").empty();
            		
 		    $(idWindow).css("display", "none");	
+			$(".pageWindows").css("display", "none");
+			$(".pageWindows").remove();
 	}
 	
 	/*Удаление документа или группы*/
@@ -47,6 +50,7 @@ $(document).ready(function(){
 	 
 	//Редактирование ТСЖ
 	$("._adminEditObjectRegistry_").click(function(){
+		 
 		displayWindow("#_windowEditObject_")
 	});
 	$(".cancelButton").click(function(){
