@@ -6,7 +6,7 @@ class Registry {
 	private $lng_prefix;	
 	public $count;
 	public $items_registry = array('id','logo','title','address','id_template','phoneNumber','E-mail','fax','President');
-	public $items_reg = array('logo','title','address','id_template','phoneNumber','e_mail','fax','President', 'site', 'area', 'man', 'groupsArea');
+	public $items_reg = array('breadth', 'longitude','logo','title','address','id_template','phoneNumber','e_mail','fax','President', 'site', 'area', 'man', 'groupsArea');
 
 	
 	function __construct($request=NULL,$db) 	{

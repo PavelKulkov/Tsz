@@ -91,9 +91,10 @@
                   <input type="text"  name="titleTsz">
              </div>
 			 <!-- <input type="hidden" id="idTsz" name="idTsz">-->
+			 <input type="hidden" id="addCoordsTsz" name="addCoordsTsz">
             <div class="windowEditObjectTitle">
                  <p>Адрес</p>
-                  <input type="text"  name="addressTsz" >
+                  <input type="text"  name="addressTsz" id="addressTszAddCoord" >
             </div>
             <div class="windowEditObjectTitle">
                  <p>Телефон</p>
@@ -157,7 +158,8 @@
             </div>
         
         <div class="windowButton">
-              <input class="delButton" type="submit" value="Сохранить"/>
+		
+              <input class="delButton" type="submit"  value="Сохранить"/>
               <a href="#" class="cancelButton">Отмена</a>
         </div>
 		</form>
@@ -176,10 +178,10 @@
              </div>
 			 
 			 <input type="hidden" id="idTsz" name="idTsz">
-			 
+			 <input type="hidden" id="editCoordsTsz" name="editCoordsTsz">
             <div class="windowEditObjectTitle">
                  <p>Адрес</p>
-                  <input type="text" id="addressTsz" name="addressTsz">
+                  <input type="text" id="addressTszEditCoord" name="addressTsz">
             </div>
             <div class="windowEditObjectTitle">
                  <p>Телефон</p>

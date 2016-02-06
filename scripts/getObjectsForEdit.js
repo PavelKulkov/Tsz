@@ -87,7 +87,9 @@ $(document).ready(function(){
 				var reg = jQuery.parseJSON(data);
 				$("#titleTsz").val(reg.title);
 				$('#idTsz').val(reg.id);
-				$('#addressTsz').val(reg.address);
+				$('#editCoordsTsz').val(reg.breadth + "," + reg.longitude);
+				alert(reg.breadth + "," + reg.longitude);
+				$('#addressTszEditCoord').val(reg.address);
 				$('#phoneNumberTsz').val(reg.phoneNumber);
 				$('#e_mailTsz').val(reg.e_mail);
 				$('#presidentTsz').val(reg.President);
@@ -98,5 +100,54 @@ $(document).ready(function(){
 		})
      
     });
+	
+	//Добавление координат по адресу ТСЖ для метки на карте
+	function getCoors(idFieldAddress, idHiddenField){
+		var address = $(idFieldAddress).val();
+		
+		ymaps.ready(init);
+		function init(){
+			var myGeocoder = ymaps.geocode(address);
+            myGeocoder.then(
+                function (res) {
+					var coords = res.geoObjects.get(0).geometry.getCoordinates();
+					alert(coords);
+					if($(idHiddenField).val() != ""){
+						$(idHiddenField).val("");
+					}
+					$(idHiddenField).val(coords);
+                },
+                function (err) {
+                // обработка ошибки
+                }
+            );
+		}
+	}
+	
+	//Добавление ТСЖ
+	$('#addressTszAddCoord').change(function() {
+		getCoors("#addressTszAddCoord", "#addCoordsTsz");
+	});
+	//Редактирование ТСЖ
+	$('#addressTszEditCoord').change(function() {
+		getCoors("#addressTszEditCoord", "#editCoordsTsz");
+	});
+	
+	
+	$('#addressTszAddCoord').blur(function() {
+		if($('#addressTszAddCoord').val() === ""){
+			$('#addCoordsTsz').val('');
+		}
+		//alert($('#addressTszAddCoord').val());
+	});
+	
+	
+	$('#addressTszEditCoord').blur(function() {
+		if($('#addressTszEditCoord').val() === ""){
+			$('#editCoordsTsz').val("");
+		}
+		//alert($('#addressTszAddCoord').val());
+	});
+	
 
 });

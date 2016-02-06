@@ -1,5 +1,5 @@
 ﻿//Формирование карты
-    ymaps.ready(init);
+  ymaps.ready(init);
     var myMap,
         myPlacemark;
  
@@ -16,6 +16,9 @@
       });
 
       for (var i = 0; i < registeredHome.length; i++) {
+		if(registeredHome[i].breadth != -1 && registeredHome[i].longitude != -1){
+			
+		
         myGeoObjects[i] = new ymaps.GeoObject({
           geometry: {
             type: "Point",
@@ -26,17 +29,19 @@
             clusterCaption: '<p class=mapHeader>ТСЖ \"' + registeredHome[i].title + '\"</p>',
 			
 
-            balloonContentBody: "<div class='mapContent'><div class='mapImage'><img src='/templates/images/registry/logo/" + registeredHome[i].logo + ".png'></div><div class='mapText'><p><strong>Адрес:</strong> " + registeredHome[i].address + "</p>" +
+            balloonContentBody: "<div class='mapContent'><div class='mapImage'><img src='/files/Registry/" + registeredHome[i].logo + "'></div><div class='mapText'><p><strong>Адрес:</strong> " + registeredHome[i].address + "</p>" +
 			    "<p><strong>Телефон: </strong> " + registeredHome[i].phoneNumber + " ; " + registeredHome[i].fax + "</p>" +
 				"<p><strong>E-mail:</strong> " + registeredHome[i].e_mail + "</p>"+
 				"<p><strong>Председатель:</strong> " + registeredHome[i].President +"</p>" +
 				"<p><strong>Сайт:</strong> <a href="+ registeredHome[i].site + "> " + registeredHome[i].site + "</a></p></div></div>",
             hintContent: '<p class=mapHeader>ТСЖ \"' + registeredHome[i].title + '\"</p>',  //Хинт для метки
-            /*balloonContentFooter: '<a href="#">' + registeredHome[i].site + '</a>'*/
+           
           }
         });
+		}
       }
       var myClusterer = new ymaps.Clusterer({clusterDisableClickZoom: true});
       myClusterer.add(myGeoObjects);
       myMap.geoObjects.add(  myClusterer);
+	
     }
