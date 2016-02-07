@@ -29,9 +29,9 @@
 		@unlink($_SERVER['DOCUMENT_ROOT']."/files".$oldDoc['path']);
 		
 		$info = pathinfo($uploadfile);
-		
-		@rename($uploaddir.basename($_FILES['uploaded_file_edit_object']['name']),$uploaddir.md5(basename($_FILES['uploaded_file_edit_object']['name'],'.'.$info['extension'])).'.'.$info['extension']);
-		$path = "/Docs/".md5(basename($path,'.'.$info['extension'])).'.'.$info['extension'];
+		$newPath = $uploaddir.md5(basename($path)).'.'.$info['extension'];
+		rename($uploadfile,$newPath);
+		$path = "/Docs/".md5(basename($path)).'.'.$info['extension'];
 		
 		
 		$newDoc = array('id'=>$_POST['idDoc'],'title'=>$_POST['titleDoc'],'date'=>date("Y-m-d H:i:s"),'path'=>$path);
@@ -46,9 +46,9 @@
 		
 		
 		$info = pathinfo($uploadfile);
-		
-		@rename($uploaddir.basename($_FILES['uploaded_file_edit_object']['name']),$uploaddir.md5(basename($_FILES['uploaded_file_edit_object']['name'],'.'.$info['extension'])).'.'.$info['extension']);
-		$path = "/Docs/".md5(basename($path,'.'.$info['extension'])).'.'.$info['extension'];
+		$newPath = $uploaddir.md5(basename($path)).'.'.$info['extension'];
+		rename($uploadfile,$newPath);
+		$path = "/Docs/".md5(basename($path)).'.'.$info['extension'];
 		
 		$newDoc = array('title'=>$_POST['title'],'date'=>date("Y-m-d H:i:s"),'groupOfDocs'=>$_POST['idGroup'],'path'=>$path);
 		$documentation ->saveDoc($newDoc);
