@@ -76,6 +76,19 @@ $(document).ready(function(){
 		})
      
     });
+	$('._adminEditObjectContact_').click(function() {
+		var id =($(this).attr('id'));
+		$.ajax({
+			url:"../modules/contact/src/getContacts.php",
+			type:"post",
+			data:{"nameField":id},
+			success:function(data){
+			
+			}
+		})
+     
+    });
+	
 	//Редактирование ТСЖ
 	$('._adminEditObjectRegistry_').click(function() {
 		var id =($(this).attr('id'));

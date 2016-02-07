@@ -1,1 +1,0 @@
-<center><h1 style="font-size: 28pt;">{#title}</h1></center>

@@ -1,1 +1,0 @@
-a:4:{s:10:"service_id";s:2:"93";s:5:"title";s:12:"Деньги";s:18:"short_name_service";s:23:"с процентами";s:17:"url_image_service";s:6:"34.jpg";}

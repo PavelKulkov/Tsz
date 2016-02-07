@@ -132,4 +132,11 @@ $(document).ready(function(){
 	$(".cancelButton").click(function(){
 		closeWindow("#_windowEditObjectQuestions_")
 	});
+	/*Редактирование контактов*/
+	$("._adminEditObjectContact_").click(function(){
+		displayWindow("#_windowEditObjectContact_")
+	});
+	$(".cancelButton").click(function(){
+		closeWindow("#_windowEditObjectContact_")
+	});
  });
