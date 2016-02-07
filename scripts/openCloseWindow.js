@@ -18,7 +18,7 @@ $(document).ready(function(){
            var height = jQuery(idWindow).height();
         
            var left = (screen.width - width)/2;
-           var top = (screen.height - height)/2;
+           var top = (screen.height - height)/2 - 50;
         
            $(idWindow).css({"left": left + "px", "top": top + "px" });
 			

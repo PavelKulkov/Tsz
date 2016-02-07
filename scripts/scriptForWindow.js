@@ -9,6 +9,7 @@
 		        $(".logoModalWindow").append('<img src="/files/Registry/'+ obj[i].logo + '">');
                 $(".textModalWindow").append('<p><strong>Адрес:</strong> '+obj[i].address+'</p>'+
 			                        '<p><strong>Телефон:</strong> '+ obj[i].phoneNumber +'; '+ obj[i].fax +' </p>'+
+									 '<p><strong>Факс:</strong> '+ obj[i].fax +' </p>'+
                                     '<p><strong>E-mail:</strong><a href=#> '+ obj[i].e_mail +'</a></p>'+
                                     '<p><strong>Председатель:</strong> '+ obj[i].President +'</p>'+
                                     '<p><strong>Сайт: </strong><a href="#"> '+ obj[i].site +'</a></p>');

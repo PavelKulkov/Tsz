@@ -53,5 +53,24 @@ $(document).ready(function(){
 	         var input2 = $(this)[0];
         	addFile(input2,"#image_uploaded_add_object_group", "image_preview_add_object_group", "#file_name_add_object_group p");
 	});
+	
+	
+	//Добавление новостей
+	$("#uploaded_file_news_one").change(function() { 
+	         var input2 = $(this)[0];
+        	addFile(input2,"#image_uploaded_news_one", "image_preview_news_one", "#file_name_news_one p");
+	});
+    
+    $("#uploaded_file_news_two").change(function() { 
+	         var input2 = $(this)[0];
+        	addFile(input2,"#image_uploaded_news_two", "image_preview_news_two", "#file_name_news_two p");
+	});
+    
+    $("#uploaded_file_news_three").change(function() { 
+	         var input2 = $(this)[0];
+        	addFile(input2,"#image_uploaded_news_three", "image_preview_news_three", "#file_name_news_three p");
+	});
+	
+	
 
 });

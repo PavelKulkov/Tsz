@@ -6,7 +6,7 @@
     function init(){
       myMap = new ymaps.Map("map", {
           center: [53.197167, 45.008982],
-          zoom: 14
+          zoom: 11
       });
       var myGeoObjects = [];
 
@@ -30,7 +30,8 @@
 			
 
             balloonContentBody: "<div class='mapContent'><div class='mapImage'><img src='/files/Registry/" + registeredHome[i].logo + "'></div><div class='mapText'><p><strong>Адрес:</strong> " + registeredHome[i].address + "</p>" +
-			    "<p><strong>Телефон: </strong> " + registeredHome[i].phoneNumber + " ; " + registeredHome[i].fax + "</p>" +
+			    "<p><strong>Телефон: </strong> " + registeredHome[i].phoneNumber + "</p>" +
+				"<p><strong>Факс: </strong> " + registeredHome[i].fax + "</p>" +
 				"<p><strong>E-mail:</strong> " + registeredHome[i].e_mail + "</p>"+
 				"<p><strong>Председатель:</strong> " + registeredHome[i].President +"</p>" +
 				"<p><strong>Сайт:</strong> <a href="+ registeredHome[i].site + "> " + registeredHome[i].site + "</a></p></div></div>",

@@ -9,6 +9,14 @@ if($_SESSION['admin']){
 	$new = $news->getNew($id_new);
 
 	$text ='
+	<style>
+	#select_5 a{
+		border-bottom: 7px solid #fd8505;
+	}
+	</style>
+	<script>
+		    $(".feedbackContent").append("<a href=modules/auth/admin.php?do=logout class=adminExit>Выход</a>");	
+		    </script>
       <div class="_adminHeader">
           <span class="_adminHeaderL"><p><a href="/news">Новости</a></p></span>
           <span class="_adminHeaderR">

@@ -101,17 +101,18 @@ $(document).ready(function(){
 				$("#titleTsz").val(reg.title);
 				$('#idTsz').val(reg.id);
 				$('#editCoordsTsz').val(reg.breadth + "," + reg.longitude);
-				//alert(reg.breadth + "," + reg.longitude);
 				$('#addressTszEditCoord').val(reg.address);
 				$('#phoneNumberTsz').val(reg.phoneNumber);
 				$('#e_mailTsz').val(reg.e_mail);
+				$('#faxTsz').val(reg.fax);
 				$('#presidentTsz').val(reg.President);
 				$('#siteTsz').val(reg.site);
 			    $('#area-'+reg.groupsArea).attr("checked","checked");
+				$('#file_name_edit_object_group p').empty();
+				$('#file_name_edit_object_group p').append(reg.logo);
 				$('#image_uploaded_edit_object_group').append("<img id='image"+reg.id+"' src='../files/Registry/"+reg.logo+"'>");
 			}
 		})
-     
     });
 	
 	//Добавление координат по адресу ТСЖ для метки на карте
@@ -124,7 +125,7 @@ $(document).ready(function(){
             myGeocoder.then(
                 function (res) {
 					var coords = res.geoObjects.get(0).geometry.getCoordinates();
-					//alert(coords);
+				
 					if($(idHiddenField).val() != ""){
 						$(idHiddenField).val("");
 					}
@@ -151,7 +152,6 @@ $(document).ready(function(){
 		if($('#addressTszAddCoord').val() === ""){
 			$('#addCoordsTsz').val('');
 		}
-		//alert($('#addressTszAddCoord').val());
 	});
 	
 	
@@ -159,7 +159,6 @@ $(document).ready(function(){
 		if($('#addressTszEditCoord').val() === ""){
 			$('#editCoordsTsz').val("");
 		}
-		//alert($('#addressTszAddCoord').val());
 	});
 	
 

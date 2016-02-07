@@ -104,6 +104,10 @@
                  <p>Телефон</p>
                   <input type="text" name="phoneNumberTsz">
             </div>
+			<div class="windowEditObjectTitle">
+                 <p>Факс</p>
+                  <input type="text" name="faxTsz">
+            </div>
             <div class="windowEditObjectTitle">
                  <p>E-mail</p>
                   <input type="text" name="e_mailTsz">
@@ -190,6 +194,10 @@
             <div class="windowEditObjectTitle">
                  <p>Телефон</p>
                   <input type="text" id="phoneNumberTsz" name="phoneNumberTsz">
+            </div>
+			<div class="windowEditObjectTitle">
+                 <p>Факс</p>
+                  <input type="text" id="faxTsz" name="faxTsz">
             </div>
             <div class="windowEditObjectTitle">
                  <p>E-mail</p>

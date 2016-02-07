@@ -42,7 +42,7 @@
 	        $editCoords = array(-1, -1);
 		}
 		
-		$newReg = array('id'=>$_POST['idTsz'],'breadth'=>$editCoords[0],'longitude'=>$editCoords[1],'logo'=>$path,'title'=>$_POST['titleTsz'],'address'=>$_POST['addressTsz'],'id_template'=>1,'phoneNumber'=>$_POST['phoneNumberTsz'],'e_mail'=>$_POST['e_mailTsz'],'fax'=>3,'President'=>$_POST['presidentTsz'], 'site'=>$_POST['siteTsz'], 'area'=>1, 'man'=>"ПИК", 'groupsArea'=>$_POST['area']);
+		$newReg = array('id'=>$_POST['idTsz'],'breadth'=>$editCoords[0],'longitude'=>$editCoords[1],'logo'=>$path,'title'=>$_POST['titleTsz'],'address'=>$_POST['addressTsz'],'id_template'=>1,'phoneNumber'=>$_POST['phoneNumberTsz'],'e_mail'=>$_POST['e_mailTsz'],'fax'=>$_POST['faxTsz'],'President'=>$_POST['presidentTsz'], 'site'=>$_POST['siteTsz'], 'area'=>1, 'man'=>"ПИК", 'groupsArea'=>$_POST['area']);
 		
 		$registry ->saveReg($newReg);
 			
@@ -67,7 +67,7 @@
 				$addCoords = array(-1, -1);
 			}
 	
-		    $newReg = array('breadth'=>$addCoords[0],'longitude'=>$addCoords[1],'logo'=>$path,'title'=>$_POST['titleTsz'],'address'=>$_POST['addressTsz'],'id_template'=>1,'phoneNumber'=>$_POST['phoneNumberTsz'],'e_mail'=>$_POST['e_mailTsz'],'fax'=>3,'President'=>$_POST['presidentTsz'], 'site'=>$_POST['siteTsz'], 'area'=>1, 'man'=>"ПИК", 'groupsArea'=>$_POST['area']);
+		    $newReg = array('breadth'=>$addCoords[0],'longitude'=>$addCoords[1],'logo'=>$path,'title'=>$_POST['titleTsz'],'address'=>$_POST['addressTsz'],'id_template'=>1,'phoneNumber'=>$_POST['phoneNumberTsz'],'e_mail'=>$_POST['e_mailTsz'],'fax'=>$_POST['faxTsz'],'President'=>$_POST['presidentTsz'], 'site'=>$_POST['siteTsz'], 'area'=>1, 'man'=>"-", 'groupsArea'=>$_POST['area']);
 		
 		    $registry ->saveReg($newReg);
 		}

@@ -919,13 +919,16 @@ html, body{
 }
 .ourPartnersContent{
     width: 324px;
+	
     display: inline-block;
-    height: 180px;
+    height: auto;
     margin: 10px 0 10px 7px;
     float: left;
 }
 .ourPartnersContent p{ 
     font-size: 1.1em;
+	display: inline-block;
+	 word-wrap: break-word;
 	
 }
 .ourPartnersContent a{
@@ -1624,7 +1627,7 @@ footer{
 
 .windowEditRegistry{
     width: 900px;
-    height: 650px;
+    height: 700px;
     background: #ffffff;
     z-index: 99999;
     position: fixed;

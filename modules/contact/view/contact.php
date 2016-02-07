@@ -1,6 +1,15 @@
 <?php
 	if($_SESSION['admin']){
-		$text = '<div class="_adminHeader">
+		$text = '
+		<style>
+	#select_6 a{
+		border-bottom: 7px solid #fd8505;
+	}
+	</style>
+		<script>
+		    $(".feedbackContent").append("<a href=modules/auth/admin.php?do=logout class=adminExit>Выход</a>");	
+		    </script>
+		<div class="_adminHeader">
           <span class="_adminHeaderL"><p>Контакты</p></span>
       </div>
       

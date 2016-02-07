@@ -173,7 +173,7 @@
 				
               <div class="windowEditObjectContent">
                   <p class="windowEditObjectP">Описание</p>
-                  <input type="text" name="textProject">            
+                  <textarea  name="textProject"> </textarea>           
               </div>    
          
           <div class="windowButton">
@@ -184,7 +184,7 @@
            </form>
       </div>
       
-       <!-- РЕДАКТИРОВАНИЕ ИНФОРМАЦИИ О ПАРТНЕРЕ -->
+       <!-- РЕДАКТИРОВАНИЕ ИНФОРМАЦИИ О ПРОЕКТЕ -->
       
       <div class="windowEditObject" id="_windowEditObjectProject_">
           <h3>Редактирование информации о проекте</h3>
@@ -197,7 +197,7 @@
 				<input type="hidden" id="idProject" name="idProject">
               <div class="windowEditObjectContent">
                   <p class="windowEditObjectP">Описание</p>
-                  <input type="text" id="textProject" name="textProject">             
+                  <textarea id="textProject" name="textProject"> </textarea>            
               </div>    
           <div class="windowButton">
               <input class="delButton" type="submit" value="Сохранить"/>
@@ -231,7 +231,7 @@
 		        foreach ($partners as $partner) {
 			        $text .= '<div class="ourPartnersContent">
                       <div class="namePartners"> 
-                          <a href="'.$partner['site'].'" target="_blank"><img src="/templates/images/partners/'.$partner['image'].'"></a>
+                          <a href="'.$partner['site'].'" target="_blank"><img src="/files'.$partner['image'].'"></a>
                       </div>
                       <p><a href="'.$partner['site'].'" target="_blank">'.$partner['title'].'</a></p>
                   </div>';
