@@ -1,0 +1,49 @@
+<?php
+
+ $masFileName;
+	function count_files($dir){
+		$c = 0;
+		$d = dir($dir);
+		while($str = $d->read()){
+			
+			if($str{0} != '.'){
+				if(is_dir($dir.'/'.$str)){
+					$c += count_files($dir.'/'.$str);
+				}
+				else{
+					$masName[] = $str;
+					$c++;
+				}
+			}
+		}
+		$d->close();
+		$GLOBALS["masFileName"] = $masName;
+		
+	}
+
+
+$text = '<div class="lastNewsIndex">';
+if(!empty($entry)){
+	$text .= '<h1>Последние новости</h1>';
+	
+}
+ 
+foreach ($mas as $entry) {
+	count_files('files'.$entry['image']);
+   // $masImage = explode(",", $entry['image']);
+   
+	$text .= '<div class="lastNewsBox">
+              <div class="lastNewsContent">
+                  <div class="lastNewsImage">
+				 
+                      <a href="news?id_news='.$entry['id'].'"><img src="files'.$entry['image'].$masFileName[0].'"></a>
+                  </div>
+                  <div class="lastNewsText">
+                      <p>'.$entry['title'].'</p>
+                      <a href="news?id_news='.$entry['id'].'">Подробнее...</a>
+                  </div>
+              </div>
+          </div>';
+}	
+$text .='</div>' ;
+$module['text'] = $text;
