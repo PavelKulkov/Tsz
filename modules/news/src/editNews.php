@@ -1,13 +1,54 @@
 <?php
 	require_once($modules_root."news/class/News.class.php");
 	
+	$masFileName;
+	function count_files($dir){
+		$c = 0;
+		$d = dir($dir);
+		while($str = $d->read()){
+			
+			if($str{0} != '.'){
+				if(is_dir($dir.'/'.$str)){
+					$c += count_files($dir.'/'.$str);
+				}
+				else{
+					$masName[] = $str;
+					$c++;
+				}
+			}
+		}
+		$d->close();
+		$GLOBALS["masFileName"] = $masName;
+		
+	}
+	
+	function getStrImage($id, $path, $masName){
+		
+		if(isset($masName[$id])){
+			//Картинка
+			$mas[0] = '<img src="../files'.$path.$masName[$id].'">';
+			//Имя файла
+			$mas[1] = $masName[$id];	 
+	   }
+	   else{
+			$mas[0] =' <img src="../files/News/noImage/noImage.png">';
+			$mas[1] = 'Файл не выбран';
+	   }
+	   return $mas;
+	}
+	
 	
 if($_SESSION['admin']){
 	$id_new = $request->getValue('id');
 	if(!isset($news)) $news = new News($request, $db);
 	
 	$new = $news->getNew($id_new);
-
+    count_files('files'.$new['image']);
+	
+	$image1 =  getStrImage(0,$new['image'], $masFileName);
+	$image2 =  getStrImage(1,$new['image'], $masFileName);
+	$image3 =  getStrImage(2, $new['image'],$masFileName);
+	
 	$text ='
 	<style>
 	#select_5 a{
@@ -41,11 +82,13 @@ if($_SESSION['admin']){
               <div class="_adminEditNewsContentImg">
                  <div class="file_upload">
                       <button type="button">Загрузить...</button>
-                      <div class="file_name" id="file_name_news_one"><p>Файл не выбран</p></div>
+                      <div class="file_name" id="file_name_news_one"><p>'.$image1[1].'</p></div>
                       <input type="file" name="uploaded_file_news_one" id="uploaded_file_news_one" multiple accept="image/*,image/jpeg">
                  </div> 
-                 <div class="image_uploaded" id="image_uploaded_news_one">
-					<img src="../files'.$new['image'].'image1.jpg">
+                 <div class="image_uploaded" id="image_uploaded_news_one">';
+		
+				 $text .='	
+					'.$image1[0].'
 				 </div>
               </div>
           </div>
@@ -54,11 +97,13 @@ if($_SESSION['admin']){
               <div class="_adminEditNewsContentImg">
                  <div class="file_upload">
                       <button type="button">Загрузить...</button>
-                      <div class="file_name" id="file_name_news_two"><p>Файл не выбран</p></div>
+                      <div class="file_name" id="file_name_news_two"><p>'.$image2[1].'</p></div>
                       <input type="file" name="uploaded_file_news_two" id="uploaded_file_news_two" multiple accept="image/*,image/jpeg">
                  </div> 
-                 <div class="image_uploaded" id="image_uploaded_news_two">
-					<img src="../files'.$new['image'].'image2.jpg">
+                 <div class="image_uploaded" id="image_uploaded_news_two">';
+				 
+				 $text .='
+					'.$image2[0].'
 				 </div>
               </div>
           </div>
@@ -67,11 +112,13 @@ if($_SESSION['admin']){
               <div class="_adminEditNewsContentImg">
                  <div class="file_upload">
                       <button type="button">Загрузить...</button>
-                      <div class="file_name" id="file_name_news_three"><p>Файл не выбран</p></div>
+                      <div class="file_name" id="file_name_news_three"><p>'.$image3[1].'</p></div>
                       <input type="file" name="uploaded_file_news_three" id="uploaded_file_news_three" multiple accept="image/*,image/jpeg">
                  </div> 
-                 <div class="image_uploaded" id="image_uploaded_news_three">
-					<img src="../files'.$new['image'].'image3.jpg">
+                 <div class="image_uploaded" id="image_uploaded_news_three">';
+
+				 $text .= '
+					'.$image3[0].'
 				</div>
               </div>
           </div>

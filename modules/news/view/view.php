@@ -1,13 +1,26 @@
 <?php
-    function getMasImages($obj){
-		$mas = explode(",", $obj);
-		$text = '';
-		
-		for($i = 0; $i < count($mas); $i++){
-			$text .= '<img src="/templates/images/news/'.$mas[$i].'.png">';
+    //Имена файлов из деректории
+    $masFileName;
+	function count_files($dir){
+		$c = 0;
+		$d = dir($dir);
+		while($str = $d->read()){
+			
+			if($str{0} != '.'){
+				if(is_dir($dir.'/'.$str)){
+					$c += count_files($dir.'/'.$str);
+				}
+				else{
+					$masName[] = $str;
+					$c++;
+				}
+			}
 		}
-		return $text;
+		$d->close();
+		$GLOBALS["masFileName"] = $masName;
+		return $c;
 	}
+	
 	
     $text = '<style>
 	#select_5 a{
@@ -19,7 +32,6 @@
             </div>
 	';
 	
-
     $text .= '<div class="news">
           <div class="openNews">
               <p class="newsContentData">'.date('d.m.Y H:i',strtotime($new['date'])).'</p>
@@ -27,8 +39,10 @@
               <p class="openNewsText">'.$new['text'].'
               </p>
          
-              <div class="openNewsImages">';
-			 $text .= getMasImages($new['image']);
+              <div class="openNewsImages">';			  
+			 for($i=1; $i<=count_files('files'.$new['image']); $i++ ){
+				 $text .= '<img src="/files'.$new['image'].$masFileName[$i-1].'">';
+			 }
              $text .='</div>
               <a href="news">Ко всем новостям</a>
           </div>

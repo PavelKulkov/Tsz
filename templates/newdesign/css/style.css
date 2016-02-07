@@ -1349,6 +1349,7 @@ footer{
 ._adminEditNewsContentImg .file_name p{
     text-align: center;    
     width: 320px;
+	 word-wrap: break-word;
 }
 ._adminContentButton{
     width: 1000px;

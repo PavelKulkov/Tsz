@@ -57,6 +57,7 @@ $(document).ready(function(){
 	
 	//Добавление новостей
 	$("#uploaded_file_news_one").change(function() { 
+	
 	         var input2 = $(this)[0];
         	addFile(input2,"#image_uploaded_news_one", "image_preview_news_one", "#file_name_news_one p");
 	});

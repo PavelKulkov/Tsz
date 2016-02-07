@@ -84,14 +84,14 @@
 				</div>
 				<div class="news">';
 				foreach ($list as $entry) {	
-					$mas = explode(",", $entry['image']);
+					//$mas = explode(",", $entry['image']);
 					
 					$text .= '
 					<div class="newsContent">
 				  <p class="newsContentData">'.date('d.m.Y H:i',strtotime($entry['date'])).'</p>
 				  <a class="newsContentTitle" href="news?id_news='.$entry['id'].'">'.$entry['title'].'</a>
 				  <div class="newsText">
-					  <img src="/templates/images/news/'.$mas[0].'.png">
+					  <img src="/files'.$entry['image'].'image1.jpg">
 					  <p>'.$entry['preview'].'</p>
 					  <a href="news?id_news='.$entry['id'].'">Читать дальше</a>
 				  </div>
