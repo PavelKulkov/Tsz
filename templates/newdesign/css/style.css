@@ -679,79 +679,19 @@ html, body{
 	border-color: #abcc26;
 	color: #abcc26;
 }
-/*Left*/
-/*
-.listAreasLeft{
-    float: left;
-    width: 50%;
-    margin: 10px 0 20px 0;
-    
-}
-.AreasLeftName h3{
-    color: #abcc26;
-    text-align: right;
-    font-size: 1.3em;
-    font-family: 'robotoregular';
-    margin: 0 40px 15px 0;
-    
-}
-.AreasLeftContent{
-    text-align: right;
-    color: #7a7a7a;
-    font-family: 'robotoregular';
-    font-size: 1.1em;
-}
-.AreasLeftContent p{
-    margin: 0 40px 0 0;
-    line-height: 1.5;
-	cursor: pointer;
-}*/
-/*.AreasLeftContent p:hover{
-	border-bottom: 1px solid maroon;
-	border-color: #abcc26;
-	color: #abcc26;
-}*/
-/*RIGHT*/
-/*
-.listAreasRight{
-    float: right;
-    width: 50%;
-    margin: 10px 0 20px 0;
-}
-.AreasRightName h3{
-    color: #abcc26;
-    text-align: left;
-    font-size: 1.3em;
-    font-family: 'robotoregular';
-    margin: 0 0 15px 40px;
-}
-.AreasRightContent{
-    text-align: left;
-    color: #7a7a7a;
-    font-family: 'robotoregular';
-    font-size: 1.1em;
-}
-.AreasRightContent p{
-    margin: 0 0 0 40px;
-    line-height: 1.5;
-	cursor: pointer;
-	
-}
-*/
-/*modalWindow*/
 
+/*modalWindow*/
 .modalWindow{
     width: 800px;
-    height: 400px;
+    height: 430px;
     background: #ffffff;
     display: none;
     position: fixed;
     z-index: 99999;
-    position: fixed;
     box-shadow: 0px 0px 20px #000;
     top: 35%;
-	margin: 0 100px 0 100px;
-  
+	left: 0;
+	top: 0; 
 }
 .closeModalWindow{
     position: relative;
@@ -775,7 +715,7 @@ html, body{
     width: 100%;
     height: 60px;
 }
-.headerModalWindow h1{
+.modalWindow .headerModalWindow h1{
     color: #fd8505;
     font-family: 'HattoriHanzoLight';
     text-align: center;

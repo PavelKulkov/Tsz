@@ -42,6 +42,16 @@ class Registry {
 			return false;
 	}
 	
+	function getAllReg(){
+		$sql= "SELECT t1.id, t1.breadth, t1.longitude, t1.logo, t1.title, t1.address, t1.phoneNumber, t1.e_mail, t1.fax, t1.President, t1.site, t2.groupsArea AS groupsArea
+		       FROM registry t1
+			   LEFT OUTER JOIN groups_area t2
+			   ON t1.groupsArea = t2.id";
+			   $item  =$this->db_instance->select($sql);
+	    if(!$item) return false;
+		
+	    return $item;
+	}
 	function getReg($id) {
 		
 		$sql = "SELECT * FROM `registry` WHERE `id`= ?";

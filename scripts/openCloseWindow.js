@@ -7,7 +7,6 @@ $(document).ready(function(){
 		
 		    if(flag){
 			    flag = false;
-		        //var id = $(this).attr('id');
 				 $('.content').append('<div class="pageWindows"></div>');
 		        $(".pageWindows").css("display", "block");
 		         $(idWindow).css("display", "block");
@@ -18,7 +17,7 @@ $(document).ready(function(){
            var height = jQuery(idWindow).height();
         
            var left = (screen.width - width)/2;
-           var top = (screen.height - height)/2 - 50;
+           var top = (document.body.clientHeight - height)/2;
         
            $(idWindow).css({"left": left + "px", "top": top + "px" });
 			

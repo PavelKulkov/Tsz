@@ -168,7 +168,16 @@
           
 		  
 		  
-		  <div class="modalWindow">
+		  
+   </div> 
+		  
+		   {#area24}
+      </div>
+          
+      </div>
+	  
+	   <!--Всплывающее окно-->
+  <div class="modalWindow">
       <div class="closeModalWindow">
           <div class="closeModalWindowImg"></div>
       </div>
@@ -177,15 +186,6 @@
           <div class="logoModalWindow"></div>
           <div class="textModalWindow"></div>
       </div>
-   </div> 
-		  
-		  
-      </div>
-           {#area24}
-      </div>
-	  
-	   <!--Всплывающее окно-->
-  
 	  
   </div>
   
