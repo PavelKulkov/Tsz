@@ -18,9 +18,9 @@ html, body{
     min-width: 1024px;
 }
 .feedbackContent{
-    width: 350px;
+    width: 250px;
     float: right;
-    margin: 5px 5% 0 0;
+    margin: 5px 1% 0 0;
     color: #7a7a7a;
     display: flex;
     font-family: 'HattoriHanzoLight';
@@ -149,7 +149,7 @@ html, body{
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	opacity: 0.8;
+	opacity: 0.9;
 }
 .upper_picture img{
     position: absolute;
@@ -181,7 +181,9 @@ html, body{
     text-align: center;
     margin: 0 auto;
     color: #ffffff;
+	font-weight: 400;
     font-family: 'HattoriHanzoLight';
+	
 }
 .formContent{
     width: 456px;

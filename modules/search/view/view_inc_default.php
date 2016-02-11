@@ -1,7 +1,7 @@
 <?php
 	$text = '<form class="searchForm">
-                  <input type="text" placeholder="Введите название вашего ТСЖ" class="nameTsz"  autocomplete="off">
-               
+                  <input type="text" placeholder="Введите адрес" class="nameTsz"  autocomplete="off">
+               <h2>или выберите по названию</h2>
 				  <select class="listTsz">';
 	foreach($listTsz as $Tsz){
 			$text .='<option id="'.$Tsz['id'].'">'.$Tsz['title'].'</option>';

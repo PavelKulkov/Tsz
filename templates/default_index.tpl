@@ -8,15 +8,14 @@
 	</title>
 	<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
 	<script src="../modules/search/scripts/search.js"></script>
-	<script src="/scripts/scriptForJson.js"></script>
 	<script src="/scripts/scriptForWindow.js"></script>
   </head>
   <body>
   <header>
       <div class="feedback">
           <div class="feedbackContent">
-              <img src="/templates/images/logo_tube.png"><p> 8 (8412) 23 11 25 | </p><img src="/templates/images/logo_message.png"><p><a href="#">Обратная связь</a></p>
-              </div>
+              <img src="/templates/images/logo_tube.png"><p> 8 (8412) 23 11 25 </p>
+          </div>
       </div>
     <div class="header">
       <img src="/templates/images/index_logo/feader.png">
@@ -36,7 +35,7 @@
       </div>
       <div class="search">
           <h1>Найди свое ТСЖ</h1>
-          <h2>Введите название своего ТСЖ<br>или адрес</h2>
+          <h2>Введите адрес своего ТСЖ</h2>
           <div class="formContent">
               {#area4}
           </div>

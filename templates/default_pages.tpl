@@ -10,7 +10,6 @@
 	<script src="/scripts/jquery-ui.min.js"></script>
 	<script src="/scripts/accordion.js"></script>
 	<script src="../modules/search/scripts/search.js"></script>
-	<script src="/scripts/scriptForJson.js"></script>
 	<script src="/scripts/scriptForMap.js"></script>
 	<script src="/scripts/scriptForWindow.js"></script>
 	<script type="text/javascript" src="/scripts/addDoc.js"></script>
@@ -20,18 +19,15 @@
 	
 	<script src="/scripts/activMenu.js"></script>
 	
-	
-	
 	<title>
 	  associationTsz
 	</title>
-	<script src="http://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
   </head>
   <body>
   <header>
       <div class="feedback">
           <div class="feedbackContent">
-              <img src="/templates/images/logo_tube.png"><p> 8 (8412) 23 11 25 | </p><img src="/templates/images/logo_message.png"><p><a href="#">Обратная связь</a></p>
+              <img src="/templates/images/logo_tube.png"><p> 8 (8412) 23 11 25 </p>
               </div>
       </div>
     <div class="header">
