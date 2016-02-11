@@ -32,7 +32,7 @@
   
    <div class="sidebar">
       <div class="upper_picture">
-         <img src="/templates/images/upper_picture.png">
+         <!--<img src="/templates/images/upper_picture.png">-->
       </div>
       <div class="search">
           <h1>Найди свое ТСЖ</h1>
