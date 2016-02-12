@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 	if($_SESSION['admin']){
 		$text = '
 		<style>
@@ -230,10 +230,14 @@
 				 
 		        foreach ($partners as $partner) {
 			        $text .= '<div class="ourPartnersContent">
+					  
                       <div class="namePartners"> 
                           <a href="'.$partner['site'].'" target="_blank"><img src="/files'.$partner['image'].'"></a>
                       </div>
-                      <p><a href="'.$partner['site'].'" target="_blank">'.$partner['title'].'</a></p>
+					  <div class="contentPartners">
+					      <p><a href="'.$partner['site'].'" target="_blank">'.$partner['title'].'</a></p>
+					  </div>
+   
                   </div>';
 		        }	
 		        $text .=' </div>
@@ -242,11 +246,15 @@
                  <h2>Совместные проекты</h3>';
 				 
 		        foreach ($projects as $project) {
-			        $text .= '<div class="ourPartnersContent">
-                      <div class="namePartners"> 
-                          <p><a href="'.$project['site'].'" target="_blank">'.$project['title'].'</a></p>
-                      </div>
-                      <p>'.$project['text'].'</p>
+			        $text .= '
+					<div class="ourPartnersContent">
+					
+					<div class="namePartners"> 
+					    <img src="/files'.$project['image'].'">
+					</div>
+					<div class="contentPartners">
+					    <p><a href="'.$project['site'].'" target="_blank">'.$project['title'].'</a></p>
+					</div>   
                  </div>';	
 		        }
 		        $text .=' </div>';

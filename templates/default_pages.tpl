@@ -31,7 +31,7 @@
               </div>
       </div>
     <div class="header">
-      <img src="/templates/images/index_logo/feader.png">
+      <a href="/"><img src="/templates/images/index_logo/feader.png"></a>
     </div>
       
     <div class="topMenu">

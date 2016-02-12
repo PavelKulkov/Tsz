@@ -123,7 +123,9 @@ $text .='
       <div class="pageTitle">
           <h1>Часто задаваемые вопросы</h1>
       </div>
-   <div class="questions" id="accordion">';
+   
+   <div class="questions" id="accordion">
+';
     
 	foreach ($list as $entry) {
 	    $text .= '

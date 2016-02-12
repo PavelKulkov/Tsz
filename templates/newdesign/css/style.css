@@ -8,9 +8,13 @@ html, body{
    /* background: #ffffff;*/
    height: 100%;
 }
-/*
-  HEADER
-*/
+a, p, h3{
+   -webkit-transition: 300ms;
+   -moz-transition: 300ms;
+   -o-transition: 300ms;
+   transition: 300ms;
+}
+/* HEADER */
 .feedback{
     width: 100%;
     height: 30px;
@@ -31,7 +35,6 @@ html, body{
 .feedbackContent a:hover{
     color:#fd8505;
 }
-
 .feedbackContent .adminExit{
     margin: 0 0 0 30px;
 }
@@ -41,7 +44,6 @@ html, body{
     width: 19px;
     height: 14px
 }
-
 .header{
     width: 1000px;
 	height: 135px;
@@ -49,25 +51,17 @@ html, body{
 	
 }
 .header img{
-   /* display: block;*/
     width: 427px;
 	height: 125px;
 	margin: 10px 286px 0 286px;
-    /*min-width: 1024px;*/
 }
 
-/*
-  MENU
-*/
-
+/* MENU */
 .topMenu{
     width: 100%;
     background: #abcc26;
     min-width: 1024px;
     height: 50px;
-	
-	
-	
 }
 @-moz-document url-prefix()
 {
@@ -92,8 +86,7 @@ html, body{
 }
 .insideContent li{
     list-style: none;
-    text-align: center;
-   
+    text-align: center;  
 }
 #select_1{
     width: 270px;
@@ -118,8 +111,7 @@ html, body{
     text-decoration: none;
     color: #ffffff;
     padding: 10px;
-    border-bottom: 7px solid #abcc26;
-     
+    border-bottom: 7px solid #abcc26; 
 }
 .insideContent a:hover{
 	border-bottom: 7px solid #fd8505;
@@ -128,12 +120,10 @@ html, body{
 	border-bottom: 7px solid #fd8505;
 }
 
-
 /*SIDEBAR*/
 .sidebar{
     width: 100%;
     position: relative;
-	
 }
 .upper_picture{
     position: relative;
@@ -143,7 +133,6 @@ html, body{
 	min-width: 1000px;
 	max-width: 2560px;
     display: block;
-	
 	background: #3A3A3A;
 	background-image: url("/templates/images/upper_picture.png");
 	background-position: center center;
@@ -183,13 +172,11 @@ html, body{
     color: #ffffff;
 	font-weight: 400;
     font-family: 'HattoriHanzoLight';
-	
 }
 .formContent{
     width: 456px;
     margin: 0 auto;
     margin-top: 10px;
-	
 }
 .searchForm input[type="text"]{
     width: 388px;
@@ -201,15 +188,6 @@ html, body{
     color: #7a7a7a;
 	margin: 0 28px 0 28px;
 }
-/*
-.searchForm input[type="image"]{
-    margin: 0;
-    position: absolute;
-    height: 44px;
-    margin: 0 0 0 6px;
-    outline: none;
-}
-*/
 .searchForm select{
     width: 402px;
     border-radius: 5px;
@@ -229,7 +207,6 @@ html, body{
     width: 100%;
 	min-width: 1000px;
     margin: 0 auto;
-	
 }
 .infoContent{
     width: 800px;
@@ -255,7 +232,6 @@ html, body{
     text-align: center;
     /*TODO проверить размер на количество контента*/
 }
-
 .joinContent{
     position: relative;
     width: 1000px;
@@ -273,8 +249,6 @@ html, body{
 
 /*STEPONE*/
 .stepOne{
-	
-    /*width: 35%;*/
 	width: 489px;
 	height: 150px;
     float: left;
@@ -290,7 +264,6 @@ html, body{
 	font-family: 'robotoregular';
 	width: 350px;
 	margin: 0 8px 0 0;
-	
 }
 .OnestepText h3{
     margin: 0 0 15px 0;
@@ -306,23 +279,17 @@ html, body{
 .OnestepImage{
     float: right;
 	width: 122px;
-	
 	margin: 10px 0 0 0;
-	
 }
-
-
 
 /*STEPTWO*/
 .stepTwo{
-	
     width: 489px;
 	height: 150px;
     float: right;
     margin: 0 0 10px 10px;
     min-width: 450px;
     display: block;
-	
 }
 .TwostepImage{
     float: left;
@@ -341,7 +308,7 @@ html, body{
 .TwostepText p{
     text-align: left;
     font-size: 0.95em;
-    }
+}
 .TwostepText h3{
     margin: 0 0 15px 0;
     color: #fd8505;
@@ -354,7 +321,6 @@ html, body{
 
 /*services*/
 .services{
-   
     position: relative;
     width: 1000px;
     min-width: 1000px;
@@ -367,17 +333,16 @@ html, body{
     color: #fd8505;
     font-family: 'robotoregular';
 }
+
 /*servicesOne*/
 .servicesOne{
     width: 100%;
     display: inline-block;
     margin: 0 0 10px 0;
-     
 }
 .servicesOneImage{
     float: left;
-    margin: 0 0 0 60px;
-    
+    margin: 0 0 0 60px;   
 }
 .servicesOneText{
     text-align: left;
@@ -413,7 +378,7 @@ html, body{
     color: #abcc26;
     text-align: right;
     font-size: 1.5em;
-     font-family: 'robotoregular';
+    font-family: 'robotoregular';
 }
 .servicesTwoImage{
     float: right;
@@ -426,32 +391,25 @@ html, body{
     list-style-image: url(../images/li.gif);
 }
 
-/*word-wrap: break-word;*/
 /*lastNews*/
 .lastNewsIndex{
 	display: inline-block;
 	width: 100%;
 }
-
-
 .lastNewsIndex h1{
     text-align: center;
     margin: 30px 0 30px 0;
     color: #fd8505;
     font-family: 'robotoregular';
 }
-
-
 .lastNews{
     position: relative;
     width: 1000px; 
     margin: 0 auto;
     display: inline-block;
-    
     margin-bottom: 100px;
 }
 .lastNews h1{
-   
     text-align: center;
     margin: 30px 0 30px 0;
     color: #fd8505;
@@ -466,7 +424,6 @@ html, body{
 .lastNewsContent{
     width: 230px;
     display: inline-block;
-	
     margin:  10px 8px 10px 8px ;
 }
 .lastNewsImage img{
@@ -475,7 +432,6 @@ html, body{
 }
 .lastNewsText p{
     width: 100%;
-	
     text-align: left;
     margin: 5px 0 0 3px;
     color: #ffffff;
@@ -486,7 +442,6 @@ html, body{
 }
 .lastNewsText a{
     float: right;
-	
     color: #ffffff;
     margin: 7px 8px 5px 0;
     font-family: 'robotoregular';
@@ -496,11 +451,9 @@ html, body{
 .pageNavigation{
     width: 100%;
     position: relative;
-    
     font-family: 'robotoregular';
     color: #7a7a7a;
     height: 100px;
-    
 }
 .pageNavigation p{
     position: absolute;
@@ -512,7 +465,6 @@ html, body{
 .pageNavigation a{
     color: #7a7a7a;
 }
-
 .pageTitle{
     position: relative;
     width: 100%;
@@ -524,34 +476,21 @@ html, body{
     text-align: center;
     margin: 5px 0 30px 0;
 }
-
 .listAssociation{
     position: relative;
     width: 100%;
     height: 180px;
 }
-/*.listAssociation h1{
-    font-size: 2.4em;
-    font-family: 'HattoriHanzoLight';
-    color: #fd8505;
-    text-align: center;
-    margin: 5px 0 30px 0;
-}*/
-
 .listAssociationSelect{
     width: 100%;
     color: #7a7a7a;
-    
 }
 .listAssociationSelect p{
     text-align: left;
     margin: 0 0 25px 10px;
     font-family: 'robotoregular';
     font-size: 1.15em;
-    min-width: 
-    
 }
-
 .listAssociationSelect input{
     width: 300px;
     border-radius: 5px;
@@ -568,8 +507,6 @@ html, body{
     float: left;
     border-radius: 5px;
     outline: none;
-    
-    
 }
 .listAssociationSelect img{
     width: 45px;
@@ -583,19 +520,15 @@ html, body{
     padding: 10px 0 10px 12px;
     border: 1px solid #848DA1;
     color: #7a7a7a;
-   
-    
     margin: 60px 0 0 0;
     position: absolute;
     left: 10px;
 }
-
 .map{
     width: 100%;
     position: relative;
     height: 524px;
-    
-     min-width: 1000px;
+    min-width: 1000px;
 }
 .mapHeader{
 	text-align: center;
@@ -612,12 +545,10 @@ html, body{
 	float: left;
 	width: 100px;
 	height: 100px;
-	
 }
 .mapImage img{
 	width: 100%;
 	height: 100%;
-	
 }
 .mapText{
 	color: #7a7a7a;
@@ -630,7 +561,6 @@ html, body{
 	color: #fd8505;
 }
 
-
 /*LIST AREAS*/
 .listAreasContent{
      position: relative;
@@ -638,9 +568,7 @@ html, body{
     min-width: 1000px;
     max-width: 1000px;
     display: inline-block;
-    margin: 0 auto;   
-	
-    
+    margin: 0 auto;
 }
 .listAreasContent p{
 	border-bottom: 1px dashed maroon;
@@ -705,7 +633,6 @@ html, body{
     position: relative;
     width:  100%;   
     height: 30px;
-   
     padding: 0;
 }
 .closeModalWindowImg{
@@ -744,7 +671,6 @@ html, body{
     width: 100%;
     height: 250px;
 }
-
 .textModalWindow{
     float: right;
     width: 480px;
@@ -753,12 +679,10 @@ html, body{
     color: #7a7a7a;
     font-size: 1.1em;
     line-height: 1.4em;
-   
 }
 .textModalWindow p{
     margin: 0 0 0 10px;
 	text-align:left;
-	
 }
 .textModalWindow a{
     color: #fd8505;
@@ -772,8 +696,6 @@ html, body{
     max-width: 1000px;
     display: inline-block;
     margin:  0 0 100px 0;
-	
-	
 }
 .logoDoc{
     width: 100%;
@@ -788,7 +710,6 @@ html, body{
 .headerDoc{
     width: 100%;
     height: auto;
-    
     font-family: 'robotoregular';
     text-align: center;
 }
@@ -805,28 +726,11 @@ html, body{
     margin: 30px 0 0 0;
 	height: auto;
 }
-
-/*
-.listAreasContent p{
-	border-bottom: 1px dashed maroon;
-	border-color: #7a7a7a;
-}
-.listAreasContent p:hover{
-	border-bottom: 1px solid maroon;
-	border-color: #abcc26;
-	color: #abcc26;
-}*/
-
-
-
-
 .textDoc p{
     width: 98%;
     font-size: 0.9em;
     margin: 0 1% 10px 1%;
-	
 }
-
 .textDoc a{
     color: #7a7a7a;
     text-decoration: none;
@@ -839,7 +743,6 @@ html, body{
 	height: 100%;
 	display: inline-block;
 }
-
 .mainContentDoc{
 	width: 48%;
 	height: auto;
@@ -853,7 +756,6 @@ html, body{
     width: 100%;
     position: relative;
     font-family: 'robotoregular';
-   
     text-align: center;
     display: inline-block;
     margin: 0 0 60px 0;
@@ -861,27 +763,20 @@ html, body{
 }
 .ourPartners h2{
     text-align: center;
-    
     font-size: 1.3em;
-    margin: 0 0 20px 0;
-}
-.namePartners{
-    width: 100%;
     margin: 0 0 20px 0;
 }
 .ourPartnersContent{
     width: 324px;
-	
+	height: 180px;
     display: inline-block;
-    height: auto;
-    margin: 10px 0 10px 7px;
-    float: left;
+    margin: 15px 0 10px 7px;
+    float: left;	
 }
 .ourPartnersContent p{ 
-    font-size: 1.1em;
+    font-size: 1em;
 	display: inline-block;
-	 word-wrap: break-word;
-	
+	word-wrap: break-word;
 }
 .ourPartnersContent a{
 	text-decoration: none;
@@ -890,20 +785,22 @@ html, body{
 .ourPartnersContent a:hover{
 	color: #abcc26;
 }
-
-.namePartners p{
-    font-size: 1.8em;
-    color: #abcc26;
-    margin: 10px 0 0 0;
-    
-}
-.namePartners a{
-	color: #abcc26;
+.namePartners{
+	width: 100%;
+	height: 120px;
 }
 .namePartners img{
+	width: auto;
+	max-width: 320px;
     height: 100px;
-    width: auto;
-    margin: 10px 0 0 0;
+	margin: 10px 0 10px 0;  
+}
+.contentPartners{
+	width:100%;
+	height: 60px;
+}
+.contentPartners p{
+	margin: 10px 0 0 0;
 }
 
 /*questions */
@@ -921,7 +818,7 @@ html, body{
     font-weight: 100;
     width: 95%;
     margin: 5px 2.5% 0 0;
-	padding-left: 2.5%;
+	padding: 6px 0 6px 2.5%;
 	background: #abcc26;
 	border-radius: 5px;
 	color: #ffffff;	
@@ -937,27 +834,13 @@ html, body{
     margin: 0 2.5% 0 2.5%;
 }
 .answer p{
-     margin: 5px 0 0 0;
-     word-wrap: break-word;
+    margin: 5px 0 0 0;
+	padding: 8px 0 8px 0;
+    word-wrap: break-word;
     text-align: left;
 	font-size: 0.9em;
 }
-/*
-.question{
-    width: 95%;
-    position: relative;
-    text-align: left;
-    margin: 15px 2.5% 15px 2.5%;
-}
-.question span{
-    font-size: 1.5em;
-    
-}
-.question p{
-    margin: 5px 0 0 0;
-    word-wrap: break-word;
-}
-*/
+
 /*NEWS*/
 .news{
     width: 800px;
@@ -970,7 +853,6 @@ html, body{
     width: 800px;
     position: relative;
     margin: 0 0 30px 0;
-   
 }
 .newsContent .newsContentData{
     text-align: left;
@@ -989,11 +871,9 @@ html, body{
     width: 800px;
     position: relative;
     margin: 5px 0 0 0;
-    
     display: inline-block;
 }
 .newsText img{
-    
     float: left;
     width: 180px;
     height: 100px;
@@ -1021,11 +901,9 @@ html, body{
     position: relative;
     margin: 20px 0 0 0;
     font-family: 'robotoregular';
-    
 }
 .openNews .newsContentData{
     text-align: left;
-    
     color: #7a7a7a;
     font-size: 0.9em;
 }
@@ -1057,7 +935,6 @@ html, body{
     display: inline-block;
     position: relative;
     margin: 30px 0 40px 0;
-    
 }
 .openNewsImages img{
     float: left;
@@ -1072,7 +949,6 @@ html, body{
     width: 100%;
     height: 30px;
 }
-
 
 /*pagination*/
 .pagination{
@@ -1089,8 +965,6 @@ html, body{
 .pagination div{
 	margin: 0 2px 0 2px;
 }
-.page_next{
-}
 .page_next a{
 	text-decoration: none;
 	color: #fd8505;
@@ -1104,7 +978,6 @@ html, body{
 .activHref{
 	background: #fd8505;
 	color: #ffffff;
-	
 }
 .activHref span{
 	padding: 5px;
@@ -1121,6 +994,7 @@ background: #fd8505;
 	color: #fd8505;
 	padding: 5px;
 }
+
 /*CONTACTS*/
 .contacts{
     width: 1000px;
@@ -1144,9 +1018,9 @@ background: #fd8505;
 .contactInfo{
     width: 440px;
     margin: 0 10px 0 0;
-   float: left;
+    float: left;
     text-align: right;
-	 word-wrap: break-word;
+	word-wrap: break-word;
 }
 .contactText{
     width: 440px;
@@ -1158,9 +1032,6 @@ background: #fd8505;
     color: #fd8505;
      font-weight: 400;
 }
-
-
-
 
 /*FOOTER*/
 footer{
@@ -1185,18 +1056,6 @@ footer{
     font-family: 'HattoriHanzoLight';
     font-size: 1.14em;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*ADMIN====================================================================================================================*/
 /*Добавление документов*/
@@ -1235,7 +1094,7 @@ footer{
 ._adminHeader h3{
     color: #abcc26;
     text-align: center;
-     font-family: 'robotoregular';
+    font-family: 'robotoregular';
     font-weight: 100;
     margin: 40px 0 40px 0;
 }
@@ -1244,7 +1103,6 @@ footer{
 ._adminEditNews{
     width: 1000px;
     display: inline-block;
-    
 }
 ._adminEditNewsContent{
     width: 1000px;
@@ -1314,70 +1172,6 @@ footer{
 ._adminContentButton .windowButton a{
     margin: 0 10px 0 10px;
 }
-
-/*
-.windowEditObjectTitle .windowEditObjectTitleBox input[type=text]{
-    width: 180px;
-    display: inline-block;
-    float: left;
-    margin: 0 5px 0 5px;
-}
-.windowEditObjectTitle .windowEditObjectTitleBox label{
-   font-size: 0.95em;
-    float: left;
-}
-.windowEditObjectTitle p {
-    float: left;
-    color: #7a7a7a;
-    width: 280px;
-    font-size: 1.2em;
-    text-align: right;
-    margin: 0 20px 0 0;
-}
-.windowEditObjectTitle input[type=text]{
-    float: right;
-    width: 530px;
-    height:20px;
-    border-radius: 5px;
-    resize: none;
-    border: 1px solid #dcdada;
-    padding: 5px;
-    font-size: 1.1em;
-    font-family: 'robotoregular';
-    color: #7a7a7a;
-}
-.windowEditObjectTitle textarea{
-    float: right;
-    width: 530px;
-    height:110px;
-    border-radius: 5px;
-    resize: none;
-    border: 1px solid #dcdada;
-    padding: 5px;
-     font-size: 1.1em;
-    font-family: 'robotoregular';
-    color: #7a7a7a;
-}
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ._adminList{
     width: 1000px;
     display: inline-block;
@@ -1435,25 +1229,21 @@ footer{
     width: 16px;
     height: 10px;
 }
-
 ._adminAccordionSelectAction{
     width: 120px;
     margin: 0 20px 0 0;
     display: inline-block;
     float: right;
     text-align: right;
-   
 }
 ._adminAccordionSelectAction a{
     z-index: 9999;
 }
-
 ._adminAccordionSelectAction a span img{
     width: 16px;
     height: 16px;
     margin: 0 5px 0 5px;
 }
-
 ._adminAccordionContents{
     width: 1000px;
     display: inline-block;
@@ -1466,7 +1256,6 @@ footer{
     padding: 0 0 5px 0;
     margin: 10px 0 5px 0;
 }
-
 ._adminAccordionContent p{
     width: 810px;
     margin: 0 0 0 50px;
@@ -1474,7 +1263,6 @@ footer{
     float: left;
     color: #7a7a7a;
 }
-
 ._adminAccordionContent ._adminAccordionName{
     margin: 0 0 0 50px;
     float: left;
@@ -1489,7 +1277,6 @@ footer{
     width: 480px;
     margin: 0 0 0 20px;
 }
-
 
 /*Окно для удаления документа или группы*/
 .windowDel{
@@ -1519,17 +1306,6 @@ footer{
     font-size: 1.4em;
      font-family: 'robotoregular'; 
 }
-/*
-.delButton{
-    display: inline-block;
-    background: #abcc26;
-    padding: 10px 20px 10px 20px;
-    color: #ffffff;
-    border-radius: 5px;
-    margin: 0 2px 0 0;
-    box-shadow: 0 6px 10px 1px rgba(0, 0, 0, 0.2);
-    text-decoration: none;
-}*/
 .delButton{
     display: inline-block;
     background: #abcc26;
@@ -1544,7 +1320,7 @@ footer{
 }
 .cancelButton{
     display: inline-block;
-     background: #e1e1e1;
+    background: #e1e1e1;
     color: #7a7a7a;
     padding: 10px 20px 10px 20px;
     border-radius: 5px;
@@ -1567,8 +1343,8 @@ footer{
     display: none; /*---------------------------------------------------------------------------------------------------*/
 }
 .windowEditObject h3{
-     color: #abcc26;
-     font-weight: 100;
+    color: #abcc26;
+    font-weight: 100;
     font-size: 1.7em;
     margin: 30px 0 20px 0;
 }
@@ -1577,7 +1353,6 @@ footer{
     height: 260px;
     display: none;
 }
-
 .windowEditRegistry{
     width: 900px;
     height: 700px;
@@ -1592,11 +1367,10 @@ footer{
 }
 .windowEditRegistry h3{
     color: #abcc26;
-     font-weight: 100;
+    font-weight: 100;
     font-size: 1.7em;
     margin: 30px 0 20px 0;
 }
-
 .windowEditObjectTitle{
    width: 850px; 
     margin: 0 25px 0 25px;
@@ -1646,7 +1420,7 @@ footer{
     resize: none;
     border: 1px solid #dcdada;
     padding: 5px;
-     font-size: 1.1em;
+    font-size: 1.1em;
     font-family: 'robotoregular';
     color: #7a7a7a;
 }
@@ -1663,7 +1437,6 @@ footer{
     font-size: 0.9em;
    
 }
-
 .windowEditObjectContent{
     width: 850px; 
     margin: 5px 25px 0 25px;
@@ -1672,30 +1445,12 @@ footer{
 .windowEditObjectP {
     float: left;
     display: block;
-     width: 280px;
-     color: #7a7a7a;
+    width: 280px;
+    color: #7a7a7a;
     font-size: 1.2em;
     margin: 0 20px 0 0;
     text-align: right;
 }
-/*
-.windowEditObjectContent textarea{
-    float: right;
-    width: 530px;
-    height:110px;
-    border-radius: 5px;
-    resize: none;
-    border: 1px solid #7a7a7a;
-    padding: 5px;
-     font-size: 1.1em;
-    font-family: 'robotoregular';
-    color: #7a7a7a;
-    margin: 0 0 50px 0;
-}*/
-
-
-
-
 .windowEditObjectContent textarea{
     float: right;
     width: 530px;
@@ -1704,23 +1459,17 @@ footer{
     resize: none;
     border: 1px solid #dcdada;
     padding: 5px;
-     font-size: 1.1em;
+    font-size: 1.1em;
     font-family: 'robotoregular';
     color: #7a7a7a;
 }
-
-
-
-
-
-
 .windowEditDocFileAnswer{
     width: 540px;
     float: right;
     display: inline-block;
 }
 .windowEditDocFileAnswer input[type=text]{
-     float: right;
+    float: right;
     width: 530px;
     height:20px;
     border-radius: 5px;
@@ -1739,17 +1488,15 @@ footer{
     resize: none;
     border: 1px solid #7a7a7a;
     padding: 5px;
-     font-size: 1.1em;
+    font-size: 1.1em;
     font-family: 'robotoregular';
     color: #7a7a7a;
     margin: 0 0 50px 0;
 }
-
 .windowFileUpload{
     width: 540px;
     float: right;
     display: inline-block;
-   
 }
 .image_uploaded{
     width: 100px;
@@ -1757,8 +1504,6 @@ footer{
     float: left;
     display: inline-block;
     margin: 0 0 0 0;
-   
-
 }
 .image_uploaded img{
     width: 100%;
@@ -1766,24 +1511,19 @@ footer{
     display: block;
 }
 .file_upload{
-    
-   
     width: 430px;
     position: relative;
     overflow: hidden;
     font-size: 1em;        /* example */
     height: 2em;           /* example */
     line-height: 2em ;      /* the same as height */
-        float: right;
+    float: right;
     margin: 0 0 0 0;
 }
 .file_name{
     color: #7a7a7a;
-    display: inline-block;
-    
+    display: inline-block;   
 }
-
-
 .file_upload > button{
     font-family: 'robotoregular';
     float: right;

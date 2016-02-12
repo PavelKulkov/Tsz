@@ -129,6 +129,7 @@ $(document).ready(function(){
 					if($(idHiddenField).val() != ""){
 						$(idHiddenField).val("");
 					}
+					
 					$(idHiddenField).val(coords);
                 },
                 function (err) {
