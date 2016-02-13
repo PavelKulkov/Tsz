@@ -24,7 +24,8 @@
 
 $text = '<div class="lastNewsIndex">';
 if(!empty($entry)){
-	$text .= '<h1>Последние новости</h1>';
+	$text .= '<h1>Последние новости</h1>
+	<div class="lastNewsContent">';
 	
 }
  
@@ -33,17 +34,19 @@ foreach ($mas as $entry) {
    // $masImage = explode(",", $entry['image']);
    
 	$text .= '<div class="lastNewsBox">
-              <div class="lastNewsContent">
-                  <div class="lastNewsImage">
-				 
-                      <a href="news?id_news='.$entry['id'].'"><img src="files'.$entry['image'].$masFileName[0].'"></a>
-                  </div>
+	              <div class="lastNewsImage">
+				      <a href="news?id_news='.$entry['id'].'">
+					      <img src="files'.$entry['image'].$masFileName[0].'">
+					  </a>
+				  </div>	
                   <div class="lastNewsText">
                       <p>'.$entry['title'].'</p>
-                      <a href="news?id_news='.$entry['id'].'">Подробнее...</a>
                   </div>
-              </div>
+				  <div class="lastNewRead">
+				       <a href="news?id_news='.$entry['id'].'">Подробнее...</a>
+				  </div>
           </div>';
 }	
-$text .='</div>' ;
+$text .='</div>
+</div>' ;
 $module['text'] = $text;

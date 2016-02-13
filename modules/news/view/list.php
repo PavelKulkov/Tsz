@@ -88,13 +88,19 @@
 					
 					$text .= '
 					<div class="newsContent">
-				  <p class="newsContentData">'.date('d.m.Y H:i',strtotime($entry['date'])).'</p>
-				  <a class="newsContentTitle" href="news?id_news='.$entry['id'].'">'.$entry['title'].'</a>
-				  <div class="newsText">
-					  <img src="/files'.$entry['image'].'image1.jpg">
-					  <p>'.$entry['preview'].'</p>
-					  <a href="news?id_news='.$entry['id'].'">Читать дальше</a>
-				  </div>
+				        <p class="newsContentData">'.date('d.m.Y H:i',strtotime($entry['date'])).'</p>
+						
+					    <div class="newsImage">
+						    <a href="news?id_news='.$entry['id'].'"> 
+						        <img src="/files'.$entry['image'].'image1.jpg">
+					        </a>
+						</div>
+						<div class="newsText">
+						     <a class="newsContentTitle" href="news?id_news='.$entry['id'].'">'.$entry['title'].'</a>
+							 <div class="readNews">
+							     <a href="news?id_news='.$entry['id'].'">Читать дальше ></a>
+							 </div>
+						</div>
 			  </div>';
 				}
 				
