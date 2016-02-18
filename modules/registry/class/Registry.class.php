@@ -6,7 +6,7 @@ class Registry {
 	private $lng_prefix;	
 	public $count;
 	public $items_registry = array('id','logo','title','address','id_template','phoneNumber','E-mail','fax','President');
-	public $items_reg = array('breadth', 'longitude','logo','title','address','id_template','phoneNumber','e_mail','fax','President', 'site', 'area', 'man', 'groupsArea');
+	public $items_reg = array('breadth', 'longitude','logo','title','address','id_template','phoneNumber','e_mail','fax','surnamePresident', 'namePresident', 'patronymicPresident', 'site', 'area', 'man', 'groupsArea');
 
 	
 	function __construct($request=NULL,$db) 	{
@@ -29,7 +29,7 @@ class Registry {
 		       FROM registry LEFT JOIN groups_area
 			   ON registry.groupsArea = groups_area.id";*/
 		
-		$sql= "SELECT t1.id, t1.title, t1.address, t1.phoneNumber, t1.e_mail, t1.fax, t1.President, t1.site, t2.groupsArea AS groupsArea
+		$sql= "SELECT t1.id, t1.title, t1.address, t1.phoneNumber, t1.e_mail, t1.fax, t1.surnamePresident, t1.namePresident, t1.patronymicPresident, t1.site, t2.groupsArea AS groupsArea
 		       FROM registry t1
 			   LEFT OUTER JOIN groups_area t2
 			   ON t1.groupsArea = t2.id";
@@ -43,7 +43,7 @@ class Registry {
 	}
 	
 	function getAllReg(){
-		$sql= "SELECT t1.id, t1.breadth, t1.longitude, t1.logo, t1.title, t1.address, t1.phoneNumber, t1.e_mail, t1.fax, t1.President, t1.site, t2.groupsArea AS groupsArea
+		$sql= "SELECT t1.id, t1.breadth, t1.longitude, t1.logo, t1.title, t1.address, t1.phoneNumber, t1.e_mail, t1.fax, t1.surnamePresident, t1.namePresident, t1.patronymicPresident, t1.site, t2.groupsArea AS groupsArea
 		       FROM registry t1
 			   LEFT OUTER JOIN groups_area t2
 			   ON t1.groupsArea = t2.id";

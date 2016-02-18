@@ -22,10 +22,8 @@
 			                        '<p><strong>Телефон:</strong> '+ reg.phoneNumber +'</p>'+
 									 '<p><strong>Факс:</strong> '+ reg.fax +' </p>'+
                                     '<p><strong>E-mail:</strong><a href=#> '+ reg.e_mail +'</a></p>'+
-                                    '<p><strong>Председатель:</strong> '+ reg.President +'</p>'+
+                                    '<p><strong>Председатель:</strong> '+ reg.surnamePresident + " " + reg.namePresident + " " + reg.patronymicPresident +'</p>'+
                                     '<p><strong>Сайт: </strong><a href="#"> '+ reg.site +'</a></p>');
-				
-				 
 			}
 		})
 			$('body').append('<div class="pageWindows"></div>');
@@ -63,7 +61,7 @@
 			                        '<p><strong>Телефон:</strong> '+ reg.phoneNumber +' </p>'+
 									 '<p><strong>Факс:</strong> '+ reg.fax +' </p>'+
                                     '<p><strong>E-mail:</strong><a href=#> '+ reg.e_mail +'</a></p>'+
-                                    '<p><strong>Председатель:</strong> '+ reg.President +'</p>'+
+                                    '<p><strong>Председатель:</strong> '+ reg.surnamePresident + " " + reg.namePresident + " " + reg.patronymicPresident +'</p>'+
                                     '<p><strong>Сайт: </strong><a href="#"> '+ reg.site +'</a></p>');
 				
 				 

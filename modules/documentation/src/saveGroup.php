@@ -44,7 +44,7 @@
 	
 	
 	
-		$newGroup = array('groupOfDoc'=>$_POST['title'],'image'=>$image);
+		$newGroup = array('groupOfDoc'=>$_POST['titleAddGroup'],'image'=>$image);
 	
 		
 		$documentation ->saveGroup($newGroup);

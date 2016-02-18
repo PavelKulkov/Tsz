@@ -35,7 +35,7 @@
 		
 		if(!isset($news)) $news = new News($request, $db);
 		
-		$new = array('id'=>$_POST['idNew'],'title'=>$_POST['titleNew'],'date'=>date("Y-m-d H:i:s"),'annotation'=>'', 'image'=>$_POST['nameDir'], 'text'=>$_POST['textNew'],'is_published'=>'','id_template'=>1);
+		$new = array('id'=>$_POST['idNew'],'title'=>$_POST['titleNews'],'date'=>date("Y-m-d H:i:s"),'annotation'=>'', 'image'=>$_POST['nameDir'], 'text'=>$_POST['textNews'],'is_published'=>'','id_template'=>1);
 		$news ->save($new);
 	}
 	else{

@@ -83,20 +83,33 @@
       
       <div class="windowEditObject" id="_windowAddObjectPartner_">
           <h3>Добавление партнера</h3>
-          <form method="post" enctype="multipart/form-data" action="modules/partners/src/savePartner.php">
+          <form method="post" id="formAddPartner" enctype="multipart/form-data" action="modules/partners/src/savePartner.php">
 		 
               <div class="windowEditObjectTitle">
-                 <p>Название</p>
-                 <input type="text" name="titlePartner">
+			      <div class="windowEditObjectTitleBoxOne">
+                      <p>Название</p>
+				  </div>
+				  <div class="windowEditObjectTitleBoxTwo">
+                      <input type="text" name="titlePartner">
+					  <span class="error" id="errormsg_titlePartner"></span>
+                  </div>
               </div>
               
               <div class="windowEditObjectTitle">
-                 <p>Ссылка на сайт</p>
-                 <input type="text" name="sitePartner">
+			      <div class="windowEditObjectTitleBoxOne">
+                      <p>Ссылка на сайт</p>
+				  </div>
+				   <div class="windowEditObjectTitleBoxTwo">
+                      <input type="text" name="sitePartner">
+					  <span class="error" id="errormsg_sitePartner"></span>
+
+				</div>
               </div>
           
-              <div class="windowEditObjectContent">
-                  <p class="windowEditObjectP">Логотип</p>
+              <div class="windowEditObjectImg">
+			      <div class="windowEditObjectTitleBoxOne">
+                      <p>Логотип</p>
+				 </div>
                   <div class="windowFileUpload">
                       <div class="file_upload">
                           <button type="button">Обзор...</button>
@@ -123,20 +136,32 @@
       
       <div class="windowEditObject" id="_windowEditObjectPartner_">
           <h3>Редактирование информации о партнере</h3>
-          <form method="post" enctype="multipart/form-data" action="../modules/partners/src/savePartner.php">
+          <form method="post" id="formEditPartner" enctype="multipart/form-data" action="../modules/partners/src/savePartner.php">
 		 
               <div class="windowEditObjectTitle">
-                 <p>Название</p>
-                 <input type="text" id="titlePartner" name="titlePartner">
-              </div>
+			      <div class="windowEditObjectTitleBoxOne">
+                      <p>Название</p>
+				  </div>
+				  <div class="windowEditObjectTitleBoxTwo">
+                      <input type="text" id="titlePartner" name="titleEditPartner">
+                      <span class="error" id="errormsg_titleEditPartner"></span>
+                  </div>
+			  </div>
               
               <div class="windowEditObjectTitle">
-                 <p>Ссылка на сайт</p>
-                 <input type="text" id="sitePartner" name="sitePartner">
-              </div>
+			      <div class="windowEditObjectTitleBoxOne">
+                      <p>Ссылка на сайт</p>
+				  </div>
+				  <div class="windowEditObjectTitleBoxTwo">
+                      <input type="text" id="sitePartner" name="sitePartner">
+                      <span class="error" id="errormsg_sitePartner"></span>
+                  </div>
+			  </div>
 			  <input type="hidden" id="idPartner" name="idPartner">
-              <div class="windowEditObjectContent">
-                  <p class="windowEditObjectP">Логотип</p>
+              <div class="windowEditObjectImg">
+			      <div class="windowEditObjectTitleBoxOne">
+                      <p>Логотип</p>
+				  </div>
                   <div class="windowFileUpload">
                       <div class="file_upload">
                           <button type="button">Обзор...</button>
@@ -164,16 +189,26 @@
       
       <div class="windowEditObject" id="_windowAddObjectProject_">
           <h3>Добавление проекта</h3>
-          <form method="post" enctype="multipart/form-data" action="../modules/partners/src/saveProject.php">
+          <form method="post" id="formAddProject" enctype="multipart/form-data" action="../modules/partners/src/saveProject.php">
 		 
               <div class="windowEditObjectTitle">
-                 <p>Название</p>
-                  <input type="text"  name="titleProject">
+			      <div class="windowEditObjectTitleBoxOne">
+                      <p>Название</p>
+				  </div>
+				  <div class="windowEditObjectTitleBoxTwo">
+                      <input type="text"  name="titleProject">
+				      <span class="error" id="errormsg_titleProject"></span>
+                  </div>
               </div>
 				
-              <div class="windowEditObjectContent">
-                  <p class="windowEditObjectP">Описание</p>
-                  <textarea  name="textProject"> </textarea>           
+              <div class="windowEditObjectTitle">
+			      <div class="windowEditObjectTitleBoxOne">
+                      <p>Описание</p>
+				  </div>
+				  <div class="windowEditObjectTitleBoxTwo">
+                     <textarea  name="textProject"> </textarea>   
+					 <span class="error" id="errormsg_textProject"></span>
+                  </div>
               </div>    
          
           <div class="windowButton">
@@ -188,17 +223,27 @@
       
       <div class="windowEditObject" id="_windowEditObjectProject_">
           <h3>Редактирование информации о проекте</h3>
-          <form method="post" enctype="multipart/form-data" action="../modules/partners/src/saveProject.php">
+          <form method="post" id="formEditProject" enctype="multipart/form-data" action="../modules/partners/src/saveProject.php">
 		 
               <div class="windowEditObjectTitle">
-                 <p>Название</p>
-                  <input type="text" id="titleProject" name="titleProject">
-              </div>
+			      <div class="windowEditObjectTitleBoxOne">
+                     <p>Название</p>
+				  </div>
+				  <div class="windowEditObjectTitleBoxTwo">
+                      <input type="text" id="titleEditProject" name="titleEditProject">
+                      <span class="error" id="errormsg_titleEditProject"></span>
+                  </div>
+			 </div>
 				<input type="hidden" id="idProject" name="idProject">
-              <div class="windowEditObjectContent">
-                  <p class="windowEditObjectP">Описание</p>
-                  <textarea id="textProject" name="textProject"> </textarea>            
-              </div>    
+              <div class="windowEditObjectTitle">
+			      <div class="windowEditObjectTitleBoxOne">
+                      <p class="windowEditObjectP">Описание</p>
+                  </div>
+				  <div class="windowEditObjectTitleBoxTwo">
+				       <textarea id="textProject" name="textProject"> </textarea>            
+                       <span class="error" id="errormsg_textProject"></span>
+                  </div>
+			  </div>    
           <div class="windowButton">
               <input class="delButton" type="submit" value="Сохранить"/>
               <a href="#" class="cancelButton">Отмена</a>

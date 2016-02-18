@@ -20,8 +20,5 @@
 	$reg = $registry->getAllReg();
 	$db->disconnect();
 	echo(json_encode($reg));
-	
-	
-	
 
 ?>

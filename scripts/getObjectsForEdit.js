@@ -105,9 +105,11 @@ $(document).ready(function(){
 				$('#phoneNumberTsz').val(reg.phoneNumber);
 				$('#e_mailTsz').val(reg.e_mail);
 				$('#faxTsz').val(reg.fax);
-				$('#presidentTsz').val(reg.President);
+				$('#surnamePresident').val(reg.surnamePresident);
+				$('#namePresident').val(reg.namePresident);
+				$('#patronymicPresident').val(reg.patronymicPresident);
 				$('#siteTsz').val(reg.site);
-			    $('#area-'+reg.groupsArea).attr("checked","checked");
+			    $('#area-'+reg.groupsArea).attr("selected","selected");
 				$('#file_name_edit_object_group p').empty();
 				$('#file_name_edit_object_group p').append(reg.logo);
 				$('#image_uploaded_edit_object_group').append("<img id='image"+reg.id+"' src='../files/Registry/"+reg.logo+"'>");
@@ -148,13 +150,11 @@ $(document).ready(function(){
 		getCoors("#addressTszEditCoord", "#editCoordsTsz");
 	});
 	
-	
 	$('#addressTszAddCoord').blur(function() {
 		if($('#addressTszAddCoord').val() === ""){
 			$('#addCoordsTsz').val('');
 		}
 	});
-	
 	
 	$('#addressTszEditCoord').blur(function() {
 		if($('#addressTszEditCoord').val() === ""){
@@ -162,5 +162,4 @@ $(document).ready(function(){
 		}
 	});
 	
-
 });

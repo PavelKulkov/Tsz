@@ -212,7 +212,7 @@
 				  <span class="contactText">'.$list['schedule_organization'].'</span>
 			  </div>
 			   <div class="contantsContent">
-				  <span class="contactInfo">Контактное лицо</span>
+				  <span class="contactInfo">Исполнительный директор:</span>
 			  </div>
 			  <div class="contantsContent">
 				  <span class="contactInfo"><strong>ФИО</strong></span>

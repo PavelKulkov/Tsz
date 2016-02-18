@@ -66,14 +66,16 @@ if($_SESSION['admin']){
           <h3>Редактирование новости</h3>
       </div>
       <div class="_adminEditNews">
-         <form method="post" enctype="multipart/form-data" action="../modules/news/src/saveNews.php">
+         <form method="post" id="formEditNews" enctype="multipart/form-data" action="../modules/news/src/saveNews.php">
 		  <div class="_adminEditNewsContent">
               <p>Заголовок</p>
-              <input type="text" name="titleNew" value="'.$new['title'].'">
+              <input type="text" name="titleNews" value="'.$new['title'].'">
+			  <span class="error" id="errormsg_titleNews"></span>
           </div>
            <div class="_adminEditNewsContent">
               <p>Текст новости</p>
-			  <textarea  name="textNew" >'.$new['text'].'</textarea>
+			  <textarea  name="textNews" >'.$new['text'].'</textarea>
+			  <span class="error" id="errormsg_textNews"></span>
           </div>
 		  <input type="hidden" name="idNew" value="'.$new['id'].'">
 		  <input type="hidden" name="nameDir" value="'.$new['image'].'">

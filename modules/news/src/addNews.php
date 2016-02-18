@@ -14,15 +14,17 @@
           </span>
           <h3>Добавление новости</h3>
       </div>
-	  <form method="post" enctype="multipart/form-data" action="modules/news/src/saveNews.php">
+	  <form method="post" id="formAddNews" enctype="multipart/form-data" action="modules/news/src/saveNews.php">
 		  <div class="_adminEditNews">
 			  <div class="_adminEditNewsContent">
 				  <p>Заголовок</p>
 				  <input type="text" name="titleNews">
+				  <span class="error" id="errormsg_titleNews"></span>
 			  </div>
 			   <div class="_adminEditNewsContent">
 				  <p>Текст новости</p>
 				  <textarea type="text" name="textNews"></textarea>
+				  <span class="error" id="errormsg_textNews"></span>
 			  </div>
 			  <div class="_adminEditNewsContent">
 				  <p>Изображение №1</p>

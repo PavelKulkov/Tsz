@@ -18,6 +18,7 @@
 	<script type="text/javascript" src="/scripts/getObjectsForEdit.js"></script>
 	
 	<script src="/scripts/activMenu.js"></script>
+	<script src="/scripts/checkForm.js"></script>
 	
 	<title>
 	  associationTsz

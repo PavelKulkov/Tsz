@@ -30,7 +30,7 @@ function addMap(data){
 			                "<p><strong>Телефон: </strong> " + data[i].phoneNumber + "</p>" +
 				            "<p><strong>Факс: </strong> " + data[i].fax + "</p>" +
 				            "<p><strong>E-mail:</strong> " + data[i].e_mail + "</p>"+
-				            "<p><strong>Председатель:</strong> " + data[i].President +"</p>" +
+				            "<p><strong>Председатель:</strong> " + data[i].surnamePresident + " " + data[i].namePresident + " " + data[i].patronymicPresident + "</p>" +
 				            "<p><strong>Сайт:</strong> <a href="+ data[i].site + "> " + data[i].site + "</a></p></div></div>",
                         hintContent: '<p class=mapHeader>ТСЖ \"' + data[i].title + '\"</p>',  //Хинт для метки
                     }

@@ -14,19 +14,25 @@ $(document).ready(function(){
 		    }
 			
 			var width = jQuery(idWindow).width();
-           var height = jQuery(idWindow).height();
+            var height = jQuery(idWindow).height();
         
-           var left = (screen.width - width)/2;
-           var top = (document.body.clientHeight - height)/2;
+            var left = (screen.width - width)/2;
+            var top = (document.body.clientHeight - height)/2;
         
+           $("body").css({"overflow-y": "hidden" });
            $(idWindow).css({"left": left + "px", "top": top + "px" });
 			
 	}
-	
+	var i=0;
 	//Функция для скрытия открытого окна
 	function closeWindow(idWindow){
 		    //Сброс формы при отмене
-		    jQuery('form').get(0).reset();
+		    //jQuery('form').get(0).reset();
+			$(':input','form')
+            .not(':button, :submit, :reset, :hidden')
+            .val('')
+            .removeAttr('checked')
+            .removeAttr('selected');
 
 		    flag = true;
 			//Очищаем форму
@@ -37,6 +43,7 @@ $(document).ready(function(){
 		    $(idWindow).css("display", "none");	
 			$(".pageWindows").css("display", "none");
 			$(".pageWindows").remove();
+			$("body").css({"overflow-y": "scroll" });
 	}
 	
 	/*Удаление документа или группы*/
@@ -86,6 +93,7 @@ $(document).ready(function(){
 		displayWindow("#_windowAddObjectGroup_")
 	});
 	$(".cancelButton").click(function(){
+		
 		closeWindow("#_windowAddObjectGroup_")
 	});
     

@@ -63,16 +63,27 @@ $text .='
       
       <div class="windowEditObject" id="_windowAddObject_">
           <h3>Добавление вопроса</h3>
-          <form method="post" enctype="multipart/form-data" action="modules/questions/src/saveQuestion.php">
+          <form method="post" id="formAddQuestion" enctype="multipart/form-data" action="modules/questions/src/saveQuestion.php">
 		 
               <div class="windowEditObjectTitle">
-                 <p>Вопрос</p>
-                  <input type="text" name="titleQuestion">
+			      <div class="windowEditObjectTitleBoxOne">
+                      <p>Вопрос</p>
+				 </div>
+				 <div class="windowEditObjectTitleBoxTwo">
+                     <input type="text" name="titleQuestion">
+					 <span class="error" id="errormsg_titleQuestion"></span>
+                 </div>
+					 
               </div>
           
-              <div class="windowEditObjectContent">
-                  <p class="windowEditObjectP">Ответ</p>
-                  <textarea name="answer"></textarea>             
+              <div class="windowEditObjectTitle">
+			      <div class="windowEditObjectTitleBoxOne">
+                      <p>Ответ</p>
+				 </div>
+				 <div class="windowEditObjectTitleBoxTwo">
+                     <textarea name="answer"></textarea>
+					 <span class="error" id="errormsg_answer"></span>
+                 </div>
               </div>    
               
 			  <div class="windowButton">
@@ -88,17 +99,27 @@ $text .='
       
       <div class="windowEditObject" id="_windowEditObjectQuestions_">
           <h3>Редактирование вопроса</h3>
-          <form method="post" enctype="multipart/form-data" action="modules/questions/src/saveQuestion.php">
+          <form method="post" id="formEditQuestion" enctype="multipart/form-data" action="modules/questions/src/saveQuestion.php">
 		 
               <div class="windowEditObjectTitle">
-                 <p>Вопрос</p>
-                  <input type="text" id="titleQuestion" name="titleQuestion">
-              </div>
+			      <div class="windowEditObjectTitleBoxOne">
+                     <p>Вопрос</p>
+                  </div>
+				  <div class="windowEditObjectTitleBoxTwo">
+				      <input type="text" id="titleQuestion" name="titleQuestion">
+                      <span class="error" id="errormsg_titleQuestion"></span>
+                  </div>
+			  </div>
 				<input type="hidden" id="idQuestion" name="idQuestion">
-              <div class="windowEditObjectContent">
-                  <p class="windowEditObjectP">Ответ</p>
-                  <textarea  id="answer" name="answer"></textarea>           
-              </div>    
+              <div class="windowEditObjectTitle">
+			      <div class="windowEditObjectTitleBoxOne">
+                      <p class="windowEditObjectP">Ответ</p>
+                  </div>
+				  <div class="windowEditObjectTitleBoxTwo">
+				      <textarea  id="answer" name="answer"></textarea>           
+                      <span class="error" id="errormsg_answer"></span>
+                  </div>
+			 </div>    
 			  <div class="windowButton">
 				  <input class="delButton" type="submit" value="Сохранить"/>
 				  <a href="#" class="cancelButton">Отмена</a>

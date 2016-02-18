@@ -28,7 +28,7 @@
 		$oldPartner = $partneryAndProject->getPartner($_POST['idPartner']);
 		@unlink($_SERVER['DOCUMENT_ROOT']."/files".$oldPartner['image']);
 		
-		$newPartner = array('id'=>$_POST['idPartner'],'image'=>$image,'title'=>$_POST['titlePartner'],'text'=>'','site'=>$_POST['sitePartner']);
+		$newPartner = array('id'=>$_POST['idPartner'],'image'=>$image,'title'=>$_POST['titleEditPartner'],'text'=>'','site'=>$_POST['sitePartner']);
 
 		$partneryAndProject -> savePartner($newPartner);
 	}else{

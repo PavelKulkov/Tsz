@@ -99,15 +99,22 @@
       
     <div class="windowEditObject" id="_windowEditObject_">
           <h3>Редактирование документа</h3>
-          <form method="post" enctype="multipart/form-data" action="../modules/documentation/src/saveDoc.php">
+          <form method="post" id="formEditDoc" enctype="multipart/form-data" action="../modules/documentation/src/saveDoc.php">
 		 
               <div class="windowEditObjectTitle">
-                  <p>Название документа</p>
-                  <textarea type="text" id="titleDoc" name="titleDoc" ></textarea>
-              </div>
+			      <div class="windowEditObjectTitleBoxOne">
+                      <p>Название документа</p>
+				  </div>
+				  <div class="windowEditObjectTitleBoxTwo">
+                      <textarea type="text" id="titleDoc" name="titleDoc" ></textarea>
+                       <span class="error" id="errormsg_titleDoc"></span>
+			      </div>
+			  </div>
 			  <input type="hidden" id="idDoc" name="idDoc">
-              <div class="windowEditObjectContent">
-                  <p class="windowEditObjectP">Файл с документом</p>
+              <div class="windowEditObjectImg">
+			      <div class="windowEditObjectTitleBoxOne">
+                      <p>Файл с документом</p>
+				  </div>
                   <div class="windowFileUpload">
                       <div class="file_upload">
                           <button type="button">Обзор...</button>
@@ -133,15 +140,22 @@
       <!-- РЕДАКТИРОВАНИЕ ГРУППЫ  -->
      <div class="windowEditObject" id="_windowEditObjectGroup_">
           <h3>Редактирование группы</h3>
-          <form method="post" enctype="multipart/form-data" action="modules/documentation/src/saveGroup.php">
+          <form method="post" id="formEditGroupDoc" enctype="multipart/form-data" action="modules/documentation/src/saveGroup.php">
 		 
               <div class="windowEditObjectTitle">
-                 <p>Название группы</p>
-                  <textarea type="text" id="titleGroup" name="titleGroup"></textarea>
-              </div>
+			      <div class="windowEditObjectTitleBoxOne">
+                     <p>Название группы</p>
+			      </div>
+				  <div class="windowEditObjectTitleBoxTwo">
+                      <textarea type="text" id="titleGroup" name="titleGroup"></textarea>
+                      <span class="error" id="errormsg_titleGroup"></span>
+				  </div> 
+			 </div>
 				  <input type="hidden" name="idGroup" id="idGroup">
-              <div class="windowEditObjectContent">
-                  <p class="windowEditObjectP">Изображение</p>
+              <div class="windowEditObjectImg">
+			  <div class="windowEditObjectTitleBoxOne">
+                  <p >Изображение</p>
+			 </div>
                   <div class="windowFileUpload">
                       <div class="file_upload">
                           <button type="button">Обзор...</button>
@@ -170,15 +184,23 @@
       
       <div class="windowEditObject" id="_windowAddObject_">
           <h3>Добавление документа</h3>
-          <form method="post" enctype="multipart/form-data" action="modules/documentation/src/saveDoc.php">
+          <form method="post" id="formAddDoc" enctype="multipart/form-data" action="modules/documentation/src/saveDoc.php">
 		 
               <div class="windowEditObjectTitle">
-                 <p>Название документа</p>
-                  <textarea type="text" name="title"/></textarea>
-              </div>
+			      <div class="windowEditObjectTitleBoxOne">  
+                      <p>Название документа</p>
+				  </div>
+				  <div class="windowEditObjectTitleBoxTwo">
+                      <textarea type="text" name="titleAddDoc"/></textarea>
+                      <span class="error" id="errormsg_titleAddDoc"></span>
+
+				  </div>
+			  </div>
 			  <input type="hidden" name="idGroup" id="idGroupForAdd" value="">
-              <div class="windowEditObjectContent">
-                  <p class="windowEditObjectP">Файл с документом</p>
+              <div class="windowEditObjectImg">
+			      <div class="windowEditObjectTitleBoxOne">
+                      <p>Файл с документом</p>
+			      </div>
                   <div class="windowFileUpload">
                       <div class="file_upload">
                           <button type="button">Обзор...</button>
@@ -204,15 +226,23 @@
       
     <div class="windowEditObject" id="_windowAddObjectGroup_">
           <h3>Добавление группы</h3>
-          <form method="post" enctype="multipart/form-data" action="modules/documentation/src/saveGroup.php">
+          <form method="post" id="formAddGroupDoc" enctype="multipart/form-data" action="modules/documentation/src/saveGroup.php">
 		 
               <div class="windowEditObjectTitle">
-                 <p>Название группы</p>
-                   <textarea type="text" name="title"></textarea>
+			     <div class="windowEditObjectTitleBoxOne">
+                     <p>Название группы</p>
+				 </div>
+				 <div class="windowEditObjectTitleBoxTwo">
+                     <textarea type="text" name="titleAddGroup"></textarea>
+					 <span class="error" id="errormsg_titleAddGroup"></span>
+
+			     </div>
               </div>
           
-              <div class="windowEditObjectContent">
-                  <p class="windowEditObjectP">Изображение</p>
+              <div class="windowEditObjectImg">
+			      <div class="windowEditObjectTitleBoxOne">
+                      <p>Изображение</p>
+				  </div>
                   <div class="windowFileUpload">
                       <div class="file_upload">
                           <button type="button">Обзор...</button>

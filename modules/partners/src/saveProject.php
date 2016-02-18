@@ -25,7 +25,7 @@
 	
 		move_uploaded_file($_FILES['uploaded_file_edit_object']['tmp_name'], $uploadfile);
 	
-		$newProject = array('id'=>$_POST['idProject'],'image'=>$image,'title'=>$_POST['titleProject'],'text'=>$_POST['textProject'],'site'=>$_POST['siteProject']);
+		$newProject = array('id'=>$_POST['idProject'],'image'=>$image,'title'=>$_POST['titleEditProject'],'text'=>$_POST['textProject'],'site'=>$_POST['siteProject']);
 
 		$partneryAndProject -> saveProject($newProject);
 	}else{
