@@ -31,6 +31,25 @@ class PartneryAndProject {
 		
 		return  $item;		
 	}
+	//Поиск совпадений image
+	function matchesImg($image, $tableName){
+		$sql= "SELECT image  FROM `".$tableName."`";
+		$item = $this->db_instance->select($sql); 
+		$tmp = 0;
+		if($item) {
+		    foreach($item AS $mas){
+			    if($mas['image'] == $image){
+					$tmp++;
+				}
+		    }
+		    if($tmp>=2){
+				return true;
+			}
+	        else{
+			    return false;
+		    }
+		}
+	}
 	function savePartner($partner){
 		return $this->db_instance->saveData($partner,'partners',$this->items);	
 	}
@@ -59,6 +78,7 @@ class PartneryAndProject {
 		
 		return  $item;		
 	}
+	
 	function saveProject($project){
 		return $this->db_instance->saveData($project,'projects',$this->items);	
 	}

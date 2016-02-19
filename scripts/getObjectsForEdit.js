@@ -42,6 +42,9 @@ $(document).ready(function(){
 				$('#idPartner').val(partner.id);
 				$('#sitePartner').val(partner.site);
 				$('#image_uploaded_edit_object').append("<img id='image"+partner.id+"' src='../files"+partner.image+"'>");
+				$('#file_name_edit_object p').empty();
+				var mas = partner.image.split('/');
+				$('#file_name_edit_object p').append(mas[2]);
 			}
 		})
      
@@ -54,9 +57,13 @@ $(document).ready(function(){
 			data:{"idProject":id},
 			success:function(data){
 				var project = jQuery.parseJSON(data);
-				$('#titleProject').val(project.title);
+				$('#titleEditProject').val(project.title);
 				$('#idProject').val(project.id);
-				$('#textProject').val(project.text);
+				//$('#textProject').val(project.text);
+				$('#image_uploaded_edit_object_group').append("<img src='../files"+project.image+"'>");
+				$('#file_name_edit_object_group p').empty();
+				var mas = project.image.split('/');
+				$('#file_name_edit_object_group p').append(mas[2]);
 			}
 		})
      

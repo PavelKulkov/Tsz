@@ -422,29 +422,38 @@
 		  	
     $text .= ' <div class="listAreasContent">';
 
-				 for($i=0;$i<count($groups);$i++){
-					 
-					 if($i == 0 || $i%2 == 0){
-						 $text .= '<div class="listAreasMain">'; 
-					 }
-					 
-					 
-					 $text .= '<div class="listAreas">
+			    for($i=0;$i<count($groups);$i++){
+					$flag = false;
+					for($j=0;$j<count($registry);$j++){
+				        if(strcasecmp($groups[$i]['groupsArea'],$registry[$j]['groupsArea'])==0){
+						    $flag = true;
+							break;
+				        }
+					}
+					
+					//Если записи с данным районом есть
+				    if($flag){
+				
+				        if($i == 0 || $i%2 == 0){
+					        $text .= '<div class="listAreasMain">'; 
+					    }
+				 
+					    $text .= '<div class="listAreas">
                                   <div class="AreasName">
                                      <h3>'.$groups[$i]['groupsArea'].'</h3>
                                   </div>
 			                    <div class="listAreasMainContent">';
-					for($j=0;$j<count($registry);$j++){
-				        if(strcasecmp($groups[$i]['groupsArea'],$registry[$j]['groupsArea'])==0){
-							//$text .='<p id='.$registry[$j]['id'].'>ddddd</p>';
-							$text .= "<p id = ".$registry[$j]['id'].">ТСЖ ".$registry[$j]['title']." , ".$registry[$j]['address']."</p>";  
-				        }
-					}
-					$text .= '</div>
-					</div>';
-					if($i%2 != 0 && $i != 0){
-						$text .= '</div>'; 
-					 }
+					    for($j=0;$j<count($registry);$j++){
+				            if(strcasecmp($groups[$i]['groupsArea'],$registry[$j]['groupsArea'])==0){
+							    $text .= "<p id = ".$registry[$j]['id'].">ТСЖ ".$registry[$j]['title']." , ".$registry[$j]['address']."</p>";  
+				            }
+					    }
+					    $text .= '</div>
+					    </div>';
+					    if($i%2 != 0 && $i != 0){
+						    $text .= '</div>'; 
+					    }
+					}	
 				 }
 				 $text .= '</div>';
 

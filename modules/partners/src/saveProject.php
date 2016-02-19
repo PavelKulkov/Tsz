@@ -20,26 +20,44 @@
 	
 	if($_POST['idProject']){
 		$uploaddir = $_SERVER['DOCUMENT_ROOT']."/files/LogosProjects/";
-		$uploadfile = $uploaddir . basename($_FILES['uploaded_file_edit_object']['name']);
-		$image = "/LogosProjects/".$_FILES['uploaded_file_edit_object']['name'];
+        //Если загружается новое изображение
+		if(!empty($_FILES['uploaded_file_edit_object_group']['name'])){
+		    $uploadfile = $uploaddir . basename($_FILES['uploaded_file_edit_object_group']['name']);
+			$image = "/LogosProjects/".$_FILES['uploaded_file_edit_object_group']['name'];
 	
-		move_uploaded_file($_FILES['uploaded_file_edit_object']['tmp_name'], $uploadfile);
-	
-		$newProject = array('id'=>$_POST['idProject'],'image'=>$image,'title'=>$_POST['titleEditProject'],'text'=>$_POST['textProject'],'site'=>$_POST['siteProject']);
+			move_uploaded_file($_FILES['uploaded_file_edit_object_group']['tmp_name'], $uploadfile);
+			$oldProject = $partneryAndProject->getProject($_POST['idProject']);
+			$flagName = $partneryAndProject->matchesImg($oldProject['image'], "projects");
+			if($oldProject['image'] != "/LogosProjects/default/default.png" && !$flagName){
+				@unlink($_SERVER['DOCUMENT_ROOT']."/files".$oldProject['image']);
+			}
+		}
+		//Изображение не меняется
+		else{
+		    $oldProject = $partneryAndProject->getProject($_POST['idProject']);
+		    $image = $oldProject['image'];
+		}
+		$newProject = array('id'=>$_POST['idProject'],'image'=>$image,'title'=>$_POST['titleEditProject'],'text'=>$_POST['textProject'],'site'=>"-" );
 
 		$partneryAndProject -> saveProject($newProject);
+		
 	}else{
 		$uploaddir = $_SERVER['DOCUMENT_ROOT']."/files/LogosProjects/";
-		$uploadfile = $uploaddir . basename($_FILES['uploaded_file_add_object']['name']);
-		$image = "/LogosProjects/".$_FILES['uploaded_file_add_object']['name'];
-	
-		move_uploaded_file($_FILES['uploaded_file_add_object']['tmp_name'], $uploadfile);
-	
+		
+		if(!empty($_FILES['uploaded_file_add_object_group']['name'])){
+		    $uploadfile = $uploaddir . basename($_FILES['uploaded_file_add_object_group']['name']);
+			$image = "/LogosProjects/".$_FILES['uploaded_file_add_object_group']['name'];
+			move_uploaded_file($_FILES['uploaded_file_add_object_group']['tmp_name'], $uploadfile);
+		}
+		//Если изображение отсутствует
+		else{
+			$image = "/LogosProjects/default/default.png";
+		}
+		
 		$newProject = array('image'=>$image,'title'=>$_POST['titleProject'],'text'=>$_POST['textProject'],'site'=>$_POST['siteProject']);
 
 		$partneryAndProject -> saveProject($newProject);
 	}
-	
 	
 	$db->disconnect();
 	header("Location:/partners");

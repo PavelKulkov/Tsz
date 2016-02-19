@@ -201,7 +201,7 @@
                   </div>
               </div>
 				
-              <div class="windowEditObjectTitle">
+              <!--<div class="windowEditObjectTitle">
 			      <div class="windowEditObjectTitleBoxOne">
                       <p>Описание</p>
 				  </div>
@@ -209,7 +209,23 @@
                      <textarea  name="textProject"> </textarea>   
 					 <span class="error" id="errormsg_textProject"></span>
                   </div>
-              </div>    
+              </div>-->
+
+              <div class="windowEditObjectImg">
+			      <div class="windowEditObjectTitleBoxOne">
+                      <p>Изображение</p>
+				 </div>
+                  <div class="windowFileUpload">
+                      <div class="file_upload">
+                          <button type="button">Обзор...</button>
+                          <div class="file_name" id="file_name_add_object_group"><p>Файл не выбран</p></div>
+                
+                           <input type="file" name="uploaded_file_add_object_group" id="uploaded_file_add_object_group" multiple accept="image/*,image/jpeg">
+                  
+                      </div>
+                      <div class="image_uploaded" id="image_uploaded_add_object_group"></div>
+                   </div>
+              </div>    		  
          
           <div class="windowButton">
               <input class="delButton" type="submit" value="Сохранить"/>
@@ -235,7 +251,7 @@
                   </div>
 			 </div>
 				<input type="hidden" id="idProject" name="idProject">
-              <div class="windowEditObjectTitle">
+             <!-- <div class="windowEditObjectTitle">
 			      <div class="windowEditObjectTitleBoxOne">
                       <p class="windowEditObjectP">Описание</p>
                   </div>
@@ -243,7 +259,25 @@
 				       <textarea id="textProject" name="textProject"> </textarea>            
                        <span class="error" id="errormsg_textProject"></span>
                   </div>
-			  </div>    
+			  </div> -->
+             <div class="windowEditObjectImg">
+			      <div class="windowEditObjectTitleBoxOne">
+                      <p>Изображение</p>
+				 </div>
+                  <div class="windowFileUpload">
+                      <div class="file_upload">
+                          <button type="button">Обзор...</button>
+                          <div class="file_name" id="file_name_edit_object_group"><p>Файл не выбран</p></div>
+                
+                           <input type="file" name="uploaded_file_edit_object_group" id="uploaded_file_edit_object_group" multiple accept="image/*,image/jpeg">
+                  
+                      </div>
+                      <div class="image_uploaded" id="image_uploaded_edit_object_group"></div>
+                   </div>
+              </div>              
+
+
+		   
           <div class="windowButton">
               <input class="delButton" type="submit" value="Сохранить"/>
               <a href="#" class="cancelButton">Отмена</a>

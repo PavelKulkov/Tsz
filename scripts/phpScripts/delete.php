@@ -20,7 +20,10 @@
 		$sql = "SELECT * FROM `".$tmp[0]."` WHERE `id`= ?";
 		$item = $db ->selectRow($sql,$tmp[1]);
 		if($item['image']){
-			@unlink($_SERVER['DOCUMENT_ROOT']."/files".$item['image']);
+			//Если изображение не default
+			if(!strpos($item['image'], "default/default.png")){
+			    @unlink($_SERVER['DOCUMENT_ROOT']."/files".$item['image']);
+			}
 		}	
 		$sql = "DELETE FROM `".$tmp[0]."` WHERE `id`= ?";
 		$db -> delete($sql,$tmp[1]);
