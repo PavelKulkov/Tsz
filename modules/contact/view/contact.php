@@ -24,6 +24,9 @@
           
           <h3 class="_adminAccordionTitle">
               <p>Контактная информация <span><img src="templates/images/select.png"></span></p>
+			  <span class="_adminAccordionSelectAction">
+                  <a  href="#" class="_adminAddObjectContact_"><span><img src="templates/images/addDoc.png"></span></a>
+              </span>
           </h3>
           <div class="_adminAccordionContents">
               <div class="_adminAccordionContent">
