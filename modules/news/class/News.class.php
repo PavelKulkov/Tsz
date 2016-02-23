@@ -80,5 +80,24 @@ class News {
 		$time = $time[1];
 		return $day." ".$month." ".$year." ".$time;
 	}
+	//Кол-во файлов в дериктории
+	function count_files($dir){
+		$c = 0;
+		$d = dir($dir);
+		while($str = $d->read()){
+			
+			if($str{0} != '.'){
+				if(is_dir($dir.'/'.$str)){
+					$c += count_files($dir.'/'.$str);
+				}
+				else{
+					$masName[] = $str;
+					$c++;
+				}
+			}
+		}
+		$d->close();
+		return $masName;
+	}
 	
 }

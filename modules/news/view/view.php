@@ -1,54 +1,39 @@
 <?php
-    //Имена файлов из деректории
-    $masFileName;
-	function count_files($dir){
-		$c = 0;
-		$d = dir($dir);
-		while($str = $d->read()){
-			
-			if($str{0} != '.'){
-				if(is_dir($dir.'/'.$str)){
-					$c += count_files($dir.'/'.$str);
-				}
-				else{
-					$masName[] = $str;
-					$c++;
-				}
-			}
-		}
-		$d->close();
-		$GLOBALS["masFileName"] = $masName;
-		return $c;
-	}
+   
+	if(!isset($news)) $news = new News($request, $db);
 	
-	
-    $text = '<style>
-	#select_5 a{
-		border-bottom: 7px solid #fd8505;
-	}
+    $text = '
+	<style>
+	    #select_5 a{
+		    border-bottom: 7px solid #fd8505;
+	    }
 	</style>
 	<div class="pageNavigation">
-                 <p><a href="/">Главная</a> -> <a href="news">Новости</a> -> '.$new['title'].'</p>
-            </div>
-	';
+        <p><a href="/">Главная</a> -> <a href="news">Новости</a> -> '.$new['title'].'</p>
+    </div>';
 	
-    $text .= '<div class="news">
-          <div class="openNews">
-              <p class="newsContentData">'.date('d.m.Y H:i',strtotime($new['date'])).'</p>
-              <p class="newsContentTitle">'.$new['title'].'</p>
-              <p class="openNewsText">'.$new['text'].'
-              </p>
-         
-              <div class="openNewsImages">';			  
-			 for($i=1; $i<=count_files('files'.$new['image']); $i++ ){
-				 $text .= '<img src="/files'.$new['image'].$masFileName[$i-1].'">';
-			 }
-             $text .='</div>
-              <a href="news">Ко всем новостям</a>
-          </div>
-      </div>';
-
-
+    $text .= '
+	<div class="news">
+        <div class="openNews">
+            <p class="newsContentData">'.date('d.m.Y H:i',strtotime($new['date'])).'</p>
+            <p class="newsContentTitle">'.$new['title'].'</p>
+            <p class="openNewsText">'.$new['text'].'</p>
+            <div class="openNewsImages">';
+			    if($new['image'] == "/News/default/default.png"){
+			        $image = '<img src="/files'.$new['image'].'">';
+			    }
+				else{
+					$fileName = $news->count_files('files'.$new['image']);
+					for($i=1; $i<=count($fileName); $i++ ){
+				        $image .= '<img src="/files'.$new['image'].$fileName[$i-1].'">';
+			        }
+				}
+                $text .= $image ;
+                $text .='
+			</div>
+            <a href="news">Ко всем новостям</a>
+        </div>
+    </div>';
 
 /*
 		$text .= '	
@@ -159,4 +144,4 @@ $twitter = <<<TEXT
 </div>
 TEXT;
 */
-		$text .= $twitter;	
+    $text .= $twitter;	

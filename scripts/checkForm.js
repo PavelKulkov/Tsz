@@ -94,7 +94,7 @@
 			            //если поле ошибки не содержит сообщения
 			            if(!$("#errormsg_" + nameFild).html()){
 							/*if(nameFild == 'e_mailTsz'){
-		       
+		                         error = validate_output(/^[a-zA-Zа-яА-Я0-9-_\.]+@[a-zA-Zа-яА-Я0-9-_\.]+\.[A-z]{2,4}$/, $(this).val());
 			                    $('form[id="'+ formId +'"] #errormsg_' + nameFild).append("Поле " + masName[nameFild] + "должно содержать @");
 		                    }*/
 							//else{
@@ -113,10 +113,10 @@
             
     });
 	
-	/*
+	
 	
 	 //Функция проверки
-    function validate_output(reg, str){
+   /* function validate_output(reg, str){
         if(!reg.test(str)){
 			//document.getElementById(id).innerHTML = message;
             return true;

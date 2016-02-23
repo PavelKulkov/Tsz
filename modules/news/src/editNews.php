@@ -18,8 +18,7 @@
 			}
 		}
 		$d->close();
-		$GLOBALS["masFileName"] = $masName;
-		
+		$GLOBALS["masFileName"] = $masName;	
 	}
 	
 	function getStrImage($id, $path, $masName){
@@ -43,11 +42,20 @@ if($_SESSION['admin']){
 	if(!isset($news)) $news = new News($request, $db);
 	
 	$new = $news->getNew($id_new);
-    count_files('files'.$new['image']);
-	
-	$image1 =  getStrImage(0,$new['image'], $masFileName);
-	$image2 =  getStrImage(1,$new['image'], $masFileName);
-	$image3 =  getStrImage(2, $new['image'],$masFileName);
+	//TODO Оптимизировать
+	if($new['image'] != '/News/default/default.png'){
+		count_files('files'.$new['image']);
+	    $image1 =  getStrImage(0,$new['image'], $masFileName);
+	    $image2 =  getStrImage(1,$new['image'], $masFileName);
+	    $image3 =  getStrImage(2, $new['image'],$masFileName);
+	}
+	else{
+		$image1[0] = '<img src="../files'.$new['image'].'">';
+		$image1[1] = 'default';
+		$image2 =  getStrImage(1,$new['image'], $masFileName);
+	    $image3 =  getStrImage(2, $new['image'],$masFileName);
+	}
+    
 	
 	$text ='
 	<style>
