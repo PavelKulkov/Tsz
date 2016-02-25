@@ -24,61 +24,51 @@
           
           <h3 class="_adminAccordionTitle">
               <p>Контактная информация <span><img src="templates/images/select.png"></span></p>
-			  <span class="_adminAccordionSelectAction">
-                  <a  href="#" class="_adminAddObjectContact_"><span><img src="templates/images/addDoc.png"></span></a>
-              </span>
           </h3>
           <div class="_adminAccordionContents">
               <div class="_adminAccordionContent">
                   <p>Адрес</p>
                  <span class="_adminAccordionSelectAction">
                   <a id="address_organization" href="#" class="_adminEditObjectContact_"><span><img src="templates/images/editDoc.png"></span></a>
-                  <a href="#" class="_adminDelObject_"><span><img src="templates/images/delDoc.png"></span></a>
               </span>
               </div> 
               
               <div class="_adminAccordionContent">
                   <p>Телефон</p>
                  <span class="_adminAccordionSelectAction">
-                  <a href="#" class="_adminEditObjectContact_"><span><img src="templates/images/editDoc.png"></span></a>
-                  <a href="#" class="_adminDelObject_"><span><img src="templates/images/delDoc.png"></span></a>
+                  <a href="#" class="_adminEditObjectContact_"><span><img src="templates/images/editDoc.png"></span></a>                  
               </span>
               </div> 
               
               <div class="_adminAccordionContent">
                   <p>E-mail</p>
                  <span class="_adminAccordionSelectAction">
-                  <a href="#" class="_adminEditObjectContact_"><span><img src="templates/images/editDoc.png"></span></a>
-                  <a href="#" class="_adminDelObject_"><span><img src="templates/images/delDoc.png"></span></a>
+                  <a href="#" class="_adminEditObjectContact_"><span><img src="templates/images/editDoc.png"></span></a>                  
               </span>
               </div> 
               
               <div class="_adminAccordionContent">
                   <p>График работ</p>
                  <span class="_adminAccordionSelectAction">
-                  <a href="#" class="_adminEditObjectContact_"><span><img src="templates/images/editDoc.png"></span></a>
-                  <a href="#" class="_adminDelObject_"><span><img src="templates/images/delDoc.png"></span></a>
+                  <a href="#" class="_adminEditObjectContact_"><span><img src="templates/images/editDoc.png"></span></a>                
               </span>
               </div>
 			  <div class="_adminAccordionContent">
                   <p>ФИО главы</p>
                  <span class="_adminAccordionSelectAction">
-                  <a href="#" class="_adminEditObjectContact_"><span><img src="templates/images/editDoc.png"></span></a>
-                  <a href="#" class="_adminDelObject_"><span><img src="templates/images/delDoc.png"></span></a>
+                  <a href="#" class="_adminEditObjectContact_"><span><img src="templates/images/editDoc.png"></span></a>                  
               </span>
               </div>
 			  <div class="_adminAccordionContent">
                   <p>Телефон главы</p>
                  <span class="_adminAccordionSelectAction">
-                  <a href="#" class="_adminEditObjectContact_"><span><img src="templates/images/editDoc.png"></span></a>
-                  <a href="#" class="_adminDelObject_"><span><img src="templates/images/delDoc.png"></span></a>
+                  <a href="#" class="_adminEditObjectContact_"><span><img src="templates/images/editDoc.png"></span></a>                 
               </span>
               </div>
 			  <div class="_adminAccordionContent">
                   <p>E-mail главы</p>
                  <span class="_adminAccordionSelectAction">
-                  <a href="#" class="_adminEditObjectContact_"><span><img src="templates/images/editDoc.png"></span></a>
-                  <a href="#" class="_adminDelObject_"><span><img src="templates/images/delDoc.png"></span></a>
+                  <a href="#" class="_adminEditObjectContact_"><span><img src="templates/images/editDoc.png"></span></a>                 
               </span>
               </div> 
           </div>
