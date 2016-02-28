@@ -107,7 +107,7 @@
             <div class="windowEditObjectTitle">
 			    
 				<div class="windowEditObjectTitleBoxOne">
-                    <p>Адрес</p>
+                    <p>Адрес: город, улица, дом </p>
 				</div>
 				
 				<div class="windowEditObjectTitleBoxTwo">
@@ -260,7 +260,7 @@
 			
             <div class="windowEditObjectTitle">
 			    <div class="windowEditObjectTitleBoxOne">
-                    <p>Адрес</p>
+                    <p>Адрес: город, улица, дом</p>
 				</div>
                 <div class="windowEditObjectTitleBoxTwo">				
                     <input type="text" id="addressTszEditCoord" name="addressTsz">

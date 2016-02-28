@@ -9,22 +9,23 @@
 	  			              $guestUser[2],
 	  			              $guestUser[3]);	  	
 	  	  
-	  $regInfo = DBRegInfo::getInstance();
+	$regInfo = DBRegInfo::getInstance();
 	try{
 	  	$db->connect($regInfo);
-	  }catch(Exception $e){
-	  	 die("DB Connection error");
-	  }
+	}catch(Exception $e){
+	  	die("DB Connection error");
+	}
 	  
 	if(!isset($questions)) $questions = new Questions($request,$db);
-	
-	if($_POST['idQuestion']){
-		$newQuestion = array('id'=>$_POST['idQuestion'],'title'=>$_POST['titleQuestion'],'answer'=>$_POST['answer'],'groupsQuestion'=>$_POST['idGroup']);
-		$questions->saveQuestion($newQuestion);
+
+	if($_POST['idGroup']){
+		$newGroup = array('id'=>$_POST['idGroup'],'groupsQuestion'=>$_POST['titleGroupQuestions']);
+		$questions->saveGroup($newGroup);
 	}else{
-		$newQuestion = array('title'=>$_POST['titleQuestion'],'answer'=>$_POST['answer'], 'groupsQuestion'=>$_POST['idGroup']);
-		$questions->saveQuestion($newQuestion);
+		$newGroup = array('groupsQuestion'=>$_POST['titleGroupQuestions']);
+		$questions->saveGroup($newGroup);
 	}
+	
 	$db->disconnect();
 	header("Location:/questions");
 ?>

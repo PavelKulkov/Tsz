@@ -68,4 +68,23 @@ class Documentation{
 		$sql = "DELETE FROM `groups of documents` WHERE `id`= ?";
 		$this->db_instance->delete($sql, $idGroup);
 	}
+	
+	function matchesImg($image, $tableName){
+		$sql= "SELECT image  FROM `".$tableName."`";
+		$item = $this->db_instance->select($sql); 
+		$tmp = 0;
+		if($item) {
+		    foreach($item AS $mas){
+			    if($mas['image'] == $image){
+					$tmp++;
+				}
+		    }
+		    if($tmp>=2){
+				return true;
+			}
+	        else{
+			    return false;
+		    }
+		}
+	}
 }

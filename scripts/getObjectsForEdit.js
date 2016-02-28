@@ -78,6 +78,7 @@ $(document).ready(function(){
 				var question = jQuery.parseJSON(data);
 				$('#titleQuestion').val(question.title);
 				$('#idQuestion').val(question.id);
+				$('#idGroupForEdit').val(question.groupsQuestion);
 				$('#answer').val(question.answer);
 			}
 		})
@@ -123,6 +124,40 @@ $(document).ready(function(){
 			}
 		})
     });
+	
+	
+	
+	//Добавление вопроса
+	$('._adminAddObject_').click(function() {
+		var id =($(this).attr('id'));
+		$.ajax({
+			url:"../modules/questions/src/getGroup.php",
+			type:"post",
+			data:{"idGroupForAdd":id},
+			success:function(data){
+				var group = jQuery.parseJSON(data);
+				$('#idGroupForAdd').val(group.id);
+			}
+		})
+     
+    });
+	/*Редактирование группы вопроса*/
+	
+	$('._adminEditGroup_').click(function() {
+		var id =($(this).attr('id'));
+		$.ajax({
+			url:"../modules/questions/src/getGroup.php",
+			type:"post",
+			data:{"idGroupForAdd":id},
+			success:function(data){
+				var group = jQuery.parseJSON(data);
+				$('#idGroup').val(group.id);
+				$('#titleGroupQuestions').val(group.groupsQuestion);
+			}
+		})
+     
+    });
+	
 	
 	//Добавление координат по адресу ТСЖ для метки на карте
 	function getCoors(idFieldAddress, idHiddenField){

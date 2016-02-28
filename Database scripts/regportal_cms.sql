@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Янв 17 2016 г., 22:09
+-- Время создания: Фев 28 2016 г., 21:17
 -- Версия сервера: 5.5.45
 -- Версия PHP: 5.3.29
 
@@ -82,17 +82,21 @@ CREATE TABLE IF NOT EXISTS `documentation` (
   `path` text NOT NULL,
   PRIMARY KEY (`id`),
   KEY `groupOfDocs` (`groupOfDocs`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
 --
 -- Дамп данных таблицы `documentation`
 --
 
 INSERT INTO `documentation` (`id`, `title`, `date`, `groupOfDocs`, `path`) VALUES
-(5, 'Закон РФ 1 ', '2016-01-11 19:47:29', 7, '/Docs/Query.txt'),
-(6, 'Пенз.обл. 1 ', '2016-01-11 19:49:07', 8, '/Docs/TODO TSZ.txt'),
-(7, 'Местные 1 ', '2016-01-11 19:58:16', 9, '/Docs/Tulips.jpg'),
-(9, 'Прочие 1 ', '2016-01-17 19:59:55', 11, '/Docs/5aeb1f62f6cd496dc81c07d58b82f143.jpg');
+(1, 'ЖК РФ 2016', '2016-02-07 17:54:22', 7, '/Docs/02d32a578268ebf35de09bcbd88b83ad.rtf'),
+(2, 'Закон Пензенской области от 16.10.2015 № 2815-ЗПО', '2016-02-07 17:56:53', 8, '/Docs/f5b1b89d98b7286673128a5fb112cb9a.doc'),
+(3, 'Закон Пензенской области от 16.10.2015 № 2805-ЗПО', '2016-02-07 17:57:48', 8, '/Docs/564645fbd0332f066cbd9d083ddd077c.doc'),
+(4, 'ПОСТАНОВЛЕНИЕ ПРАВИТЕЛЬСТА ПЕНЗЕНСКОЙ ОБЛАСТИ от 10 декабря 2009 г. N 962-пП "ОБ УТВЕРЖДЕНИИ ДОЛГОСРОЧНОЙ ЦЕЛЕВОЙ ПРОГРАММЫ ПЕНЗЕНСКОЙ ОБЛАСТИ "ЭНЕРГОСБЕРЕЖЕНИЕ В УЧРЕЖДЕНИЯХ И ОРГАНИЗАЦИЯХ БЮДЖЕТНОЙ СФЕРЫ ПЕНЗЕНСКОЙ ОБЛАСТИ НА 2010 - 2015 ГОДЫ"', '2016-02-07 17:59:37', 9, '/Docs/56b3e75aad5f48799ca18c4a16336a4b.doc'),
+(5, 'ПОСТАНОВЛЕНИЕ ПРАВИТЕЛЬСТВА ПЕНЗЕНСКОЙ ОБЛАСТИ от 28 июля 2010 г. N 431-пП "ОБ УТВЕРЖДЕНИИ ОБЛАСТНОЙ ЦЕЛЕВОЙ ПРОГРАММЫ ЭНЕРГОСБЕРЕЖЕНИЯ И ПОВЫШЕНИЯ ЭНЕРГЕТИЧЕСКОЙ ЭФФЕКТИВНОСТИ ПЕНЗЕНСКОЙ ОБЛАСТИ НА 2010 - 2020 ГОДЫ"', '2016-02-07 18:00:19', 9, '/Docs/e9aa3638db7734b9d47ce44563319345.doc'),
+(6, 'УПРАВЛЕНИЕ ПО РЕГУЛИРОВАНИЮ ТАРИФОВ И ЭНЕРГОСБЕРЕЖЕНИЮ ПЕНЗЕНСКОЙ ОБЛАСТИ ПРИКАЗ от 18 декабря 2016 года г. Пенза № 167', '2016-02-07 18:01:23', 11, '/Docs/42f589df53f32d37aa9fbcb5c183c290.pdf'),
+(7, 'G', '2016-02-20 13:47:31', 7, '/Docs/eacf331f0ffc35d4b482f1d15a887d3b.html'),
+(8, 'Здорово', '2016-02-28 17:33:32', 13, '/Docs/d44e27d97b5d7f0d60b24251e1cef181.png');
 
 -- --------------------------------------------------------
 
@@ -156,17 +160,61 @@ CREATE TABLE IF NOT EXISTS `groups of documents` (
   `groupOfDoc` text NOT NULL,
   `image` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
 
 --
 -- Дамп данных таблицы `groups of documents`
 --
 
 INSERT INTO `groups of documents` (`id`, `groupOfDoc`, `image`) VALUES
-(7, 'Законы РФ', '/Docs/LogoForGroups/Tulips.jpg'),
-(8, 'Законодательные документы Пензенской области', '/Docs/LogoForGroups/Penguins.jpg'),
-(9, 'Местные нормативные документы г.Пензы', '/Docs/LogoForGroups/Koala.jpg'),
-(11, 'Прочие документы', '/Docs/LogoForGroups/Lighthouse.jpg');
+(7, 'Законы РФ', '/Docs/LogoForGroups/'),
+(8, 'Законодательные документы Пензенской области', '/Docs/LogoForGroups/logoDoc_2.png'),
+(9, 'Местные нормативные документы г.Пензы', '/Docs/LogoForGroups/logoDoc_3.png'),
+(11, 'Прочие документы', '/Docs/LogoForGroups/logoDoc_4.png'),
+(13, 'Пока', '/Docs/LogoForGroups/default/default.png');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `groups_area`
+--
+
+CREATE TABLE IF NOT EXISTS `groups_area` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `groupsArea` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+
+--
+-- Дамп данных таблицы `groups_area`
+--
+
+INSERT INTO `groups_area` (`id`, `groupsArea`) VALUES
+(1, 'Первомайский район'),
+(2, 'Ленинский район'),
+(3, 'Октябрьский район'),
+(4, 'Железнодорожный район'),
+(5, 'Пензенский район');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `groups_questions`
+--
+
+CREATE TABLE IF NOT EXISTS `groups_questions` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `groupsQuestion` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Дамп данных таблицы `groups_questions`
+--
+
+INSERT INTO `groups_questions` (`id`, `groupsQuestion`) VALUES
+(1, 'Тема 01'),
+(2, 'Тема 2');
 
 -- --------------------------------------------------------
 
@@ -358,20 +406,18 @@ CREATE TABLE IF NOT EXISTS `news` (
   PRIMARY KEY (`id`),
   KEY `FK_TEMPLATE` (`id_template`),
   FULLTEXT KEY `text` (`title`,`annotation`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='Новости' AUTO_INCREMENT=5036 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='Новости' AUTO_INCREMENT=13 ;
 
 --
 -- Дамп данных таблицы `news`
 --
 
 INSERT INTO `news` (`id`, `title`, `preview`, `date`, `annotation`, `image`, `text`, `id_template`, `is_published`) VALUES
-(5028, 'Заседание Совета директоров компании «Оператор электронного правительства» ', 'Накануне режиссер Эльдар Рязанов был госпитализирован в одну из центральных московских клиник для обследования, сообщается о его тяжелом состоянии. Ранее Рязанов уже проходил плановое лечение в сентябре и октябре.', '2015-11-22 05:05:00', '7 ноября состоялось заседание Совета директоров ОАО «Оператор электронного правительства», на котором Председатель Правительства Пензенской области Андреев Андрей Викторович был единогласно избран Председателем Совета директоров компании.', 'openNews_1,openNews_2', 'Сегодня в Пензенском ЦНТИ открылась ежегодная выставка «Электронная Пенза», в которой принимает участие компания ОАО «Оператор электронного правительства». В мероприятии принимают участие организации, представляющие информационные технологии, программные продукты, системы и средства телекоммуникаций, оборудование и услуги связи. Сотрудники ОАО «ОЭП» подготовили презентационный и раздаточный материал, который позволит любому желающему подробнее узнать о текущих проектах и услугах, а также о планах развития компании.\nПрисутствовавший на выставке заместитель начальника управления информатизации Пензенской области Руслан Чикин пожелал всем участникам дальнейшей плодотворной работы, а также выразил уверенность, что подобные мероприятия будут полезны и компаниям и посетителям, пришедшим ознакомиться с новыми тенденциями.\nНапомним, что межрегиональная выставка «Электронная Пенза» в этом году проводится 10-11 ноября в ЦНТИ по адресу ул. Ульяновская, 1. Наши сотрудники, которые находятся рядом с выставочным стендом, готовы ответить на любые Ваши вопросы относительно деятельности компании.', 1, 0),
-(5029, 'Компания ОАО «Оператор электронного правительства» принимает участие в выставке «Электронная Пенза»', 'Накануне режиссер Эльдар Рязанов был госпитализирован в одну из центральных московских клиник для обследования, сообщается о его тяжелом состоянии. Ранее Рязанов уже проходил плановое лечение в сентябре и октябре.', '2015-11-20 05:05:00', 'Сегодня в Пензенском ЦНТИ открылась ежегодная выставка «Электронная Пенза», в которой принимает участие компания ОАО «Оператор электронного...', 'openNews_2,openNews_1', 'Сегодня в Пензенском ЦНТИ открылась ежегодная выставка «Электронная Пенза», в которой принимает участие компания ОАО «Оператор электронного правительства». В мероприятии принимают участие организации, представляющие информационные технологии, программные продукты, системы и средства телекоммуникаций, оборудование и услуги связи. Сотрудники ОАО «ОЭП» подготовили презентационный и раздаточный материал, который позволит любому желающему подробнее узнать о текущих проектах и услугах, а также о планах развития компании.\nПрисутствовавший на выставке заместитель начальника управления информатизации Пензенской области Руслан Чикин пожелал всем участникам дальнейшей плодотворной работы, а также выразил уверенность, что подобные мероприятия будут полезны и компаниям и посетителям, пришедшим ознакомиться с новыми тенденциями.\nНапомним, что межрегиональная выставка «Электронная Пенза» в этом году проводится 10-11 ноября в ЦНТИ по адресу ул. Ульяновская, 1. Наши сотрудники, которые находятся рядом с выставочным стендом, готовы ответить на любые Ваши вопросы относительно деятельности компании.', 1, 0),
-(5030, '«Ростелеком» проводит открытый конкурс среди Интернет-пользователей на лучший персонаж-талисман компании', 'Накануне режиссер Эльдар Рязанов был госпитализирован в одну из центральных московских клиник для обследования, сообщается о его тяжелом состоянии. Ранее Рязанов уже проходил плановое лечение в сентябре и октябре.', '2015-11-23 05:05:00', 'Пензенцы могут принять участие в открытом конкурсе на создание маскота (персонажа-талисмана) для компании «Ростелеком». Компания проводит конкурс с 1 по 18 ноября 2011 года. Заявлено, что выбранный в ходе конкурса графический талисман будет впоследствии использоваться "Ростелекомом" в интернет-коммуникациях и социальных проектах.', 'openNews_1,openNews_2', 'Сегодня в Пензенском ЦНТИ открылась ежегодная выставка «Электронная Пенза», в которой принимает участие компания ОАО «Оператор электронного правительства». В мероприятии принимают участие организации, представляющие информационные технологии, программные продукты, системы и средства телекоммуникаций, оборудование и услуги связи. Сотрудники ОАО «ОЭП» подготовили презентационный и раздаточный материал, который позволит любому желающему подробнее узнать о текущих проектах и услугах, а также о планах развития компании.\nПрисутствовавший на выставке заместитель начальника управления информатизации Пензенской области Руслан Чикин пожелал всем участникам дальнейшей плодотворной работы, а также выразил уверенность, что подобные мероприятия будут полезны и компаниям и посетителям, пришедшим ознакомиться с новыми тенденциями.\nНапомним, что межрегиональная выставка «Электронная Пенза» в этом году проводится 10-11 ноября в ЦНТИ по адресу ул. Ульяновская, 1. Наши сотрудники, которые находятся рядом с выставочным стендом, готовы ответить на любые Ваши вопросы относительно деятельности компании.', 1, 0),
-(5032, 'Привет', 'пока', '2015-12-02 00:00:00', NULL, 'openNews_1,openNews_2', ';lkjhgfchjkl;''lkjhgfhjkl;''\r\n;lkjhgfjkl;''\r\n;lkjhgfhjkl;''\r\n'';lkjhgfhjkl;''\r\n'';lkjhgfhjkl;''\r\n', 0, 0),
-(5033, 'здравствуй', 'доствидания', '2015-12-01 00:00:00', NULL, 'openNews_1,openNews_2', '''\r\nghp[jhgvnhop[jhgop[hjgjopjhmbjp[\r\nkjhlp[jhvo', 0, 0),
-(5034, 'я', 'и ты', '2015-11-30 00:00:00', NULL, 'openNews_1,openNews_2', ';lkjhgfchjkl;''lkjhgfhjkl;''\r\n;lkjhgfjkl;''\r\n;lkjhgfhjkl;''\r\n'';lkjhgfhjkl;''\r\n'';lkjhgfhjkl;''\r\n', 0, 0),
-(5035, 'смысл', 'осознание', '2015-12-05 00:00:00', NULL, 'openNews_1,openNews_2', '''\r\nghp[jhgvnhop[jhgop[hjgjopjhmbjp[\r\nkjhlp[jhvo', 0, 0);
+(1, 'В Пензе запущен городской портал «Открытый город».В Пензе запущен городской портал «Открытый город».', '', '2016-02-07 18:27:49', '', '/News/ceb1ae2b4432131cd8b79b949c700550/', 'Для решения проблем в сфере ЖКХ в Пензе запущен портал «Открытый город».\r\nПортал «Открытый город», позволяющий жителям Пензы оставить заявку на решение той или иной проблемы в сфере ЖКХ, которая автоматически будет направлена в соответствующую службу или ведомство, запущен в тестовом режиме.\r\n\r\nВ ходе презентации, состоявшейся в управлении по делам ГО и ЧС города Пензы в пятницу, 22 января, вице-мэр Юрий Ильин сообщил, что данный проект имеет важную практическую составляющую.\r\n\r\nПо его словам, «Открытый город», помимо новой формы обратной связи, позволяет жителям получить подробную информацию о состоянии городского хозяйства вплоть до конкретного многоквартирного дома.\r\nПортал работает в тесной взаимосвязи с единой дежурной диспетчерской службой (ЕДДС) города. К системе подключены ресурсоснабжающие организации, жилищно-коммунальные службы и управляющие компании, у которых не менее 10 домов в управлении.', 1, 0),
+(3, 'На дорогах Пензенской области пройдет профилактическое мероприятие «Пешеход»', '', '2016-02-07 18:53:51', '', '/News/41389b5bdeb39437f0d85725540622d7/', 'Сотрудники Госавтоинспекции проведут оперативно-профилактическое мероприятие «Пешеход» в предстоящий понедельник, 8 февраля.\r\n\r\nЕго главная задача — предупреждение ДТП, в том числе путем повышения культуры пользования пешеходным переходом со стороны всех участников дорожного движения.\r\n\r\n«В период проведения мероприятия сотрудники ГИБДД уделят особое внимание недопущению и пресечению нарушений правил дорожного движения пешеходами», — сообщили ИА «PenzaNews» в отделе пропаганды управления ГИБДД УМВД РФ по Пензенской области.\r\n\r\nВ ведомстве напомнили, что с 1 июля 2015 года при переходе дороги и движении по обочинам в темное время суток или в условиях недостаточной видимости рекомендуется, а вне населенных пунктов обязательно наличие у пешеходов предметов со световозвращающими элементами.\r\n\r\n«В соответствии с ч. 1 ст. 12.29 КоАП РФ «Нарушение правил дорожного движения пешеходом или иным лицом, участвующим в процессе дорожного движения» предусмотрено административное наказание в виде административного штрафа в размере 500 рублей», — сказали в отделе пропаганды.\r\n\r\nПолный текст новости ИА «PenzaNews»: http://penzanews.ru/society/98836-2016', 1, 0),
+(11, 'b', '', '2016-02-23 16:37:51', '', '/News/92eb5ffee6ae2fec3ad71c777531578f/', 'b', 1, 0),
+(12, 'y', '', '2016-02-23 17:08:17', '', '/News/415290769594460e2e485922904f345d/', 'y', 1, 0),
+(10, 'вв', '', '2016-02-23 12:07:59', '', '/News/default/default.png', 'ввв', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -419,7 +465,17 @@ CREATE TABLE IF NOT EXISTS `partners` (
   `text` text,
   `site` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+
+--
+-- Дамп данных таблицы `partners`
+--
+
+INSERT INTO `partners` (`id`, `image`, `title`, `text`, `site`) VALUES
+(1, '/LogosPartners/partners_1.png', 'Оператор электронного правительства', '', 'http://rosoperator.ru/'),
+(2, '/LogosPartners/partners_2.png', 'Росно', '', 'http://rosno-ms.ru/'),
+(3, '/LogosPartners/partners_3.png', 'Пенза-Онлайн', '', 'http://www.hosting-online.ru/'),
+(4, '/LogosPartners/partners_1.png', 'Оператор электронного правительства', NULL, 'http://rosoperator.ru/');
 
 -- --------------------------------------------------------
 
@@ -434,19 +490,16 @@ CREATE TABLE IF NOT EXISTS `projects` (
   `text` text NOT NULL,
   `site` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Дамп данных таблицы `projects`
 --
 
 INSERT INTO `projects` (`id`, `image`, `title`, `text`, `site`) VALUES
-(1, '/LogosProjects/', 'Портал Пенза 1', 'Проект был реализован в рамках...', '#'),
-(2, NULL, 'Портал Пенза 2', 'Проект был реализован в рамках...', '#'),
-(3, NULL, 'Портал Пенза 3', 'Проект был реализован в рамках...', '#'),
-(4, NULL, 'Портал Пенза 4', 'Проект был реализован в рамках...', '#'),
-(5, NULL, 'Портал Пенза 5', 'Проект был реализован в рамках...', '#'),
-(6, NULL, 'Портал Пенза 6', 'Проект был реализован в рамках...', '#');
+(1, '/LogosPartners/partners_1.png', 'ПРОГРАММНЫЙ КОМПЛЕКС «ГОСУСЛУГИ.OPEN»', ' Типовое решение «Электронные услуги региона» система предназначена для обеспечения подачи заявки на оказание услуг, отслеживания статуса исполнения заявки и получения результата в электронном виде. Входящий в состав решения генератор интерактивных форм позволяет создавать сложные динамические и многошаговые формы подачи заявления на оказание государственных, муниципальных и иных услуг региона.', ''),
+(2, '/LogosPartners/partners_1.png', 'ГЛОНАСС-МОНИТОРИНГ', ' Тахограф – контрольное устройство, устанавливаемое на борту автотранспортных средств. Предназначено для регистрации скорости, режима труда, отдыха водителей и членов экипажа. Благодаря наличию системы самодиагностики и защиты передачи сигналов, практически исключается возможность несанкционированных действий с ним: его нельзя отключить, откорректировать данные и выполнить другие манипуляции для получения и искажения информации.  ', ''),
+(3, '/LogosPartners/partners_1.png', 'ЭЛЕКТРОННАЯ ШКОЛА', ' Проект «Электронная школа» представляет собой автоматизированную безналичную систему оплаты, учёта и организации питания учащихся школ Пензенской области.  Система позволяет упростить процесс обслуживания в школьной столовой и вести автоматизированный учёт целевого расходования, как родительских, так и бюджетных средств, выделяемых на питание школьников.   ', '');
 
 -- --------------------------------------------------------
 
@@ -458,20 +511,21 @@ CREATE TABLE IF NOT EXISTS `questions` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` text NOT NULL,
   `answer` text NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+  `groupsQuestion` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `groupOfQuestions` (`groupsQuestion`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
 -- Дамп данных таблицы `questions`
 --
 
-INSERT INTO `questions` (`id`, `title`, `answer`) VALUES
-(1, 'Чем занимается Ассоциациия ТСЖ?', 'This is Photoshop''s version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.'),
-(2, 'Как вступить в Ассоциацию ТСЖ?', 'This is Photoshop''s version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.'),
-(3, 'Какие документы необходимы для вступления в Ассоциацию?', 'This is Photoshop''s version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.'),
-(4, 'Где узнать номера аварийных служб?', 'This is Photoshop''s version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.'),
-(5, 'Какие преимущества от вступления в Ассоциацию?', 'This is Photoshop''s version  of Lorem Ipsum. Proin \n'),
-(6, 'Какие услуги предоставляет Ассоциация ТСЖ?', 'This is Photoshop''s version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id');
+INSERT INTO `questions` (`id`, `title`, `answer`, `groupsQuestion`) VALUES
+(1, 'Где узнать номера аварийных служб?', 'Во вкладке "Контакты"', 1),
+(2, 'Какие преимущества от вступления в Ассоциацию?', 'Расширение профессиональных контактов;\nВовлечение', 1),
+(3, 'Чем занимается Ассоциациия ТСЖ?', 'Консультирование по вопросам коммерческой деятельн', 2),
+(4, 'Чем занимается Ассоциациия ТСЖ?', 'Консультирование по вопросам коммерческой деятельн', 2),
+(6, 'Норм ', 'ага', 1);
 
 -- --------------------------------------------------------
 
@@ -532,8 +586,8 @@ INSERT INTO `regions` (`id`, `name`, `link`, `coord`) VALUES
 
 CREATE TABLE IF NOT EXISTS `registry` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `breadth` double NOT NULL,
-  `longitude` double NOT NULL,
+  `breadth` double DEFAULT NULL,
+  `longitude` double DEFAULT NULL,
   `logo` text NOT NULL,
   `title` text NOT NULL,
   `address` text NOT NULL,
@@ -541,22 +595,32 @@ CREATE TABLE IF NOT EXISTS `registry` (
   `phoneNumber` text NOT NULL,
   `e_mail` text NOT NULL,
   `fax` text NOT NULL,
-  `President` text NOT NULL,
+  `surnamePresident` text NOT NULL,
+  `namePresident` text NOT NULL,
+  `patronymicPresident` text NOT NULL,
   `site` text NOT NULL,
   `area` int(11) NOT NULL,
   `man` text NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+  `groupsArea` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `groupsArea` (`groupsArea`),
+  KEY `groupsArea_2` (`groupsArea`),
+  KEY `groupsArea_3` (`groupsArea`),
+  KEY `groupsArea_4` (`groupsArea`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
 -- Дамп данных таблицы `registry`
 --
 
-INSERT INTO `registry` (`id`, `breadth`, `longitude`, `logo`, `title`, `address`, `id_template`, `phoneNumber`, `e_mail`, `fax`, `President`, `site`, `area`, `man`) VALUES
-(1, 53.198419, 45.003341, 'romashka', 'Ромашка', 'г. Пенза, ул. Пушкина, 23', 1, '45-56-54', 'ts@yandex.ru', '45-45-99', 'Акимов Валерий Иванович ', 'association.tsz/romashka58', 1, 'поп'),
-(2, 53.200463, 45.014264, 'romashka', 'Ромашка', 'г. Пенза, ул. Суворова, 71', 1, '45-88-88', 'mail.ru', '46-98-77', 'Иванов Иван Иванович', 'association.tsz/romashka_258', 2, 'лот'),
-(3, 53.198484, 45.014121, 'romashka', 'Виктория', 'г. Пенза, ул. Гладкова, 11', 1, '45-88-88', 'tsz@yandex.ru', '45-88-20', 'Иванов Иван Иванович', 'assocciation.tsz/romashka58', 3, 'гот'),
-(4, 53.198419, 44.99796, 'romashka', 'Аврора', 'г. Пенза, ул. Кулакова, 4', 1, '45-56-54', 'tsz@yandex.ru', '45-45-99', 'Акимов Валерий Иванович', 'association.tsz/romashka582', 4, 'сот');
+INSERT INTO `registry` (`id`, `breadth`, `longitude`, `logo`, `title`, `address`, `id_template`, `phoneNumber`, `e_mail`, `fax`, `surnamePresident`, `namePresident`, `patronymicPresident`, `site`, `area`, `man`, `groupsArea`) VALUES
+(1, 53.198419, 45.003341, '5b8058d804346695935c41900eb7c8c3.png', 'Ромашка', 'г. Пенза, ул. Пушкина, 23', 1, '45-56-54', 'romashka58@yandex.ru', '45-56-56', '', '', '', 'association.tsz/romashka58', 1, '-', 1),
+(2, 53.200463, 45.014264, '9f1268fbb142b758c43d71caedcd49ae.jpg', 'Виктория', 'г. Пенза, ул. Суворова, 71', 1, '44-33-23', 'victoria58@yandex.ru', '44-33-44', 'Петренко', 'Николай', 'Игорьевич', 'victoria58@yandex.ru', 1, '-', 2),
+(3, 53.143318, 45.023158, '880e4be2c2478164fa55ef152bb56522.jpg', 'Доверие', 'г. Пенза, ул. Терновского, 160В', 1, '87-99-45', 'сonfidence58@yandex.ru', '87-99-80', 'Иванов', 'Дмитрий', 'Васильевич', 'сonfidence.tsz/romashka58', 1, 'ПИК', 3),
+(4, 53.140525, 45.02314, '3ef386e5da0fa8cfc81b8eebd16b405f.jpg', 'Сура', 'г. Пенза, ул. Терновского, 172', 1, '11-22-43', 'sura58@yandex.ru', '11-22-99', '', '', '', 'sura.tsz/romashka58', 1, '-', 4),
+(5, 53.186264, 45.059279, '00c1de56b1cbab48f9869c1460d70e76.jpg', 'Олимпийский', 'г. Пенза, ул. Антонова, 19б', 1, '54-32-22', 'olympic58@yandex.ru', '54-32-99', '', '', '', 'olympic.tsz/romashka58', 1, '-', 1),
+(6, 53.143177, 45.020005, '4e1ab36884b253ce24768da1c4080a14.jpg', 'Путилково-люкс', 'г. Пенза, ул. Петровская, 38', 1, '66-87-12', 'PutilkovoSuite@yandex.ru', '66-87-88', '', '', '', 'PutilkovoSuite.tsz/romashka58', 1, 'ПИК', 2),
+(7, -1, -1, 'default/default.png', 'вывы', 'ыва', 1, 'ыв', 'zawarin.andrey20@yandex.ru', 'ыв', 'Зав', 'вава', 'вава', '', 1, '-', 5);
 
 -- --------------------------------------------------------
 
@@ -654,6 +718,26 @@ INSERT INTO `templates` (`id`, `name`, `description`, `is_deleted`, `domain_id`,
 (3, 'default_index', 'Begin', 0, 1, 'ru', 0, 'default', 'index'),
 (4, 'default_pages', 'Begin', 0, 1, 'ru', 0, 'default', 'pages');
 
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `ttt`
+--
+
+CREATE TABLE IF NOT EXISTS `ttt` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Дамп данных таблицы `ttt`
+--
+
+INSERT INTO `ttt` (`id`, `title`) VALUES
+(1, 'привет'),
+(2, 'пока');
+
 --
 -- Ограничения внешнего ключа сохраненных таблиц
 --
@@ -677,6 +761,18 @@ ALTER TABLE `module_location`
   ADD CONSTRAINT `FK_LOCATIONTYPE` FOREIGN KEY (`id_locationType`) REFERENCES `locationtype` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `FK_MODULE` FOREIGN KEY (`id_module`) REFERENCES `modules` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `FK_TEMPLATE` FOREIGN KEY (`id_template`) REFERENCES `templates` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Ограничения внешнего ключа таблицы `questions`
+--
+ALTER TABLE `questions`
+  ADD CONSTRAINT `questions_ibfk_1` FOREIGN KEY (`groupsQuestion`) REFERENCES `groups_questions` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Ограничения внешнего ключа таблицы `registry`
+--
+ALTER TABLE `registry`
+  ADD CONSTRAINT `registry_ibfk_1` FOREIGN KEY (`groupsArea`) REFERENCES `groups_area` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Ограничения внешнего ключа таблицы `templates`

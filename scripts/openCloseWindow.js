@@ -120,6 +120,7 @@ $(document).ready(function(){
 	$(".cancelButton").click(function(){
 		closeWindow("#_windowEditObjectProject_")
 	});
+	/*СТРАНИЦА ВОПРОС-ОТВЕТ*/
 	/*Редактирование информации о вопросе*/
 	$("._adminEditObjectQuestions_").click(function(){
 		displayWindow("#_windowEditObjectQuestions_")
@@ -127,6 +128,24 @@ $(document).ready(function(){
 	$(".cancelButton").click(function(){
 		closeWindow("#_windowEditObjectQuestions_")
 	});
+	
+	/*Добавление группы вопроса*/
+	$("._adminAddGroupQuestions_").click(function(){
+		displayWindow("#_windowAddGroupQuestions_")
+	});
+	$(".cancelButton").click(function(){
+		closeWindow("#_windowAddGroupQuestions_")
+	});
+	
+	/*Редактирование группы вопроса*/
+	$("._adminEditGroup_").click(function(){
+		displayWindow("#_windowEditObjectGroup_")
+	});
+	$(".cancelButton").click(function(){
+		closeWindow("#_windowEditObjectGroup_")
+	});
+	
+	
 	/*Редактирование контактов*/
 	$("._adminEditObjectContact_").click(function(){
 		displayWindow("#_windowEditObjectContact_")
@@ -134,4 +153,6 @@ $(document).ready(function(){
 	$(".cancelButton").click(function(){
 		closeWindow("#_windowEditObjectContact_")
 	});
+	
+	
  });

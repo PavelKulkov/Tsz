@@ -48,25 +48,22 @@
 	//Если поле потеряло фокус проверяем его содержание
 	$("form input, select, textarea").focusout(function(){
 		var formId = $($(this)).closest('form').attr('id');
-		//alert(formId);
 		var name = $(this).attr("name");
-		//alert(name);
 		for(var i=0;i<requiredField.length;i++){ // если поле присутствует в списке обязательных
             if(name==requiredField[i]){ //проверяем поле формы на пустоту
 		        //TODO Добавить адыкватную проверка select
 		        if(!$(this).val() || $(this).val() == 0){
 			    //если поле ошибки не содержит сообщения
 			        if(!$('form[id="'+ formId +'"] #errormsg_' + name).html()){
-				        if(name == 'e_mailTsz'){
-			                $('form[id="'+ formId +'"] #errormsg_' + name).append("Поле " + masName[name] + "должно содержать @");
-		                }
-				        else{
-			                $('form[id="'+ formId +'"] #errormsg_' + name).append("Поле " + masName[name] + " обязательно для заполнения");
-				        }
+			            $('form[id="'+ formId +'"] #errormsg_' + name).append("Поле " + masName[name] + " обязательно для заполнения");
 			        }
 		        }
 		        else{
 			        $("#" + formId + " #errormsg_" + name).empty();
+					//Проверка E-mail
+					if(name == 'e_mailTsz' && validate_output(/^[a-zA-Zа-яА-Я0-9-_\.]+@[a-zA-Zа-яА-Я0-9-_\.]+\.[A-z]{2,4}$/, $(this).val())){
+						$('form[id="'+ formId +'"] #errormsg_' + name).append("Поле " + masName[name] + " заполненно некорректно (E-mail  должно содержать @)");
+		            }
 		        }
 			}
 		}
@@ -85,47 +82,38 @@
 					//else{
 				    if(!$(this).val() || $(this).val() == 0){
 						//TODO оптимизировать проверку на e-mail (модульный код)
-						/*if(nameFild == 'e_mailTsz'){
-		                    error = validate_output(/^[a-zA-Zа-яА-Я0-9-_\.]+@[a-zA-Zа-яА-Я0-9-_\.]+\.[A-z]{2,4}$/, $(this).val());
-			               
-		                } */
 					    error=true;
-						
-			            //если поле ошибки не содержит сообщения
+			            //Если ошибка выводится первый раз
 			            if(!$("#errormsg_" + nameFild).html()){
-							/*if(nameFild == 'e_mailTsz'){
-		                         error = validate_output(/^[a-zA-Zа-яА-Я0-9-_\.]+@[a-zA-Zа-яА-Я0-9-_\.]+\.[A-z]{2,4}$/, $(this).val());
-			                    $('form[id="'+ formId +'"] #errormsg_' + nameFild).append("Поле " + masName[nameFild] + "должно содержать @");
-		                    }*/
-							//else{
 			                $("#errormsg_" + nameFild).append("Поле " + masName[nameFild] + " обязательно для заполнения");
-							//}
 			            }
 		            }
-					//}
+					else{
+						$("#" + formName + " #errormsg_" + nameFild).empty();
+						//Проверка E-mail
+					    if(nameFild == 'e_mailTsz' && validate_output(/^[a-zA-Zа-яА-Я0-9-_\.]+@[a-zA-Zа-яА-Я0-9-_\.]+\.[A-z]{2,4}$/, $(this).val())){
+						    error=true;
+							$('form[id="'+ formName +'"] #errormsg_' + nameFild).append("Поле " + masName[nameFild] + " заполненно некорректно (E-mail  должно содержать @)");
+		                }
+					}
                 }               
             }
         });
         if(error){ // если ошибок нет то отправляем данные
             e.preventDefault(); //Отменили нативное действие
            (e.cancelBubble) ? e.cancelBubble : e.stopPropagation; //Погасили всплытие 
-        }
-            
+        }     
     });
 	
-	
-	
-	 //Функция проверки
-   /* function validate_output(reg, str){
+	//Функция проверки по регулярному выражению
+    function validate_output(reg, str){
         if(!reg.test(str)){
-			//document.getElementById(id).innerHTML = message;
             return true;
         }
 		else{
-			//document.getElementById(id).innerHTML = "";
             return false;
 		}
-    }*/
+    }
 	
   
  });
