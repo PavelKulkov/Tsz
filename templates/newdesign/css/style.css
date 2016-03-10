@@ -1,5 +1,6 @@
  @import url("fonts/hattori/hattori.css");
  @import url("fonts/roboto/roboto.css");
+ @import url("siteTsz.css");
 *{
     margin: 0;
     padding: 0;
@@ -553,7 +554,7 @@ a, p, h3{
 	text-align: center;
 	color: #fd8505;
 	font-family: 'HattoriHanzoLight';
-	font-size: 1.3em;
+	font-size: 1.2em;
 }
 .mapContent{
 	width: 400px;
@@ -589,15 +590,15 @@ a, p, h3{
     display: inline-block;
     margin: 0 auto;
 }
-.listAreasContent p{
+/*.listAreasContent p{
 	border-bottom: 1px dashed maroon;
 	border-color: #7a7a7a;
-}
-.listAreasContent p:hover{
+}*/
+/*.listAreasContent p:hover{
 	border-bottom: 1px solid maroon;
 	border-color: #abcc26;
 	color: #abcc26;
-}
+}*/
 .listAreasMain{
 	width: 100%;
 	height: 100%;
@@ -628,6 +629,8 @@ a, p, h3{
     margin: 5px 40px 0 0;
     line-height: 1.5;
 	cursor: pointer;
+	border-bottom: 1px dashed maroon;
+	border-color: #7a7a7a;
 }
 .listAreasMainContent p:hover{
 	border-bottom: 1px solid maroon;
@@ -855,6 +858,9 @@ a, p, h3{
     word-wrap: break-word;
     text-align: left;
 	font-size: 0.9em;
+}
+.questions .answer h3{
+	background: #abcc26;
 }
 
 /*NEWS*/
@@ -1097,20 +1103,19 @@ footer{
     height: 100px;
     display: block;
     min-width: 1024px;
-    margin: 10px 0 0 0 ;
-	
+    margin: 100px 0 0 0 ;	
 }
 .footer{
     position: absolute;
     width: 100%;
-    height: 65px;
+    height: 60px;
     margin: 17.5px 0 17.5px 0;
 }
 .footer p{
     color: #f0f0f0;
     text-align: center;
     font-family: 'HattoriHanzoLight';
-    font-size: 1.14em;
+    font-size: 1em;
 }
 
 /*ADMIN====================================================================================================================*/
@@ -1707,7 +1712,6 @@ input:-moz-placeholder {color: transparent}*/
     opacity: 0;
     cursor: pointer
 }
-
 .pageWindows{
 	width: 100%;
 	height: 100%;

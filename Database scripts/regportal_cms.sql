@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Фев 28 2016 г., 21:17
+-- Время создания: Мар 10 2016 г., 21:26
 -- Версия сервера: 5.5.45
 -- Версия PHP: 5.3.29
 
@@ -286,7 +286,7 @@ CREATE TABLE IF NOT EXISTS `modules` (
   `name` varchar(255) NOT NULL,
   `description` varchar(255) DEFAULT ' ',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Перечень модулей системы' AUTO_INCREMENT=25 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Перечень модулей системы' AUTO_INCREMENT=28 ;
 
 --
 -- Дамп данных таблицы `modules`
@@ -315,7 +315,8 @@ INSERT INTO `modules` (`id`, `name`, `description`) VALUES
 (21, 'partners', 'Партнеры и проекты'),
 (22, 'questions', ' Вопрос-ответ'),
 (23, 'contact', 'Контакты'),
-(24, 'buttomNews', 'Нижняя новость');
+(24, 'buttomNews', 'Нижняя новость'),
+(27, 'site', 'Отдельный сайт для ТСЖ');
 
 -- --------------------------------------------------------
 
@@ -334,7 +335,7 @@ CREATE TABLE IF NOT EXISTS `module_location` (
   KEY `temp_mod` (`id_template`,`id_module`) USING BTREE,
   KEY `id_template` (`id_template`),
   KEY `id_locationType` (`id_locationType`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Разположение модулей' AUTO_INCREMENT=226 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Разположение модулей' AUTO_INCREMENT=229 ;
 
 --
 -- Дамп данных таблицы `module_location`
@@ -385,7 +386,8 @@ INSERT INTO `module_location` (`id`, `id_module`, `locationNum`, `id_template`, 
 (222, 22, NULL, 4, 2),
 (223, 23, NULL, 4, 2),
 (224, 24, 24, 3, 1),
-(225, 4, 4, 3, 1);
+(225, 4, 4, 3, 1),
+(228, 27, NULL, 4, 2);
 
 -- --------------------------------------------------------
 
