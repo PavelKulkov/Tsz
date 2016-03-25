@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Мар 10 2016 г., 21:26
+-- Время создания: Мар 25 2016 г., 19:17
 -- Версия сервера: 5.5.45
 -- Версия PHP: 5.3.29
 
@@ -593,6 +593,9 @@ CREATE TABLE IF NOT EXISTS `registry` (
   `logo` text NOT NULL,
   `title` text NOT NULL,
   `address` text NOT NULL,
+  `town` text NOT NULL,
+  `street` text NOT NULL,
+  `house` text NOT NULL,
   `id_template` int(11) NOT NULL,
   `phoneNumber` text NOT NULL,
   `e_mail` text NOT NULL,
@@ -609,20 +612,19 @@ CREATE TABLE IF NOT EXISTS `registry` (
   KEY `groupsArea_2` (`groupsArea`),
   KEY `groupsArea_3` (`groupsArea`),
   KEY `groupsArea_4` (`groupsArea`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
 -- Дамп данных таблицы `registry`
 --
 
-INSERT INTO `registry` (`id`, `breadth`, `longitude`, `logo`, `title`, `address`, `id_template`, `phoneNumber`, `e_mail`, `fax`, `surnamePresident`, `namePresident`, `patronymicPresident`, `site`, `area`, `man`, `groupsArea`) VALUES
-(1, 53.198419, 45.003341, '5b8058d804346695935c41900eb7c8c3.png', 'Ромашка', 'г. Пенза, ул. Пушкина, 23', 1, '45-56-54', 'romashka58@yandex.ru', '45-56-56', '', '', '', 'association.tsz/romashka58', 1, '-', 1),
-(2, 53.200463, 45.014264, '9f1268fbb142b758c43d71caedcd49ae.jpg', 'Виктория', 'г. Пенза, ул. Суворова, 71', 1, '44-33-23', 'victoria58@yandex.ru', '44-33-44', 'Петренко', 'Николай', 'Игорьевич', 'victoria58@yandex.ru', 1, '-', 2),
-(3, 53.143318, 45.023158, '880e4be2c2478164fa55ef152bb56522.jpg', 'Доверие', 'г. Пенза, ул. Терновского, 160В', 1, '87-99-45', 'сonfidence58@yandex.ru', '87-99-80', 'Иванов', 'Дмитрий', 'Васильевич', 'сonfidence.tsz/romashka58', 1, 'ПИК', 3),
-(4, 53.140525, 45.02314, '3ef386e5da0fa8cfc81b8eebd16b405f.jpg', 'Сура', 'г. Пенза, ул. Терновского, 172', 1, '11-22-43', 'sura58@yandex.ru', '11-22-99', '', '', '', 'sura.tsz/romashka58', 1, '-', 4),
-(5, 53.186264, 45.059279, '00c1de56b1cbab48f9869c1460d70e76.jpg', 'Олимпийский', 'г. Пенза, ул. Антонова, 19б', 1, '54-32-22', 'olympic58@yandex.ru', '54-32-99', '', '', '', 'olympic.tsz/romashka58', 1, '-', 1),
-(6, 53.143177, 45.020005, '4e1ab36884b253ce24768da1c4080a14.jpg', 'Путилково-люкс', 'г. Пенза, ул. Петровская, 38', 1, '66-87-12', 'PutilkovoSuite@yandex.ru', '66-87-88', '', '', '', 'PutilkovoSuite.tsz/romashka58', 1, 'ПИК', 2),
-(7, -1, -1, 'default/default.png', 'вывы', 'ыва', 1, 'ыв', 'zawarin.andrey20@yandex.ru', 'ыв', 'Зав', 'вава', 'вава', '', 1, '-', 5);
+INSERT INTO `registry` (`id`, `breadth`, `longitude`, `logo`, `title`, `address`, `town`, `street`, `house`, `id_template`, `phoneNumber`, `e_mail`, `fax`, `surnamePresident`, `namePresident`, `patronymicPresident`, `site`, `area`, `man`, `groupsArea`) VALUES
+(1, 53.198419, 45.003341, '5b8058d804346695935c41900eb7c8c3.png', 'Ромашка', 'г. Пенза, ул. Пушкина, 23', 'Пенза', 'Пушкина', '23', 1, '45-56-54', 'romashka58@yandex.ru', '45-56-56', '', '', '', 'association.tsz/romashka58', 1, '-', 1),
+(2, 53.200463, 45.014264, '9f1268fbb142b758c43d71caedcd49ae.jpg', 'Виктория', 'г. Пенза, ул. Суворова, 71', 'Пенза', 'Суворова', '71', 1, '44-33-23', 'victoria58@yandex.ru', '44-33-44', 'Петренко', 'Николай', 'Игорьевич', 'victoria58@yandex.ru', 1, '-', 2),
+(3, 53.143318, 45.023158, '880e4be2c2478164fa55ef152bb56522.jpg', 'Доверие', 'г. Пенза, ул. Терновского, 160В', 'Пенза', 'Терновского', '160В', 1, '87-99-45', 'сonfidence58@yandex.ru', '87-99-80', 'Иванов', 'Дмитрий', 'Васильевич', 'сonfidence.tsz/romashka58', 1, 'ПИК', 3),
+(4, 53.140525, 45.02314, '3ef386e5da0fa8cfc81b8eebd16b405f.jpg', 'Сура', 'г. Пенза, ул. Терновского, 172', 'Пенза', 'Терновского', '172', 1, '11-22-43', 'sura58@yandex.ru', '11-22-99', '', '', '', 'sura.tsz/romashka58', 1, '-', 4),
+(5, 53.186264, 45.059279, '00c1de56b1cbab48f9869c1460d70e76.jpg', 'Олимпийский', 'г. Пенза, ул. Антонова, 19б', 'Пенза', 'Антонова', '19б', 1, '54-32-22', 'olympic58@yandex.ru', '54-32-99', '', '', '', 'olympic.tsz/romashka58', 1, '-', 1),
+(6, 53.143177, 45.020005, '4e1ab36884b253ce24768da1c4080a14.jpg', 'Путилково-люкс', 'г. Пенза, ул. Петровская, 38', 'Пенза', 'Петровская', '38', 1, '66-87-12', 'PutilkovoSuite@yandex.ru', '66-87-88', '', '', '', 'PutilkovoSuite.tsz/romashka58', 1, 'ПИК', 2);
 
 -- --------------------------------------------------------
 

@@ -26,7 +26,7 @@ function addMap(data){
                     properties: {
                         balloonContentHeader: "<p class=mapHeader>ТСЖ \"" + data[i].title + "\"</p>", //Баллун для метки
                         clusterCaption: '<p class=mapHeader>ТСЖ \"' + data[i].title + '\"</p>',
-                        balloonContentBody: "<div class='mapContent'><div class='mapImage'><img src='/files/Registry/" + data[i].logo + "'></div><div class='mapText'><p><strong>Адрес:</strong> " + data[i].address + "</p>" +
+                        balloonContentBody: "<div class='mapContent'><div class='mapImage'><img src='/files/Registry/" + data[i].logo + "'></div><div class='mapText'><p><strong>Адрес:</strong> "  + "г." + data[i].town + ", ул. " + data[i].street + ", "+  data[i].house +"</p>" +
 			                "<p><strong>Телефон: </strong> " + data[i].phoneNumber + "</p>" +
 				            "<p><strong>Факс: </strong> " + data[i].fax + "</p>" +
 				            "<p><strong>E-mail:</strong> " + data[i].e_mail + "</p>"+

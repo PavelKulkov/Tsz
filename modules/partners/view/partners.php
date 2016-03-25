@@ -13,15 +13,13 @@
           <p class="_adminListL">Название</p>
           <p class="_adminListR">Действие</p>
       </div>
-      
-      
-      <!--################ НАЧАЛО  accordion  ###########################-->
+    
       <div class="_adminAccordion" id="accordion">
           
           <h3 class="_adminAccordionTitle">
               <p>Партнеры <span><img src="/templates/images/select.png"</span></p>
               <span class="_adminAccordionSelectAction">
-                  <a  href="#" class="_adminAddObjectPartner_"><span ><img src="/templates/images/addDoc.png"></span></a>
+                <span class="_adminAddObjectPartner_"><img src="/templates/images/addDoc.png"></span>
               </span>
           </h3>
 		  <div class="_adminAccordionContents">';
@@ -30,9 +28,9 @@
               <div class="_adminAccordionContent">
                   <p>'.$partner['title'].'</p>
                  <span class="_adminAccordionSelectAction">
-                  <a id="'.$partner['id'].'" href="#" class="_adminEditObjectPartner_"><span ><img src="/templates/images/editDoc.png"></span></a>
-                  <a id="partners-'.$partner['id'].'"href="#" class="_adminDelObject_"><span ><img src="/templates/images/delDoc.png"></span></a>
-              </span>
+                     <span id="'.$partner['id'].'"  class="_adminEditObjectPartner_"><img src="/templates/images/editDoc.png"></span>
+                     <span id="partners-'.$partner['id'].'" class="_adminDelObject_"><img src="/templates/images/delDoc.png"></span>
+                 </span>
               </div>
           ';
           }
@@ -40,7 +38,7 @@
          $text.='<h3 class="_adminAccordionTitle">
               <p>Проекты <span><img src="/templates/images/select.png"></span></p>
               <span class="_adminAccordionSelectAction">
-                  <a  href="#" class="_adminAddObjectProject_"><span ><img src="/templates/images/addDoc.png"></span></a>
+                 <span class="_adminAddObjectProject_"><img src="/templates/images/addDoc.png"></span>
               </span>
           </h3>
 		   <div class="_adminAccordionContents">';
@@ -48,12 +46,11 @@
 		  $text .='
               <div class="_adminAccordionContent">
                   <p>'.$project['title'].'</p>
-                 <span class="_adminAccordionSelectAction">
-                  <a id="'.$project['id'].'" href="#" class="_adminEditObjectProject_"><span ><img src="/templates/images/editDoc.png"></span></a>
-                  <a id="projects-'.$project['id'].'"href="#" class="_adminDelObject_"><span ><img src="/templates/images/delDoc.png"></span></a>
+                  <span class="_adminAccordionSelectAction">
+                      <span id="'.$project['id'].'" class="_adminEditObjectProject_"><img src="/templates/images/editDoc.png"></span>
+                      <span id="projects-'.$project['id'].'" class="_adminDelObject_"><img src="/templates/images/delDoc.png"></span>
               </span>
-              </div>
-		  ';
+              </div>';
 		  }
 		  $text.='</div>';
 	 $text.='
@@ -74,10 +71,6 @@
           </div>
 		  </form>
       </div>
-      
-      
-      
-      
       
       <!-- ДОБАВЛЕНИЕ ПАРТНЕРА  -->
       

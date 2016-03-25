@@ -5,8 +5,9 @@ class Registry {
 	public $sql;
 	private $lng_prefix;	
 	public $count;
-	public $items_registry = array('id','logo','title','address','id_template','phoneNumber','E-mail','fax','President');
-	public $items_reg = array('breadth', 'longitude','logo','title','address','id_template','phoneNumber','e_mail','fax','surnamePresident', 'namePresident', 'patronymicPresident', 'site', 'area', 'man', 'groupsArea');
+	public $items_registry = array('id','logo','title','town','street','house','id_template','phoneNumber','E-mail','fax','President');
+	//public $items_reg = array('breadth', 'longitude','logo','title','address','id_template','phoneNumber','e_mail','fax','surnamePresident', 'namePresident', 'patronymicPresident', 'site', 'area', 'man', 'groupsArea');
+	public $items_reg = array('breadth', 'longitude','logo','title','town','street','house','id_template','phoneNumber','e_mail','fax','surnamePresident', 'namePresident', 'patronymicPresident', 'site', 'area', 'man', 'groupsArea');
 
 	
 	function __construct($request=NULL,$db) 	{
@@ -29,7 +30,7 @@ class Registry {
 		       FROM registry LEFT JOIN groups_area
 			   ON registry.groupsArea = groups_area.id";*/
 		
-		$sql= "SELECT t1.id, t1.title, t1.address, t1.phoneNumber, t1.e_mail, t1.fax, t1.surnamePresident, t1.namePresident, t1.patronymicPresident, t1.site, t2.groupsArea AS groupsArea
+		$sql= "SELECT t1.id, t1.title, t1.town, t1.street, t1.house, t1.phoneNumber, t1.e_mail, t1.fax, t1.surnamePresident, t1.namePresident, t1.patronymicPresident, t1.site, t2.groupsArea AS groupsArea
 		       FROM registry t1
 			   LEFT OUTER JOIN groups_area t2
 			   ON t1.groupsArea = t2.id";
@@ -43,7 +44,7 @@ class Registry {
 	}
 	
 	function getAllReg(){
-		$sql= "SELECT t1.id, t1.breadth, t1.longitude, t1.logo, t1.title, t1.address, t1.phoneNumber, t1.e_mail, t1.fax, t1.surnamePresident, t1.namePresident, t1.patronymicPresident, t1.site, t2.groupsArea AS groupsArea
+		$sql= "SELECT t1.id, t1.breadth, t1.longitude, t1.logo, t1.title, t1.town, t1.street, t1.house, t1.phoneNumber, t1.e_mail, t1.fax, t1.surnamePresident, t1.namePresident, t1.patronymicPresident, t1.site, t2.groupsArea AS groupsArea
 		       FROM registry t1
 			   LEFT OUTER JOIN groups_area t2
 			   ON t1.groupsArea = t2.id";
@@ -120,7 +121,7 @@ class Registry {
 	}
 	/*
 	function Time_To_Show($value) {
-		$montharray = array('1' => 'Января','2' => 'Февраля','3' => 'Марта','4' => 'Апреля','5' => 'Мая','6' => 'Июня','7' => 'Июля','8' => 'Августа','9' => 'Сентября','10' => 'Октября','11' => 'Ноября','12' => 'Декабря');
+		$montharray = array('1' => 'пїЅпїЅпїЅпїЅпїЅпїЅ','2' => 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅ','3' => 'пїЅпїЅпїЅпїЅпїЅ','4' => 'пїЅпїЅпїЅпїЅпїЅпїЅ','5' => 'пїЅпїЅпїЅ','6' => 'пїЅпїЅпїЅпїЅ','7' => 'пїЅпїЅпїЅпїЅ','8' => 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅ','9' => 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ','10' => 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅ','11' => 'пїЅпїЅпїЅпїЅпїЅпїЅ','12' => 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅ');
 		$time           = explode(' ',$value);
 		$date = $time[0];
 		$dateconvert = explode('-',$date);

@@ -109,7 +109,13 @@ $(document).ready(function(){
 				$("#titleTsz").val(reg.title);
 				$('#idTsz').val(reg.id);
 				$('#editCoordsTsz').val(reg.breadth + "," + reg.longitude);
-				$('#addressTszEditCoord').val(reg.address);
+
+				//$('#addressTszEditCoord').val(reg.address);
+
+				$('#townTszEditCoord').val(reg.town);
+				$('#streetTszEditCoord').val(reg.street);
+				$('#houseTszEditCoord').val(reg.house);
+
 				$('#phoneNumberTsz').val(reg.phoneNumber);
 				$('#e_mailTsz').val(reg.e_mail);
 				$('#faxTsz').val(reg.fax);
@@ -157,23 +163,22 @@ $(document).ready(function(){
 		})
      
     });
-	
-	
-	//Добавление координат по адресу ТСЖ для метки на карте
-	function getCoors(idFieldAddress, idHiddenField){
-		var address = $(idFieldAddress).val();
-		
+
+	/**===========================
+	 * Метод для добавление координат по адресу ТСЖ для меткок на карте
+	 * ===========================
+	 */
+	function getCoors(address, idHiddenField){
 		ymaps.ready(init);
 		function init(){
 			var myGeocoder = ymaps.geocode(address);
             myGeocoder.then(
                 function (res) {
 					var coords = res.geoObjects.get(0).geometry.getCoordinates();
-				
+				   // alert(coords);
 					if($(idHiddenField).val() != ""){
 						$(idHiddenField).val("");
 					}
-					
 					$(idHiddenField).val(coords);
                 },
                 function (err) {
@@ -182,17 +187,85 @@ $(document).ready(function(){
             );
 		}
 	}
-	
+
+	/**===========================
+	 * Обработка событый формы при Добавление ТСЖ
+	 * ===========================
+	 */
+	$('#townTsz').change(function() {
+		var address = "г. " + $('#townTsz').val() + ", ул. " + $('#streetTsz').val()+ ", "  + $('#houseTsz').val();
+		getCoors(address, "#addCoordsTsz");
+	});
+	$('#streetTsz').change(function() {
+		var address = "г. " + $('#townTsz').val() + ", ул. " + $('#streetTsz').val()+ ", "  + $('#houseTsz').val();
+		getCoors(address, "#addCoordsTsz");
+	});
+	$('#houseTsz').change(function() {
+		var address = "г. " + $('#townTsz').val() + ", ул. " + $('#streetTsz').val()+ ", "  + $('#houseTsz').val();
+		getCoors(address, "#addCoordsTsz");
+	});
+	//Очистка полей координат при потере фокуса, если их значение нулевое
+	$('#townTsz').blur(function() {
+		if($('#townTsz').val() === ""){
+	        $('#townTsz').val('');
+	    }
+	});
+	$('#streetTsz').blur(function() {
+		if($('#streetTsz').val() === ""){
+			$('#streetTsz').val('');
+		}
+	});
+	$('#houseTsz').blur(function() {
+		if($('#houseTsz').val() === ""){
+			$('#houseTsz').val('');
+		}
+	});
+
+	/**===========================
+	 * Обработка событый формы при Редактирование ТСЖ
+	 * ===========================
+	 */
+	$('#townTszEditCoord').change(function() {
+		var address = "г. " + $('#townTszEditCoord').val() + ", ул. " + $('#streetTszEditCoord').val()+ ", "  + $('#houseTszEditCoord').val();
+		getCoors(address, "#editCoordsTsz");
+	});
+	$('#streetTszEditCoord').change(function() {
+		var address = "г. " + $('#townTszEditCoord').val() + ", ул. " + $('#streetTszEditCoord').val()+ ", "  + $('#houseTszEditCoord').val();
+		getCoors(address, "#editCoordsTsz");
+	});
+	$('#houseTszEditCoord').change(function() {
+		var address = "г. " + $('#townTszEditCoord').val() + ", ул. " + $('#streetTszEditCoord').val()+ ", "  + $('#houseTszEditCoord').val();
+		getCoors(address, "#editCoordsTsz");
+	});
+	//Очистка полей координат при потере фокуса, если их значение нулевое
+	$('#townTszEditCoord').blur(function() {
+		if($('#townEditTsz').val() === ""){
+			$('#townEditTsz').val('');
+		}
+	});
+	$('#streetTszEditCoord').blur(function() {
+		if($('#streetTszEditCoord').val() === ""){
+			$('#streetTszEditCoord').val('');
+		}
+	});
+	$('#houseTszEditCoord').blur(function() {
+		if($('#houseTszEditCoord').val() === ""){
+			$('#houseTszEditCoord').val('');
+		}
+	});
+
+
+
 	//Добавление ТСЖ
-	$('#addressTszAddCoord').change(function() {
+	/*$('#addressTszAddCoord').change(function() {
 		getCoors("#addressTszAddCoord", "#addCoordsTsz");
-	});
+	});*/
 	//Редактирование ТСЖ
-	$('#addressTszEditCoord').change(function() {
+	/*$('#addressTszEditCoord').change(function() {
 		getCoors("#addressTszEditCoord", "#editCoordsTsz");
-	});
+	});*/
 	
-	$('#addressTszAddCoord').blur(function() {
+	/*$('#addressTszAddCoord').blur(function() {
 		if($('#addressTszAddCoord').val() === ""){
 			$('#addCoordsTsz').val('');
 		}
@@ -202,6 +275,6 @@ $(document).ready(function(){
 		if($('#addressTszEditCoord').val() === ""){
 			$('#editCoordsTsz').val("");
 		}
-	});
+	});*/
 	
 });

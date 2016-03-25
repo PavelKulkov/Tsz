@@ -59,14 +59,14 @@
 		$path = md5(basename($path,'.'.$info['extension'])).'.'.$info['extension'];
 	     */
 		    $editCoords = explode(",",$_POST['editCoordsTsz'] );
-		    if(!empty($_POST['addressTsz'])){
+		   // if(!empty($_POST['addressTsz'])){
 		        $editCoords = explode(",",$_POST['editCoordsTsz'] );
-		    }
-	        else{
-	            $editCoords = array(-1, -1);
-		    }
+		    //}
+	        //else{
+	           // $editCoords = array(-1, -1);
+		  //  }
 		
-		    $newReg = array('id'=>$_POST['idTsz'],'breadth'=>$editCoords[0],'longitude'=>$editCoords[1],'logo'=>$path,'title'=>$_POST['titleTsz'],'address'=>$_POST['addressTsz'],'id_template'=>1,'phoneNumber'=>$_POST['phoneNumberTsz'],'e_mail'=>$_POST['e_mailTsz'],'fax'=>$_POST['faxTsz'], 'surnamePresident'=>$_POST['surnamePresident'],'namePresident'=>$_POST['namePresident'], 'patronymicPresident'=>$_POST['patronymicPresident'], 'site'=>$_POST['siteTsz'], 'area'=>1, 'man'=>"ПИК", 'groupsArea'=>$_POST['area']);
+		    $newReg = array('id'=>$_POST['idTsz'],'breadth'=>$editCoords[0],'longitude'=>$editCoords[1],'logo'=>$path,'title'=>$_POST['titleTsz'],'town'=>$_POST['townTsz'],'street'=>$_POST['streetTsz'], 'house'=>$_POST['houseTsz'],'id_template'=>1,'phoneNumber'=>$_POST['phoneNumberTsz'],'e_mail'=>$_POST['e_mailTsz'],'fax'=>$_POST['faxTsz'], 'surnamePresident'=>$_POST['surnamePresident'],'namePresident'=>$_POST['namePresident'], 'patronymicPresident'=>$_POST['patronymicPresident'], 'site'=>$_POST['siteTsz'], 'area'=>1, 'man'=>"ПИК", 'groupsArea'=>$_POST['area']);
 		
 		    $registry ->saveReg($newReg);
 			
@@ -91,14 +91,14 @@
 		   @rename($uploaddir.basename($_FILES['uploaded_file_edit_object']['name']),$uploaddir.md5(basename($_FILES['uploaded_file_edit_object']['name'],'.'.$info['extension'])).'.'.$info['extension']);
 		    $path = md5(basename($path,'.'.$info['extension'])).'.'.$info['extension'];
 	        */
-			if(empty($_POST['addressTsz']) == false && count(explode(",",$_POST['addCoordsTsz'])) == 2 ){
+			//if(empty($_POST['addressTsz']) == false && count(explode(",",$_POST['addCoordsTsz'])) == 2 ){
 				$addCoords = explode(",",$_POST['addCoordsTsz'] );
-			}
-			else{
-				$addCoords = array(-1, -1);
-			}
-			
-		    $newReg = array('breadth'=>$addCoords[0],'longitude'=>$addCoords[1],'logo'=>$path,'title'=>$_POST['titleTsz'],'address'=>$_POST['addressTsz'],'id_template'=>1,'phoneNumber'=>$_POST['phoneNumberTsz'],'e_mail'=>$_POST['e_mailTsz'],'fax'=>$_POST['faxTsz'], 'surnamePresident'=>$_POST['surnamePresident'],'namePresident'=>$_POST['namePresident'], 'patronymicPresident'=>$_POST['patronymicPresident'], 'site'=>$_POST['siteTsz'], 'area'=>1, 'man'=>"-", 'groupsArea'=>$_POST['area']);
+			//}
+			//else{
+			//	$addCoords = array(-1, -1);
+			//}
+
+		    $newReg = array('breadth'=>$addCoords[0],'longitude'=>$addCoords[1],'logo'=>$path,'title'=>$_POST['titleTsz'],'town'=>$_POST['townTsz'],'street'=>$_POST['streetTsz'], 'house'=>$_POST['houseTsz'],'id_template'=>1,'phoneNumber'=>$_POST['phoneNumberTsz'],'e_mail'=>$_POST['e_mailTsz'],'fax'=>$_POST['faxTsz'], 'surnamePresident'=>$_POST['surnamePresident'],'namePresident'=>$_POST['namePresident'], 'patronymicPresident'=>$_POST['patronymicPresident'], 'site'=>$_POST['siteTsz'], 'area'=>1, 'man'=>"-", 'groupsArea'=>$_POST['area']);
 		
 		    $registry ->saveReg($newReg);
 		}

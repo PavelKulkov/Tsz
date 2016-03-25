@@ -74,6 +74,26 @@ class Search {
 	function setDistrict($district){
 	  $this->district = $district;
 	}
+	function getValue() {
+		$sql = "SELECT * FROM `registry`";
+		$item  =$this->db_instance->select($sql);
+	    if(!$item) return false;
+	    return $item;
+	}
+	
+	function getAddress($strp){
+		$sql = "SELECT id, address FROM registry WHERE title LIKE '%".strtoupper($strp)."%' OR text LIKE '%".strtoupper($strp)."%' LIMIT 100";
+		$item  =$this->db_instance->select($sql);
+	    if(!$item) return false;
+	    return $item;
+    }
+	
+	
+	
+	
+	
+	
+	
 	
 }
 ?>

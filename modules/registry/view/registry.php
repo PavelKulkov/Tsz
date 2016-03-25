@@ -15,8 +15,9 @@
 		 <div class="_adminHeader">
           <span class="_adminHeaderL"><p>Список членов Ассоциации</p></span>
           <span class="_adminHeaderR">
-              <a href="#">Карта</a>
-              <a href="#" class="_adminAddObjectGroup_">Добавить организацию</a>
+             <!-- <a href="#">Карта</a>
+              <a href="#" class="_adminAddObjectGroup_">Добавить организацию</a>-->
+              <p class="_adminAddObjectGroup_ link">Добавить организацию</p>
           </span>
       </div>
       
@@ -42,9 +43,9 @@
                              <p class="_adminAccordionName"> ТСЖ '.$registry[$j]['title'].'</p>
                              <p class="_adminAccordionAddress">'.$registry[$j]['address'].'</p>
                              <span class="_adminAccordionSelectAction">
-                                 <a id="'.$registry[$j]['id'].'" href="#" class="_adminEditObjectRegistry_"><span ><img src="templates/images/EditDoc.png"></span></a>
-                                 <a href="#" class="_adminBlockObject_"><span ><img src="templates/images/block.png"></span></a>
-                                 <a id="registry-'.$registry[$j]['id'].'" href="#" class="_adminDelObject_"><span ><img src="templates/images/delDoc.png"></span></a>
+                                 <span id="'.$registry[$j]['id'].'" class="_adminEditObjectRegistry_" ><img src="templates/images/EditDoc.png"></span>
+                                 <span class="_adminBlockObject_" ><img src="templates/images/block.png"></span>
+                                 <span id="registry-'.$registry[$j]['id'].'"  class="_adminDelObject_" ><img src="templates/images/delDoc.png"></span>
                              </span>
                          </div>';
 				  }
@@ -104,17 +105,52 @@
 			 <!-- <input type="hidden" id="idTsz" name="idTsz">-->
 			 
 			    <input type="hidden" id="addCoordsTsz" name="addCoordsTsz">
-            <div class="windowEditObjectTitle">
-			    
+           <!-- <div class="windowEditObjectTitle">
 				<div class="windowEditObjectTitleBoxOne">
                     <p>Адрес: город, улица, дом </p>
 				</div>
-				
 				<div class="windowEditObjectTitleBoxTwo">
                     <input type="text"  name="addressTsz" id="addressTszAddCoord" >
 					<span class="error" id="errormsg_addressTsz"></span>
 				</div>
+            </div>-->
+            
+            
+            
+            
+            <div class="windowEditObjectTitle">
+				<div class="windowEditObjectTitleBoxOne">
+                    <p>Город</p>
+				</div>
+				<div class="windowEditObjectTitleBoxTwo">
+                    <input type="text"  name="townTsz" id="townTsz" >
+					<span class="error" id="errormsg_townTsz"></span>
+				</div>
             </div>
+            
+            <div class="windowEditObjectTitle">
+				<div class="windowEditObjectTitleBoxOne">
+                    <p>Улица</p>
+				</div>
+				<div class="windowEditObjectTitleBoxTwo">
+                    <input type="text"  name="streetTsz" id="streetTsz" >
+					<span class="error" id="errormsg_streetTsz"></span>
+				</div>
+            </div>
+            
+            <div class="windowEditObjectTitle">
+				<div class="windowEditObjectTitleBoxOne">
+                    <p>Дом</p>
+				</div>
+				<div class="windowEditObjectTitleBoxTwo">
+                    <input type="text"  name="houseTsz" id="houseTsz" >
+					<span class="error" id="errormsg_houseTsz"></span>
+				</div>
+            </div>
+            
+            
+            
+            
 			
             <div class="windowEditObjectTitle">
 			    <div class="windowEditObjectTitleBoxOne">
@@ -258,7 +294,7 @@
 			<input type="hidden" id="idTsz" name="idTsz">
 			<input type="hidden" id="editCoordsTsz" name="editCoordsTsz">
 			
-            <div class="windowEditObjectTitle">
+           <!-- <div class="windowEditObjectTitle">
 			    <div class="windowEditObjectTitleBoxOne">
                     <p>Адрес: город, улица, дом</p>
 				</div>
@@ -266,7 +302,39 @@
                     <input type="text" id="addressTszEditCoord" name="addressTsz">
 					<span class="error" id="errormsg_addressTsz"></span>
                 </div>
-			</div>
+			</div>-->
+			
+			
+			 <div class="windowEditObjectTitle">
+				<div class="windowEditObjectTitleBoxOne">
+                    <p>Город</p>
+				</div>
+				<div class="windowEditObjectTitleBoxTwo">
+                    <input type="text"  name="townTsz" id="townTszEditCoord" >
+					<span class="error" id="errormsg_townTszEditCoord"></span>
+				</div>
+            </div>
+            
+            <div class="windowEditObjectTitle">
+				<div class="windowEditObjectTitleBoxOne">
+                    <p>Улица</p>
+				</div>
+				<div class="windowEditObjectTitleBoxTwo">
+                    <input type="text"  name="streetTsz" id="streetTszEditCoord" >
+					<span class="error" id="errormsg_streetTszEditCoord"></span>
+				</div>
+            </div>
+            
+            <div class="windowEditObjectTitle">
+				<div class="windowEditObjectTitleBoxOne">
+                    <p>Дом</p>
+				</div>
+				<div class="windowEditObjectTitleBoxTwo">
+                    <input type="text"  name="houseTsz" id="houseTszEditCoord" >
+					<span class="error" id="errormsg_houseTszEditCoord"></span>
+				</div>
+            </div>
+            
 			
             <div class="windowEditObjectTitle">
 			    <div class="windowEditObjectTitleBoxOne">
@@ -445,7 +513,7 @@
 			                    <div class="listAreasMainContent">';
 					    for($j=0;$j<count($registry);$j++){
 				            if(strcasecmp($groups[$i]['groupsArea'],$registry[$j]['groupsArea'])==0){
-							    $text .= "<p id = ".$registry[$j]['id'].">ТСЖ ".$registry[$j]['title']." , ".$registry[$j]['address']."</p>";  
+							    $text .= "<p id = ".$registry[$j]['id'].">ТСЖ ".$registry[$j]['title']." , г.".$registry[$j]['town'].", ул. ".$registry[$j]['street'].", ".$registry[$j]['house']."</p>";
 				            }
 					    }
 					    $text .= '</div>

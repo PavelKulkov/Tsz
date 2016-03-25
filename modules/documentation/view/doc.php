@@ -26,9 +26,9 @@
 			<h3 class="_adminAccordionTitle">
 			    <p>'.$groups[$i]['groupOfDoc'].' <span><img src="/templates/images/select.png"></span></p>
 			    <span class="_adminAccordionSelectAction">
-				    <a id="'.$groups[$i]['id'].'" href="#" class="_adminAddObject_"><span><img src="/templates/images/addDoc.png"></span></a>
-				    <a id="'.$groups[$i]['id'].'" href="#" class="_adminEditObjectGroup_"><span ><img src="/templates/images/editDocGroup.png"></span></a>
-				    <a id="groups of documents-'.$groups[$i]['id'].'" href="#" class="_adminDelObject_"><span ><img src="/templates/images/delDocGroup.png"></span></a>
+				    <span id="'.$groups[$i]['id'].'" class="_adminAddObject_"><img src="/templates/images/addDoc.png"></span>
+				    <span id="'.$groups[$i]['id'].'" class="_adminEditObjectGroup_" ><img src="/templates/images/editDocGroup.png"></span>
+				    <span  id="groups of documents-'.$groups[$i]['id'].'" class="_adminDelObject_"><img src="/templates/images/delDocGroup.png"></span>
 			    </span>
 			</h3>
 			<div class="_adminAccordionContents">';
@@ -38,8 +38,8 @@
 				<div class="_adminAccordionContent">	
 					<p>'.$docs[$j]['title'].'</p>
 					<span class="_adminAccordionSelectAction">
-						<a id="'.$docs[$j]['idDoc'].'" href="#" class="_adminEditObject_"><span ><img src="/templates/images/editDoc.png"></span></a>
-						<a id="documentation-'.$docs[$j]['idDoc'].'" href="#" class="_adminDelObject_"><span ><img src="/templates/images/delDoc.png"></span></a>
+						<span id="'.$docs[$j]['idDoc'].'" class="_adminEditObject_" ><img src="/templates/images/editDoc.png"></span>
+						<span id="documentation-'.$docs[$j]['idDoc'].'" class="_adminDelObject_" ><img src="/templates/images/delDoc.png"></span>
 					</span>
 				</div>';
 					}

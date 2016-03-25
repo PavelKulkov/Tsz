@@ -1,13 +1,20 @@
 ﻿<!DOCTYPE html>
   <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">  
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" href="/templates/newdesign/css/jquery-ui.css">
 	<link rel="stylesheet" type="text/css" href="/templates/newdesign/css/style.css">
+
 	<title>
 	  associationTsz
 	</title>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 	<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
-	<script src="../modules/search/scripts/search.js"></script>
+    <script src="/scripts/jquery-ui.js"></script>
+    <script src="/scripts/jquery-ui.min.js"></script>
+	<!--<script src="../modules/search/scripts/search.js"></script>-->
+	<script src="../modules/search/scripts/searchTwo.js"></script>
+	
 	<script src="/scripts/scriptForWindow.js"></script>
   </head>
   <body>
@@ -29,9 +36,8 @@
 
   </header>
   
-   <div class="sidebar">
+  <div class="sidebar">
       <div class="upper_picture">
-         <!--<img src="/templates/images/upper_picture.png">-->
       </div>
       <div class="search">
           <h1>Найди свое ТСЖ</h1>
@@ -53,7 +59,6 @@
 	       </p>
          </div>
       </div>
-      
   </div>
   <div class="content">
       <div class="joinContent">
@@ -76,7 +81,6 @@
               <div class="TwostepImage">
                   <img src="/templates/images/step_2.png">
               </div>
-              
               <div class="TwostepText">
                   <h3>2 ПРИСВОЕНИЕ <br>РЕГИСТРАЦИОННОГО НОМЕРА</h3>
                   <p>Для присвоения регистрационного номера<br>
@@ -114,8 +118,6 @@
                     решении вступления в Ассоциацию.</p>
               </div>
           </div>
-
-          
       </div>
       <div class="services">
          <h1>Наши услуги</h1>
@@ -164,21 +166,15 @@
                   </ul>
               </div>
           </div>
-          
-		  
-		  
-		  
-   </div> 
-		  
-		   {#area24}
       </div>
-          
-      </div>
-	  
-	   <!--Всплывающее окно-->
+      {#area24}
+  </div>
+  <!--</div>-->
+  <!--Всплывающее окно-->
   <div class="modalWindow">
       <div class="closeModalWindow">
-          <div class="closeModalWindowImg"></div>
+          <div id = "closeModalWindow" class="closeModalWindowImg">
+          </div>
       </div>
       <div class="headerModalWindow"></div>
       <div class="contentModalWindow">
@@ -187,8 +183,17 @@
       </div>
 	  
   </div>
-  
-	<footer>
+  <!--Всплывающее окно с картой поиска-->
+  <div class="modalWindowMap">
+      <div class="closeModalWindow">
+          <div id = "closeModalWindowMap" class="closeModalWindowImg">
+          </div>
+      </div>
+      <div id="mapSearch" class="map mapSearch" >
+      </div>
+  </div>
+
+  <footer>
     <div class="footer">
       <p>
         (c) 2015 "Ассоциация ТСЖ" Все права защищены.<br>
@@ -196,11 +201,6 @@
         т.: 8 (8412) 23 11 25; e-mail: tczh@yandex.ru
       </p>
     </div>
-
   </footer>
-  
- 
-  
-  
   </body>
 </html>

@@ -15,7 +15,7 @@
 				    var reg = jQuery.parseJSON(data);
 				    $(".headerModalWindow").append('<h1>ТСЖ "'+ reg.title +'"</h1>');
 		            $(".logoModalWindow").append('<img src="/files/Registry/'+ reg.logo + '">');
-                    $(".textModalWindow").append('<p><strong>Адрес:</strong> '+reg.address+'</p>'+
+                    $(".textModalWindow").append('<p><strong>Адрес:</strong> г.'+reg.town+', ул.'+reg.street+', '+reg.house+'</p>'+
 			            '<p><strong>Телефон:</strong> '+ reg.phoneNumber +'</p>'+
 					    '<p><strong>Факс:</strong> '+ reg.fax +' </p>'+
                         '<p><strong>E-mail:</strong><a href=#> '+ reg.e_mail +'</a></p>'+
@@ -57,7 +57,7 @@
 				    var reg = jQuery.parseJSON(data);
 				    $(".headerModalWindow").append('<h1>ТСЖ "'+ reg.title +'"</h1>');
 		            $(".logoModalWindow").append('<img src="/files/Registry/'+ reg.logo + '">');
-                    $(".textModalWindow").append('<p><strong>Адрес:</strong> '+reg.address+'</p>'+
+                    $(".textModalWindow").append('<p><strong>Адрес:</strong>  г.'+reg.town+', ул.'+reg.street+', '+reg.house+'</p>'+
 			            '<p><strong>Телефон:</strong> '+ reg.phoneNumber +' </p>'+
 						'<p><strong>Факс:</strong> '+ reg.fax +' </p>'+
                         '<p><strong>E-mail:</strong><a href=#> '+ reg.e_mail +'</a></p>'+
@@ -75,15 +75,28 @@
 		    $(".modalWindow").css("display", "block");
 		}
 	});
-	
-	//Функция скрытия всплывающего окна
-	$(".closeModalWindowImg").click(function(){
+
+	//Функция скрытия всплывающих окон ТСЖ
+	$("#closeModalWindow").click(function(){
 		flag = true;
 		$(".modalWindow").css("display", "none");
 		$(".pageWindows").css("display", "none");
-		$('.pageWindows').remove()        
+		$('.pageWindows').remove();
 		$(".textModalWindow").empty();
 		$(".headerModalWindow").empty();
+
 		$(".logoModalWindow").empty();
 	});
+
+	 //Функция скрытия всплывающего окна карты
+	 $("#closeModalWindowMap").click(function(){
+		 //alert("tt");
+		 //flag = true;
+		 $("body").css({"overflow": "auto" });
+		 $(".modalWindowMap").css("display", "none");
+		 $(".pageWindows").css("display", "none");
+
+		 $('.pageWindows').remove()
+		 $("#mapSearch").empty();
+	 });
  });

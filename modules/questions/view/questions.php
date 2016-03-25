@@ -25,9 +25,9 @@
 				<h3 class="_adminAccordionTitle">
                     <p>'.$groups[$i]['groupsQuestion'].' <span><img src="templates/images/select.png"></span></p>
                     <span class="_adminAccordionSelectAction">
-					    <a id="'.$groups[$i]['id'].'" href="#" class="_adminAddObject_"><span><img src="templates/images/addDoc.png"></span></a>
-				        <a id="'.$groups[$i]['id'].'" href="#" class="_adminEditGroup_"><span ><img src="/templates/images/editDocGroup.png"></span></a>
-				        <a id="groups_questions-'.$groups[$i]['id'].'" href="#" class="_adminDelObject_"><span ><img src="/templates/images/delDocGroup.png"></span></a>
+					   <span id="'.$groups[$i]['id'].'"  class="_adminAddObject_"><img src="templates/images/addDoc.png"></span>
+				       <span id="'.$groups[$i]['id'].'" class="_adminEditGroup_"><img src="/templates/images/editDocGroup.png"></span>
+				       <span id="groups_questions-'.$groups[$i]['id'].'" class="_adminDelObject_"><img src="/templates/images/delDocGroup.png"></span>
 			        </span>
                 </h3>
                 <div class="_adminAccordionContents">';
@@ -38,8 +38,8 @@
 			            <div class="_adminAccordionContent">
                             <p>'.$questions[$j]['title'].'</p>
                             <span class="_adminAccordionSelectAction">
-                                <a href="#" id="'.$questions[$j]['id'].'" class="_adminEditObjectQuestions_"><span><img src="templates/images/editDoc.png"></span></a>
-                                <a href="#" id="questions-'.$questions[$j]['id'].'" class="_adminDelObject_"><span><img src="templates/images/delDoc.png"></span></a>
+                                <span id="'.$questions[$j]['id'].'" class="_adminEditObjectQuestions_"><img src="templates/images/editDoc.png"></span>
+                                <span id="questions-'.$questions[$j]['id'].'" class="_adminDelObject_"><img src="templates/images/delDoc.png"></span>
                             </span>
                         </div>';
 				    }
